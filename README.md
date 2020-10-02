@@ -7,3 +7,7 @@ Estructura del proyecto con Maven
 ├───.idea
 └───src
     ├───main
+    │   ├───java
+    │   └───resources
+    └───test
+        └───javain
