@@ -7,10 +7,3 @@ Estructura del proyecto con Maven
 ├───.idea
 └───src
     ├───main
-    │   ├───java
-    |   |   |_ Main.java (Creado)
-    |   |   |_ Otras Clases. java (Creadas)
-    |   |
-    │   └───resources
-    └───test
-        └───java
