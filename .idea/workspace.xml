@@ -23,27 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28013bc3-bb25-49b9-958c-4242e1584582" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Data-Structure.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Estructura de datos trabajo1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Estructura de datos trabajo1.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tabajo_1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ContratoArriendo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ContratoArriendo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Empresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Empresa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entrega.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entrega.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Especialidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Especialidad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repartidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Repartidor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sucursal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sucursal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TipoDeEntrega.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TipoDeEntrega.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Estructura de datos trabajo1.pdf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +48,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Bermudez\Desktop\Data-Structure\src\main\java" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
