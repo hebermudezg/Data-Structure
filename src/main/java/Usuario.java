@@ -12,4 +12,14 @@ public class Usuario {
         Correo = correo;
         Contraseña = contraseña;
     }
+    @Override
+    public String toString() {
+        return "Usuario " + "\n" +
+                "\t Documento: " + Documento + "\n" +
+                "\t Nombre: " + Nombre + "\n" +
+                "\t Apellido: " + Apellido + "\n" +
+                "\t Correo: " + Correo + "\n" +
+                "\t Contraseña: " + Contraseña + "\n" +
+                "\t ";
+    }
 }

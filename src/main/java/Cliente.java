@@ -10,4 +10,13 @@ public class Cliente {
         this.telefono = telefono;
         CodigoPostal = codigoPostal;
     }
+    @Override
+    public String toString() {
+        return "Cliente " + "\n" +
+                "\t Nombre: " + Nombre + "\n" +
+                "\t Direccion: " + Direccion + "\n" +
+                "\t Telefono: " + telefono + "\n" +
+                "\t Codigo postal: " + CodigoPostal + "\n" +
+                "\t ";
+    }
 }

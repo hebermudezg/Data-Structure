@@ -22,11 +22,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28013bc3-bb25-49b9-958c-4242e1584582" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Data-Structure.iml" afterDir="false" />
+    <list default="true" id="28013bc3-bb25-49b9-958c-4242e1584582" name="Default Changelist" comment="Se creó la salida de string a todos los objetos para la visualizacion, y se crearon las funciones de la empresa (ver,crear,modificar,eliminar)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ContratoArriendo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ContratoArriendo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Empresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Empresa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entrega.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entrega.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Especialidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Especialidad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Repartidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Repartidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sucursal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sucursal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TipoDeEntrega.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TipoDeEntrega.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,6 +101,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Se creó la salida de string a todos los objetos para la visualizacion, y se crearon las funciones de la empresa (ver,crear,modificar,eliminar)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se creó la salida de string a todos los objetos para la visualizacion, y se crearon las funciones de la empresa (ver,crear,modificar,eliminar)" />
   </component>
   <component name="WindowStateProjectService">
     <state width="1323" height="223" key="GridCell.Tab.0.bottom" timestamp="1602014897835">

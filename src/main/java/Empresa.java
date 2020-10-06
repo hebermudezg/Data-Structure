@@ -8,4 +8,12 @@ public class Empresa {
         RazonSocial = razonSocial;
         Presidente = presidente;
     }
+    @Override
+    public String toString() {
+        return "Empresa " + "\n" +
+                "\t Nit: " + Nit + "\n" +
+                "\t Razon social: " + RazonSocial + "\n" +
+                "\t Presidente: " + Presidente + "\n" +
+                "\t ";
+    }
 }
