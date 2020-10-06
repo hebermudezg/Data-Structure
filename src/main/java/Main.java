@@ -68,11 +68,11 @@ public class Main {
         System.out.println("Ingrese la contraceña del nuevo empleado:");
         String contraseña = input.nextLine();
 
-        Usuario RegistroUsuario = new Usuario(documento,nombre,apellido,correo,contraseña);
-        RegistrosUsuarios.add(RegistroUsuario);
+        Usuario RegistrUsuario = new Usuario(documento,nombre,apellido,correo,contraseña);
+        RegistrosUsuarios.add(RegistrUsuario);
         System.out.println("Registro exitoso");
         System.out.println("Ya podra iniciar sesion");
-        //Iniciarsesion();
+        Iniciarsesion();
     }
     public static void Iniciarsesion() {
         while (true) {
@@ -110,31 +110,15 @@ public class Main {
             }
             if (inicio == null) {
                 System.out.println("El documento o correo no fueron encontrados");
-                //break;
+                break;
+            }else if(inicio.Contraseña != contras){
+                System.out.println("La contraseña es incorrecta");
+                break;
             }else {
-                if(inicio.Contraseña!=contras){
-                    System.out.println("La contraseña es incorrecta");
-                    //break
-                }else {
-                    //el siguente menu
-                }
+                System.out.println("Hola"+inicio.Nombre+"\n"+
+                        "Bienvenido al sistema Empresa de entregas"+"\n");
+                MenuPrincipal();
             }
-            //sin usar pila
-            //if (isNumeric(entrada)) {
-            //                int documento = Integer.parseInt(entrada);
-            //                for (Usuario RegistroUsuario : RegistrosUsuarios) {
-            //                    if (RegistroUsuario.Documento == documento) {
-            //                        inicio = RegistroUsuario;
-            //                        break;
-            //                    }
-            //                }
-            //            }else{
-            //for (Usuario RegistroUsuario : RegistrosUsuarios) {
-            //                    if (RegistroUsuario.Correo == entrada) {
-            //                        inicio = RegistroUsuario;
-            //                        break;
-            //                    }
-            //                }
         }
     }
     public static boolean isNumeric(String cadena){
@@ -144,5 +128,302 @@ public class Main {
         } catch (NumberFormatException nfe){
             return false;
         }
+    }
+    public static void MenuPrincipal(){
+        String option;
+        while(true) {
+            System.out.println();
+            System.out.println("-----------------------------");
+            System.out.println("Buenas, bienvenido al menu pricipal");
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Administración");
+            System.out.println("2. Búsqueda");
+            System.out.println("3. Diagnóstico de inconsistencias");
+            System.out.println("4. Guardar");
+            System.out.println("0. Salir y cancelar");
+            System.out.println();
+            option = input.next();
+            if (option.equals("1")) {
+                Administracion();
+            } else if (option.equals("2")) {
+                Busqueda();
+            } else if (option.equals("3")) {
+                DiagnosticoInconsistencias();
+            } else if (option.equals("4")) {
+                Guardar();
+            } else if (option.equals("0")) {
+                SalirCancelar();
+            }
+        }
+    }
+    public static void Administracion(){
+        System.out.println("Estos son los elementos posibles");
+        System.out.println("Escoja una opcion:");
+        System.out.println("1. Empresas");
+        System.out.println("2. Sucursales");
+        System.out.println("3. Especialidades");
+        System.out.println("4. Contrato de arriendos");
+        System.out.println("5. Repartidores");
+        System.out.println("6. Tipo de entregas");
+        System.out.println("7. Entregas");
+        System.out.println("8. Clientes");
+        System.out.println("0. Cancelar");
+        System.out.println();
+        String option;
+        option = input.next();
+        if (option.equals("1")) {
+            String i="Empresa";
+            System.out.println("Cual de las acciones quiere realizar");
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Ver "+i+"s");
+            System.out.println("2. Crear "+i);
+            System.out.println("3. Editar "+i);
+            System.out.println("4. Eliminar "+i);
+            System.out.println("0. Cancelar "+i);
+            String option1;
+            option1 = input.next();
+            if (option1.equals("1")) {
+                VEmpresa();
+            }else if (option1.equals("2")) {
+                CEmpresa();
+            }else if (option1.equals("3")) {
+                EEmpresa();
+            }else if (option1.equals("4")) {
+                ELEmpresa();
+            }else {
+                return;
+            }
+        } else if (option.equals("2")) {
+            String i="Sucursal";
+            System.out.println("Cual de las acciones quiere realizar");
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Ver "+i+"es");
+            System.out.println("2. Crear "+i);
+            System.out.println("3. Editar "+i);
+            System.out.println("4. Eliminar "+i);
+            System.out.println("0. Cancelar "+i);
+            String option1;
+            option1 = input.next();
+            if (option1.equals("1")) {
+                VSucursal();
+            }else if (option1.equals("2")) {
+                CSucursal();
+            }else if (option1.equals("3")) {
+                ESucursal();
+            }else if (option1.equals("4")) {
+                ELSucursal();
+            }else {
+                return;
+            }
+        } else if (option.equals("3")) {
+            String i="Especialidad";
+            System.out.println("Cual de las acciones quiere realizar");
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Ver "+i+"es");
+            System.out.println("2. Crear "+i);
+            System.out.println("3. Editar "+i);
+            System.out.println("4. Eliminar "+i);
+            System.out.println("0. Cancelar "+i);
+            String option1;
+            option1 = input.next();
+            if (option1.equals("1")) {
+                VEspecialidad();
+            }else if (option1.equals("2")) {
+                CEspecialidad();
+            }else if (option1.equals("3")) {
+                EEspecialidad();
+            }else if (option1.equals("4")) {
+                ELEspecialidad();
+            }else {
+                return;
+            }
+        } else if (option.equals("4")) {
+            String i="Contrato de arriendo";
+            System.out.println("Cual de las acciones quiere realizar");
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Ver "+i+"s");
+            System.out.println("2. Crear "+i);
+            System.out.println("3. Editar "+i);
+            System.out.println("4. Eliminar "+i);
+            System.out.println("0. Cancelar "+i);
+            String option1;
+            option1 = input.next();
+            if (option1.equals("1")) {
+                VContratoArriendo();
+            }else if (option1.equals("2")) {
+                CContratoArriendo();
+            }else if (option1.equals("3")) {
+                EContratoArriendo();
+            }else if (option1.equals("4")) {
+                ELContratoArriendo();
+            }else {
+                return;
+            }
+        } else if (option.equals("5")) {
+            String i="Repartidor";
+            System.out.println("Cual de las acciones quiere realizar");
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Ver "+i+"es");
+            System.out.println("2. Crear "+i);
+            System.out.println("3. Editar "+i);
+            System.out.println("4. Eliminar "+i);
+            System.out.println("0. Cancelar "+i);
+            String option1;
+            option1 = input.next();
+            if (option1.equals("1")) {
+                VRepartidor();
+            }else if (option1.equals("2")) {
+                CRepartidor();
+            }else if (option1.equals("3")) {
+                ERepartidor();
+            }else if (option1.equals("4")) {
+                ELRepartidor();
+            }else {
+                return;
+            }
+        }else if (option.equals("6")) {
+            String i="Tipo de entrega";
+            System.out.println("Cual de las acciones quiere realizar");
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Ver "+i+"s");
+            System.out.println("2. Crear "+i);
+            System.out.println("3. Editar "+i);
+            System.out.println("4. Eliminar "+i);
+            System.out.println("0. Cancelar "+i);
+            String option1;
+            option1 = input.next();
+            if (option1.equals("1")) {
+                VTipoEntrega();
+            }else if (option1.equals("2")) {
+                CTipoEntrega();
+            }else if (option1.equals("3")) {
+                ETipoEntrega();
+            }else if (option1.equals("4")) {
+                ELTipoEntrega();
+            }else {
+                return;
+            }
+        } else if (option.equals("7")) {
+            String i="Entrega";
+            System.out.println("Cual de las acciones quiere realizar");
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Ver "+i+"s");
+            System.out.println("2. Crear "+i);
+            System.out.println("3. Editar "+i);
+            System.out.println("4. Eliminar "+i);
+            System.out.println("0. Cancelar "+i);
+            String option1;
+            option1 = input.next();
+            if (option1.equals("1")) {
+                VEntrega();
+            }else if (option1.equals("2")) {
+                CEntrega();
+            }else if (option1.equals("3")) {
+                EEntrega();
+            }else if (option1.equals("4")) {
+                ELEntrega();
+            }else {
+                return;
+            }
+        } else if (option.equals("8")) {
+            String i="Cliente";
+            System.out.println("Cual de las acciones quiere realizar");
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Ver "+i+"s");
+            System.out.println("2. Crear "+i);
+            System.out.println("3. Editar "+i);
+            System.out.println("4. Eliminar "+i);
+            System.out.println("0. Cancelar "+i);
+            String option1;
+            option1 = input.next();
+            if (option1.equals("1")) {
+                VCliente();
+            }else if (option1.equals("2")) {
+                CCliente();
+            }else if (option1.equals("3")) {
+                ECliente();
+            }else if (option1.equals("4")) {
+                ELCliente();
+            }else {
+                return;
+            }
+        } else {
+            return;
+        }
+    }
+    public static void VEmpresa(){
+    }
+    public static void CEmpresa(){
+    }
+    public static void EEmpresa(){
+    }
+    public static void ELEmpresa(){
+    }
+    public static void VSucursal(){
+    }
+    public static void CSucursal(){
+    }
+    public static void ESucursal() {
+    }
+    public static void ELSucursal(){
+    }
+    public static void VEspecialidad(){
+    }
+    public static void CEspecialidad(){
+    }
+    public static void EEspecialidad(){
+    }
+    public static void ELEspecialidad(){
+    }
+    public static void VContratoArriendo(){
+    }
+    public static void CContratoArriendo(){
+    }
+    public static void EContratoArriendo(){
+    }
+    public static void ELContratoArriendo(){
+    }
+    public static void VRepartidor(){
+    }
+    public static void CRepartidor(){
+    }
+    public static void ERepartidor(){
+    }
+    public static void ELRepartidor(){
+    }
+    public static void VTipoEntrega(){
+    }
+    public static void CTipoEntrega(){
+    }
+    public static void ETipoEntrega(){
+    }
+    public static void ELTipoEntrega(){
+    }
+    public static void VEntrega(){
+    }
+    public static void CEntrega(){
+    }
+    public static void EEntrega(){
+    }
+    public static void ELEntrega(){
+    }
+    public static void VCliente(){
+    }
+    public static void CCliente(){
+    }
+    public static void ECliente(){
+    }
+    public static void ELCliente(){
+    }
+    public static void Busqueda(){
+    }
+    public static void DiagnosticoInconsistencias(){
+
+    }
+    public static void Guardar(){
+
+    }
+    public static void SalirCancelar(){
+
     }
 }

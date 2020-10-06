@@ -12,9 +12,4 @@ public class Usuario {
         Correo = correo;
         Contraseña = contraseña;
     }
-    public String toString() {
-        return "Hola"+Nombre+"\n"+
-                "Bienvenido al sistema Empresa de entregas"+"\n";
-
-    }
 }
