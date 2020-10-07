@@ -3,7 +3,9 @@ import java.util.Scanner;
 import java.util.Stack;
 public class Main {
     public static Scanner input = new Scanner(System.in);
-    public static LinkedList<Usuario> RegistrosUsuarios  = new LinkedList<>();
+    public static LinkedList<Usuario> RegistrosUsuarios = new LinkedList<>();
+    public static int Numbus= 0;
+    public static int Texbus=0;
 
     public static void main(String[] args) {
         String option;
@@ -25,6 +27,7 @@ public class Main {
             }
         }
     }
+
     public static void NuevoUsuario() {
         System.out.println("Registro de un nuevo usuario.");
         System.out.println("Ingrese la cedula del nuevo usurio:");
@@ -33,7 +36,7 @@ public class Main {
             System.out.println("Ingresaste una cedula invalida");
             return;
         }
-        for (Usuario RegistroUsuario :RegistrosUsuarios){
+        for (Usuario RegistroUsuario : RegistrosUsuarios) {
             if (RegistroUsuario.Documento == documento) {
                 System.out.println("Ingresaste una cedula ya existente");
                 return;
@@ -47,7 +50,7 @@ public class Main {
         System.out.println("Ingrese el correo del nuevo usuario:");
         System.out.println("El correo debe contener un @");
         String correo = input.nextLine();
-        Stack<Integer> pila= new Stack<>();
+        Stack<Integer> pila = new Stack<>();
         String f = "";
         for (int i = 0; i < correo.length(); i++) {
             f = correo.substring(i, i + 1);
@@ -55,11 +58,11 @@ public class Main {
                 pila.push(i);
             }
         }
-        if (pila.empty()==true) {
+        if (pila.empty() == true) {
             System.out.println("Ingresaste un correo invalida falta el @");
             return;
         }
-        for (Usuario RegistroUsuario :RegistrosUsuarios){
+        for (Usuario RegistroUsuario : RegistrosUsuarios) {
             if (RegistroUsuario.Correo == correo) {
                 System.out.println("Ingresaste un correo ya existente");
                 return;
@@ -68,12 +71,13 @@ public class Main {
         System.out.println("Ingrese la contraceña del nuevo empleado:");
         String contraseña = input.nextLine();
 
-        Usuario RegistrUsuario = new Usuario(documento,nombre,apellido,correo,contraseña);
+        Usuario RegistrUsuario = new Usuario(documento, nombre, apellido, correo, contraseña);
         RegistrosUsuarios.add(RegistrUsuario);
         System.out.println("Registro exitoso");
         System.out.println("Ya podra iniciar sesion");
         Iniciarsesion();
     }
+
     public static void Iniciarsesion() {
         while (true) {
             input.nextLine();
@@ -94,7 +98,7 @@ public class Main {
             }
             if (pila.empty() != true) {
                 for (Usuario RegistroUsuario : RegistrosUsuarios) {
-                    if (RegistroUsuario.Correo == entrada) {
+                    if (RegistroUsuario.Correo.equals(entrada)) {
                         inicio = RegistroUsuario;
                         break;
                     }
@@ -111,28 +115,31 @@ public class Main {
             if (inicio == null) {
                 System.out.println("El documento o correo no fueron encontrados");
                 break;
-            }else if(inicio.Contraseña != contras){
+            } else if (!inicio.Contraseña.equals(contras)) {
+                System.out.print(inicio.Contraseña);
+                System.out.print(contras);
                 System.out.println("La contraseña es incorrecta");
                 break;
-            }else {
-                System.out.println("Hola"+inicio.Nombre+"\n"+
-                        "Bienvenido al sistema Empresa de entregas"+"\n");
+            } else {
+                System.out.println("Hola" + inicio.Nombre + "\n" +
+                        "Bienvenido al sistema Empresa de entregas" + "\n");
                 MenuPrincipal();
             }
         }
     }
-    public static boolean isNumeric(String cadena){
+
+    public static boolean isNumeric(String cadena) {
         try {
             Integer.parseInt(cadena);
             return true;
-        } catch (NumberFormatException nfe){
+        } catch (NumberFormatException nfe) {
             return false;
         }
     }
-    public static void MenuPrincipal(){
+
+    public static void MenuPrincipal() {
         String option;
-        while(true) {
-            System.out.println();
+        while (true) {
             System.out.println("-----------------------------");
             System.out.println("Buenas, bienvenido al menu pricipal");
             System.out.println("Escoja una opcion:");
@@ -156,7 +163,8 @@ public class Main {
             }
         }
     }
-    public static void Administracion(){
+
+    public static void Administracion() {
         System.out.println("Estos son los elementos posibles");
         System.out.println("Escoja una opcion:");
         System.out.println("1. Empresas");
@@ -172,258 +180,799 @@ public class Main {
         String option;
         option = input.next();
         if (option.equals("1")) {
-            String i="Empresa";
+            String i = "Empresa";
             System.out.println("Cual de las acciones quiere realizar");
             System.out.println("Escoja una opcion:");
-            System.out.println("1. Ver "+i+"s");
-            System.out.println("2. Crear "+i);
-            System.out.println("3. Editar "+i);
-            System.out.println("4. Eliminar "+i);
-            System.out.println("0. Cancelar "+i);
+            System.out.println("1. Ver " + i + "s");
+            System.out.println("2. Crear " + i);
+            System.out.println("3. Editar " + i);
+            System.out.println("4. Eliminar " + i);
+            System.out.println("0. Cancelar " + i);
             String option1;
             option1 = input.next();
             if (option1.equals("1")) {
                 VEmpresa();
-            }else if (option1.equals("2")) {
+            } else if (option1.equals("2")) {
                 CEmpresa();
-            }else if (option1.equals("3")) {
+            } else if (option1.equals("3")) {
                 EEmpresa();
-            }else if (option1.equals("4")) {
+            } else if (option1.equals("4")) {
                 ELEmpresa();
-            }else {
+            } else {
                 return;
             }
         } else if (option.equals("2")) {
-            String i="Sucursal";
+            String i = "Sucursal";
             System.out.println("Cual de las acciones quiere realizar");
             System.out.println("Escoja una opcion:");
-            System.out.println("1. Ver "+i+"es");
-            System.out.println("2. Crear "+i);
-            System.out.println("3. Editar "+i);
-            System.out.println("4. Eliminar "+i);
-            System.out.println("0. Cancelar "+i);
+            System.out.println("1. Ver " + i + "es");
+            System.out.println("2. Crear " + i);
+            System.out.println("3. Editar " + i);
+            System.out.println("4. Eliminar " + i);
+            System.out.println("0. Cancelar " + i);
             String option1;
             option1 = input.next();
             if (option1.equals("1")) {
                 VSucursal();
-            }else if (option1.equals("2")) {
+            } else if (option1.equals("2")) {
                 CSucursal();
-            }else if (option1.equals("3")) {
+            } else if (option1.equals("3")) {
                 ESucursal();
-            }else if (option1.equals("4")) {
+            } else if (option1.equals("4")) {
                 ELSucursal();
-            }else {
+            } else {
                 return;
             }
         } else if (option.equals("3")) {
-            String i="Especialidad";
+            String i = "Especialidad";
             System.out.println("Cual de las acciones quiere realizar");
             System.out.println("Escoja una opcion:");
-            System.out.println("1. Ver "+i+"es");
-            System.out.println("2. Crear "+i);
-            System.out.println("3. Editar "+i);
-            System.out.println("4. Eliminar "+i);
-            System.out.println("0. Cancelar "+i);
+            System.out.println("1. Ver " + i + "es");
+            System.out.println("2. Crear " + i);
+            System.out.println("3. Editar " + i);
+            System.out.println("4. Eliminar " + i);
+            System.out.println("0. Cancelar " + i);
             String option1;
             option1 = input.next();
             if (option1.equals("1")) {
                 VEspecialidad();
-            }else if (option1.equals("2")) {
+            } else if (option1.equals("2")) {
                 CEspecialidad();
-            }else if (option1.equals("3")) {
+            } else if (option1.equals("3")) {
                 EEspecialidad();
-            }else if (option1.equals("4")) {
+            } else if (option1.equals("4")) {
                 ELEspecialidad();
-            }else {
+            } else {
                 return;
             }
         } else if (option.equals("4")) {
-            String i="Contrato de arriendo";
+            String i = "Contrato de arriendo";
             System.out.println("Cual de las acciones quiere realizar");
             System.out.println("Escoja una opcion:");
-            System.out.println("1. Ver "+i+"s");
-            System.out.println("2. Crear "+i);
-            System.out.println("3. Editar "+i);
-            System.out.println("4. Eliminar "+i);
-            System.out.println("0. Cancelar "+i);
+            System.out.println("1. Ver " + i + "s");
+            System.out.println("2. Crear " + i);
+            System.out.println("3. Editar " + i);
+            System.out.println("4. Eliminar " + i);
+            System.out.println("0. Cancelar " + i);
             String option1;
             option1 = input.next();
             if (option1.equals("1")) {
                 VContratoArriendo();
-            }else if (option1.equals("2")) {
+            } else if (option1.equals("2")) {
                 CContratoArriendo();
-            }else if (option1.equals("3")) {
+            } else if (option1.equals("3")) {
                 EContratoArriendo();
-            }else if (option1.equals("4")) {
+            } else if (option1.equals("4")) {
                 ELContratoArriendo();
-            }else {
+            } else {
                 return;
             }
         } else if (option.equals("5")) {
-            String i="Repartidor";
+            String i = "Repartidor";
             System.out.println("Cual de las acciones quiere realizar");
             System.out.println("Escoja una opcion:");
-            System.out.println("1. Ver "+i+"es");
-            System.out.println("2. Crear "+i);
-            System.out.println("3. Editar "+i);
-            System.out.println("4. Eliminar "+i);
-            System.out.println("0. Cancelar "+i);
+            System.out.println("1. Ver " + i + "es");
+            System.out.println("2. Crear " + i);
+            System.out.println("3. Editar " + i);
+            System.out.println("4. Eliminar " + i);
+            System.out.println("0. Cancelar " + i);
             String option1;
             option1 = input.next();
             if (option1.equals("1")) {
                 VRepartidor();
-            }else if (option1.equals("2")) {
+            } else if (option1.equals("2")) {
                 CRepartidor();
-            }else if (option1.equals("3")) {
+            } else if (option1.equals("3")) {
                 ERepartidor();
-            }else if (option1.equals("4")) {
+            } else if (option1.equals("4")) {
                 ELRepartidor();
-            }else {
+            } else {
                 return;
             }
-        }else if (option.equals("6")) {
-            String i="Tipo de entrega";
+        } else if (option.equals("6")) {
+            String i = "Tipo de entrega";
             System.out.println("Cual de las acciones quiere realizar");
             System.out.println("Escoja una opcion:");
-            System.out.println("1. Ver "+i+"s");
-            System.out.println("2. Crear "+i);
-            System.out.println("3. Editar "+i);
-            System.out.println("4. Eliminar "+i);
-            System.out.println("0. Cancelar "+i);
+            System.out.println("1. Ver " + i + "s");
+            System.out.println("2. Crear " + i);
+            System.out.println("3. Editar " + i);
+            System.out.println("4. Eliminar " + i);
+            System.out.println("0. Cancelar " + i);
             String option1;
             option1 = input.next();
             if (option1.equals("1")) {
                 VTipoEntrega();
-            }else if (option1.equals("2")) {
+            } else if (option1.equals("2")) {
                 CTipoEntrega();
-            }else if (option1.equals("3")) {
+            } else if (option1.equals("3")) {
                 ETipoEntrega();
-            }else if (option1.equals("4")) {
+            } else if (option1.equals("4")) {
                 ELTipoEntrega();
-            }else {
+            } else {
                 return;
             }
         } else if (option.equals("7")) {
-            String i="Entrega";
+            String i = "Entrega";
             System.out.println("Cual de las acciones quiere realizar");
             System.out.println("Escoja una opcion:");
-            System.out.println("1. Ver "+i+"s");
-            System.out.println("2. Crear "+i);
-            System.out.println("3. Editar "+i);
-            System.out.println("4. Eliminar "+i);
-            System.out.println("0. Cancelar "+i);
+            System.out.println("1. Ver " + i + "s");
+            System.out.println("2. Crear " + i);
+            System.out.println("3. Editar " + i);
+            System.out.println("4. Eliminar " + i);
+            System.out.println("0. Cancelar " + i);
             String option1;
             option1 = input.next();
             if (option1.equals("1")) {
                 VEntrega();
-            }else if (option1.equals("2")) {
+            } else if (option1.equals("2")) {
                 CEntrega();
-            }else if (option1.equals("3")) {
+            } else if (option1.equals("3")) {
                 EEntrega();
-            }else if (option1.equals("4")) {
+            } else if (option1.equals("4")) {
                 ELEntrega();
-            }else {
+            } else {
                 return;
             }
         } else if (option.equals("8")) {
-            String i="Cliente";
+            String i = "Cliente";
             System.out.println("Cual de las acciones quiere realizar");
             System.out.println("Escoja una opcion:");
-            System.out.println("1. Ver "+i+"s");
-            System.out.println("2. Crear "+i);
-            System.out.println("3. Editar "+i);
-            System.out.println("4. Eliminar "+i);
-            System.out.println("0. Cancelar "+i);
+            System.out.println("1. Ver " + i + "s");
+            System.out.println("2. Crear " + i);
+            System.out.println("3. Editar " + i);
+            System.out.println("4. Eliminar " + i);
+            System.out.println("0. Cancelar " + i);
             String option1;
             option1 = input.next();
             if (option1.equals("1")) {
                 VCliente();
-            }else if (option1.equals("2")) {
+            } else if (option1.equals("2")) {
                 CCliente();
-            }else if (option1.equals("3")) {
+            } else if (option1.equals("3")) {
                 ECliente();
-            }else if (option1.equals("4")) {
+            } else if (option1.equals("4")) {
                 ELCliente();
-            }else {
+            } else {
                 return;
             }
         } else {
             return;
         }
     }
-    public static void VEmpresa(){
+
+    public static void VEmpresa() {
     }
-    public static void CEmpresa(){
+
+    public static void CEmpresa() {
     }
-    public static void EEmpresa(){
+
+    public static void EEmpresa() {
     }
-    public static void ELEmpresa(){
+
+    public static void ELEmpresa() {
     }
-    public static void VSucursal(){
+
+    public static void VSucursal() {
     }
-    public static void CSucursal(){
+
+    public static void CSucursal() {
     }
+
     public static void ESucursal() {
     }
-    public static void ELSucursal(){
-    }
-    public static void VEspecialidad(){
-    }
-    public static void CEspecialidad(){
-    }
-    public static void EEspecialidad(){
-    }
-    public static void ELEspecialidad(){
-    }
-    public static void VContratoArriendo(){
-    }
-    public static void CContratoArriendo(){
-    }
-    public static void EContratoArriendo(){
-    }
-    public static void ELContratoArriendo(){
-    }
-    public static void VRepartidor(){
-    }
-    public static void CRepartidor(){
-    }
-    public static void ERepartidor(){
-    }
-    public static void ELRepartidor(){
-    }
-    public static void VTipoEntrega(){
-    }
-    public static void CTipoEntrega(){
-    }
-    public static void ETipoEntrega(){
-    }
-    public static void ELTipoEntrega(){
-    }
-    public static void VEntrega(){
-    }
-    public static void CEntrega(){
-    }
-    public static void EEntrega(){
-    }
-    public static void ELEntrega(){
-    }
-    public static void VCliente(){
-    }
-    public static void CCliente(){
-    }
-    public static void ECliente(){
-    }
-    public static void ELCliente(){
-    }
-    public static void Busqueda(){
-    }
-    public static void DiagnosticoInconsistencias(){
 
+    public static void ELSucursal() {
     }
-    public static void Guardar(){
 
+    public static void VEspecialidad() {
     }
-    public static void SalirCancelar(){
 
+    public static void CEspecialidad() {
+    }
+
+    public static void EEspecialidad() {
+    }
+
+    public static void ELEspecialidad() {
+    }
+
+    public static void VContratoArriendo() {
+    }
+
+    public static void CContratoArriendo() {
+    }
+
+    public static void EContratoArriendo() {
+    }
+
+    public static void ELContratoArriendo() {
+    }
+
+    public static void VRepartidor() {
+    }
+
+    public static void CRepartidor() {
+    }
+
+    public static void ERepartidor() {
+    }
+
+    public static void ELRepartidor() {
+    }
+
+    public static void VTipoEntrega() {
+    }
+
+    public static void CTipoEntrega() {
+    }
+
+    public static void ETipoEntrega() {
+    }
+
+    public static void ELTipoEntrega() {
+    }
+
+    public static void VEntrega() {
+    }
+
+    public static void CEntrega() {
+    }
+
+    public static void EEntrega() {
+    }
+
+    public static void ELEntrega() {
+    }
+
+    public static void VCliente() {
+    }
+
+    public static void CCliente() {
+    }
+
+    public static void ECliente() {
+    }
+
+    public static void ELCliente() {
+    }
+
+    public static void Busqueda() {
+        System.out.println("Estos son los elementos posibles");
+        System.out.println("Escoja una opcion:");
+        System.out.println("1. Empresas");
+        System.out.println("2. Sucursales");
+        System.out.println("3. Especialidades");
+        System.out.println("4. Contrato de arriendos");
+        System.out.println("5. Repartidores");
+        System.out.println("6. Tipo de entregas");
+        System.out.println("7. Entregas");
+        System.out.println("8. Clientes");
+        System.out.println("0. Cancelar");
+        System.out.println();
+        String option;
+        option = input.next();
+        if (option.equals("1")) {
+            System.out.println("Los atributos que tiene la clase seleccionada");
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Nit");
+            System.out.println("2. Razon social");
+            System.out.println("3. Presidente");
+            System.out.println("4. Mostrar todas las empresas");
+            System.out.println("0. Cancelar");
+            String option1;
+            option1 = input.next();
+            if (option1.equals("1")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("2")) {
+                TexBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }
+            } else if (option1.equals("3")) {
+                TexBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }
+            } else if (option1.equals("4")) {
+
+            } else {
+                return;
+            }
+        } else if (option.equals("2")) {
+            System.out.println("Los atributos que tiene la clase seleccionada");
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Codigo");
+            System.out.println("2. Ciudad");
+            System.out.println("3. Direccion");
+            System.out.println("4. Cantidad de empleados");
+            System.out.println("5. Mostrar todas las sucursales");
+            System.out.println("0. Cancelar");
+            String option1;
+            option1 = input.next();
+            if (option1.equals("1")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("2")) {
+                TexBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }
+            } else if (option1.equals("3")) {
+                TexBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }
+            } else if (option1.equals("4")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("5")) {
+            } else {
+                return;
+            }
+        } else if (option.equals("3")) {
+            System.out.println("Los atributos que tiene la clase seleccionada");
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Codigo");
+            System.out.println("2. Encargado");
+            System.out.println("3. Enfoque");
+            System.out.println("4. Linea de atencion");
+            System.out.println("5. Mostrar todas las especialidades");
+            System.out.println("0. Cancelar");
+            String option1;
+            option1 = input.next();
+            if (option1.equals("1")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("2")) {
+                TexBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }
+            } else if (option1.equals("3")) {
+                TexBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }
+            } else if (option1.equals("4")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("5")) {
+            } else {
+                return;
+            }
+        } else if (option.equals("4")) {
+            System.out.println("Los atributos que tiene la clase seleccionada");
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Numero de contrato");
+            System.out.println("2. Fecha de inicio");
+            System.out.println("3. Fecha de finalizacion");
+            System.out.println("4. Canon");
+            System.out.println("5. Mostrar todos los contrato de arriendos");
+            System.out.println("0. Cancelar");
+            String option1;
+            option1 = input.next();
+            if (option1.equals("1")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("2")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("3")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("4")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("5")) {
+            } else {
+                return;
+            }
+        } else if (option.equals("5")) {
+            System.out.println("Los atributos que tiene la clase seleccionada");
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Cedula");
+            System.out.println("2. Nombre");
+            System.out.println("3. Edad");
+            System.out.println("4. Numero de celular");
+            System.out.println("5. Tipo de licencia");
+            System.out.println("6. Sueldo");
+            System.out.println("7. Mostrar todos los Repartidores");
+            System.out.println("0. Cancelar");
+            String option1;
+            option1 = input.next();
+            if (option1.equals("1")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("2")) {
+                TexBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }
+            } else if (option1.equals("3")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("4")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("5")) {
+                TexBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }
+            } else if (option1.equals("6")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("7")) {
+            } else {
+                return;
+            }
+        } else if (option.equals("6")) {
+            System.out.println("Los atributos que tiene la clase seleccionada");
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Codigo");
+            System.out.println("2. Tiempo estimado");
+            System.out.println("3. Medio de transporte");
+            System.out.println("4. Mostrar todos los tipo de entregas");
+            System.out.println("0. Cancelar");
+            String option1;
+            option1 = input.next();
+            if (option1.equals("1")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("2")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("3")) {
+                TexBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }
+            } else if (option1.equals("4")) {
+
+            } else {
+                return;
+            }
+        } else if (option.equals("7")) {
+            System.out.println("Los atributos que tiene la clase seleccionada");
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Codigo de entrega");
+            System.out.println("2. Peso");
+            System.out.println("3. Dimenciones");
+            System.out.println("4. Fragil");
+            System.out.println("5. Costo");
+            System.out.println("6. Estado de entrega");
+            System.out.println("7. Mostrar todas las entregas");
+            System.out.println("0. Cancelar");
+            String option1;
+            option1 = input.next();
+            if (option1.equals("1")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("2")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("3")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("4")) {
+
+            } else if (option1.equals("5")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("6")) {
+                TexBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }
+            } else if (option1.equals("7")) {
+            } else {
+                return;
+            }
+        } else if (option.equals("8")) {
+            System.out.println("Los atributos que tiene la clase seleccionada");
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Documento");
+            System.out.println("2. Nombre");
+            System.out.println("3. Direccion");
+            System.out.println("4. Telefono");
+            System.out.println("5. Codigo postal");
+            System.out.println("6. Mostrar todos los clientes");
+            System.out.println("0. Cancelar");
+            String option1;
+            option1 = input.next();
+            if (option1.equals("1")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("2")) {
+                TexBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }
+            } else if (option1.equals("3")) {
+                TexBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }
+            } else if (option1.equals("4")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("5")) {
+                NumBusqueda();
+                if(Numbus == 0){
+
+                }else if (Numbus == 1){
+
+                }else if (Numbus == 2){
+
+                }else if (Numbus == 3){
+
+                }
+            } else if (option1.equals("6")) {
+            } else {
+                return;
+            }
+        } else {
+            return;
+        }
+    }
+
+    public static void DiagnosticoInconsistencias() {
+    }
+
+    public static void Guardar() {
+    }
+
+    public static void SalirCancelar() {
+    }
+
+    public static void NumBusqueda() {
+        System.out.println("Escoja una opcion:");
+        System.out.println("1. Valor exacto");
+        System.out.println("2. Valor mínimo");
+        System.out.println("3. Valor máximo");
+        System.out.println("4. Rango");
+        System.out.println("0. Cancelar");
+        String option1;
+        option1 = input.next();
+        if (option1.equals("1")) {
+            Numbus =0;
+        } else if (option1.equals("2")) {
+            Numbus =1;
+        } else if (option1.equals("3")) {
+            Numbus =2;
+        } else if (option1.equals("4")) {
+            Numbus =3;
+        } else {
+            return;
+        }
+    }
+    public static void TexBusqueda() {
+        System.out.println("Escoja una opcion:");
+        System.out.println("1. Valor exacto");
+        System.out.println("2. Valor sin considerar mayúsculas");
+
+        System.out.println("0. Cancelar");
+        String option1;
+        option1 = input.next();
+        if (option1.equals("1")) {
+            Texbus =0;
+        } else if (option1.equals("2")) {
+            Texbus =1;
+        } else {
+            return;
+        }
     }
 }

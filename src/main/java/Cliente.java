@@ -1,13 +1,15 @@
 public class Cliente {
+    public int Documento;
     public String Nombre;
     public String Direccion;
-    public int telefono;
+    public int Telefono;
     public int CodigoPostal;
 
-    public Cliente(String nombre, String direccion, int telefono, int codigoPostal) {
+    public Cliente(int documento, String nombre, String direccion, int telefono, int codigoPostal) {
+        Documento = documento;
         Nombre = nombre;
         Direccion = direccion;
-        this.telefono = telefono;
+        Telefono = telefono;
         CodigoPostal = codigoPostal;
     }
 }
