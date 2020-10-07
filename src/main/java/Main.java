@@ -1014,8 +1014,19 @@ public class Main {
     }
 
     public static void SalirCancelar() {
+        while (true) {
+            System.out.println("Si sale se perderán los cambios sin guardar:");
+            System.out.println("Y. Si");
+            System.out.println("N. NO");
+            String option1;
+            option1 = input.next();
+            if (option1.equals("Y")||option1.equals("y")) {
+                return;
+            } else if (option1.equals("N") || option1.equals("n")) {
+                MenuPrincipal();
+            }
+        }
     }
-
     public static void NumBusqueda() {
         System.out.println("Escoja una opcion:");
         System.out.println("1. Valor exacto");
