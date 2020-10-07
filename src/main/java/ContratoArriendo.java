@@ -10,4 +10,12 @@ public class ContratoArriendo {
         FechaDeFin = fechaDeFin;
         Canon = canon;
     }
+    @Override
+    public String toString() {
+        return "Contrato de arriendo " + "\n" +
+                "\t Numero de contrato: " + Numcontrato + "\n" +
+                "\t Fecha de inicio: " + FechaDeInicio + "\n" +
+                "\t Fecha de fin: " + FechaDeFin + "\n" +
+                "\t ";
+    }
 }

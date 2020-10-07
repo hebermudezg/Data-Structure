@@ -1,11 +1,25 @@
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.Stack;
 public class Main {
     public static Scanner input = new Scanner(System.in);
+<<<<<<< HEAD
     public static LinkedList<Usuario> RegistrosUsuarios = new LinkedList<>();
     public static int Numbus= 0;
     public static int Texbus=0;
+=======
+    public static LinkedList<Usuario> RegistrosUsuarios  = new LinkedList<>();
+    public static LinkedList<Cliente> clientes  = new LinkedList<>();
+    public static LinkedList<ContratoArriendo> contratoArriendos  = new LinkedList<>();
+    public static LinkedList<Empresa> empresas  = new LinkedList<>();
+    public static LinkedList<Entrega> entregas  = new LinkedList<>();
+    public static LinkedList<Especialidad> especialidades  = new LinkedList<>();
+    public static LinkedList<Repartidor> repartidores = new LinkedList<>();
+    public static LinkedList<Sucursal> sucursales  = new LinkedList<>();
+    public static LinkedList<TipoDeEntrega> tipoDeEntregas  = new LinkedList<>();
+
+>>>>>>> 348af769007b279678a5e4a255b2952bfebf6fe6
 
     public static void main(String[] args) {
         String option;
@@ -359,6 +373,7 @@ public class Main {
             return;
         }
     }
+<<<<<<< HEAD
 
     public static void VEmpresa() {
     }
@@ -370,6 +385,93 @@ public class Main {
     }
 
     public static void ELEmpresa() {
+=======
+    public static void VEmpresa(){
+        Iterator<Empresa> iterador = empresas.listIterator();
+        while (iterador.hasNext()) {
+            Empresa empresa = iterador.next();
+            System.out.println(empresa);
+        }
+    }
+    public static void CEmpresa(){
+        System.out.println("ingrese el nit de la nueva empresa: ");
+        int nit=input.nextInt();
+        if(nit<0){
+            System.out.println("el nit ingresado es invalido, seras regresado al menu anterior");
+            return;
+        }
+        //en caso de necesitar iterador
+        //for (Empresa ){
+        //    if(personaPendiente.cedula == cedula) {
+        //        System.out.println("Ya existe una persona con esta cedula");
+        //        return;
+        //    }
+        System.out.println("ingrese la razon social de la empresa: ");
+        int razon=input.nextInt();
+        if (razon<0){
+            System.out.println("la razon social ingresada es invalida, seras regresado al menu anterior");
+            return;
+        }
+        System.out.println("ingrese el presidente de la empresa: ");
+        String presidente = input.nextLine();
+
+        Empresa nuevaEmpresa = new Empresa(nit,razon,presidente);
+        empresas.add(nuevaEmpresa);
+        System.out.println("Empresa ingresada");
+
+    }
+    public static void EEmpresa(){
+        System.out.println("ingrese el nit de la empresa a modificar: ");
+        int nit = input.nextInt();
+        Iterator<Empresa> iterator = empresas.listIterator();
+        while (iterator.hasNext()){
+            Empresa empresa = iterator.next();
+            if (empresa.Nit==nit){
+                System.out.println("Que deseas modificar: ");
+                System.out.println("1. Nit ");
+                System.out.println("2. Razon social ");
+                System.out.println("3. Presidente ");
+                String option;
+                option = input.next();
+                if (option.equals("1")) {
+                    System.out.println("ingrese el nuevo Nit:");
+                    int x = input.nextInt();
+                    if (x<0){
+                        System.out.println("Nit invalido, seras regresado al menu anterior");
+                        return;
+                    }
+                    empresa.Nit=x;
+                    System.out.println("Nit modificado satisfactoriamente");
+                }else if (option.equals("2")) {
+                    System.out.println("ingrese la nueva razon social:");
+                    int x = input.nextInt();
+                    if (x<0){
+                        System.out.println("razon social invalida, seras regresado al menu anterior");
+                        return;
+                    }
+                    empresa.RazonSocial=x;
+                    System.out.println("Razon social modificada satisfactoriamente");
+                }else if (option.equals("3")) {
+                    System.out.println("ingrese el nuevo Presidente:");
+                    String x = input.nextLine();
+                    empresa.Presidente = x;
+                    System.out.println("Presidente modificado satisfactoriamente");
+                    break;
+                }
+            }
+        }
+    }
+    public static void ELEmpresa(){
+            System.out.println("ingrese el nit de la empresa a modificar: ");
+            int nit = input.nextInt();
+            Iterator<Empresa> iterator = empresas.listIterator();
+            while (iterator.hasNext()){
+                Empresa empresa = iterator.next();
+                if (empresa.Nit==nit){
+                    //COMO SE ELIMINA EL OBJETO DE LA ARRAYLIST?
+                }
+        }
+>>>>>>> 348af769007b279678a5e4a255b2952bfebf6fe6
     }
 
     public static void VSucursal() {

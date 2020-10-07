@@ -14,4 +14,15 @@ public class Entrega {
         Costo = costo;
         Estado_Entrega = estado_Entrega;
     }
+    @Override
+    public String toString() {
+        return "Entrega " + "\n" +
+                "\t Codigo de entrega: " + Cod_Entrega + "\n" +
+                "\t Peso: " + Peso + "\n" +
+                "\t Dimenciones: " + Dimenciones + "\n" +
+                "\t Fragil: " + Fragil + "\n" +
+                "\t Costo: " + Costo + "\n" +
+                "\t Estado de entrega: " + Estado_Entrega + "\n" +
+                "\t ";
+    }
 }

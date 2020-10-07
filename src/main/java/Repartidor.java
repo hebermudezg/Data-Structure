@@ -14,4 +14,15 @@ public class Repartidor {
         Tipo_Licencia = tipo_Licencia;
         Sueldo = sueldo;
     }
+    @Override
+    public String toString() {
+        return "Repartidor " + "\n" +
+                "\t Cedula: " + Cedula + "\n" +
+                "\t Nombre: " + Nombre + "\n" +
+                "\t Edad: " + Edad + "\n" +
+                "\t Numero de celular: " + Num_Celular + "\n" +
+                "\t Tipo de licencia: " + Tipo_Licencia + "\n" +
+                "\t Sueldo: " + Sueldo + "\n" +
+                "\t ";
+    }
 }

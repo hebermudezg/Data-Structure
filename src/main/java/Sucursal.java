@@ -10,4 +10,13 @@ public class Sucursal {
         Direccion = direccion;
         Cant_Empleados = cant_Empleados;
     }
+    @Override
+    public String toString() {
+        return "Sucursal " + "\n" +
+                "\t Codigo: " + Codigo + "\n" +
+                "\t Ciudad: " + Ciudad + "\n" +
+                "\t Direccion: " + Direccion + "\n" +
+                "\t Cantidad de empleados: " + Cant_Empleados + "\n" +
+                "\t ";
+    }
 }
