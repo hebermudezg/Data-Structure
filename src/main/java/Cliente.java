@@ -17,7 +17,7 @@ public class Cliente {
         return "Cliente " + "\n" +
                 "\t Nombre: " + Nombre + "\n" +
                 "\t Direccion: " + Direccion + "\n" +
-                "\t Telefono: " + telefono + "\n" +
+                "\t Telefono: " + Telefono + "\n" +
                 "\t Codigo postal: " + CodigoPostal + "\n" +
                 "\t ";
     }
