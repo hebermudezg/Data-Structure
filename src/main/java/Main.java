@@ -4,12 +4,9 @@ import java.util.Scanner;
 import java.util.Stack;
 public class Main {
     public static Scanner input = new Scanner(System.in);
-<<<<<<< HEAD
     public static LinkedList<Usuario> RegistrosUsuarios = new LinkedList<>();
     public static int Numbus= 0;
     public static int Texbus=0;
-=======
-    public static LinkedList<Usuario> RegistrosUsuarios  = new LinkedList<>();
     public static LinkedList<Cliente> clientes  = new LinkedList<>();
     public static LinkedList<ContratoArriendo> contratoArriendos  = new LinkedList<>();
     public static LinkedList<Empresa> empresas  = new LinkedList<>();
@@ -19,7 +16,7 @@ public class Main {
     public static LinkedList<Sucursal> sucursales  = new LinkedList<>();
     public static LinkedList<TipoDeEntrega> tipoDeEntregas  = new LinkedList<>();
 
->>>>>>> 348af769007b279678a5e4a255b2952bfebf6fe6
+
 
     public static void main(String[] args) {
         String option;
@@ -373,19 +370,6 @@ public class Main {
             return;
         }
     }
-<<<<<<< HEAD
-
-    public static void VEmpresa() {
-    }
-
-    public static void CEmpresa() {
-    }
-
-    public static void EEmpresa() {
-    }
-
-    public static void ELEmpresa() {
-=======
     public static void VEmpresa(){
         Iterator<Empresa> iterador = empresas.listIterator();
         while (iterador.hasNext()) {
@@ -407,11 +391,7 @@ public class Main {
         //        return;
         //    }
         System.out.println("ingrese la razon social de la empresa: ");
-        int razon=input.nextInt();
-        if (razon<0){
-            System.out.println("la razon social ingresada es invalida, seras regresado al menu anterior");
-            return;
-        }
+        String razon=input.nextLine();
         System.out.println("ingrese el presidente de la empresa: ");
         String presidente = input.nextLine();
 
@@ -443,12 +423,9 @@ public class Main {
                     empresa.Nit=x;
                     System.out.println("Nit modificado satisfactoriamente");
                 }else if (option.equals("2")) {
+                    input.nextLine();
                     System.out.println("ingrese la nueva razon social:");
-                    int x = input.nextInt();
-                    if (x<0){
-                        System.out.println("razon social invalida, seras regresado al menu anterior");
-                        return;
-                    }
+                    String x = input.nextLine();
                     empresa.RazonSocial=x;
                     System.out.println("Razon social modificada satisfactoriamente");
                 }else if (option.equals("3")) {
@@ -471,7 +448,6 @@ public class Main {
                     //COMO SE ELIMINA EL OBJETO DE LA ARRAYLIST?
                 }
         }
->>>>>>> 348af769007b279678a5e4a255b2952bfebf6fe6
     }
 
     public static void VSucursal() {
