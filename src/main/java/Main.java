@@ -1021,7 +1021,7 @@ public class Main {
             String option1;
             option1 = input.next();
             if (option1.equals("Y")||option1.equals("y")) {
-                return;
+                System.exit(0);
             } else if (option1.equals("N") || option1.equals("n")) {
                 MenuPrincipal();
             }
