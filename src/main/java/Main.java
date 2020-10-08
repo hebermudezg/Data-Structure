@@ -1,7 +1,6 @@
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
+
+
 public class Main {
     public static Scanner input = new Scanner(System.in);
     public static LinkedList<Usuario> RegistrosUsuarios = new LinkedList<>();
@@ -16,9 +15,19 @@ public class Main {
     public static LinkedList<Sucursal> sucursales  = new LinkedList<>();
     public static LinkedList<TipoDeEntrega> tipoDeEntregas  = new LinkedList<>();
 
-
-
     public static void main(String[] args) {
+
+        // Escribamos un usuario de prueba
+        Usuario prueba = new Usuario(1, "Pedro", "Picapiedra", "Pedro@pica.com", "123");
+        RegistrosUsuarios.add(prueba);
+        EscribirJSON.guardarUsuario(RegistrosUsuarios);
+
+        // Leyendo los json
+        RegistrosUsuarios = LeerJSON.leerUsuariosJson();
+
+
+
+
         String option;
         while (true) {
             System.out.println();
@@ -84,8 +93,21 @@ public class Main {
 
         Usuario RegistrUsuario = new Usuario(documento, nombre, apellido, correo, contraseña);
         RegistrosUsuarios.add(RegistrUsuario);
+
+        // Guadar el usuario en el json
+        EscribirJSON.guardarUsuario(RegistrosUsuarios); // Guardando una instancia de usuario corregir
+
+
         System.out.println("Registro exitoso");
         System.out.println("Ya podra iniciar sesion");
+
+        // Imprimamos para corroborar que hay en la lista
+        for (Usuario registrosUsuario : RegistrosUsuarios) {
+            System.out.println(registrosUsuario.toString());
+        }
+
+
+
         Iniciarsesion();
     }
 
@@ -451,88 +473,117 @@ public class Main {
     }
 
     public static void VSucursal() {
+        return;
     }
 
     public static void CSucursal() {
+        return;
     }
 
     public static void ESucursal() {
+        return;
     }
 
     public static void ELSucursal() {
+        return;
     }
 
     public static void VEspecialidad() {
+        return;
     }
 
     public static void CEspecialidad() {
+        return;
     }
 
     public static void EEspecialidad() {
+        return;
     }
 
     public static void ELEspecialidad() {
+        return;
     }
 
     public static void VContratoArriendo() {
+        return;
     }
 
     public static void CContratoArriendo() {
+        return;
     }
 
     public static void EContratoArriendo() {
+        return;
     }
 
     public static void ELContratoArriendo() {
+        return;
     }
 
     public static void VRepartidor() {
+        return;
     }
 
     public static void CRepartidor() {
+        return;
     }
 
     public static void ERepartidor() {
+        return;
     }
 
     public static void ELRepartidor() {
+        return;
     }
 
     public static void VTipoEntrega() {
+        return;
     }
 
     public static void CTipoEntrega() {
+        return;
     }
 
     public static void ETipoEntrega() {
+        return;
     }
 
     public static void ELTipoEntrega() {
+        return;
     }
 
     public static void VEntrega() {
+        return;
     }
 
     public static void CEntrega() {
+        return;
     }
 
     public static void EEntrega() {
+        return;
     }
 
     public static void ELEntrega() {
+        return;
     }
 
     public static void VCliente() {
+        return;
     }
 
     public static void CCliente() {
+        return;
     }
 
     public static void ECliente() {
+        return;
     }
 
     public static void ELCliente() {
+        return;
     }
+
 
     public static void Busqueda() {
         System.out.println("Estos son los elementos posibles");
