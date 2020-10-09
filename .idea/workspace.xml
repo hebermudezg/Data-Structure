@@ -23,17 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="41c0da2b-1336-4e33-819f-7e35d95b9e06" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EscribirJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EscribirJSON.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Funciones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Funciones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LeerJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LeerJSON.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database/UsuariosJSON.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/UsuariosJSON.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EscribirJSON.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EscribirJSON.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/LeerJSON.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LeerJSON.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sucursal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sucursal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,9 +104,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Se creó la salida de string a todos los objetos para la visualizacion, y se crearon las funciones de la empresa (ver,crear,modificar,eliminar)" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1602044015135">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="368" y="-966" key="#com.intellij.ide.util.MemberChooser" timestamp="1602252798503">
+      <screen x="-318" y="-1080" width="1920" height="1040" />
     </state>
+    <state x="368" y="-966" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728/-318.-1080.1920.1040@-318.-1080.1920.1040" timestamp="1602252798503" />
     <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1602044015135" />
     <state x="333" y="-910" key="FileChooserDialogImpl" timestamp="1602131969956">
       <screen x="-318" y="-1080" width="1920" height="1040" />
