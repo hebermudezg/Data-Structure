@@ -4,7 +4,7 @@ public class Sucursal {
     public String ciudad;
     public String direccion;
     public int cantEmpleados;
-    public Empresa empresa;
+    public Empresa empresa; // Una surucrsal pertenece a una sola empresa
 
     public Sucursal(int codigo, String ciudad, String direccion, int cantEmpleados, Empresa empresa) {
         this.codigo = codigo;

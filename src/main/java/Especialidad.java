@@ -1,22 +1,26 @@
 public class Especialidad {
-    public int Codigo;
-    public String Encargado;
-    public String Enfoque;
-    public int Linea_Atencion;
+    public int codigo;
+    public String encargado;
+    public String enfoque;
+    public int lineaAtencion;
+    public Sucursal sucursal;
 
-    public Especialidad(int codigo, String encargado, String enfoque, int linea_Atencion) {
-        Codigo = codigo;
-        Encargado = encargado;
-        Enfoque = enfoque;
-        Linea_Atencion = linea_Atencion;
+    public Especialidad(int codigo, String encargado, String enfoque, int lineaAtencion, Sucursal sucursal) {
+        this.codigo = codigo;
+        this.encargado = encargado;
+        this.enfoque = enfoque;
+        this.lineaAtencion = lineaAtencion;
+        this.sucursal = sucursal;
     }
+
     @Override
     public String toString() {
-        return "Entrega " + "\n" +
-                "\t Codigo: " + Codigo + "\n" +
-                "\t Encargado: " + Encargado + "\n" +
-                "\t Enfoque: " + Enfoque + "\n" +
-                "\t Linea de atencion: " + Linea_Atencion + "\n" +
-                "\t ";
+        return "Especialidad{" +
+                "codigo=" + codigo +
+                ", encargado='" + encargado + '\'' +
+                ", enfoque='" + enfoque + '\'' +
+                ", lineaAtencion=" + lineaAtencion +
+                ", sucursal=" + sucursal +
+                '}';
     }
 }

@@ -1,28 +1,43 @@
 public class Entrega {
-    public int Cod_Entrega;
-    public double Peso;
-    public int Dimenciones;
-    public boolean Fragil;
-    public double Costo;
-    public String Estado_Entrega;
+    public int codEntrega;
+    public double peso;
+    public int dimenciones;
+    public boolean fragil;
+    public double costo;
+    public String estadoEntrega;
+    public Especialidad especialidad;
+    public TipoDeEntrega tipoDeEntrega;
+    public Cliente cliente;
+    public Repartidor repartidor;
 
-    public Entrega(int cod_Entrega, double peso, int dimenciones, boolean fragil, double costo, String estado_Entrega) {
-        Cod_Entrega = cod_Entrega;
-        Peso = peso;
-        Dimenciones = dimenciones;
-        Fragil = fragil;
-        Costo = costo;
-        Estado_Entrega = estado_Entrega;
+    public Entrega(int codEntrega, double peso, int dimenciones, boolean fragil, double costo,
+                   String estadoEntrega, Especialidad especialidad, TipoDeEntrega tipoDeEntrega,
+                   Cliente cliente, Repartidor repartidor) {
+        this.codEntrega = codEntrega;
+        this.peso = peso;
+        this.dimenciones = dimenciones;
+        this.fragil = fragil;
+        this.costo = costo;
+        this.estadoEntrega = estadoEntrega;
+        this.especialidad = especialidad;
+        this.tipoDeEntrega = tipoDeEntrega;
+        this.cliente = cliente;
+        this.repartidor = repartidor;
     }
+
     @Override
     public String toString() {
-        return "Entrega " + "\n" +
-                "\t Codigo de entrega: " + Cod_Entrega + "\n" +
-                "\t Peso: " + Peso + "\n" +
-                "\t Dimenciones: " + Dimenciones + "\n" +
-                "\t Fragil: " + Fragil + "\n" +
-                "\t Costo: " + Costo + "\n" +
-                "\t Estado de entrega: " + Estado_Entrega + "\n" +
-                "\t ";
+        return "Entrega{" +
+                "codEntrega=" + codEntrega +
+                ", peso=" + peso +
+                ", dimenciones=" + dimenciones +
+                ", fragil=" + fragil +
+                ", costo=" + costo +
+                ", estadoEntrega='" + estadoEntrega + '\'' +
+                ", especialidad=" + especialidad +
+                ", tipoDeEntrega=" + tipoDeEntrega +
+                ", cliente=" + cliente +
+                ", repartidor=" + repartidor +
+                '}';
     }
 }
