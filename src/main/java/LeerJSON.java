@@ -2,7 +2,6 @@
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.LinkedList;
 
 import org.json.simple.JSONArray;
@@ -14,7 +13,7 @@ import org.json.simple.parser.ParseException;
 public class LeerJSON {
     public static LinkedList<Usuario> leerUsuariosJson(){
         LinkedList<Usuario> usuariosLeidos = new LinkedList<>();
-        JSONParser jsonParser = new JSONParser();
+        JSONParser jsonParser = new JSONParser(); //
         try (FileReader reader = new FileReader(EscribirJSON.ruta+"UsuariosJSON.json"))   {
             Object obj = jsonParser.parse(reader);
             JSONArray ListaUsuarios = (JSONArray)obj ;

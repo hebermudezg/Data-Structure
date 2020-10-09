@@ -18,7 +18,7 @@ public class Main {
     public static void main(String[] args) {
 
         // Escribamos un usuario de prueba
-        Usuario prueba = new Usuario(1, "Pedro", "Picapiedra", "Pedro@pica.com", "123");
+        Usuario prueba = new Usuario(1, "Admin", "Admin2", "andmin@admin.com", "123");
         RegistrosUsuarios.add(prueba);
         EscribirJSON.guardarUsuario(RegistrosUsuarios);
 
