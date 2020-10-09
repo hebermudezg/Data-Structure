@@ -1,4 +1,5 @@
 # Data-Structure
+In this repository, a java application is created to put into practice the knowledge acquired in the data structure courses at the National University of Colombia-Medellín.
 
 ## Integrantes
 * Heber Esteban Bermudez Gonzalez  hebermudezg@unal.edu.co
@@ -6,8 +7,11 @@
 * intgrante
 
 
-
-
-In this repository, a java application is created to put into practice the knowledge acquired in the data structure courses at the National University of Colombia-Medellín.
+## Problema
 
 <img src="./Otros_Recursos/UML.png" width="800" title="hover text">
+
+
+
+
+# Bibliografía
