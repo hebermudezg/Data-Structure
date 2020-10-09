@@ -1,6 +1,9 @@
 # Data-Structure
 
-* Heber Esteban Bermudez Gonzalez  hebermudezg@gmail.com
+## Integrantes
+* Heber Esteban Bermudez Gonzalez  hebermudezg@unal.edu.co
+* integrante 
+* intgrante
 
 
 
