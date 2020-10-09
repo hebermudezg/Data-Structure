@@ -39,13 +39,13 @@ public class LeerJSON {
     {
         JSONObject atributos = (JSONObject) usuarioJSON.get("Usuario");
 
-        int documento = Integer.parseInt((String) atributos.get("Documento"));
-        String nombre = (String) atributos.get("Nombre");
-        String apellido = (String) atributos.get("Apellido");
-        String contraseña = (String) atributos.get("Contraseña");
-        String correo = (String) atributos.get("Correo");
+        int documento = Integer.parseInt((String) atributos.get("documento"));
+        String nombre = (String) atributos.get("nombre");
+        String apellido = (String) atributos.get("apellido");
+        String correo = (String) atributos.get("correo");
+        String contraseña = (String) atributos.get("contraseña");
 
-        Usuario usuarioLeido = new Usuario(documento,nombre,apellido,contraseña,correo);
+        Usuario usuarioLeido = new Usuario(documento,nombre,apellido,correo,contraseña);
         return usuarioLeido;
     }
 

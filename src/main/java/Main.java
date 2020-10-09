@@ -2,10 +2,12 @@ import java.util.*;
 
 
 public class Main {
-    public static Scanner input = new Scanner(System.in);
-    public static LinkedList<Usuario> RegistrosUsuarios = new LinkedList<>();
     public static int Numbus= 0;
     public static int Texbus=0;
+    public static Scanner input = new Scanner(System.in);
+
+    // LinkedList para las distintas clases.
+    public static LinkedList<Usuario> RegistrosUsuarios = new LinkedList<>();
     public static LinkedList<Cliente> clientes  = new LinkedList<>();
     public static LinkedList<ContratoArriendo> contratoArriendos  = new LinkedList<>();
     public static LinkedList<Empresa> empresas  = new LinkedList<>();
@@ -17,17 +19,19 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Escribamos un usuario de prueba
+         // Escribamos un usuario de Admin
         Usuario prueba = new Usuario(1, "Admin", "Admin2", "andmin@admin.com", "123");
-        RegistrosUsuarios.add(prueba);
-        EscribirJSON.guardarUsuario(RegistrosUsuarios);
 
+
+        // Agregando usuario a la lista de Registro de usuarios
+        RegistrosUsuarios.add(prueba);
+        // Se procede a guardar en el json
+        EscribirJSON.guardarUsuario(RegistrosUsuarios);
         // Leyendo los json
         RegistrosUsuarios = LeerJSON.leerUsuariosJson();
 
 
-
-
+        // Menú principal
         String option;
         while (true) {
             System.out.println();
@@ -48,16 +52,20 @@ public class Main {
         }
     }
 
+    // Registro de nuevo usuario
     public static void NuevoUsuario() {
         System.out.println("Registro de un nuevo usuario.");
-        System.out.println("Ingrese la cedula del nuevo usurio:");
+        System.out.println("Ingrese la cedula del nuevo usuario:");
         int documento = input.nextInt();
+
+        // Validacion para el documento
         if (documento < 0) {
             System.out.println("Ingresaste una cedula invalida");
             return;
         }
+        // Verificación que el usuario no este registrado
         for (Usuario RegistroUsuario : RegistrosUsuarios) {
-            if (RegistroUsuario.Documento == documento) {
+            if (RegistroUsuario.documento == documento) {
                 System.out.println("Ingresaste una cedula ya existente");
                 return;
             }
@@ -67,36 +75,36 @@ public class Main {
         String nombre = input.nextLine();
         System.out.println("Ingrese el apellido del nuevo usuario:");
         String apellido = input.nextLine();
-        System.out.println("Ingrese el correo del nuevo usuario:");
-        System.out.println("El correo debe contener un @");
+        System.out.println("Ingrese el correo del nuevo usuario, El correo debe contener un @ :");
         String correo = input.nextLine();
+
+        // Verificando que tenga al menos una arroba
         Stack<Integer> pila = new Stack<>();
         String f = "";
         for (int i = 0; i < correo.length(); i++) {
             f = correo.substring(i, i + 1);
             if (f.equals("@") == true) {
-                pila.push(i);
+                pila.push(i); // Insertar
             }
         }
         if (pila.empty() == true) {
             System.out.println("Ingresaste un correo invalida falta el @");
             return;
         }
+        // Verificar que el correo no este registrado aún
         for (Usuario RegistroUsuario : RegistrosUsuarios) {
-            if (RegistroUsuario.Correo == correo) {
+            if (RegistroUsuario.correo == correo) {
                 System.out.println("Ingresaste un correo ya existente");
                 return;
             }
         }
-        System.out.println("Ingrese la contraceña del nuevo empleado:");
+        System.out.println("Ingrese la contraseña del nuevo empleado:");
         String contraseña = input.nextLine();
-
         Usuario RegistrUsuario = new Usuario(documento, nombre, apellido, correo, contraseña);
+        // agragando nuevo usuario a la lista
         RegistrosUsuarios.add(RegistrUsuario);
-
         // Guadar el usuario en el json
         EscribirJSON.guardarUsuario(RegistrosUsuarios); // Guardando una instancia de usuario corregir
-
 
         System.out.println("Registro exitoso");
         System.out.println("Ya podra iniciar sesion");
@@ -105,8 +113,6 @@ public class Main {
         for (Usuario registrosUsuario : RegistrosUsuarios) {
             System.out.println(registrosUsuario.toString());
         }
-
-
 
         Iniciarsesion();
     }
@@ -131,7 +137,7 @@ public class Main {
             }
             if (pila.empty() != true) {
                 for (Usuario RegistroUsuario : RegistrosUsuarios) {
-                    if (RegistroUsuario.Correo.equals(entrada)) {
+                    if (RegistroUsuario.correo.equals(entrada)) {
                         inicio = RegistroUsuario;
                         break;
                     }
@@ -139,7 +145,7 @@ public class Main {
             } else if (isNumeric(entrada)) {
                 int documento = Integer.parseInt(entrada);
                 for (Usuario RegistroUsuario : RegistrosUsuarios) {
-                    if (RegistroUsuario.Documento == documento) {
+                    if (RegistroUsuario.documento == documento) {
                         inicio = RegistroUsuario;
                         break;
                     }
@@ -148,13 +154,13 @@ public class Main {
             if (inicio == null) {
                 System.out.println("El documento o correo no fueron encontrados");
                 break;
-            } else if (!inicio.Contraseña.equals(contras)) {
-                System.out.print(inicio.Contraseña);
+            } else if (!inicio.contraseña.equals(contras)) {
+                System.out.print(inicio.contraseña);
                 System.out.print(contras);
                 System.out.println("La contraseña es incorrecta");
                 break;
             } else {
-                System.out.println("Hola" + inicio.Nombre + "\n" +
+                System.out.println("Hola" + inicio.nombre + "\n" +
                         "Bienvenido al sistema Empresa de entregas" + "\n");
                 MenuPrincipal();
             }

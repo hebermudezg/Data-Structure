@@ -1,25 +1,25 @@
 public class Usuario {
-    public int Documento;
-    public String Nombre;
-    public String Apellido;
-    public String Correo;
-    public String Contraseña;
+    public int documento;
+    public String nombre;
+    public String apellido;
+    public String correo;
+    public String contraseña;
 
     public Usuario(int documento, String nombre, String apellido, String correo, String contraseña) {
-        Documento = documento;
-        Nombre = nombre;
-        Apellido = apellido;
-        Correo = correo;
-        Contraseña = contraseña;
+        this.documento = documento;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correo = correo;
+        this.contraseña = contraseña;
     }
     @Override
     public String toString() {
         return "Usuario " + "\n" +
-                "\t Documento: " + Documento + "\n" +
-                "\t Nombre: " + Nombre + "\n" +
-                "\t Apellido: " + Apellido + "\n" +
-                "\t Correo: " + Correo + "\n" +
-                "\t Contraseña: " + Contraseña + "\n" +
+                "\t Documento: " + documento + "\n" +
+                "\t Nombre: " + nombre + "\n" +
+                "\t Apellido: " + apellido + "\n" +
+                "\t Correo: " + correo + "\n" +
+                "\t Contraseña: " + contraseña + "\n" +
                 "\t ";
     }
 }

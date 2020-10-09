@@ -1,4 +1,4 @@
-public static void VEmpresa(){
+/*public static void VEmpresa(){
         Iterator<Empresa> iterador = empresas.listIterator();
         while (iterador.hasNext()) {
         Empresa empresa = iterador.next();
@@ -724,4 +724,4 @@ public static void ELCliente() {
         //COMO SE ELIMINA EL OBJETO DE LA ARRAYLIST?
         }
         }
-        }
+        } */
