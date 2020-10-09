@@ -1,7 +1,8 @@
 import java.util.*;
-
+import java.io.File;
 
 public class Main {
+    public static String ruta = "src/main/resources/database/";
     public static int Numbus= 0;
     public static int Texbus=0;
     public static Scanner input = new Scanner(System.in);
@@ -18,17 +19,61 @@ public class Main {
     public static LinkedList<TipoDeEntrega> tipoDeEntregas  = new LinkedList<>();
 
     public static void main(String[] args) {
+        // Leyendo archivos si es que los encuentra
+        File archivoUsuarios = new File("UsuariosJSON.json");
+        if (archivoUsuarios.exists()) {
+            RegistrosUsuarios = LeerJSON.leerUsuariosJson();
+        }
+        File archivoEmpresas = new File("EmpresasJSON.json");
+        if (archivoEmpresas.exists()) {
+            empresas = LeerJSON.leerEmpresasJson();
+        }
 
-         // Escribamos un usuario de Admin
-        Usuario prueba = new Usuario(1, "Admin", "Admin2", "andmin@admin.com", "123");
 
 
-        // Agregando usuario a la lista de Registro de usuarios
-        RegistrosUsuarios.add(prueba);
-        // Se procede a guardar en el json
-        EscribirJSON.guardarUsuario(RegistrosUsuarios);
-        // Leyendo los json
-        RegistrosUsuarios = LeerJSON.leerUsuariosJson();
+
+
+
+
+        // agunos experimnetos********************************
+
+        Empresa nuevaempresa = new Empresa(1244, "agucates rodirguez","juan" );
+        Empresa nuevaempresa2 = new Empresa(12344, "agucates rodirguez","juan" );
+        empresas.add(nuevaempresa);
+        empresas.add(nuevaempresa2);
+
+        Sucursal nuevasucursal = new Sucursal(123, "Ibague", "calle2", 20, nuevaempresa);
+        Sucursal nuevasucursal2 = new Sucursal(1234, "bogota", "calle4", 10, nuevaempresa);
+        Sucursal nuevasucursal3 = new Sucursal(1234, "bogota", "calle4", 10, nuevaempresa2);
+
+
+        sucursales.add(nuevasucursal);
+        sucursales.add(nuevasucursal2);
+        sucursales.add(nuevasucursal3);
+
+        for (Sucursal sucursale : sucursales) {
+            System.out.println(sucursale.toString());
+        }
+
+        // Cantas sucursales tiene la empresa tal (1244 ej)
+        for (Sucursal sucursale : sucursales) {
+            if (sucursale.empresa.Nit == 1244){
+                System.out.println("Encontro");
+            }else{
+                System.out.println("No Encontro");
+            }
+        }
+        // fin de los experimentos *******************************************
+
+
+
+
+
+
+
+
+
+
 
 
         // Menú principal
@@ -91,9 +136,10 @@ public class Main {
             System.out.println("Ingresaste un correo invalida falta el @");
             return;
         }
+
         // Verificar que el correo no este registrado aún
         for (Usuario RegistroUsuario : RegistrosUsuarios) {
-            if (RegistroUsuario.correo == correo) {
+            if (RegistroUsuario.correo.equals(correo)) {
                 System.out.println("Ingresaste un correo ya existente");
                 return;
             }
@@ -101,12 +147,14 @@ public class Main {
         System.out.println("Ingrese la contraseña del nuevo empleado:");
         String contraseña = input.nextLine();
         Usuario RegistrUsuario = new Usuario(documento, nombre, apellido, correo, contraseña);
+
+
         // agragando nuevo usuario a la lista
         RegistrosUsuarios.add(RegistrUsuario);
         // Guadar el usuario en el json
         EscribirJSON.guardarUsuario(RegistrosUsuarios); // Guardando una instancia de usuario corregir
 
-        System.out.println("Registro exitoso");
+        System.out.println("Registro exitoso ! ");
         System.out.println("Ya podra iniciar sesion");
 
         // Imprimamos para corroborar que hay en la lista
@@ -160,8 +208,8 @@ public class Main {
                 System.out.println("La contraseña es incorrecta");
                 break;
             } else {
-                System.out.println("Hola" + inicio.nombre + "\n" +
-                        "Bienvenido al sistema Empresa de entregas" + "\n");
+                System.out.println("Hola " + inicio.nombre + "! \n" +
+                        "Bienvenido al sistema Empresa de entregas");
                 MenuPrincipal();
             }
         }
@@ -180,7 +228,6 @@ public class Main {
         String option;
         while (true) {
             System.out.println("-----------------------------");
-            System.out.println("Buenas, bienvenido al menu pricipal");
             System.out.println("Escoja una opcion:");
             System.out.println("1. Administración");
             System.out.println("2. Búsqueda");
@@ -218,6 +265,7 @@ public class Main {
         System.out.println();
         String option;
         option = input.next();
+
         if (option.equals("1")) {
             String i = "Empresa";
             System.out.println("Cual de las acciones quiere realizar");
@@ -398,38 +446,49 @@ public class Main {
             return;
         }
     }
+
+    //************************** CRUD EMPRESA ***********************
     public static void VEmpresa(){
-        Iterator<Empresa> iterador = empresas.listIterator();
-        while (iterador.hasNext()) {
-            Empresa empresa = iterador.next();
-            System.out.println(empresa);
+        System.out.println("Las empresas registradas son: ");
+        for (Empresa empresa : empresas) {
+            System.out.println(empresa.toString());
         }
     }
+
     public static void CEmpresa(){
         System.out.println("ingrese el nit de la nueva empresa: ");
-        int nit=input.nextInt();
+        int nit =input.nextInt();
+        // validacion de nit
         if(nit<0){
             System.out.println("el nit ingresado es invalido, seras regresado al menu anterior");
             return;
         }
-        //en caso de necesitar iterador
-        //for (Empresa ){
-        //    if(personaPendiente.cedula == cedula) {
-        //        System.out.println("Ya existe una persona con esta cedula");
-        //        return;
-        //    }
+        for (Empresa empresa : empresas) {
+            if (empresa.Nit == nit ) {
+                System.out.println("Ingresaste un nit que ya esta registrado");
+                return;
+            }
+        }
+
         System.out.println("ingrese la razon social de la empresa: ");
         String razon=input.nextLine();
+        input.nextLine(); // esta liena lee el espacio en blanco que queda por ahí volando
         System.out.println("ingrese el presidente de la empresa: ");
         String presidente = input.nextLine();
-
         Empresa nuevaEmpresa = new Empresa(nit,razon,presidente);
         empresas.add(nuevaEmpresa);
-        System.out.println("Empresa ingresada");
+        EscribirJSON.guardarEmpresa(empresas); // guardando las empresas registradas
+        System.out.println("Empresa ingresada correctamente!");
 
     }
+
     public static void EEmpresa(){
-        System.out.println("ingrese el nit de la empresa a modificar: ");
+        // mostar primeros los NIT
+        System.out.println("Acontinuacion se muestra una lista de nits de las empresas: ");
+        for (Empresa empresa : empresas) {
+            System.out.println(empresa.Nit);
+        }
+        System.out.println("Ingrese el Nit de la empresa a modificar: ");
         int nit = input.nextInt();
         Iterator<Empresa> iterator = empresas.listIterator();
         while (iterator.hasNext()){
@@ -467,19 +526,24 @@ public class Main {
         }
     }
     public static void ELEmpresa(){
-            System.out.println("ingrese el nit de la empresa a modificar: ");
-            int nit = input.nextInt();
-            Iterator<Empresa> iterator = empresas.listIterator();
-            while (iterator.hasNext()){
-                Empresa empresa = iterator.next();
-                if (empresa.Nit==nit){
+        System.out.println("ingrese el nit de la empresa a modificar: ");
+        int nit = input.nextInt();
+        Iterator<Empresa> iterator = empresas.listIterator();
+        while (iterator.hasNext()){
+            Empresa empresa = iterator.next();
+            if (empresa.Nit==nit){
                     //COMO SE ELIMINA EL OBJETO DE LA ARRAYLIST?
-                }
+            }
         }
     }
 
+
+    // ************************************* CRUD sucursal *************
+
     public static void VSucursal() {
-        return;
+        for (Sucursal sucursale : sucursales) {
+            System.out.println(sucursale.toString());
+        }
     }
 
     public static void CSucursal() {
@@ -1121,4 +1185,10 @@ public class Main {
             return;
         }
     }
+
+
+    public static void MostrarClase(int option){
+
+    }
+
 }

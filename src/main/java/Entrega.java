@@ -5,10 +5,10 @@ public class Entrega {
     public boolean fragil;
     public double costo;
     public String estadoEntrega;
-    public Especialidad especialidad;
-    public TipoDeEntrega tipoDeEntrega;
-    public Cliente cliente;
-    public Repartidor repartidor;
+    public Especialidad especialidad; // tiene que venir de una especialidad
+    public TipoDeEntrega tipoDeEntrega; // tiene que tener un tipo de entrega
+    public Cliente cliente; //  tiene que tener un cliente
+    public Repartidor repartidor; // tiene que tener un repartidor
 
     public Entrega(int codEntrega, double peso, int dimenciones, boolean fragil, double costo,
                    String estadoEntrega, Especialidad especialidad, TipoDeEntrega tipoDeEntrega,

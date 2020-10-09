@@ -13,7 +13,7 @@ public static void CEmpresa(){
         return;
         }
         //en caso de necesitar iterador
-        //for (Empresa ){
+        //for (EmVEmpresapresa ){
         //    if(personaPendiente.cedula == cedula) {
         //        System.out.println("Ya existe una persona con esta cedula");
         //        return;

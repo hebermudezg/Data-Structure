@@ -30,5 +30,27 @@ public class EscribirJSON {
         }
     }
 
+    // Funcion para guardar empresas
+    public static void guardarEmpresa(LinkedList<Empresa> empresas) {
+        JSONArray EmpresaLista = new JSONArray();
+        for (Empresa empresa : empresas) {
+            JSONObject EmpresaDatos = new JSONObject();
+            EmpresaDatos.put("Nit", String.valueOf(empresa.Nit));
+            EmpresaDatos.put("RazonSocial", empresa.RazonSocial);
+            EmpresaDatos.put("Presidente", empresa.Presidente);
+            JSONObject EmpresaPerfil = new JSONObject();
+            EmpresaPerfil.put("Empresa", EmpresaDatos); //Esrbiendo el usuario
+            EmpresaLista.add(EmpresaPerfil);
+        }
+
+        try (FileWriter file = new FileWriter(ruta+"EmpresasJSON.json")) {
+            file.write(EmpresaLista.toJSONString());
+            file.flush();
+        } catch (Exception e){
+            System.out.println("Error en: "+e);
+        }
+    }
+
+
 }
 
