@@ -22,7 +22,7 @@ public class Main {
     public static void main(String[] args) {
         empresas = LeerJSON.leerEmpresasJson();
         sucursales = LeerJSON.leerSucursalesJson();
-        System.out.println(sucursales.toString());
+        //System.out.println(sucursales.toString());
 
 
         /*// Leyendo archivos si es que los encuentra
@@ -529,12 +529,13 @@ public class Main {
         for (Empresa empresa : empresas) {
             System.out.println(empresa.Nit);
         }
+        input.nextLine();
         System.out.println("Ingrese el Nit de la empresa a modificar: ");
-        String nit = input.next();
+        String nit = input.nextLine();
         Iterator<Empresa> iterator = empresas.listIterator();
         while (iterator.hasNext()){
             Empresa empresa = iterator.next();
-            if (empresa.Nit==nit){
+            if (empresa.Nit.equals(nit)){
                 System.out.println("Que deseas modificar: ");
                 System.out.println("1. Nit ");
                 System.out.println("2. Razon social ");
@@ -542,18 +543,21 @@ public class Main {
                 String option;
                 option = input.next();
                 if (option.equals("1")) {
+                    input.nextLine();
                     System.out.println("ingrese el nuevo Nit:");
-                    String x = input.next();
-
+                    String x = input.nextLine();
                     empresa.Nit=x;
                     System.out.println("Nit modificado satisfactoriamente");
+                    break;
                 }else if (option.equals("2")) {
                     input.nextLine();
                     System.out.println("ingrese la nueva razon social:");
                     String x = input.nextLine();
                     empresa.RazonSocial=x;
                     System.out.println("Razon social modificada satisfactoriamente");
+                    break;
                 }else if (option.equals("3")) {
+                    input.nextLine();
                     System.out.println("ingrese el nuevo Presidente:");
                     String x = input.nextLine();
                     empresa.Presidente = x;
@@ -564,24 +568,26 @@ public class Main {
         }
     }
     public static void ELEmpresa(){
-        System.out.println("ingrese el nit de la empresa a modificar: ");
-        String nit = input.next();
-        Iterator<Empresa> iterator = empresas.listIterator();
-        while (iterator.hasNext()){
-            Empresa empresa = iterator.next();
-            if (empresa.Nit==nit){
-                    //COMO SE ELIMINA EL OBJETO DE LA ARRAYLIST?
+        input.nextLine();
+        System.out.println("ingrese el nit de la empresa a Eliminar: ");
+        String nit = input.nextLine();
+
+        for (int i = 0; i < empresas.size(); i++) {
+            if (empresas.get(i).Nit.equals(nit)) {
+                empresas.remove(i);
+                System.out.println("¡ Se realizo la operacion correctamente !");
+                return;
             }
         }
+        System.out.println("El nit no fue encontrado");
     }
 
 
     // ************************************* CRUD sucursal *************
 
     public static void VSucursal() {
-        for (Sucursal sucursale : sucursales) {
-            System.out.println(sucursale.toString());
-        }
+            System.out.println(sucursales.toString());
+
     }
 
     public static void CSucursal() {
@@ -592,8 +598,8 @@ public class Main {
             return;
         }
         System.out.println("ingrese la Ciudad de la sucursal: ");
-        String ciudad =input.nextLine();
         input.nextLine();
+        String ciudad =input.nextLine();
         System.out.println("ingrese la direccion de la sucursal: ");
         String direccion = input.nextLine();
         System.out.println("ingrese la cantidad de empleados de la nueva sucursal: ");
@@ -602,9 +608,9 @@ public class Main {
             System.out.println("El numero ingresado es invalido, seras regresado al menu anterior");
             return;
         }
-
+        input.nextLine();
         System.out.println("Ingrese el Nit de la empresa a la que pertenece esta sucursal");
-        String Nit = input.next();
+        String Nit = input.nextLine();
         Empresa empresa = null;
         for (Empresa empresa1 : empresas) {
             if(empresa1.Nit.equals(Nit) ){
@@ -623,10 +629,74 @@ public class Main {
     }
 
     public static void ESucursal() {
-        return;
+        // mostar primeros los codigos
+        System.out.println("Acontinuacion se muestra una lista de codigo de las sucursales: ");
+        for (Sucursal sucursa : sucursales) {
+            System.out.println(sucursa.codigoScursal);
+        }
+        System.out.println("ingrese el codigo de la sucursal a modificar: ");
+        int n = input.nextInt();
+        Iterator<Sucursal> iterador = sucursales.listIterator();
+        while (iterador.hasNext()) {
+            Sucursal sucursal = iterador.next();
+            if (sucursal.codigoScursal==n){
+                System.out.println("Que deseas modificar: ");
+                System.out.println("1. Codigo ");
+                System.out.println("2. Ciudad ");
+                System.out.println("3. Direccion ");
+                System.out.println("4. Cantidad de empleados ");
+                String option;
+                option = input.next();
+                if (option.equals("1")) {
+                    System.out.println("ingrese el nuevo Codigo:");
+                    int x = input.nextInt();
+                    if (x<0){
+                        System.out.println("Numero invalido, seras regresado al menu anterior");
+                        return;
+                    }
+                    sucursal.codigoScursal=x;
+                    System.out.println("Codigo modificado satisfactoriamente");
+                    break;
+                }else if (option.equals("2")) {
+                    input.nextLine();
+                    System.out.println("ingrese la nueva ciudad:");
+                    String x = input.nextLine();
+                    sucursal.ciudad=x;
+                    System.out.println("Razon social modificada satisfactoriamente");
+                    break;
+                }else if (option.equals("3")) {
+                    input.nextLine();
+                    System.out.println("ingrese la nueva direccion:");
+                    String x = input.nextLine();
+                    sucursal.direccion = x;
+                    System.out.println("Direccion modificada satisfactoriamente");
+                    break;
+                }else if (option.equals("4")) {
+                    System.out.println("ingrese la nueva cantidad de empleados");
+                    int x = input.nextInt();
+                    if (x<0){
+                        System.out.println("Numero invalido, seras regresado al menu anterior");
+                        return;
+                    }
+                    sucursal.cantEmpleados=x;
+                    System.out.println("Cantidad de empleados modificado satisfactoriamente");
+                    break;
+                }
+            }
+        }
     }
 
-    public static void ELSucursal() {
+
+    public static void ELSucursal(){
+        System.out.println("ingrese el Codigo de la sucursal a eliminar: ");
+        int x = input.nextInt();
+        for (int i = 0; i < sucursales.size(); i++) {
+            if (sucursales.get(i).codigoScursal == x) {
+                sucursales.remove(i);
+                System.out.println("¡ Se realizo la operacion correctamente !");
+                return;
+            }
+        }
         return;
     }
 

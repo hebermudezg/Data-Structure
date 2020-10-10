@@ -16,13 +16,13 @@ public class Sucursal {
 
     @Override
     public String toString() {
-        return "Sucursal{" +
-                "codigo=" + codigoScursal +
-                ", ciudad='" + ciudad + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", cantEmpleados=" + cantEmpleados +
-                ", empresa=" + empresa.Nit +
-                '}';
+        return "Sucursal" +"\n"+
+                "\t Codigo: " + codigoScursal +"\n"+
+                "\t Ciudad: " + ciudad + "\n" +
+                "\t Direccion: " + direccion + "\n" +
+                "\t Cantidad de empleados: " + cantEmpleados +"\n"+
+                "\t Empresa: " + empresa.Nit +"\n"+
+                "\t ";
     }
 
 
