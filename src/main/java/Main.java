@@ -9,16 +9,22 @@ public class Main {
 
     // LinkedList para las distintas clases.
     public static LinkedList<Usuario> RegistrosUsuarios = new LinkedList<>();
-    public static LinkedList<Cliente> clientes  = new LinkedList<>();
-    public static LinkedList<ContratoArriendo> contratoArriendos  = new LinkedList<>();
     public static LinkedList<Empresa> empresas  = new LinkedList<>();
-    public static LinkedList<Entrega> entregas  = new LinkedList<>();
-    public static LinkedList<Especialidad> especialidades  = new LinkedList<>();
-    public static LinkedList<Repartidor> repartidores = new LinkedList<>();
+    public static LinkedList<ContratoArriendo> contratoArriendos  = new LinkedList<>();
     public static LinkedList<Sucursal> sucursales  = new LinkedList<>();
+    public static LinkedList<Especialidad> especialidades  = new LinkedList<>();
     public static LinkedList<TipoDeEntrega> tipoDeEntregas  = new LinkedList<>();
+    public static LinkedList<Cliente> clientes  = new LinkedList<>();
+    public static LinkedList<Repartidor> repartidores = new LinkedList<>();
+    public static LinkedList<Entrega> entregas  = new LinkedList<>();
+
 
     public static void main(String[] args) {
+        empresas = LeerJSON.leerEmpresasJson();
+        sucursales = LeerJSON.leerSucursalesJson();
+        System.out.println(sucursales.toString());
+
+
         // Leyendo archivos si es que los encuentra
         File archivoUsuarios = new File("UsuariosJSON.json");
         if (archivoUsuarios.exists()) {
@@ -28,50 +34,90 @@ public class Main {
         if (archivoEmpresas.exists()) {
             empresas = LeerJSON.leerEmpresasJson();
         }
+        File archivocontratoArriendos = new File("contratoArriendosJSON.json");
+        if (archivoEmpresas.exists()) {
+            contratoArriendos = LeerJSON.leercontratoArriendosJson();
+        }
+        File archivoSucursales = new File("sucursalesJSON.json");
+        if (archivoEmpresas.exists()) {
+            sucursales = LeerJSON.leerSucursalesJson();
+        }
+        /*File archivoespecialidades = new File("especialidadesJSON.json");
+        if (archivoEmpresas.exists()) {
+            especialidades = LeerJSON.leerespecialidadesJson();
+        }
+        File archivotipoDeEntregas = new File("tipoDeEntregasJSON.json");
+        if (archivoEmpresas.exists()) {
+            tipoDeEntregas = LeerJSON.leertipoDeEntregasJson();
+        }
+        File archivoclientes = new File("clientesJSON.json");
+        if (archivoclientes.exists()) {
+            clientes = LeerJSON.leerclientesJson();
+        }
+       // File archivorepartidoresContrato = new File("repartidoresContratoJSON.json");
+       // if (archivorepartidoresContrato.exists()) {
+       //  archivorepartidoresContrato = LeerJSON.leerrepartidoresContratoJson();
+       // }
+        File archivoentregas = new File("entregasJSON.json");
+        if (archivoentregas.exists()) {
+            entregas = LeerJSON.leerentregasJson();
+        }*/
 
 
+        // agunos experimnetos********************************++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        Usuario nuevousuario = new Usuario(1,"admin","apell", "admin@","123");
+        RegistrosUsuarios.add(nuevousuario);
 
-
-
-
-
-        // agunos experimnetos********************************
-
-        Empresa nuevaempresa = new Empresa(1244, "agucates rodirguez","juan" );
-        Empresa nuevaempresa2 = new Empresa(12344, "agucates rodirguez","juan" );
+        Empresa nuevaempresa = new Empresa("90.888.333-1", "Aguacates Rdorguez","Heber" );
+        Empresa nuevaempresa2 = new Empresa("90.444.222-2", "Ferreteria Ferreamaya","Andrea" );
         empresas.add(nuevaempresa);
         empresas.add(nuevaempresa2);
 
-        Sucursal nuevasucursal = new Sucursal(123, "Ibague", "calle2", 20, nuevaempresa);
-        Sucursal nuevasucursal2 = new Sucursal(1234, "bogota", "calle4", 10, nuevaempresa);
-        Sucursal nuevasucursal3 = new Sucursal(1234, "bogota", "calle4", 10, nuevaempresa2);
-
+        Sucursal nuevasucursal = new Sucursal(1, "Ibague", "calle2", 20, nuevaempresa);
+        Sucursal nuevasucursal2 = new Sucursal(2, "bogota", "calle4", 10, nuevaempresa);
+        Sucursal nuevasucursal3 = new Sucursal(3, "bogota", "calle4", 10, nuevaempresa2);
 
         sucursales.add(nuevasucursal);
         sucursales.add(nuevasucursal2);
         sucursales.add(nuevasucursal3);
 
-        for (Sucursal sucursale : sucursales) {
+        ContratoArriendo contratoArriendos1 = new ContratoArriendo(123, "10-10-2000", "10-10-20020", 20000000, nuevasucursal);
+        ContratoArriendo contratoArriendos2 = new ContratoArriendo(1234, "10-10-2001", "10-10-2020", 20000000, nuevasucursal2);
+        ContratoArriendo contratoArriendos3 = new ContratoArriendo(1234, "10-10-2002", "10-10-2020", 20000000, nuevasucursal3);
+        contratoArriendos.add(contratoArriendos1);
+        contratoArriendos.add(contratoArriendos2);
+        contratoArriendos.add(contratoArriendos3);
+
+        Especialidad epecialidad1 = new Especialidad(1, "pedro", "medicamento", 1233, nuevasucursal2);
+        Especialidad epecialidad2 = new Especialidad(2, "juan", "alimentos", 123345, nuevasucursal3);
+        especialidades.add(epecialidad1);
+        especialidades.add(epecialidad2);
+
+        TipoDeEntrega tipoentrega1 = new TipoDeEntrega(1, 20, "Burro viejo");
+        TipoDeEntrega tipoentrega2 = new TipoDeEntrega(2, 100, "Zorra");
+        tipoDeEntregas.add(tipoentrega1);
+        tipoDeEntregas.add(tipoentrega2);
+
+        Cliente cliente1 = new Cliente(95032502467, "Esteban Bermudez","Carre39 sur n 20 a 31", 3115604078, 123)
+
+
+
+
+
+
+        /*for (Sucursal sucursale : sucursales) {
             System.out.println(sucursale.toString());
-        }
+        }*/
 
         // Cantas sucursales tiene la empresa tal (1244 ej)
-        for (Sucursal sucursale : sucursales) {
-            if (sucursale.empresa.Nit == 1244){
+        /*for (Sucursal sucursale : sucursales) {
+            if (sucursale.empresa.Nit == "90.0000.000-1"){
                 System.out.println("Encontro");
             }else{
                 System.out.println("No Encontro");
             }
-        }
-        // fin de los experimentos *******************************************
-
-
-
-
-
-
-
-
+        }*/
+        // fin de los experimentos *******************************************+++++++++++++++++++++++++++++++++++++++++
 
 
 
@@ -179,7 +225,7 @@ public class Main {
             String f = "";
             for (int i = 0; i < entrada.length(); i++) {
                 f = entrada.substring(i, i + 1);
-                if (f.equals("@") == true) {
+                if (f.equals("@")) {
                     pila.push(i);
                 }
             }
@@ -449,6 +495,7 @@ public class Main {
 
     //************************** CRUD EMPRESA ***********************
     public static void VEmpresa(){
+        // Mostrando nit de empresasa registradas
         System.out.println("Las empresas registradas son: ");
         for (Empresa empresa : empresas) {
             System.out.println(empresa.toString());
@@ -456,27 +503,24 @@ public class Main {
     }
 
     public static void CEmpresa(){
+        input.nextLine(); // importante
         System.out.println("ingrese el nit de la nueva empresa: ");
-        int nit =input.nextInt();
-        // validacion de nit
-        if(nit<0){
-            System.out.println("el nit ingresado es invalido, seras regresado al menu anterior");
-            return;
-        }
+        String nit =input.nextLine();
+
         for (Empresa empresa : empresas) {
-            if (empresa.Nit == nit ) {
+            if (empresa.Nit.equals(nit) ) {
                 System.out.println("Ingresaste un nit que ya esta registrado");
                 return;
             }
         }
-
         System.out.println("ingrese la razon social de la empresa: ");
-        String razon=input.nextLine();
-        input.nextLine(); // esta liena lee el espacio en blanco que queda por ahí volando
+        String razonsocial =input.nextLine();
         System.out.println("ingrese el presidente de la empresa: ");
         String presidente = input.nextLine();
-        Empresa nuevaEmpresa = new Empresa(nit,razon,presidente);
+
+        Empresa nuevaEmpresa = new Empresa(nit,razonsocial,presidente);
         empresas.add(nuevaEmpresa);
+
         EscribirJSON.guardarEmpresa(empresas); // guardando las empresas registradas
         System.out.println("Empresa ingresada correctamente!");
 
@@ -489,7 +533,7 @@ public class Main {
             System.out.println(empresa.Nit);
         }
         System.out.println("Ingrese el Nit de la empresa a modificar: ");
-        int nit = input.nextInt();
+        String nit = input.next();
         Iterator<Empresa> iterator = empresas.listIterator();
         while (iterator.hasNext()){
             Empresa empresa = iterator.next();
@@ -502,11 +546,8 @@ public class Main {
                 option = input.next();
                 if (option.equals("1")) {
                     System.out.println("ingrese el nuevo Nit:");
-                    int x = input.nextInt();
-                    if (x<0){
-                        System.out.println("Nit invalido, seras regresado al menu anterior");
-                        return;
-                    }
+                    String x = input.next();
+
                     empresa.Nit=x;
                     System.out.println("Nit modificado satisfactoriamente");
                 }else if (option.equals("2")) {
@@ -527,7 +568,7 @@ public class Main {
     }
     public static void ELEmpresa(){
         System.out.println("ingrese el nit de la empresa a modificar: ");
-        int nit = input.nextInt();
+        String nit = input.next();
         Iterator<Empresa> iterator = empresas.listIterator();
         while (iterator.hasNext()){
             Empresa empresa = iterator.next();
@@ -547,7 +588,40 @@ public class Main {
     }
 
     public static void CSucursal() {
-        return;
+        System.out.println("ingrese el Codigo de la nueva sucursal: ");
+        int codigosucursal=input.nextInt();
+        if(codigosucursal<0){
+            System.out.println("El numero ingresado es invalido, seras regresado al menu anterior");
+            return;
+        }
+        System.out.println("ingrese la Ciudad de la sucursal: ");
+        String ciudad =input.nextLine();
+        input.nextLine();
+        System.out.println("ingrese la direccion de la sucursal: ");
+        String direccion = input.nextLine();
+        System.out.println("ingrese la cantidad de empleados de la nueva sucursal: ");
+        int cantidadempleados =input.nextInt();
+        if(cantidadempleados<0){
+            System.out.println("El numero ingresado es invalido, seras regresado al menu anterior");
+            return;
+        }
+
+        System.out.println("Ingrese el Nit de la empresa a la que pertenece esta sucursal");
+        String Nit = input.next();
+        Empresa empresa = null;
+        for (Empresa empresa1 : empresas) {
+            if(empresa1.Nit.equals(Nit) ){
+                empresa = empresa1;
+                break;
+            }
+        }        if(empresa == null){
+            System.out.println("El Nit no fue encontrado");
+            return;
+        }
+        Sucursal sucursal = new Sucursal(codigosucursal, ciudad, direccion, cantidadempleados, empresa);
+        sucursales.add(sucursal);
+        EscribirJSON.guardarSucursal(sucursales);
+        System.out.println("Sucusal ingresada");
     }
 
     public static void ESucursal() {
@@ -558,13 +632,53 @@ public class Main {
         return;
     }
 
+
+    //************************** CRUD ESPECIALIAD ***********************
     public static void VEspecialidad() {
-        return;
+        System.out.println(especialidades.toString());
     }
 
     public static void CEspecialidad() {
-        return;
+        System.out.println("ingrese el Codigo de la nueva especialidad: ");
+        int codigo=input.nextInt();
+        if(codigo<0){
+            System.out.println("El numero ingresado es invalido, seras regresado al menu anterior");
+            return;
+        }
+        System.out.println("ingrese la Encargado de la especialidad: ");
+        String encargado =input.nextLine();
+        input.nextLine();
+        System.out.println("ingrese la Enfoque de la especialidad: ");
+        String enfoque = input.nextLine();
+        System.out.println("ingrese la Linea de atencion de la especialidad: ");
+        int lineaatencion =input.nextInt();
+        if( lineaatencion<0){
+            System.out.println("El numero ingresado es invalido, seras regresado al menu anterior");
+            return;
+        }
+
+        System.out.println("Ingrese el código de la sucursal a la cual pertenece esta especialidad");
+        int codigoScursal = input.nextInt();
+
+        Sucursal sucursal = null;
+        for (Sucursal sucursal1 : sucursales) {
+            if(sucursal1.codigoScursal == codigoScursal ){
+                sucursal = sucursal1;
+                break;
+            }
+        }
+
+        if(sucursal == null){
+            System.out.println("La sucursal no fue encontrada");
+            return;
+        }
+
+        Especialidad especialidad = new Especialidad(codigo,encargado,enfoque,lineaatencion, sucursal);
+        especialidades.add(especialidad);
+        EscribirJSON.guardarEspecialida(especialidades); // guardandolo
+        System.out.println("Especialidad ingresada");
     }
+
 
     public static void EEspecialidad() {
         return;
@@ -574,8 +688,12 @@ public class Main {
         return;
     }
 
+    //************************** CRUD Contrato ***********************
     public static void VContratoArriendo() {
-        return;
+        System.out.println("Las empresas registradas son: ");
+        for (ContratoArriendo contratoArriendo : contratoArriendos) {
+            System.out.println(contratoArriendo.toString());
+        }
     }
 
     public static void CContratoArriendo() {
@@ -590,6 +708,27 @@ public class Main {
         return;
     }
 
+
+
+    //************************** CRUD REPARTIDOR ***********************
+    public static void VTipoEntrega() {
+        System.out.println(repartidores.toString());
+    }
+
+    public static void CTipoEntrega() {
+        return;
+    }
+
+    public static void ETipoEntrega() {
+        return;
+    }
+
+    public static void ELTipoEntrega() {
+        return;
+    }
+
+
+    //************************** CRUD REPARTIDOR ***********************
     public static void VRepartidor() {
         return;
     }
@@ -606,21 +745,6 @@ public class Main {
         return;
     }
 
-    public static void VTipoEntrega() {
-        return;
-    }
-
-    public static void CTipoEntrega() {
-        return;
-    }
-
-    public static void ETipoEntrega() {
-        return;
-    }
-
-    public static void ELTipoEntrega() {
-        return;
-    }
 
     public static void VEntrega() {
         return;

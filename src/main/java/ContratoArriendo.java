@@ -1,11 +1,11 @@
 public class ContratoArriendo {
     public int numContrato;
-    public int fechadeInicio;
-    public int dechadeFin;
-    public double canon;
+    public String fechadeInicio;
+    public String dechadeFin;
+    public int canon;
     public Sucursal sucursal;
 
-    public ContratoArriendo(int numContrato, int fechadeInicio, int dechadeFin, double canon, Sucursal sucursal) {
+    public ContratoArriendo(int numContrato, String fechadeInicio, String dechadeFin, int canon, Sucursal sucursal) {
         this.numContrato = numContrato;
         this.fechadeInicio = fechadeInicio;
         this.dechadeFin = dechadeFin;
@@ -20,7 +20,7 @@ public class ContratoArriendo {
                 ", fechadeInicio=" + fechadeInicio +
                 ", dechadeFin=" + dechadeFin +
                 ", canon=" + canon +
-                ", sucursal=" + sucursal +
+                ", sucursal=" + sucursal.codigoScursal + // no necesito mostrar todo el objeto solo el id
                 '}';
     }
 }

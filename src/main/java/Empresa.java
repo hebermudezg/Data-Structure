@@ -1,12 +1,12 @@
 public class Empresa {
-    public int Nit;
+    public String Nit;
     public String RazonSocial;
     public String Presidente;
 
-    public Empresa(int nit, String razonSocial, String presidente) {
-        Nit = nit;
-        RazonSocial = razonSocial;
-        Presidente = presidente;
+    public Empresa(String nit, String razonSocial, String presidente) {
+        this.Nit = nit;
+        this.RazonSocial = razonSocial;
+        this.Presidente = presidente;
     }
     @Override
     public String toString() {
