@@ -7,7 +7,7 @@ In this repository, a java application is created to put into practice the knowl
 
 ## Integrantes
 * Heber Esteban Bermudez Gonzalez  hebermudezg@unal.edu.co
-* integrante 
+* David Duque Calle daduqueca@unal.edu.co
 * intgrante
 
 
