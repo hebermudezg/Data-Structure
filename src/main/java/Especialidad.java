@@ -15,12 +15,12 @@ public class Especialidad {
 
     @Override
     public String toString() {
-        return "Especialidad{" +
-                "codigo=" + codigoEspecialidad +
-                ", encargado='" + encargado + '\'' +
-                ", enfoque='" + enfoque + '\'' +
-                ", lineaAtencion=" + lineaAtencion +
-                ", sucursal=" + sucursal +
-                '}';
+        return "Especialidad" +"\n"+
+                "\t Codigo: " + codigoEspecialidad +"\n"+
+                "\t Encargado: " + encargado + "\n" +
+                "\t Enfoque: " + enfoque + "\n"+
+                "\t Linea de atencion: " + lineaAtencion +"\n"+
+                "\t Sucursal: " + sucursal.codigoScursal +"\n"+
+                "\t ";
     }
 }

@@ -713,9 +713,9 @@ public class Main {
             System.out.println("El numero ingresado es invalido, seras regresado al menu anterior");
             return;
         }
+        input.nextLine();
         System.out.println("ingrese la Encargado de la especialidad: ");
         String encargado =input.nextLine();
-        input.nextLine();
         System.out.println("ingrese la Enfoque de la especialidad: ");
         String enfoque = input.nextLine();
         System.out.println("ingrese la Linea de atencion de la especialidad: ");
@@ -749,10 +749,73 @@ public class Main {
 
 
     public static void EEspecialidad() {
-        return;
+        // mostar primeros los codigos
+        System.out.println("Acontinuacion se muestra una lista de codigo de las sucursales: ");
+        for (Sucursal sucursa : sucursales) {
+            System.out.println(sucursa.codigoScursal);
+        }
+        System.out.println("ingrese el codigo de la especialidad a modificar: ");
+        int n = input.nextInt();
+        Iterator<Especialidad> iterador = especialidades.listIterator();
+        while (iterador.hasNext()) {
+            Especialidad especialidad = iterador.next();
+            if (especialidad.codigoEspecialidad==n){
+                System.out.println("Que deseas modificar: ");
+                System.out.println("1. Codigo ");
+                System.out.println("2. Encargado ");
+                System.out.println("3. Enfoque ");
+                System.out.println("4. Linea de atencion ");
+                String option;
+                option = input.next();
+                if (option.equals("1")) {
+                    System.out.println("ingrese el nuevo Codigo:");
+                    int x = input.nextInt();
+                    if (x<0){
+                        System.out.println("Numero invalido, seras regresado al menu anterior");
+                        return;
+                    }
+                    especialidad.codigoEspecialidad=x;
+                    System.out.println("Codigo modificado satisfactoriamente");
+                    break;
+                }else if (option.equals("2")) {
+                    input.nextLine();
+                    System.out.println("ingrese nuevo encargado:");
+                    String x = input.nextLine();
+                    especialidad.encargado=x;
+                    System.out.println("Encargado modificada satisfactoriamente");
+                    break;
+                }else if (option.equals("3")) {
+                    input.nextLine();
+                    System.out.println("ingrese nuevo enfoque:");
+                    String x = input.nextLine();
+                    especialidad.enfoque = x;
+                    System.out.println("Enfoque modificada satisfactoriamente");
+                    break;
+                }else if (option.equals("4")) {
+                    System.out.println("ingrese nueva linea de atencion");
+                    int x = input.nextInt();
+                    if (x<0){
+                        System.out.println("Numero invalido, seras regresado al menu anterior");
+                        return;
+                    }
+                    especialidad.lineaAtencion=x;
+                    System.out.println("Linea de atencion modificado satisfactoriamente");
+                    break;
+                }
+            }
+        }
     }
 
     public static void ELEspecialidad() {
+        System.out.println("ingrese el codigo de la especialidad a Eliminar: ");
+        int x = input.nextInt();
+        for (int i = 0; i < especialidades.size(); i++) {
+            if (especialidades.get(i).codigoEspecialidad == x) {
+                especialidades.remove(i);
+                System.out.println("¡ Se realizo la operacion correctamente !");
+                return;
+            }
+        }
         return;
     }
 
@@ -846,7 +909,7 @@ public class Main {
         return;
     }
 
-
+// aqui empieza el menu de busqueda
     public static void Busqueda() {
         System.out.println("Estos son los elementos posibles");
         System.out.println("Escoja una opcion:");
@@ -873,28 +936,26 @@ public class Main {
             String option1;
             option1 = input.next();
             if (option1.equals("1")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
+                TexBusqueda();
+                if(Texbus == 0){
+                    //busque da segun lo que sea texbusqueda esta lo mismo para numbusqueda mirar en la parte baja
+                    //cada busqueda queda dentro de los if
+                    System.out.println("la mala" );
+                }else if (Texbus == 1){
+                    System.out.println("la buena" );
                 }
             } else if (option1.equals("2")) {
                 TexBusqueda();
-                if(Numbus == 0){
+                if(Texbus == 0){
 
-                }else if (Numbus == 1){
+                }else if (Texbus == 1){
 
                 }
             } else if (option1.equals("3")) {
                 TexBusqueda();
-                if(Numbus == 0){
+                if(Texbus == 0){
 
-                }else if (Numbus == 1){
+                }else if (Texbus == 1){
 
                 }
             } else if (option1.equals("4")) {
@@ -926,16 +987,16 @@ public class Main {
                 }
             } else if (option1.equals("2")) {
                 TexBusqueda();
-                if(Numbus == 0){
+                if(Texbus == 0){
 
-                }else if (Numbus == 1){
+                }else if (Texbus == 1){
 
                 }
             } else if (option1.equals("3")) {
                 TexBusqueda();
-                if(Numbus == 0){
+                if(Texbus == 0){
 
-                }else if (Numbus == 1){
+                }else if (Texbus == 1){
 
                 }
             } else if (option1.equals("4")) {
@@ -977,16 +1038,16 @@ public class Main {
                 }
             } else if (option1.equals("2")) {
                 TexBusqueda();
-                if(Numbus == 0){
+                if(Texbus == 0){
 
-                }else if (Numbus == 1){
+                }else if (Texbus == 1){
 
                 }
             } else if (option1.equals("3")) {
                 TexBusqueda();
-                if(Numbus == 0){
+                if(Texbus == 0){
 
-                }else if (Numbus == 1){
+                }else if (Texbus == 1){
 
                 }
             } else if (option1.equals("4")) {
@@ -1089,9 +1150,9 @@ public class Main {
                 }
             } else if (option1.equals("2")) {
                 TexBusqueda();
-                if(Numbus == 0){
+                if(Texbus == 0){
 
-                }else if (Numbus == 1){
+                }else if (Texbus == 1){
 
                 }
             } else if (option1.equals("3")) {
@@ -1118,9 +1179,9 @@ public class Main {
                 }
             } else if (option1.equals("5")) {
                 TexBusqueda();
-                if(Numbus == 0){
+                if(Texbus == 0){
 
-                }else if (Numbus == 1){
+                }else if (Texbus == 1){
 
                 }
             } else if (option1.equals("6")) {
@@ -1172,9 +1233,9 @@ public class Main {
                 }
             } else if (option1.equals("3")) {
                 TexBusqueda();
-                if(Numbus == 0){
+                if(Texbus == 0){
 
-                }else if (Numbus == 1){
+                }else if (Texbus == 1){
 
                 }
             } else if (option1.equals("4")) {
@@ -1243,9 +1304,9 @@ public class Main {
                 }
             } else if (option1.equals("6")) {
                 TexBusqueda();
-                if(Numbus == 0){
+                if(Texbus == 0){
 
-                }else if (Numbus == 1){
+                }else if (Texbus == 1){
 
                 }
             } else if (option1.equals("7")) {
@@ -1277,16 +1338,16 @@ public class Main {
                 }
             } else if (option1.equals("2")) {
                 TexBusqueda();
-                if(Numbus == 0){
+                if(Texbus == 0){
 
-                }else if (Numbus == 1){
+                }else if (Texbus == 1){
 
                 }
             } else if (option1.equals("3")) {
                 TexBusqueda();
-                if(Numbus == 0){
+                if(Texbus == 0){
 
-                }else if (Numbus == 1){
+                }else if (Texbus == 1){
 
                 }
             } else if (option1.equals("4")) {
