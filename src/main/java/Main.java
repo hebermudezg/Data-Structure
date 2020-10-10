@@ -25,7 +25,7 @@ public class Main {
         System.out.println(sucursales.toString());
 
 
-        // Leyendo archivos si es que los encuentra
+        /*// Leyendo archivos si es que los encuentra
         File archivoUsuarios = new File("UsuariosJSON.json");
         if (archivoUsuarios.exists()) {
             RegistrosUsuarios = LeerJSON.leerUsuariosJson();
@@ -98,7 +98,8 @@ public class Main {
         tipoDeEntregas.add(tipoentrega1);
         tipoDeEntregas.add(tipoentrega2);
 
-        Cliente cliente1 = new Cliente(95032502467, "Esteban Bermudez","Carre39 sur n 20 a 31", 3115604078, 123)
+        Cliente cliente1 = new Cliente(95032, "Esteban Bermudez","Carre39 sur n 20 a 31", 31156, 123);
+
 
 
 
@@ -495,11 +496,7 @@ public class Main {
 
     //************************** CRUD EMPRESA ***********************
     public static void VEmpresa(){
-        // Mostrando nit de empresasa registradas
-        System.out.println("Las empresas registradas son: ");
-        for (Empresa empresa : empresas) {
-            System.out.println(empresa.toString());
-        }
+            System.out.println(empresas.toString());
     }
 
     public static void CEmpresa(){
@@ -614,10 +611,11 @@ public class Main {
                 empresa = empresa1;
                 break;
             }
-        }        if(empresa == null){
+        }   if(empresa == null){
             System.out.println("El Nit no fue encontrado");
             return;
         }
+
         Sucursal sucursal = new Sucursal(codigosucursal, ciudad, direccion, cantidadempleados, empresa);
         sucursales.add(sucursal);
         EscribirJSON.guardarSucursal(sucursales);

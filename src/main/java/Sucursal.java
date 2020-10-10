@@ -21,7 +21,7 @@ public class Sucursal {
                 ", ciudad='" + ciudad + '\'' +
                 ", direccion='" + direccion + '\'' +
                 ", cantEmpleados=" + cantEmpleados +
-                ", empresa=" + empresa +
+                ", empresa=" + empresa.Nit +
                 '}';
     }
 
