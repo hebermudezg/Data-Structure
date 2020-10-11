@@ -15,12 +15,12 @@ public class ContratoArriendo {
 
     @Override
     public String toString() {
-        return "ContratoArriendo{" +
-                "numContrato=" + numContrato +
-                ", fechadeInicio=" + fechadeInicio +
-                ", dechadeFin=" + dechadeFin +
-                ", canon=" + canon +
-                ", sucursal=" + sucursal.codigoScursal + // no necesito mostrar todo el objeto solo el id
-                '}';
+        return "Contrato de a rriendo" +"\n"+
+                "\t Numero de contrato:" + numContrato +"\n"+
+                "\t Fecha de inicio:" + fechadeInicio +"\n"+
+                "\t Fecha de fin: " + dechadeFin +"\n"+
+                "\t Canon: " + canon +"\n"+
+                "\t Sucursal: " + sucursal.codigoScursal + "\n"+
+                "\t ";
     }
 }

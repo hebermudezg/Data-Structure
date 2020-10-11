@@ -27,17 +27,17 @@ public class Entrega {
 
     @Override
     public String toString() {
-        return "Entrega{" +
-                "codEntrega=" + codEntrega +
-                ", peso=" + peso +
-                ", dimenciones=" + dimenciones +
-                ", fragil=" + fragil +
-                ", costo=" + costo +
-                ", estadoEntrega='" + estadoEntrega + '\'' +
-                ", especialidad=" + especialidad +
-                ", tipoDeEntrega=" + tipoDeEntrega +
-                ", cliente=" + cliente +
-                ", repartidor=" + repartidor +
-                '}';
+        return "Entrega" +"\n"+
+                "\t Codigo entrega: " + codEntrega +"\n"+
+                "\t Peso: " + peso +"\n"+
+                "\t Dimenciones: " + dimenciones +"\n"+
+                "\t Fragil: " + fragil +"\n"+
+                "\t Costo: " + costo +"\n"+
+                "\t Estado de entrega: '" + estadoEntrega + "\n" +
+                "\t Especialidad: " + especialidad.codigoEspecialidad +"\n"+
+                "\t Tipo de entrega: " + tipoDeEntrega.Codigo+"\n"+
+                "\t Cliente: " + cliente.Documento +"\n"+
+                "\t Repartidor: " + repartidor.Cedula +"\n"+
+                "\t ";
     }
 }

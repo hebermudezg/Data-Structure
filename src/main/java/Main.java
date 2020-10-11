@@ -496,7 +496,12 @@ public class Main {
 
     //************************** CRUD EMPRESA ***********************
     public static void VEmpresa(){
+        if (empresas.size() == 0) {
+            System.out.println("La lista esta vacia");
+            return;
+        } else {
             System.out.println(empresas.toString());
+        }
     }
 
     public static void CEmpresa(){
@@ -569,7 +574,7 @@ public class Main {
     }
     public static void ELEmpresa(){
         input.nextLine();
-        System.out.println("ingrese el nit de la empresa a Eliminar: ");
+        System.out.println("ingrese el nit de la empresa a eliminar: ");
         String nit = input.nextLine();
 
         for (int i = 0; i < empresas.size(); i++) {
@@ -579,15 +584,19 @@ public class Main {
                 return;
             }
         }
-        System.out.println("El nit no fue encontrado");
+        System.out.println("No fue encontrado");
     }
 
 
     // ************************************* CRUD sucursal *************
 
     public static void VSucursal() {
+        if (sucursales.size() == 0) {
+            System.out.println("La lista esta vacia");
+            return;
+        } else {
             System.out.println(sucursales.toString());
-
+        }
     }
 
     public static void CSucursal() {
@@ -596,6 +605,12 @@ public class Main {
         if(codigosucursal<0){
             System.out.println("El numero ingresado es invalido, seras regresado al menu anterior");
             return;
+        }
+        for (Sucursal sucursal : sucursales) {
+            if (sucursal.codigoScursal==codigosucursal ) {
+                System.out.println("Ingresaste un codigo que ya esta registrado");
+                return;
+            }
         }
         System.out.println("ingrese la Ciudad de la sucursal: ");
         input.nextLine();
@@ -697,13 +712,18 @@ public class Main {
                 return;
             }
         }
-        return;
+        System.out.println("No fue encontrado");
     }
 
 
     //************************** CRUD ESPECIALIAD ***********************
     public static void VEspecialidad() {
-        System.out.println(especialidades.toString());
+        if (especialidades.size() == 0) {
+            System.out.println("La lista esta vacia");
+            return;
+        } else {
+            System.out.println(especialidades.toString());
+        }
     }
 
     public static void CEspecialidad() {
@@ -712,6 +732,12 @@ public class Main {
         if(codigo<0){
             System.out.println("El numero ingresado es invalido, seras regresado al menu anterior");
             return;
+        }
+        for (Especialidad especialidad : especialidades) {
+            if (especialidad.codigoEspecialidad==codigo ) {
+                System.out.println("Ingresaste un codigo que ya esta registrado");
+                return;
+            }
         }
         input.nextLine();
         System.out.println("ingrese la Encargado de la especialidad: ");
@@ -751,8 +777,8 @@ public class Main {
     public static void EEspecialidad() {
         // mostar primeros los codigos
         System.out.println("Acontinuacion se muestra una lista de codigo de las sucursales: ");
-        for (Sucursal sucursa : sucursales) {
-            System.out.println(sucursa.codigoScursal);
+        for (Especialidad especiali : especialidades) {
+            System.out.println(especiali.codigoEspecialidad);
         }
         System.out.println("ingrese el codigo de la especialidad a modificar: ");
         int n = input.nextInt();
@@ -807,7 +833,7 @@ public class Main {
     }
 
     public static void ELEspecialidad() {
-        System.out.println("ingrese el codigo de la especialidad a Eliminar: ");
+        System.out.println("ingrese el codigo de la especialidad a eliminar: ");
         int x = input.nextInt();
         for (int i = 0; i < especialidades.size(); i++) {
             if (especialidades.get(i).codigoEspecialidad == x) {
@@ -816,69 +842,357 @@ public class Main {
                 return;
             }
         }
-        return;
+        System.out.println("No fue encontrado");
     }
 
     //************************** CRUD Contrato ***********************
     public static void VContratoArriendo() {
-        System.out.println("Las empresas registradas son: ");
-        for (ContratoArriendo contratoArriendo : contratoArriendos) {
-            System.out.println(contratoArriendo.toString());
+        if (contratoArriendos.size() == 0) {
+            System.out.println("La lista esta vacia");
+            return;
+        } else {
+            System.out.println(contratoArriendos.toString());
         }
     }
 
     public static void CContratoArriendo() {
-        return;
+        System.out.println("ingrese el numero de contrato de arriendo nuevo: ");
+        int x=input.nextInt();
+        if(x<0){
+            System.out.println("El numero ingresado es invalido, seras regresado al menu anterior");
+            return;
+        }
+        for (ContratoArriendo contratoArriendo : contratoArriendos) {
+            if (contratoArriendo.numContrato==x ) {
+                System.out.println("Ingresaste un numero de contrato que ya esta registrado");
+                return;
+            }
+        }
+        input.nextLine();
+        System.out.println("ingrese la fecha de inicio del contrato de arriendo: ");
+        String y=input.nextLine();
+        System.out.println("ingrese la fecha de fin del contrato de arriendo: ");
+        String z=input.nextLine();
+        System.out.println("ingrese el canon del contrato de arriendo: ");
+        int w=input.nextInt();
+        if(w<0){
+            System.out.println("El numero ingresado es invalido, seras regresado al menu anterior");
+            return;
+        }
+        System.out.println("Ingrese el código de la sucursal a la cual pertenece esta especialidad");
+        int codigoScursal = input.nextInt();
+
+        Sucursal sucursal = null;
+        for (Sucursal sucursal1 : sucursales) {
+            if(sucursal1.codigoScursal == codigoScursal ){
+                sucursal = sucursal1;
+                break;
+            }
+        }
+
+        if(sucursal == null){
+            System.out.println("La sucursal no fue encontrada");
+            return;
+        }
+        ContratoArriendo contratoArriendo = new ContratoArriendo(x,y,z,w,sucursal);
+        contratoArriendos.add(contratoArriendo);
+        //EscribirJSON.guardarEspecialida(especialidades); // guardandolo
+        System.out.println("Contrato de arriendo ingresada");
+    }
+    public static void EContratoArriendo() {
+        // mostar primeros los codigos
+        System.out.println("Acontinuacion se muestra una lista de codigo de las sucursales: ");
+        for (ContratoArriendo contratoArrie : contratoArriendos) {
+            System.out.println(contratoArrie.numContrato);
+        }
+        System.out.println("ingrese el numero del contrato a modificar: ");
+        int nit = input.nextInt();
+        Iterator<ContratoArriendo> iterador = contratoArriendos.listIterator();
+        while (iterador.hasNext()) {
+            ContratoArriendo contratoArriendo = iterador.next();
+            if (contratoArriendo.numContrato == nit) {
+                System.out.println("Que deseas modificar: ");
+                System.out.println("1. Numero de contrato ");
+                System.out.println("2. Fecha de inicio ");
+                System.out.println("3. Fecha de fin ");
+                System.out.println("4. canon ");
+                String option;
+                option = input.next();
+                if (option.equals("1")) {
+                    System.out.println("ingrese el nuevo numero de contrato:");
+                    int x = input.nextInt();
+                    if (x < 0) {
+                        System.out.println("Numero invalido, seras regresado al menu anterior");
+                        return;
+                    }
+                    contratoArriendo.numContrato = x;
+                    System.out.println("Numero de contrato modificado satisfactoriamente");
+                    break;
+                }else if (option.equals("2")) {
+                    input.nextLine();
+                    System.out.println("ingrese nueva fecha de inicio");
+                    String x = input.nextLine();
+                    contratoArriendo.fechadeInicio=x;
+                    System.out.println("Fecha de inicio modificado satisfactoriamente");
+                    break;
+                }else if (option.equals("3")) {
+                    input.nextLine();
+                    System.out.println("ingrese nueva Fecha de fin");
+                    String x = input.nextLine();
+                    contratoArriendo.dechadeFin = x;
+                    System.out.println("Fecha de fin modificado satisfactoriamente");
+                    break;
+                }else if (option.equals("4")) {
+                    System.out.println("ingrese nueva canon");
+                    int x = input.nextInt();
+                    if (x<0){
+                        System.out.println("Numero invalido, seras regresado al menu anterior");
+                        return;
+                    }
+                    contratoArriendo.canon=x;
+                    System.out.println("canon modificado satisfactoriamente");
+                    break;
+                }
+            }
+        }
     }
 
-    public static void EContratoArriendo() {
-        return;
-    }
 
     public static void ELContratoArriendo() {
-        return;
+        System.out.println("ingrese el numero del contrato a elinimar: ");
+        int x = input.nextInt();
+        for (int i = 0; i < contratoArriendos.size(); i++) {
+            if (contratoArriendos.get(i).numContrato == x) {
+                contratoArriendos.remove(i);
+                System.out.println("¡ Se realizo la operacion correctamente !");
+                return;
+            }
+        }
+        System.out.println("No fue encontrado");
     }
 
 
 
-    //************************** CRUD REPARTIDOR ***********************
+    //************************** CRUD TIPOENTREGA ***********************
     public static void VTipoEntrega() {
-        System.out.println(repartidores.toString());
+        if (tipoDeEntregas.size() == 0) {
+            System.out.println("La lista esta vacia");
+            return;
+        } else {
+            System.out.println(tipoDeEntregas.toString());
+        }
     }
 
     public static void CTipoEntrega() {
-        return;
+        System.out.println("ingrese el Codigo del tipo de entrega: ");
+        int x=input.nextInt();
+        if(x<0){
+            System.out.println("El numero ingresado es invalido, seras regresado al menu anterior");
+            return;
+        }
+        for (TipoDeEntrega tipoDeEntrega: tipoDeEntregas) {
+            if (tipoDeEntrega.Codigo ==x ) {
+                System.out.println("Ingresaste un tipo de entrega que ya esta registrado");
+                return;
+            }
+        }
+        System.out.println("ingrese el tiempo estimado del tipo de entrega: ");
+        int w=input.nextInt();
+        if(w<0){
+            System.out.println("El numero ingresado es invalido, seras regresado al menu anterior");
+            return;
+        }
+        input.nextLine();
+        System.out.println("ingrese medio de transporte del tipo de entrega: ");
+        String y=input.nextLine();
+
+        TipoDeEntrega tipoDeEntrega = new TipoDeEntrega(x,w,y);
+        tipoDeEntregas.add(tipoDeEntrega);
+        //EscribirJSON.guardarEspecialida(especialidades); // guardandolo
+        System.out.println("Tipo de entrega ingresada");
     }
 
+
     public static void ETipoEntrega() {
-        return;
+        // mostar primeros los codigos
+        System.out.println("Acontinuacion se muestra una lista de codigo de los tipo de entrega: ");
+        for (TipoDeEntrega tipoDeEnt  : tipoDeEntregas) {
+            System.out.println(tipoDeEnt.Codigo);
+        }
+        System.out.println("ingrese Codigo del tipo de entrega a modificar: ");
+        int n = input.nextInt();
+        Iterator<TipoDeEntrega> iterador = tipoDeEntregas.listIterator();
+        while (iterador.hasNext()) {
+            TipoDeEntrega tipoDeEntrega = iterador.next();
+            if (tipoDeEntrega.Codigo == n) {
+                System.out.println("Que deseas modificar: ");
+                System.out.println("1. Tiempo estimado ");
+                String option;
+                option = input.next();
+                if (option.equals("1")) {
+                    System.out.println("ingrese nueva Tiempo de entrega:");
+                    int x = input.nextInt();
+                    if (x < 0) {
+                        System.out.println("Numero invalido, seras regresado al menu anterior");
+                        return;
+                    }
+                    tipoDeEntrega.Tiempo_Estimado = x;
+                    System.out.println("Timepo de entrega modificado satisfactoriamente");
+                    break;
+                }
+            }
+        }
     }
 
     public static void ELTipoEntrega() {
-        return;
+        System.out.println("ingrese el codigo del tipo de entrega  a elinimar: ");
+        int x = input.nextInt();
+        for (int i = 0; i < tipoDeEntregas.size(); i++) {
+            if (tipoDeEntregas.get(i).Codigo== x) {
+                tipoDeEntregas.remove(i);
+                System.out.println("¡ Se realizo la operacion correctamente !");
+                return;
+            }
+        }
+        System.out.println("No fue encontrado");
     }
 
 
     //************************** CRUD REPARTIDOR ***********************
     public static void VRepartidor() {
-        return;
+        if (repartidores.size() == 0) {
+            System.out.println("La lista esta vacia");
+            return;
+        } else {
+            System.out.println(repartidores.toString());
+        }
     }
 
     public static void CRepartidor() {
-        return;
-    }
+        System.out.println("ingrese la cedula del repartidor: ");
+        int x=input.nextInt();
+        if(x<0){
+            System.out.println("El numero ingresado es invalido, seras regresado al menu anterior");
+            return;
+        }
+        for (Repartidor repartidor: repartidores) {
+            if (repartidor.Cedula ==x ) {
+                System.out.println("Ingresaste un cedula  que ya esta registrado");
+                return;
+            }
+        }
+        input.nextLine();
+        System.out.println("ingrese el nombre del repartidor: ");
+        String y=input.nextLine();
+        System.out.println("ingrese la edad del repartidor: ");
+        int a=input.nextInt();
+        if(a<0){
+            System.out.println("El numero ingresado es invalido, seras regresado al menu anterior");
+            return;
+        }
+        System.out.println("ingrese el numero celular del repartidor: ");
+        int b=input.nextInt();
+        if(b<0){
+            System.out.println("El numero ingresado es invalido, seras regresado al menu anterior");
+            return;
+        }
+        input.nextLine();
+        System.out.println("ingrese el tipo de licencia del repartidor: ");
+        String z = input.nextLine();
+        System.out.println("ingrese el sueldo del repartidor: ");
+        double c=input.nextInt();
+        if(c<0){
+            System.out.println("El numero ingresado es invalido, seras regresado al menu anterior");
+            return;
+        }
 
+        Repartidor repartidor = new Repartidor(x,y,a,b,z,c);
+        repartidores.add(repartidor);
+        //EscribirJSON.guardarEspecialida(especialidades); // guardandolo
+        System.out.println("Repartidor ingresado");
+    }
     public static void ERepartidor() {
-        return;
+        // mostar primeros los codigos
+        System.out.println("Acontinuacion se muestra una lista de las cedulas de los repartidores: ");
+        for (Repartidor reparti  : repartidores) {
+            System.out.println(reparti.Cedula);
+        }
+        System.out.println("ingrese cedula del repartidor a modificar: ");
+        int n = input.nextInt();
+        Iterator<Repartidor> iterador = repartidores.listIterator();
+        while (iterador.hasNext()) {
+            Repartidor repartidor = iterador.next();
+            if (repartidor.Cedula == n) {
+                System.out.println("Que deseas modificar: ");
+                System.out.println("1. Edad ");
+                System.out.println("2. Numero de celular ");
+                System.out.println("3. Tipo de licencia ");
+                System.out.println("4. Sueldo ");
+                String option;
+                option = input.next();
+                if (option.equals("1")) {
+                    System.out.println("ingrese nueva edad:");
+                    int x = input.nextInt();
+                    if (x < 0) {
+                        System.out.println("Numero invalido, seras regresado al menu anterior");
+                        return;
+                    }
+                    repartidor.Edad = x;
+                    System.out.println("Edad modificado satisfactoriamente");
+                    break;
+                }else if (option.equals("2")) {
+                    System.out.println("ingrese nueva numero de celular");
+                    int x = input.nextInt();
+                    if (x<0){
+                        System.out.println("Numero invalido, seras regresado al menu anterior");
+                        return;
+                    }
+                    repartidor.Num_Celular=x;
+                    System.out.println("Numero celular modificado satisfactoriamente");
+                    break;
+                }else if (option.equals("3")) {
+                    input.nextLine();
+                    System.out.println("ingrese nuevo tipo de licencia:");
+                    String x = input.nextLine();
+                    repartidor.Tipo_Licencia=x;
+                    System.out.println("Tipo de licencia modificada satisfactoriamente");
+                    break;
+                }else if (option.equals("4")) {
+                    System.out.println("ingrese nueva sueldo");
+                    double x = input.nextInt();
+                    if (x<0){
+                        System.out.println("Numero invalido, seras regresado al menu anterior");
+                        return;
+                    }
+                    repartidor.Sueldo=x;
+                    System.out.println("sueldo modificado satisfactoriamente");
+                    break;
+                }
+            }
+        }
     }
 
     public static void ELRepartidor() {
-        return;
+        System.out.println("ingrese el codigo del tipo de entrega  a elinimar: ");
+        int x = input.nextInt();
+        for (int i = 0; i < repartidores.size(); i++) {
+            if (repartidores.get(i).Cedula == x) {
+                repartidores.remove(i);
+                System.out.println("¡ Se realizo la operacion correctamente !");
+                return;
+            }
+            System.out.println("No fue encontrado");
+        }
     }
 
-
+    //************************** CRUD CLIENTE ***********************
     public static void VEntrega() {
-        return;
+        if (entregas.size() == 0) {
+            System.out.println("La lista esta vacia");
+            return;
+        } else {
+            System.out.println(entregas.toString());
+        }
     }
 
     public static void CEntrega() {
@@ -886,29 +1200,155 @@ public class Main {
     }
 
     public static void EEntrega() {
-        return;
+        // mostar primeros los codigos
+        System.out.println("Acontinuacion se muestra una lista de los codigos  de los entrega: ");
+        for (Entrega entre  : entregas) {
+            System.out.println(entre.codEntrega);
+        }
+        System.out.println("ingrese Codigo de entrega a modificar: ");
+        int n = input.nextInt();
+        Iterator<Entrega> iterador = entregas.listIterator();
+        while (iterador.hasNext()) {
+            Entrega entrega = iterador.next();
+            if (entrega.codEntrega == n) {
+                System.out.println("Que deseas modificar: ");
+                System.out.println("1. Codigo ");
+                String option;
+                option = input.next();
+                if (option.equals("1")) {
+                    System.out.println("ingrese nueva Codigo:");
+                    int x = input.nextInt();
+                    if (x < 0) {
+                        System.out.println("Numero invalido, seras regresado al menu anterior");
+                        return;
+                    }
+                    entrega.codEntrega = x;
+                    System.out.println("Codigo modificado satisfactoriamente");
+                    break;
+                }
+            }
+        }
     }
-
     public static void ELEntrega() {
-        return;
+        System.out.println("ingrese el codigo del tipo de entrega  a elinimar: ");
+        int x = input.nextInt();
+        for (int i = 0; i < entregas.size(); i++) {
+            if (entregas.get(i).codEntrega== x) {
+                entregas.remove(i);
+                System.out.println("¡ Se realizo la operacion correctamente !");
+                return;
+            }
+        }
+        System.out.println("No fue encontrado");
     }
-
+    //************************** CRUD CLIENTE ***********************
     public static void VCliente() {
-        return;
+        if (clientes.size() == 0) {
+            System.out.println("La lista esta vacia");
+            return;
+        } else {
+            System.out.println(clientes.toString());
+        }
     }
-
     public static void CCliente() {
-        return;
+        System.out.println("ingrese el documento del cliente: ");
+        int x=input.nextInt();
+        if(x<0){
+            System.out.println("el nit ingresado es invalido, seras regresado al menu anterior");
+            return;
+        }
+        for (Cliente cliente : clientes) {
+            if (cliente.Documento==x ) {
+                System.out.println("Ingresaste un docuemento que ya esta registrado");
+                return;
+            }
+        }
+        input.nextLine();
+        System.out.println("ingrese el nombre del cliente: ");
+        String y=input.nextLine();
+        System.out.println("ingrese la direccion del cliente: ");
+        String z = input.nextLine();
+        System.out.println("ingrese el telefono del cliente: ");
+        int a=input.nextInt();
+        if(a<0){
+            System.out.println("el nit ingresado es invalido, seras regresado al menu anterior");
+            return;
+        }
+        System.out.println("ingrese el codigo postal del cliente: ");
+        int b=input.nextInt();
+        if(b<0){
+            System.out.println("el nit ingresado es invalido, seras regresado al menu anterior");
+            return;
+        }
+
+        Cliente cliente = new Cliente(x,y,z,a,b);
+        clientes.add(cliente);
+        //EscribirJSON.guardarEspecialida(especialidades); // guardandolo
+        System.out.println("Cliente ingresada");
     }
 
     public static void ECliente() {
-        return;
+        // mostras docuemntos del clientes
+        System.out.println("Acontinuacion se muestra una lista de documentos de los clientes: ");
+        for (Cliente client: clientes) {
+            System.out.println(client.Documento);
+        }
+        System.out.println("ingrese Documento del cliente a modificar: ");
+        int n = input.nextInt();
+        Iterator<Cliente> iterador = clientes.listIterator();
+        while (iterador.hasNext()) {
+            Cliente cliente = iterador.next();
+            if (cliente.Documento == n) {
+                System.out.println("Que deseas modificar: ");
+                System.out.println("1. Direccion ");
+                System.out.println("2. Telefono ");
+                System.out.println("3. Codigo postal ");
+                String option;
+                option = input.next();
+                if (option.equals("1")) {
+                    input.nextLine();
+                    System.out.println("ingrese nuevo Direccion:");
+                    String x = input.nextLine();
+                    cliente.Direccion=x;
+                    System.out.println("Direccion modificada satisfactoriamente");
+                    break;
+                }else if (option.equals("2")) {
+                    System.out.println("ingrese nueva telefono");
+                    int x = input.nextInt();
+                    if (x<0){
+                        System.out.println("Numero invalido, seras regresado al menu anterior");
+                        return;
+                    }
+                    cliente.Telefono=x;
+                    System.out.println("Telefono modificado satisfactoriamente");
+                    break;
+                }else if (option.equals("3")) {
+                    System.out.println("ingrese nueva Codigo postal");
+                    int x = input.nextInt();
+                    if (x<0){
+                        System.out.println("Numero invalido, seras regresado al menu anterior");
+                        return;
+                    }
+                    cliente.CodigoPostal=x;
+                    System.out.println("Codigo postal modificado satisfactoriamente");
+                    break;
+                }
+            }
+        }
     }
 
     public static void ELCliente() {
-        return;
+        System.out.println("ingrese el documento del cliente a elinimar: ");
+        int x = input.nextInt();
+        for (int i = 0; i < clientes.size(); i++) {
+            if (clientes.get(i).Documento == x) {
+                clientes.remove(i);
+                System.out.println("¡ Se realizo la operacion correctamente !");
+                return;
+            }
+        }
+        System.out.println("No fue encontrado");
     }
-
 // aqui empieza el menu de busqueda
     public static void Busqueda() {
         System.out.println("Estos son los elementos posibles");
