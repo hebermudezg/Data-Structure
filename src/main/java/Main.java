@@ -939,7 +939,7 @@ public class Main {
                     input.nextLine();
                     System.out.println("ingrese nueva Fecha de fin");
                     String x = input.nextLine();
-                    contratoArriendo.dechadeFin = x;
+                    contratoArriendo.FechadeFin = x;
                     System.out.println("Fecha de fin modificado satisfactoriamente");
                     break;
                 }else if (option.equals("4")) {

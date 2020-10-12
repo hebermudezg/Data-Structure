@@ -1,14 +1,14 @@
 public class ContratoArriendo {
     public int numContrato;
     public String fechadeInicio;
-    public String dechadeFin;
+    public String FechadeFin;
     public int canon;
     public Sucursal sucursal;
 
     public ContratoArriendo(int numContrato, String fechadeInicio, String dechadeFin, int canon, Sucursal sucursal) {
         this.numContrato = numContrato;
         this.fechadeInicio = fechadeInicio;
-        this.dechadeFin = dechadeFin;
+        this.FechadeFin = dechadeFin;
         this.canon = canon;
         this.sucursal = sucursal;
     }
@@ -18,7 +18,7 @@ public class ContratoArriendo {
         return "Contrato de a rriendo" +"\n"+
                 "\t Numero de contrato:" + numContrato +"\n"+
                 "\t Fecha de inicio:" + fechadeInicio +"\n"+
-                "\t Fecha de fin: " + dechadeFin +"\n"+
+                "\t Fecha de fin: " + FechadeFin +"\n"+
                 "\t Canon: " + canon +"\n"+
                 "\t Sucursal: " + sucursal.codigoScursal + "\n"+
                 "\t ";

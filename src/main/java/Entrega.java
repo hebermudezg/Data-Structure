@@ -5,6 +5,7 @@ public class Entrega {
     public boolean fragil;
     public double costo;
     public String estadoEntrega;
+
     public Especialidad especialidad; // tiene que venir de una especialidad
     public TipoDeEntrega tipoDeEntrega; // tiene que tener un tipo de entrega
     public Cliente cliente; //  tiene que tener un cliente

@@ -12,13 +12,15 @@ public class Cliente {
         Telefono = telefono;
         CodigoPostal = codigoPostal;
     }
+
     @Override
     public String toString() {
-        return "Cliente " + "\n" +
-                "\t Nombre: " + Nombre + "\n" +
-                "\t Direccion: " + Direccion + "\n" +
-                "\t Telefono: " + Telefono + "\n" +
-                "\t Codigo postal: " + CodigoPostal + "\n" +
-                "\t ";
+        return "Cliente{" +
+                "Documento=" + Documento +
+                ", Nombre='" + Nombre + '\'' +
+                ", Direccion='" + Direccion + '\'' +
+                ", Telefono=" + Telefono +
+                ", CodigoPostal=" + CodigoPostal +
+                '}';
     }
 }
