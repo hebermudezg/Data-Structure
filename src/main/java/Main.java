@@ -97,7 +97,7 @@ public class Main {
 
 
         // agunos experimnetos********************************++++++++++++++++++++++++++++++++++++++++++++++++++++++
-        Usuario nuevousuario = new Usuario(1,"admin","apell", "admin@","123");
+        /*Usuario nuevousuario = new Usuario(1,"admin","apell", "admin@","123");
         RegistrosUsuarios.add(nuevousuario);
 
         Empresa nuevaempresa = new Empresa("90.888.333-1", "Aguacates Rdorguez","Heber" );
@@ -151,7 +151,7 @@ public class Main {
         Entrega entrega2 = new Entrega(123, 20.1, 100, true, 200000, "Una elegancia",
                 epecialidad1, tipoentrega1,cliente2,  repartidor1);
         entregas.add(entrega1);
-        entregas.add(entrega2);
+        entregas.add(entrega2); */
 
 
 
