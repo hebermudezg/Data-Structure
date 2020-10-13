@@ -338,6 +338,7 @@ public class Main {
         System.out.println("6. Tipo de entregas");
         System.out.println("7. Entregas");
         System.out.println("8. Clientes");
+        System.out.println("9. Contrato Repartidores");
         System.out.println("0. Cancelar");
         System.out.println();
         String option;
