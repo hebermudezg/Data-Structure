@@ -23,7 +23,7 @@ public class LeerJSON {
             Object obj = jsonParser.parse(reader);
             JSONArray ListaUsuarios = (JSONArray)obj ;
             // Iprimiendo *****************************************
-            System.out.println(ListaUsuarios);
+            //System.out.println(ListaUsuarios);
 
             for(Object usuarioObjeto : ListaUsuarios){
                 JSONObject usuarioJSON = (JSONObject) usuarioObjeto;
@@ -94,19 +94,17 @@ public class LeerJSON {
 
 
     // Leer contratoArriendos*****************************************************************************************
-    public static LinkedList<ContratoArriendo> contratoArriendosLeidas = new LinkedList<>();
-    public static LinkedList<ContratoArriendo> leercontratoArriendosJson(){
-        //LinkedList<ContratoArriendo> contratoArriendosLeidas = new LinkedList<>();
-        JSONParser jsonParserContratoArriendo = new JSONParser(); //
+    public static LinkedList<ContratoArriendo> contratoarriendoLeidas = new LinkedList<>(); // tuve que poner esto aquí
+    public static LinkedList<ContratoArriendo> leerContratoArriendoJson(){
+        JSONParser jsonParsercontratoarriendo = new JSONParser(); //
         try (FileReader reader = new FileReader(EscribirJSON.ruta+"contratoArriendosJSON.json"))   {
-            Object obj = jsonParserContratoArriendo.parse(reader);
-            JSONArray ListacontratoArriendos = (JSONArray)obj ;
-            // Iprimiendo *****************************************
-            //System.out.println(ListacontratoArriendos);
+            Object obj = jsonParsercontratoarriendo.parse(reader);
+            JSONArray ListaContratoArriendo = (JSONArray)obj ;
 
-            for(Object ContratoArriendoObjeto : ListacontratoArriendos){
-                JSONObject ContratoArriendoJSON = (JSONObject) ContratoArriendoObjeto;
-                contratoArriendosLeidas.add(parseContratoArriendo(ContratoArriendoJSON));
+
+            for(Object contratoarriendoObjeto : ListaContratoArriendo){
+                JSONObject contratoarriendoJSON = (JSONObject) contratoarriendoObjeto;
+                contratoarriendoLeidas.add(parseContratoArriendo(contratoarriendoJSON));
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -116,20 +114,30 @@ public class LeerJSON {
             e.printStackTrace();
         }
 
-        return contratoArriendosLeidas;
+        return contratoarriendoLeidas;
     }
 
-    private static ContratoArriendo parseContratoArriendo(JSONObject ContratoArriendoJSON)
+    public static ContratoArriendo parseContratoArriendo(JSONObject contratoarriendoJSON)
     {
-        JSONObject atributos = (JSONObject) ContratoArriendoJSON.get("ContratoArriendo");
-        int codigo = Integer.parseInt((String) atributos.get("numContrato"));
+        JSONObject atributos = (JSONObject) contratoarriendoJSON.get("ContratoArriendo");
+        int numContrato = Integer.parseInt((String) atributos.get("numContrato"));
         String fechadeInicio = (String) atributos.get("fechadeInicio");
-        String dechadeFin = (String) atributos.get("FechadeFin");
+        String FechadeFin = (String) atributos.get("FechadeFin");
         int canon = Integer.parseInt((String) atributos.get("canon"));
-        Sucursal sucursal = (Sucursal) atributos.get("sucursal");
+        String sucursal =  (String) atributos.get("sucursal");
 
-        ContratoArriendo ContratoArriendoaLeida = new ContratoArriendo(codigo,fechadeInicio, dechadeFin,canon, sucursal);
-        return ContratoArriendoaLeida;
+        // NECESITO VOLVER A CONSTRUR LAS LISTAS CON CLASES DENTRO DE ELLAS*****
+        Sucursal sucursall = null;
+        for (Sucursal sucursal1 : SucursalesLeidas) {
+            if(Integer.toString(sucursal1.codigoScursal).equals(sucursal)){
+                sucursall = sucursal1;
+                break;
+            }
+        }
+
+
+        ContratoArriendo contratoArriendoLeida = new ContratoArriendo(numContrato,fechadeInicio,FechadeFin,canon,sucursall);
+        return contratoArriendoLeida;
     }
 
 
@@ -138,7 +146,7 @@ public class LeerJSON {
     public static LinkedList<Sucursal> leerSucursalesJson(){
         //LinkedList<Sucursal> SucursalesLeidas = new LinkedList<>();
         JSONParser jsonParserSucursal = new JSONParser(); //
-        try (FileReader reader = new FileReader(EscribirJSON.ruta+"SucursalesJSON.json"))   {
+        try (FileReader reader = new FileReader(EscribirJSON.ruta+"sucursalesJSON.json"))   {
             Object obj = jsonParserSucursal.parse(reader);
             JSONArray ListaSucursales = (JSONArray)obj ;
             // Iprimiendo *****************************************
@@ -184,19 +192,17 @@ public class LeerJSON {
 
 
     // Leer especialidades*********************************************************************************************
-    public static LinkedList<Especialidad> EspecialidadesLeidas = new LinkedList<>();
-    public static LinkedList<Especialidad> leerEspecialidadesJson(){
-        //LinkedList<Sucursal> SucursalesLeidas = new LinkedList<>();
-        JSONParser jsonParserEspecialidad = new JSONParser(); //
+    public static LinkedList<Especialidad> especialidadLeidas = new LinkedList<>(); // tuve que poner esto aquí
+    public static LinkedList<Especialidad> leerEspecialidadJson(){
+        JSONParser jsonParserespecialidad = new JSONParser(); //
         try (FileReader reader = new FileReader(EscribirJSON.ruta+"especialidadesJSON.json"))   {
-            Object obj = jsonParserEspecialidad.parse(reader);
-            JSONArray ListaEspecialidades = (JSONArray)obj ;
-            // Iprimiendo *****************************************
-            //System.out.println(ListaSucursales);
+            Object obj = jsonParserespecialidad.parse(reader);
+            JSONArray ListaEspecialidad = (JSONArray)obj ;
 
-            for(Object EspecialidadObjeto : ListaEspecialidades){
-                JSONObject EspecilidadJSON = (JSONObject) EspecialidadObjeto;
-                EspecialidadesLeidas.add(parseEspecialidad(EspecilidadJSON));
+
+            for(Object especialidadObjeto : ListaEspecialidad){
+                JSONObject EspecialidadJSON = (JSONObject) especialidadObjeto;
+                especialidadLeidas.add(parseEspecialidad(EspecialidadJSON));
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -206,7 +212,7 @@ public class LeerJSON {
             e.printStackTrace();
         }
 
-        return EspecialidadesLeidas;
+        return especialidadLeidas;
     }
 
     public static Especialidad parseEspecialidad(JSONObject EspecialidadJSON)
@@ -216,18 +222,20 @@ public class LeerJSON {
         String encargado = (String) atributos.get("encargado");
         String enfoque = (String) atributos.get("enfoque");
         int lineaAtencion = Integer.parseInt((String) atributos.get("lineaAtencion"));
-        int sucursal = Integer.parseInt((String) atributos.get("sucursal"));
+        String sucursal =  (String) atributos.get("sucursal");
 
         // NECESITO VOLVER A CONSTRUR LAS LISTAS CON CLASES DENTRO DE ELLAS*****
-        Sucursal sucursales = null;
-        for (Sucursal sucursal1 : SucursalesLeidas) {
-            if(sucursal1.codigoScursal == sucursal ){
-                sucursales = sucursal1;
+        Sucursal sucursall2 = null;
+        for (Sucursal sucursal12 : SucursalesLeidas) {
+            if(Integer.toString(sucursal12.codigoScursal).equals(sucursal)){
+                sucursall2 = sucursal12;
                 break;
             }
         }
-        Especialidad EspecialidadLeida = new Especialidad(codigoEspecialidad,encargado,enfoque,lineaAtencion, sucursales);
-        return EspecialidadLeida;
+
+
+        Especialidad especialidadLeida = new Especialidad(codigoEspecialidad,encargado,enfoque,lineaAtencion,sucursall2);
+        return especialidadLeida;
     }
 
 
@@ -260,7 +268,6 @@ public class LeerJSON {
     public static TipoDeEntrega parseTipoDeEntrega(JSONObject TipoDeEntregaJSON)
     {
         JSONObject atributos = (JSONObject) TipoDeEntregaJSON.get("TipoDeEntrega");
-
         int Codigo = Integer.parseInt((String) atributos.get("Codigo"));
         int Tiempo_Estimado = Integer.parseInt((String) atributos.get("Tiempo_Estimado"));
         String MedioDeTransporte = (String) atributos.get("MedioDeTransporte");
@@ -277,7 +284,7 @@ public class LeerJSON {
     public static LinkedList<Cliente> leerClienteJson(){
         //LinkedList<Sucursal> SucursalesLeidas = new LinkedList<>();
         JSONParser jsonParserCliente = new JSONParser(); //
-        try (FileReader reader = new FileReader(EscribirJSON.ruta+"TipoDeEntregaJSON.json"))   {
+        try (FileReader reader = new FileReader(EscribirJSON.ruta+"ClienteJSON.json"))   {
             Object obj = jsonParserCliente.parse(reader);
             JSONArray ListaCliente = (JSONArray)obj ;
             // Iprimiendo *****************************************
@@ -323,8 +330,6 @@ public class LeerJSON {
         try (FileReader reader = new FileReader(EscribirJSON.ruta+"RepartidorJSON.json"))   {
             Object obj = jsonParserRepartidor.parse(reader);
             JSONArray ListaRepartidor = (JSONArray)obj ;
-            // Iprimiendo *****************************************
-            //System.out.println(ListaSucursales);
 
             for(Object RepartidorObjeto : ListaRepartidor){
                 JSONObject RepartidorJSON = (JSONObject) RepartidorObjeto;
@@ -344,16 +349,15 @@ public class LeerJSON {
     public static Repartidor parseRepartidor(JSONObject ClienteJSON)
     {
         JSONObject atributos = (JSONObject) ClienteJSON.get("Repartidor");
-
         int Cedula = Integer.parseInt((String) atributos.get("Cedula"));
         String Nombre = (String) atributos.get("Nombre");
         int Edad = Integer.parseInt((String) atributos.get("Edad"));
         int Num_Celular = Integer.parseInt((String) atributos.get("Num_Celular"));
         String Tipo_Licencia = (String) atributos.get("Tipo_Licencia");
-        double Sueldo = Integer.parseInt((String) atributos.get("Sueldo"));
+        double Sueldo = Double.parseDouble((String) atributos.get("Sueldo"));
 
-        Repartidor RepartidorLeidos = new Repartidor(Cedula, Nombre, Edad, Num_Celular, Tipo_Licencia, Sueldo);
-        return RepartidorLeidos;
+        Repartidor RepartidorLeidoss = new Repartidor(Cedula, Nombre, Edad, Num_Celular, Tipo_Licencia, Sueldo);
+        return RepartidorLeidoss;
     }
 
 
@@ -387,19 +391,19 @@ public class LeerJSON {
 
     public static ContratoRepartidor parseContratoRepartidor(JSONObject ClienteJSON)
     {
-        JSONObject atributos = (JSONObject) ClienteJSON.get("Contrato Repartidor");
+        JSONObject atributos = (JSONObject) ClienteJSON.get("ContratoRepartidor");
 
         int numerocontrato = Integer.parseInt((String) atributos.get("numerocontrato"));
         int salario = Integer.parseInt((String) atributos.get("salario"));
         String fechainicio = (String) atributos.get("fechainicio");
         String fechafin = (String) atributos.get("fechafin");
 
-        int repartidor = Integer.parseInt((String) atributos.get("repartidor"));
+        String repartidor = (String) atributos.get("repartidor");
 
         // NECESITO VOLVER A CONSTRUR LAS LISTAS CON CLASES DENTRO DE ELLAS*****
         Repartidor repartidores = null;
         for (Repartidor repartidor1 : RepartidorLeidos) {
-            if(repartidor1.Cedula == repartidor ){
+            if(Integer.toString(repartidor1.Cedula).equals(repartidor)){
                 repartidores = repartidor1;
                 break;
             }
@@ -448,16 +452,16 @@ public class LeerJSON {
         double costo = Double.parseDouble((String) atributos.get("costo"));
         String estadoEntrega = (String) atributos.get("estadoEntrega");
 
-        int especialidad = Integer.parseInt((String) atributos.get("especialidad"));
-        int tipoDeEntrega = Integer.parseInt((String) atributos.get("tipoDeEntrega"));
-        int cliente = Integer.parseInt((String) atributos.get("cliente"));
-        int repartidor = Integer.parseInt((String) atributos.get("repartidor"));
+        String especialidad = (String) atributos.get("especialidad");
+        String tipoDeEntrega = (String) atributos.get("tipoDeEntrega");
+        String cliente = (String) atributos.get("cliente");
+        String repartidor = (String) atributos.get("repartidor");
 
 
         // NECESITO VOLVER A CONSTRUR LAS LISTAS CON CLASES DENTRO DE ELLAS*****
         Especialidad especialidadd = null;
-        for (Especialidad especialidad1 : EspecialidadesLeidas) {
-            if(especialidad1.codigoEspecialidad == especialidad ){
+        for (Especialidad especialidad1 : especialidadLeidas) {
+            if(Integer.toString(especialidad1.codigoEspecialidad).equals(especialidad)){
                 especialidadd = especialidad1;
                 break;
             }
@@ -465,7 +469,7 @@ public class LeerJSON {
 
         TipoDeEntrega tipoentregaa = null;
         for (TipoDeEntrega tipoentregaa1 : TipodeentregaLeidas) {
-            if(tipoentregaa1.Codigo == tipoDeEntrega ){
+            if(Integer.toString(tipoentregaa1.Codigo).equals(tipoDeEntrega)){
                 tipoentregaa = tipoentregaa1;
                 break;
             }
@@ -473,7 +477,7 @@ public class LeerJSON {
 
         Cliente clientess = null;
         for (Cliente cliente1 : ClientesLeidos) {
-            if(cliente1.Documento == cliente ){
+            if(Integer.toString(cliente1.Documento).equals(cliente)){
                 clientess = cliente1;
                 break;
             }
@@ -481,18 +485,14 @@ public class LeerJSON {
 
         Repartidor repartidorr = null;
         for (Repartidor repartidor1 : RepartidorLeidos) {
-            if(repartidor1.Cedula == repartidor){
+            if(Integer.toString(repartidor1.Cedula).equals(repartidor)){
                 repartidorr = repartidor1;
                 break;
             }
         }
 
-
-
-
-
-        Entrega Entregaleidos = new Entrega(codEntrega, peso, dimenciones, fragil, costo, estadoEntrega, especialidadd,tipoentregaa, clientess, repartidorr);
-        return Entregaleidos;
+        Entrega Entregaleidos2 = new Entrega(codEntrega, peso, dimenciones, fragil, costo, estadoEntrega, especialidadd,tipoentregaa, clientess, repartidorr);
+        return Entregaleidos2;
     }
 
 

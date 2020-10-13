@@ -15,7 +15,7 @@ public class ContratoArriendo {
 
     @Override
     public String toString() {
-        return "Contrato de a rriendo" +"\n"+
+        return "Contrato de arriendo" +"\n"+
                 "\t Numero de contrato:" + numContrato +"\n"+
                 "\t Fecha de inicio:" + fechadeInicio +"\n"+
                 "\t Fecha de fin: " + FechadeFin +"\n"+

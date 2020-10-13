@@ -63,10 +63,10 @@ public class EscribirJSON {
             ContratoArriendoDatos.put("FechadeFin", contratoarriendo.FechadeFin);
             ContratoArriendoDatos.put("canon", String.valueOf(contratoarriendo.canon));
 
-            ContratoArriendoDatos.put("sucursal", contratoarriendo.sucursal.codigoScursal);
+            ContratoArriendoDatos.put("sucursal", String.valueOf(contratoarriendo.sucursal.codigoScursal));
 
             JSONObject SucursalPerfil = new JSONObject();
-            SucursalPerfil.put("Contrato Arriendo", ContratoArriendoDatos); //Esrbiendo el usuario
+            SucursalPerfil.put("ContratoArriendo", ContratoArriendoDatos); //Esrbiendo el usuario
             ContratoArriendoLista.add(SucursalPerfil);
         }
 
@@ -110,15 +110,16 @@ public class EscribirJSON {
         JSONArray EspeciallidadLista = new JSONArray();
         for (Especialidad especialidad : especialidades) {
             JSONObject EspecialidadDatos = new JSONObject();
-            EspecialidadDatos.put("codigo", String.valueOf(especialidad.codigoEspecialidad));
+            EspecialidadDatos.put("codigoEspecialidad", String.valueOf(especialidad.codigoEspecialidad));
             EspecialidadDatos.put("encargado", especialidad.encargado);
             EspecialidadDatos.put("enfoque", especialidad.enfoque);
             EspecialidadDatos.put("lineaAtencion", String.valueOf(especialidad.lineaAtencion));
-            EspecialidadDatos.put("sucursal", especialidad.sucursal.codigoScursal); // guardando el identificador unico
+
+            EspecialidadDatos.put("sucursal", String.valueOf(especialidad.sucursal.codigoScursal)); // guardando el identificador unico
 
 
             JSONObject EspecialidadPerfil = new JSONObject();
-            EspecialidadPerfil.put("Sucursal", EspecialidadDatos); //Esrbiendo el usuario
+            EspecialidadPerfil.put("Especialidad", EspecialidadDatos); //Esrbiendo el usuario
             EspeciallidadLista.add(EspecialidadPerfil);
         }
 
@@ -144,7 +145,7 @@ public class EscribirJSON {
 
 
             JSONObject TipoDeEntregaPerfil = new JSONObject();
-            TipoDeEntregaPerfil.put("Tipo de Entrega", TipoDeEntregaDatos); //Esrbiendo el usuario
+            TipoDeEntregaPerfil.put("TipoDeEntrega", TipoDeEntregaDatos); //Esrbiendo el usuario
             TipoDeEntregaLista.add(TipoDeEntregaPerfil);
         }
 
@@ -196,9 +197,9 @@ public class EscribirJSON {
             ContratoRepartidorDatos.put("repartidor", String.valueOf(contratorepartidor.repartidor.Cedula));
 
 
-            JSONObject SucursalPerfil = new JSONObject();
-            SucursalPerfil.put("Sucursal", ContratoRepartidorDatos); //Esrbiendo el usuario
-            ContratoRepartidorLista.add(SucursalPerfil);
+            JSONObject ContratoRepartidorPerfil = new JSONObject();
+            ContratoRepartidorPerfil.put("ContratoRepartidor", ContratoRepartidorDatos); //Esrbiendo el usuario
+            ContratoRepartidorLista.add(ContratoRepartidorPerfil);
         }
 
         try (FileWriter file = new FileWriter(ruta+"ContratoRepartidorJSON.json")) {
@@ -252,10 +253,10 @@ public class EscribirJSON {
             EntregaDatos.put("estadoEntrega",  entrega.estadoEntrega);
 
             // Clases
-            EntregaDatos.put("especialidad", entrega.especialidad.codigoEspecialidad);
-            EntregaDatos.put("tipoDeEntrega", entrega.tipoDeEntrega.Codigo);;
-            EntregaDatos.put("cliente", entrega.cliente.Documento);
-            EntregaDatos.put("repartidor", entrega.repartidor.Cedula);
+            EntregaDatos.put("especialidad", String.valueOf(entrega.especialidad.codigoEspecialidad));
+            EntregaDatos.put("tipoDeEntrega", String.valueOf(entrega.tipoDeEntrega.Codigo));;
+            EntregaDatos.put("cliente", String.valueOf(entrega.cliente.Documento));
+            EntregaDatos.put("repartidor", String.valueOf(entrega.repartidor.Cedula));
             // Tengo que recuperar estas clases para re construir el objeto
 
 

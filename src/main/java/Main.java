@@ -1,5 +1,10 @@
+
 import java.util.*;
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 
 public class Main {
     public static String ruta = "src/main/resources/database/";
@@ -15,53 +20,80 @@ public class Main {
     public static LinkedList<Especialidad> especialidades  = new LinkedList<>();
     public static LinkedList<TipoDeEntrega> tipoDeEntregas  = new LinkedList<>();
     public static LinkedList<Cliente> clientes  = new LinkedList<>();
+    public static LinkedList<ContratoRepartidor> contratorepartidores = new LinkedList<>();
     public static LinkedList<Repartidor> repartidores = new LinkedList<>();
     public static LinkedList<Entrega> entregas  = new LinkedList<>();
 
 
     public static void main(String[] args) {
-        empresas = LeerJSON.leerEmpresasJson();
-        sucursales = LeerJSON.leerSucursalesJson();
-        //System.out.println(sucursales.toString());
 
 
-        /*// Leyendo archivos si es que los encuentra
-        File archivoUsuarios = new File("UsuariosJSON.json");
-        if (archivoUsuarios.exists()) {
+
+        // Leyendo los JSON********************************************************************
+        Path pathusuarios = Paths.get("src/main/resources/database/UsuariosJSON.json");
+        if(Files.exists(pathusuarios) && !Files.isDirectory(pathusuarios)) {
             RegistrosUsuarios = LeerJSON.leerUsuariosJson();
+            //System.out.println("pathusuarios");
         }
-        File archivoEmpresas = new File("EmpresasJSON.json");
-        if (archivoEmpresas.exists()) {
+
+        Path pathempresas = Paths.get("src/main/resources/database/EmpresasJSON.json");
+        if(Files.exists(pathempresas) && !Files.isDirectory(pathempresas)) {
             empresas = LeerJSON.leerEmpresasJson();
+            //System.out.println("pathempresas");
         }
-        File archivocontratoArriendos = new File("contratoArriendosJSON.json");
-        if (archivoEmpresas.exists()) {
-            contratoArriendos = LeerJSON.leercontratoArriendosJson();
-        }
-        File archivoSucursales = new File("sucursalesJSON.json");
-        if (archivoEmpresas.exists()) {
+
+
+        Path pathSucursalesJSON = Paths.get("src/main/resources/database/sucursalesJSON.json");
+        if(Files.exists(pathSucursalesJSON) && !Files.isDirectory(pathSucursalesJSON)) {
             sucursales = LeerJSON.leerSucursalesJson();
+           //System.out.println("pathSucursalesJSON");
         }
-        /*File archivoespecialidades = new File("especialidadesJSON.json");
-        if (archivoEmpresas.exists()) {
-            especialidades = LeerJSON.leerespecialidadesJson();
+
+        Path pathcontratoarriendo = Paths.get("src/main/resources/database/contratoArriendosJSON.json");
+        if(Files.exists(pathcontratoarriendo) && !Files.isDirectory(pathcontratoarriendo)) {
+            contratoArriendos = LeerJSON.leerContratoArriendoJson();
+            //System.out.println("pathcontratoarriendo");
         }
-        File archivotipoDeEntregas = new File("tipoDeEntregasJSON.json");
-        if (archivoEmpresas.exists()) {
-            tipoDeEntregas = LeerJSON.leertipoDeEntregasJson();
+
+        Path pathespecialidadesJSON = Paths.get("src/main/resources/database/especialidadesJSON.json");
+        if(Files.exists(pathespecialidadesJSON) && !Files.isDirectory(pathespecialidadesJSON)) {
+            especialidades = LeerJSON.leerEspecialidadJson();
+            //System.out.println("pathespecialidadesJSON");
+
         }
-        File archivoclientes = new File("clientesJSON.json");
-        if (archivoclientes.exists()) {
-            clientes = LeerJSON.leerclientesJson();
+
+        Path pathTipoDeEntregaJSON = Paths.get("src/main/resources/database/TipoDeEntregaJSON.json");
+        if(Files.exists(pathTipoDeEntregaJSON) && !Files.isDirectory(pathTipoDeEntregaJSON)) {
+            tipoDeEntregas = LeerJSON.leerTipoDeEntregaJson();
+            //System.out.println("pathTipoDeEntregaJSON");
         }
-       // File archivorepartidoresContrato = new File("repartidoresContratoJSON.json");
-       // if (archivorepartidoresContrato.exists()) {
-       //  archivorepartidoresContrato = LeerJSON.leerrepartidoresContratoJson();
-       // }
-        File archivoentregas = new File("entregasJSON.json");
-        if (archivoentregas.exists()) {
-            entregas = LeerJSON.leerentregasJson();
-        }*/
+
+
+        Path pathClienteJSON = Paths.get("src/main/resources/database/ClienteJSON.json");
+        if(Files.exists(pathClienteJSON) && !Files.isDirectory(pathClienteJSON)) {
+            clientes = LeerJSON.leerClienteJson();
+            //System.out.println("pathClienteJSON");
+        }
+
+         Path pathRepartidorJSON = Paths.get("src/main/resources/database/RepartidorJSON.json");
+        if(Files.exists(pathRepartidorJSON) && !Files.isDirectory(pathRepartidorJSON)) {
+            repartidores = LeerJSON.leerRepartidorJson();
+            //System.out.println("pathRepartidorJSON");
+        }
+
+        Path pathContratoRepartidorJSON = Paths.get("src/main/resources/database/ContratoRepartidorJSON.json");
+        if(Files.exists(pathContratoRepartidorJSON) && !Files.isDirectory(pathContratoRepartidorJSON)) {
+            contratorepartidores = LeerJSON.leerContratoRepartidorJson();
+            //System.out.println("pathContratoRepartidorJSON");
+        }
+
+        Path pathEntregaJSON = Paths.get("src/main/resources/database/EntregaJSON.json");
+        if(Files.exists(pathEntregaJSON) && !Files.isDirectory(pathEntregaJSON)) {
+            entregas = LeerJSON.leerEntregaJson();
+            //System.out.println("pathEntregaJSON");
+        }
+        // Fin de lectura de JSON ************************************************
+
 
 
         // agunos experimnetos********************************++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -99,25 +131,31 @@ public class Main {
         tipoDeEntregas.add(tipoentrega2);
 
         Cliente cliente1 = new Cliente(95032, "Esteban Bermudez","Carre39 sur n 20 a 31", 31156, 123);
+        Cliente cliente2 = new Cliente(95032501, "Jualiana Bermudez","Carre39 sur n 20 a 41", 3115678, 12366);
+        clientes.add(cliente1);
+        clientes.add(cliente2);
+
+
+        Repartidor repartidor1 = new Repartidor(123, "repartidor1",12, 31156078,"AAA", 200000);
+        Repartidor repartidor2 = new Repartidor(1234, "repartidor2",22, 311560,"AAA", 300000);
+        repartidores.add(repartidor1);
+        repartidores.add(repartidor2);
+
+        ContratoRepartidor contratoRepartidor1 = new ContratoRepartidor(1234, 200000, "12-01-2020", "12-01-2020", repartidor1);
+        ContratoRepartidor contratoRepartidor2 = new ContratoRepartidor(12345, 200000, "12-01-2020", "12-01-2020", repartidor2);
+        contratorepartidores.add(contratoRepartidor1);
+        contratorepartidores.add(contratoRepartidor2);
+
+        Entrega entrega1 = new Entrega(12, 20.1, 100, true, 200000, "Una elegancia",
+                epecialidad1, tipoentrega1,cliente1,  repartidor1);
+        Entrega entrega2 = new Entrega(123, 20.1, 100, true, 200000, "Una elegancia",
+                epecialidad1, tipoentrega1,cliente2,  repartidor1);
+        entregas.add(entrega1);
+        entregas.add(entrega2);
 
 
 
 
-
-
-
-        /*for (Sucursal sucursale : sucursales) {
-            System.out.println(sucursale.toString());
-        }*/
-
-        // Cantas sucursales tiene la empresa tal (1244 ej)
-        /*for (Sucursal sucursale : sucursales) {
-            if (sucursale.empresa.Nit == "90.0000.000-1"){
-                System.out.println("Encontro");
-            }else{
-                System.out.println("No Encontro");
-            }
-        }*/
         // fin de los experimentos *******************************************+++++++++++++++++++++++++++++++++++++++++
 
 
@@ -202,14 +240,10 @@ public class Main {
         EscribirJSON.guardarUsuario(RegistrosUsuarios); // Guardando una instancia de usuario corregir
 
         System.out.println("Registro exitoso ! ");
-        System.out.println("Ya podra iniciar sesion");
-
-        // Imprimamos para corroborar que hay en la lista
-        for (Usuario registrosUsuario : RegistrosUsuarios) {
-            System.out.println(registrosUsuario.toString());
-        }
-
+        System.out.println("Ya podra iniciar sesion, \n" +
+                "Presione enter");
         Iniciarsesion();
+
     }
 
     public static void Iniciarsesion() {
@@ -522,8 +556,7 @@ public class Main {
 
         Empresa nuevaEmpresa = new Empresa(nit,razonsocial,presidente);
         empresas.add(nuevaEmpresa);
-
-        EscribirJSON.guardarEmpresa(empresas); // guardando las empresas registradas
+        //EscribirJSON.guardarEmpresa(empresas); // se guarda en la opcion guardar
         System.out.println("Empresa ingresada correctamente!");
 
     }
@@ -1824,7 +1857,21 @@ public class Main {
     public static void DiagnosticoInconsistencias() {
     }
 
+
+    // Funcion para guardar all (lo que hay en la sesion)
     public static void Guardar() {
+        EscribirJSON.guardarUsuario(RegistrosUsuarios);
+        EscribirJSON.guardarEmpresa(empresas);
+        EscribirJSON.guardarContratoArriendo(contratoArriendos);
+        EscribirJSON.guardarSucursal(sucursales);
+        EscribirJSON.guardarEspecialida(especialidades);
+        EscribirJSON.guardarTipoDeEntrega(tipoDeEntregas);
+        EscribirJSON.guardarCliente(clientes);
+        EscribirJSON.guardarContratoRepartidor(contratorepartidores);
+        EscribirJSON.guardarRepartidor(repartidores);
+        EscribirJSON.guardarEntrega(entregas);
+        System.out.println("Se han guardado satisfactoriamente todos los datos de esta sesión");
+
     }
 
     public static void SalirCancelar() {
