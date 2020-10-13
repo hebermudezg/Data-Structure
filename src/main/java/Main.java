@@ -95,8 +95,8 @@ public class Main {
         // Fin de lectura de JSON ************************************************
 
 
-
-        // agunos experimnetos********************************++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        // NO BORRAR
+        // agunos experimnetos**********************NO BORRAR ++++++++++++++++++++++++++++++++++++++++++++++++++
         /*Usuario nuevousuario = new Usuario(1,"admin","apell", "admin@","123");
         RegistrosUsuarios.add(nuevousuario);
 
@@ -152,10 +152,6 @@ public class Main {
                 epecialidad1, tipoentrega1,cliente2,  repartidor1);
         entregas.add(entrega1);
         entregas.add(entrega2); */
-
-
-
-
         // fin de los experimentos *******************************************+++++++++++++++++++++++++++++++++++++++++
 
 
@@ -285,7 +281,7 @@ public class Main {
                 break;
             } else if (!inicio.contraseña.equals(contras)) {
                 System.out.print(inicio.contraseña);
-                System.out.print(contras);
+                //System.out.print(contras);
                 System.out.println("La contraseña es incorrecta");
                 break;
             } else {

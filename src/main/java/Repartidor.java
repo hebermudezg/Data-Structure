@@ -17,13 +17,12 @@ public class Repartidor {
 
     @Override
     public String toString() {
-        return "Repartidor{" +
-                "Cedula=" + Cedula +
-                ", Nombre='" + Nombre + '\'' +
-                ", Edad=" + Edad +
-                ", Num_Celular=" + Num_Celular +
-                ", Tipo_Licencia='" + Tipo_Licencia + '\'' +
-                ", Sueldo=" + Sueldo +
-                '}';
+        return "Repartidor:" +'\n' +
+                "Cedula: " + Cedula + '\n' +
+                "Nombre: '" + Nombre + '\n' +
+                "Edad: " + Edad + '\n' +
+                "Num_Celular: " + Num_Celular + '\n' +
+                "Tipo_Licencia: '" + Tipo_Licencia + '\n' +
+                "Sueldo: " + Sueldo ;
     }
 }
