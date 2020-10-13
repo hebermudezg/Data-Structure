@@ -1,9 +1,5 @@
 # Data-Structure
 
-* dentificador compuesto para clases que vienen de dos relaciones??
-* arreglar bug en registro de especialidad
-* borrar atributo codigo postal de cliente del UML
-
 In this repository, a java application is created to put into practice the knowledge acquired in the data structure courses at the National University of Colombia-Medellín.
 
 ## Integrantes
@@ -39,6 +35,5 @@ sucursales activas y demás información que le permite tener una trazabilidad d
 para consiguientemente poder tomar decisiones estratégicas a futuro.
 
 
-
-
 # Bibliografía
+Notas de clase Estrucutra de datos 2020
