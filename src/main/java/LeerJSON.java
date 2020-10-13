@@ -356,7 +356,11 @@ public class LeerJSON {
         String Tipo_Licencia = (String) atributos.get("Tipo_Licencia");
         double Sueldo = Double.parseDouble((String) atributos.get("Sueldo"));
 
+<<<<<<< HEAD
         Repartidor RepartidorLeidoss = new Repartidor(Cedula, Nombre, Edad, Num_Celular, Tipo_Licencia);
+=======
+        Repartidor RepartidorLeidoss = new Repartidor(Cedula, Nombre, Edad, Num_Celular, Tipo_Licencia, Sueldo);
+>>>>>>> ba688a478a63a3a378a9d89d17a60b3c16d4e538
         return RepartidorLeidoss;
     }
 

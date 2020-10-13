@@ -4,6 +4,11 @@ import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ba688a478a63a3a378a9d89d17a60b3c16d4e538
 public class Main {
     public static String ruta = "src/main/resources/database/";
     public static int Numbus= 0;
@@ -50,6 +55,7 @@ public class Main {
         if(Files.exists(pathcontratoarriendo) && !Files.isDirectory(pathcontratoarriendo)) {
             contratoArriendos = LeerJSON.leerContratoArriendoJson();
             //System.out.println("pathcontratoarriendo");
+<<<<<<< HEAD
         }
 
         Path pathespecialidadesJSON = Paths.get("src/main/resources/database/especialidadesJSON.json");
@@ -70,6 +76,21 @@ public class Main {
         if(Files.exists(pathClienteJSON) && !Files.isDirectory(pathClienteJSON)) {
             clientes = LeerJSON.leerClienteJson();
             //System.out.println("pathClienteJSON");
+=======
+        }
+
+        Path pathespecialidadesJSON = Paths.get("src/main/resources/database/especialidadesJSON.json");
+        if(Files.exists(pathespecialidadesJSON) && !Files.isDirectory(pathespecialidadesJSON)) {
+            especialidades = LeerJSON.leerEspecialidadJson();
+            //System.out.println("pathespecialidadesJSON");
+
+        }
+
+        Path pathTipoDeEntregaJSON = Paths.get("src/main/resources/database/TipoDeEntregaJSON.json");
+        if(Files.exists(pathTipoDeEntregaJSON) && !Files.isDirectory(pathTipoDeEntregaJSON)) {
+            tipoDeEntregas = LeerJSON.leerTipoDeEntregaJson();
+            //System.out.println("pathTipoDeEntregaJSON");
+>>>>>>> ba688a478a63a3a378a9d89d17a60b3c16d4e538
         }
 
          Path pathRepartidorJSON = Paths.get("src/main/resources/database/RepartidorJSON.json");
@@ -78,6 +99,21 @@ public class Main {
             //System.out.println("pathRepartidorJSON");
         }
 
+<<<<<<< HEAD
+=======
+        Path pathClienteJSON = Paths.get("src/main/resources/database/ClienteJSON.json");
+        if(Files.exists(pathClienteJSON) && !Files.isDirectory(pathClienteJSON)) {
+            clientes = LeerJSON.leerClienteJson();
+            //System.out.println("pathClienteJSON");
+        }
+
+         Path pathRepartidorJSON = Paths.get("src/main/resources/database/RepartidorJSON.json");
+        if(Files.exists(pathRepartidorJSON) && !Files.isDirectory(pathRepartidorJSON)) {
+            repartidores = LeerJSON.leerRepartidorJson();
+            //System.out.println("pathRepartidorJSON");
+        }
+
+>>>>>>> ba688a478a63a3a378a9d89d17a60b3c16d4e538
         Path pathContratoRepartidorJSON = Paths.get("src/main/resources/database/ContratoRepartidorJSON.json");
         if(Files.exists(pathContratoRepartidorJSON) && !Files.isDirectory(pathContratoRepartidorJSON)) {
             contratorepartidores = LeerJSON.leerContratoRepartidorJson();
@@ -235,6 +271,11 @@ public class Main {
         System.out.println("Ya podra iniciar sesion, \n" +
                 "Presione enter");
         Iniciarsesion();
+<<<<<<< HEAD
+=======
+
+    }
+>>>>>>> ba688a478a63a3a378a9d89d17a60b3c16d4e538
 
     }
     public static void Iniciarsesion() {
@@ -566,6 +607,10 @@ public class Main {
 
         Empresa nuevaEmpresa = new Empresa(nit,razonsocial,presidente);
         empresas.add(nuevaEmpresa);
+<<<<<<< HEAD
+=======
+        //EscribirJSON.guardarEmpresa(empresas); // se guarda en la opcion guardar
+>>>>>>> ba688a478a63a3a378a9d89d17a60b3c16d4e538
         System.out.println("Empresa ingresada correctamente!");
 
     }
@@ -2024,6 +2069,11 @@ public class Main {
     }
     public static void DiagnosticoInconsistencias() {
     }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ba688a478a63a3a378a9d89d17a60b3c16d4e538
     // Funcion para guardar all (lo que hay en la sesion)
     public static void Guardar() {
         EscribirJSON.guardarUsuario(RegistrosUsuarios);
@@ -2037,6 +2087,11 @@ public class Main {
         EscribirJSON.guardarRepartidor(repartidores);
         EscribirJSON.guardarEntrega(entregas);
         System.out.println("Se han guardado satisfactoriamente todos los datos de esta sesión");
+<<<<<<< HEAD
+=======
+
+    }
+>>>>>>> ba688a478a63a3a378a9d89d17a60b3c16d4e538
 
     }
     public static void SalirCancelar() {

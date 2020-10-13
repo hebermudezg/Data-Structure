@@ -223,7 +223,11 @@ public class EscribirJSON {
             RepartidorDatos.put("Edad", String.valueOf(repardor.Edad));
             RepartidorDatos.put("Num_Celular", String.valueOf(repardor.Num_Celular));
             RepartidorDatos.put("Tipo_Licencia",  repardor.Tipo_Licencia);
+<<<<<<< HEAD
 
+=======
+            RepartidorDatos.put("Sueldo",  String.valueOf(repardor.Sueldo));
+>>>>>>> ba688a478a63a3a378a9d89d17a60b3c16d4e538
 
 
             JSONObject RepartidorPerfil = new JSONObject();

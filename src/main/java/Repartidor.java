@@ -16,6 +16,7 @@ public class Repartidor {
 
     @Override
     public String toString() {
+<<<<<<< HEAD
         return "Repartidor" +"\n" +
                 "\t Cedula: " + Cedula + "\n" +
                 "\t Nombre: " + Nombre + "\n" +
@@ -23,5 +24,14 @@ public class Repartidor {
                 "\t Numero de celular: " + Num_Celular + "\n" +
                 "\t Tipo de licencia: " + Tipo_Licencia + "\n" +
                 "\t ";
+=======
+        return "Repartidor:" +'\n' +
+                "Cedula: " + Cedula + '\n' +
+                "Nombre: '" + Nombre + '\n' +
+                "Edad: " + Edad + '\n' +
+                "Num_Celular: " + Num_Celular + '\n' +
+                "Tipo_Licencia: '" + Tipo_Licencia + '\n' +
+                "Sueldo: " + Sueldo ;
+>>>>>>> ba688a478a63a3a378a9d89d17a60b3c16d4e538
     }
 }

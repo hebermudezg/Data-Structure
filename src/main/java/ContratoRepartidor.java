@@ -15,6 +15,7 @@ public class ContratoRepartidor {
 
     @Override
     public String toString() {
+<<<<<<< HEAD
         return "Contrato de repartidor" +"\n"+
                 "\t Numerocontrato: " + numerocontrato +"\n"+
                 "\t Salario: " + salario +"\n"+
@@ -22,5 +23,14 @@ public class ContratoRepartidor {
                 "\t Fecha de fin: " + fechafin + "\n" +
                 "\t Repartidor: " + repartidor.Nombre+"\n"+
                 "\t ";
+=======
+        return "ContratoRepartidor{" +
+                "numerocontrato=" + numerocontrato +
+                ", salario=" + salario +
+                ", fechainicio='" + fechainicio + '\'' +
+                ", fechafin='" + fechafin + '\'' +
+                ", repartidor=" + repartidor +
+                '}';
+>>>>>>> ba688a478a63a3a378a9d89d17a60b3c16d4e538
     }
 }
