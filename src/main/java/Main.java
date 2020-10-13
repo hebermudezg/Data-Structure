@@ -1391,6 +1391,7 @@ public class Main {
         System.out.println("6. Tipo de entregas");
         System.out.println("7. Entregas");
         System.out.println("8. Clientes");
+        System.out.println("9. Contrato de Repartidor");
         System.out.println("0. Cancelar");
         System.out.println();
         String option;
@@ -1407,32 +1408,23 @@ public class Main {
             option1 = input.next();
             if (option1.equals("1")) {
                 TexBusqueda();
-                if(Texbus == 0){
-                    //busque da segun lo que sea texbusqueda esta lo mismo para numbusqueda mirar en la parte baja
-                    //cada busqueda queda dentro de los if
-                    System.out.println("la mala" );
-                }else if (Texbus == 1){
-                    System.out.println("la buena" );
-                }
             } else if (option1.equals("2")) {
                 TexBusqueda();
-                if(Texbus == 0){
-
-                }else if (Texbus == 1){
-
-                }
             } else if (option1.equals("3")) {
                 TexBusqueda();
-                if(Texbus == 0){
-
-                }else if (Texbus == 1){
-
+            } else if (option1.equals("4")) { // Mostrar todas las empresas***
+                if (empresas.size() == 0){
+                    System.out.println("No hay empresas registradas en el momento");
+                }else{
+                    System.out.println(empresas.toString());
                 }
-            } else if (option1.equals("4")) {
+
 
             } else {
                 return;
             }
+
+
         } else if (option.equals("2")) {
             System.out.println("Los atributos que tiene la clase seleccionada");
             System.out.println("Escoja una opcion:");
