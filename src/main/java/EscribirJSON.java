@@ -62,7 +62,6 @@ public class EscribirJSON {
             ContratoArriendoDatos.put("fechadeInicio", contratoarriendo.fechadeInicio);
             ContratoArriendoDatos.put("FechadeFin", contratoarriendo.FechadeFin);
             ContratoArriendoDatos.put("canon", String.valueOf(contratoarriendo.canon));
-
             ContratoArriendoDatos.put("sucursal", String.valueOf(contratoarriendo.sucursal.codigoScursal));
 
             JSONObject SucursalPerfil = new JSONObject();

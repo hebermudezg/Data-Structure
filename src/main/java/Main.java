@@ -2019,7 +2019,79 @@ public class Main {
         }
     }
     public static void DiagnosticoInconsistencias() {
+        LinkedList<Empresa> empre = new LinkedList<>();
+        for (int i = 0; i < empresas.size(); i++) {
+            for (int j = 0; j < sucursales.size(); j++) {
+                if (empresas.get(i).Nit.equals(sucursales.get(j).empresa.Nit)) {
+                    break;
+                } else {
+                    if (j == (sucursales.size() - 1)) {
+                        empre.add(empresas.get(i));
+                    }
+                }
+            }
+        }
+        System.out.println("Empresas que no tiene sucursales----------------------");
+        System.out.println(empre.toString());
+        LinkedList<Sucursal> sucurCon = new LinkedList<>();
+        for (int i = 0; i < sucursales.size(); i++) {
+            for (int j = 0; j < contratoArriendos.size(); j++) {
+                if (sucursales.get(i).codigoScursal == contratoArriendos.get(j).sucursal.codigoScursal) {
+                    break;
+                } else {
+                    if (j == (contratoArriendos.size() - 1)) {
+                        sucurCon.add(sucursales.get(i));
+                    }
+                }
+            }
+        }
+        System.out.println("Sucursales que no tiene contrato de arrendamiento----------------------");
+        System.out.println(sucurCon.toString());
+        LinkedList<Sucursal> sucurEspe = new LinkedList<>();
+        for (int i = 0; i < sucursales.size(); i++) {
+            for (int j = 0; j < especialidades.size(); j++) {
+                if (sucursales.get(i).codigoScursal == especialidades.get(j).sucursal.codigoScursal) {
+                    break;
+                } else {
+                    if (j == (especialidades.size() - 1)) {
+                        sucurEspe.add(sucursales.get(i));
+                    }
+                }
+            }
+        }
+        System.out.println("Sucursales que no tiene especialidad----------------------");
+        System.out.println(sucurEspe.toString());
+        LinkedList<Repartidor> repar = new LinkedList<>();
+        for (int i = 0; i < repartidores.size(); i++) {
+            for (int j = 0; j < contratorepartidores.size(); j++) {
+                if (repartidores.get(i).Cedula == contratorepartidores.get(j).repartidor.Cedula) {
+                    break;
+                } else {
+                    if (j == (contratorepartidores.size() - 1)) {
+                        repar.add(repartidores.get(i));
+                    }
+                }
+            }
+
+        }
+        System.out.println("Repartidor que no tiene contrato----------------------");
+        System.out.println(repar.toString());
+        LinkedList<TipoDeEntrega> tipod = new LinkedList<>();
+        for (int i = 0; i < tipoDeEntregas.size(); i++) {
+            for (int j = 0; j < entregas.size(); j++) {
+                if (tipoDeEntregas.get(i).Codigo ==entregas.get(j).tipoDeEntrega.Codigo) {
+                    break;
+                } else {
+                    if (j == (entregas.size() - 1)) {
+                        tipod.add(tipoDeEntregas.get(i));
+                    }
+                }
+            }
+        }
+        System.out.println("Tipo de entrega no tiene entrega----------------------");
+        System.out.println(tipod.toString());
     }
+
     // Funcion para guardar all (lo que hay en la sesion)
     public static void Guardar() {
         EscribirJSON.guardarUsuario(RegistrosUsuarios);

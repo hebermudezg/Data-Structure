@@ -24,8 +24,4 @@ public class Sucursal {
                 "\t Empresa: " + empresa.Nit +"\n"+
                 "\t ";
     }
-
-
-
-
 }
