@@ -12,7 +12,7 @@ In this repository, a java application is created to put into practice the knowl
 
 <img src="./Otros_Recursos/UML.png" width="800" title="hover text">
 
-Empresa de entregas o envíos.
+**Empresa de entregas o envíos.**
 
 Se requiere un software para una empresa, que permita gestionar entregas de mercancía
 de diferentes tipos, como lo son: cartas o documentos, medicamentos, alimentos, etc.
