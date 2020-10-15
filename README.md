@@ -1,13 +1,14 @@
 # Data-Structure
 
 **Para ingresar**
-*correo:admin@
 
-*documento:1
+* correo:admin@
 
-*contraseña:123
+* documento:1
 
-*nombre:admin
+* contraseña:123
+
+* nombre:admin
 
 In this repository, a java application is created to put into practice the knowledge acquired in the data structure courses at the National University of Colombia-Medellín.
 
