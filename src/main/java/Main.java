@@ -2120,8 +2120,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(sucursales, new SucursalComparator(atriordena,ordena));
-                for (Sucursal sucursale : sucursales) {
+
+                LinkedList<Sucursal> sucursalescopy = new LinkedList<>(sucursales);
+                Collections.sort(sucursalescopy, new SucursalComparator(atriordena,ordena));
+                for (Sucursal sucursale : sucursalescopy) {
                     if ((sucursale.codigoScursal >= busca1) && (sucursale.codigoScursal <= busca2)){
                         System.out.println(sucursale.toString());
                     }
@@ -2226,8 +2228,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(sucursales, new SucursalComparator(atriordena,ordena));
-                for (Sucursal sucursale : sucursales) {
+
+                LinkedList<Sucursal> sucursalescopy = new LinkedList<>(sucursales);
+                Collections.sort(sucursalescopy, new SucursalComparator(atriordena,ordena));
+                for (Sucursal sucursale : sucursalescopy) {
                     if (sucursale.cantEmpleados >= busca){
                         System.out.println(sucursale.toString());
                     }
@@ -2246,8 +2250,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(sucursales, new SucursalComparator(atriordena,ordena));
-                for (Sucursal sucursale : sucursales) {
+
+                LinkedList<Sucursal> sucursalescopy = new LinkedList<>(sucursales);
+                Collections.sort(sucursalescopy, new SucursalComparator(atriordena,ordena));
+                for (Sucursal sucursale : sucursalescopy) {
                     if (sucursale.cantEmpleados <= busca){
                         System.out.println(sucursale.toString());
                     }
@@ -2266,8 +2272,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(sucursales, new SucursalComparator(atriordena,ordena));
-                for (Sucursal sucursale : sucursales) {
+
+                LinkedList<Sucursal> sucursalescopy = new LinkedList<>(sucursales);
+                Collections.sort(sucursalescopy, new SucursalComparator(atriordena,ordena));
+                for (Sucursal sucursale : sucursalescopy) {
                     if ((sucursale.cantEmpleados >= busca1) && (sucursale.cantEmpleados <= busca2)){
                         System.out.println(sucursale.toString());
                     }
@@ -2312,8 +2320,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(especialidades, new EspecialidadComparator(atriordena,ordena));
-                for (Especialidad especialidad : especialidades) {
+
+                LinkedList<Especialidad> especialidadescopy = new LinkedList<>(especialidades);
+                Collections.sort(especialidadescopy, new EspecialidadComparator(atriordena,ordena));
+                for (Especialidad especialidad : especialidadescopy) {
                     if (especialidad.codigoEspecialidad >= busca){
                         System.out.println(especialidad.toString());
                     }
@@ -2332,8 +2342,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(especialidades, new EspecialidadComparator(atriordena,ordena));
-                for (Especialidad especialidad : especialidades) {
+
+                LinkedList<Especialidad> especialidadescopy = new LinkedList<>(especialidades);
+                Collections.sort(especialidadescopy, new EspecialidadComparator(atriordena,ordena));
+                for (Especialidad especialidad : especialidadescopy) {
                     if (especialidad.codigoEspecialidad <= busca){
                         System.out.println(especialidad.toString());
                     }
@@ -2352,7 +2364,9 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(sucursales, new SucursalComparator(atriordena,ordena));
+
+                LinkedList<Especialidad> especialidadescopy = new LinkedList<>(especialidades);
+                Collections.sort(especialidadescopy, new EspecialidadComparator(atriordena,ordena));
                 for (Especialidad especialidad : especialidades) {
                     if ((especialidad.codigoEspecialidad >= busca1) && (especialidad.codigoEspecialidad <= busca2)){
                         System.out.println(especialidad.toString());
@@ -2454,8 +2468,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(especialidades, new EspecialidadComparator(atriordena,ordena));
-                for (Especialidad especialidad : especialidades) {
+
+                LinkedList<Especialidad> especialidadescopy = new LinkedList<>(especialidades);
+                Collections.sort(especialidadescopy, new EspecialidadComparator(atriordena,ordena));
+                for (Especialidad especialidad : especialidadescopy) {
                     if (especialidad.lineaAtencion >= busca){
                         System.out.println(especialidad.toString());
                     }
@@ -2474,8 +2490,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(especialidades, new EspecialidadComparator(atriordena,ordena));
-                for (Especialidad especialidad : especialidades) {
+
+                LinkedList<Especialidad> especialidadescopy = new LinkedList<>(especialidades);
+                Collections.sort(especialidadescopy, new EspecialidadComparator(atriordena,ordena));
+                for (Especialidad especialidad : especialidadescopy) {
                     if (especialidad.lineaAtencion <= busca){
                         System.out.println(especialidad.toString());
                     }
@@ -2494,8 +2512,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(sucursales, new SucursalComparator(atriordena, ordena));
-                for (Especialidad especialidad : especialidades) {
+
+                LinkedList<Especialidad> especialidadescopy = new LinkedList<>(especialidades);
+                Collections.sort(especialidadescopy, new EspecialidadComparator(atriordena, ordena));
+                for (Especialidad especialidad : especialidadescopy) {
                     if ((especialidad.lineaAtencion >= busca1) && (especialidad.lineaAtencion <= busca2)) {
                         System.out.println(especialidad.toString());
                     }
@@ -2547,8 +2567,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(contratoArriendos, new ContratoDeArriendoComparator(atriordena,ordena));
-                for (ContratoArriendo contratoarriendo : contratoArriendos) {
+
+                LinkedList<ContratoArriendo> contratoArriendoscopy = new LinkedList<>(contratoArriendos);
+                Collections.sort(contratoArriendoscopy, new ContratoDeArriendoComparator(atriordena,ordena));
+                for (ContratoArriendo contratoarriendo : contratoArriendoscopy) {
                     if (contratoarriendo.numContrato >= busca){
                         System.out.println(contratoarriendo.toString());
                     }
@@ -2567,8 +2589,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(contratoArriendos, new ContratoDeArriendoComparator(atriordena,ordena));
-                for (ContratoArriendo contratoarriendo : contratoArriendos) {
+
+                LinkedList<ContratoArriendo> contratoArriendoscopy = new LinkedList<>(contratoArriendos);
+                Collections.sort(contratoArriendoscopy, new ContratoDeArriendoComparator(atriordena,ordena));
+                for (ContratoArriendo contratoarriendo : contratoArriendoscopy) {
                     if (contratoarriendo.numContrato <= busca){
                         System.out.println(contratoarriendo.toString());
                     }
@@ -2587,8 +2611,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(contratoArriendos, new ContratoDeArriendoComparator(atriordena,ordena));
-                for (ContratoArriendo contratoarriendo : contratoArriendos) {
+
+                LinkedList<ContratoArriendo> contratoArriendoscopy = new LinkedList<>(contratoArriendos);
+                Collections.sort(contratoArriendoscopy, new ContratoDeArriendoComparator(atriordena,ordena));
+                for (ContratoArriendo contratoarriendo : contratoArriendoscopy) {
                     if ((contratoarriendo.numContrato >= busca1) && (contratoarriendo.numContrato <= busca2)){
                         System.out.println(contratoarriendo.toString());
                     }
@@ -2688,8 +2714,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(contratoArriendos, new ContratoDeArriendoComparator(atriordena,ordena));
-                for (ContratoArriendo contratoarriendo : contratoArriendos) {
+
+                LinkedList<ContratoArriendo> contratoArriendoscopy = new LinkedList<>(contratoArriendos);
+                Collections.sort(contratoArriendoscopy, new ContratoDeArriendoComparator(atriordena,ordena));
+                for (ContratoArriendo contratoarriendo : contratoArriendoscopy) {
                     if (contratoarriendo.canon >= busca){
                         System.out.println(contratoarriendo.toString());
                     }
@@ -2708,8 +2736,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(contratoArriendos, new ContratoDeArriendoComparator(atriordena,ordena));
-                for (ContratoArriendo contratoarriendo : contratoArriendos) {
+
+                LinkedList<ContratoArriendo> contratoArriendoscopy = new LinkedList<>(contratoArriendos);
+                Collections.sort(contratoArriendoscopy, new ContratoDeArriendoComparator(atriordena,ordena));
+                for (ContratoArriendo contratoarriendo : contratoArriendoscopy) {
                     if (contratoarriendo.canon <= busca){
                         System.out.println(contratoarriendo.toString());
                     }
@@ -2728,8 +2758,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(contratoArriendos, new ContratoDeArriendoComparator(atriordena,ordena));
-                for (ContratoArriendo contratoarriendo : contratoArriendos) {
+
+                LinkedList<ContratoArriendo> contratoArriendoscopy = new LinkedList<>(contratoArriendos);
+                Collections.sort(contratoArriendoscopy, new ContratoDeArriendoComparator(atriordena,ordena));
+                for (ContratoArriendo contratoarriendo : contratoArriendoscopy) {
                     if ((contratoarriendo.canon >= busca1) && (contratoarriendo.canon <= busca2)) {
                         System.out.println(contratoarriendo.toString());
                     }
@@ -2780,8 +2812,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(repartidores, new RepartidorComparator(atriordena,ordena));
-                for (Repartidor repartidor : repartidores) {
+
+                LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
+                Collections.sort(repartidorescopy, new RepartidorComparator(atriordena,ordena));
+                for (Repartidor repartidor : repartidorescopy) {
                     if (repartidor.Cedula >= busca){
                         System.out.println(repartidor.toString());
                     }
@@ -2800,8 +2834,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(repartidores, new RepartidorComparator(atriordena,ordena));
-                for (Repartidor repartidor : repartidores) {
+
+                LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
+                Collections.sort(repartidorescopy, new RepartidorComparator(atriordena,ordena));
+                for (Repartidor repartidor : repartidorescopy) {
                     if (repartidor.Cedula <= busca){
                         System.out.println(repartidor.toString());
                     }
@@ -2820,8 +2856,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(repartidores, new RepartidorComparator(atriordena,ordena));
-                for (Repartidor repartidor : repartidores) {
+
+                LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
+                Collections.sort(repartidorescopy, new RepartidorComparator(atriordena,ordena));
+                for (Repartidor repartidor : repartidorescopy) {
                     if ((repartidor.Cedula >= busca1) && (repartidor.Cedula <= busca2)){
                         System.out.println(repartidor.toString());
                     }
@@ -2886,8 +2924,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(repartidores, new RepartidorComparator(atriordena,ordena));
-                for (Repartidor repartidor : repartidores) {
+
+                LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
+                Collections.sort(repartidorescopy, new RepartidorComparator(atriordena,ordena));
+                for (Repartidor repartidor : repartidorescopy) {
                     if (repartidor.Num_Celular >= busca){
                         System.out.println(repartidor.toString());
                     }
@@ -2906,8 +2946,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(repartidores, new RepartidorComparator(atriordena,ordena));
-                for (Repartidor repartidor : repartidores) {
+
+                LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
+                Collections.sort(repartidorescopy, new RepartidorComparator(atriordena,ordena));
+                for (Repartidor repartidor : repartidorescopy) {
                     if (repartidor.Num_Celular <= busca){
                         System.out.println(repartidor.toString());
                     }
@@ -2926,8 +2968,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(repartidores, new RepartidorComparator(atriordena,ordena));
-                for (Repartidor repartidor : repartidores) {
+
+                LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
+                Collections.sort(repartidorescopy, new RepartidorComparator(atriordena,ordena));
+                for (Repartidor repartidor : repartidorescopy) {
                     if ((repartidor.Num_Celular >= busca1) && (repartidor.Num_Celular <= busca2)) {
                         System.out.println(repartidor.toString());
                     }
@@ -2965,8 +3009,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(repartidores, new RepartidorComparator(atriordena,ordena));
-                for (Repartidor repartidor : repartidores) {
+
+                LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
+                Collections.sort(repartidorescopy, new RepartidorComparator(atriordena,ordena));
+                for (Repartidor repartidor : repartidorescopy) {
                     if (repartidor.Edad >= busca){
                         System.out.println(repartidor.toString());
                     }
@@ -2985,8 +3031,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(repartidores, new RepartidorComparator(atriordena,ordena));
-                for (Repartidor repartidor : repartidores) {
+
+                LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
+                Collections.sort(repartidorescopy, new RepartidorComparator(atriordena,ordena));
+                for (Repartidor repartidor : repartidorescopy) {
                     if (repartidor.Edad <= busca){
                         System.out.println(repartidor.toString());
                     }
@@ -3005,8 +3053,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(repartidores, new RepartidorComparator(atriordena,ordena));
-                for (Repartidor repartidor : repartidores) {
+
+                LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
+                Collections.sort(repartidorescopy, new RepartidorComparator(atriordena,ordena));
+                for (Repartidor repartidor : repartidorescopy) {
                     if ((repartidor.Edad >= busca1) && (repartidor.Edad <= busca2)) {
                         System.out.println(repartidor.toString());
                     }
@@ -3045,8 +3095,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(repartidores, new RepartidorComparator(atriordena, ordena));
-                for (Repartidor repartidor : repartidores) {
+
+                LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
+                Collections.sort(repartidorescopy, new RepartidorComparator(atriordena, ordena));
+                for (Repartidor repartidor : repartidorescopy) {
                     if (repartidor.Num_Celular >= busca) {
                         System.out.println(repartidor.toString());
                     }
@@ -3065,8 +3117,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(repartidores, new RepartidorComparator(atriordena, ordena));
-                for (Repartidor repartidor : repartidores) {
+
+                LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
+                Collections.sort(repartidorescopy, new RepartidorComparator(atriordena, ordena));
+                for (Repartidor repartidor : repartidorescopy) {
                     if (repartidor.Num_Celular <= busca) {
                         System.out.println(repartidor.toString());
                     }
@@ -3085,8 +3139,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(repartidores, new RepartidorComparator(atriordena, ordena));
-                for (Repartidor repartidor : repartidores) {
+
+                LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
+                Collections.sort(repartidorescopy, new RepartidorComparator(atriordena, ordena));
+                for (Repartidor repartidor : repartidorescopy) {
                     if ((repartidor.Num_Celular >= busca1) && (repartidor.Num_Celular <= busca2)) {
                         System.out.println(repartidor.toString());
                     }
@@ -3164,8 +3220,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(tipoDeEntregas, new TipoDeEntregaComparator(atriordena,ordena));
-                for (TipoDeEntrega tipodeentrega : tipoDeEntregas) {
+
+                LinkedList<TipoDeEntrega> tipoDeEntregascopy = new LinkedList<>(tipoDeEntregas);
+                Collections.sort(tipoDeEntregascopy, new TipoDeEntregaComparator(atriordena,ordena));
+                for (TipoDeEntrega tipodeentrega : tipoDeEntregascopy) {
                     if (tipodeentrega.Codigo >= busca){
                         System.out.println(tipodeentrega.toString());
                     }
@@ -3184,8 +3242,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(tipoDeEntregas, new TipoDeEntregaComparator(atriordena,ordena));
-                for (TipoDeEntrega tipodeentrega : tipoDeEntregas) {
+
+                LinkedList<TipoDeEntrega> tipoDeEntregascopy = new LinkedList<>(tipoDeEntregas);
+                Collections.sort(tipoDeEntregascopy, new TipoDeEntregaComparator(atriordena,ordena));
+                for (TipoDeEntrega tipodeentrega : tipoDeEntregascopy) {
                     if (tipodeentrega.Codigo <= busca){
                         System.out.println(tipodeentrega.toString());
                     }
@@ -3204,8 +3264,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(tipoDeEntregas, new TipoDeEntregaComparator(atriordena,ordena));
-                for (TipoDeEntrega tipodeentrega : tipoDeEntregas) {
+
+                LinkedList<TipoDeEntrega> tipoDeEntregascopy = new LinkedList<>(tipoDeEntregas);
+                Collections.sort(tipoDeEntregascopy, new TipoDeEntregaComparator(atriordena,ordena));
+                for (TipoDeEntrega tipodeentrega : tipoDeEntregascopy) {
                     if ((tipodeentrega.Codigo >= busca1) && (tipodeentrega.Codigo <= busca2)){
                         System.out.println(tipodeentrega.toString());
                     }
@@ -3242,8 +3304,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(tipoDeEntregas, new TipoDeEntregaComparator(atriordena,ordena));
-                for (TipoDeEntrega tipodeentrega : tipoDeEntregas) {
+
+                LinkedList<TipoDeEntrega> tipoDeEntregascopy = new LinkedList<>(tipoDeEntregas);
+                Collections.sort(tipoDeEntregascopy, new TipoDeEntregaComparator(atriordena,ordena));
+                for (TipoDeEntrega tipodeentrega : tipoDeEntregascopy) {
                     if (tipodeentrega.Tiempo_Estimado >= busca){
                         System.out.println(tipodeentrega.toString());
                     }
@@ -3262,8 +3326,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(tipoDeEntregas, new TipoDeEntregaComparator(atriordena,ordena));
-                for (TipoDeEntrega tipodeentrega : tipoDeEntregas) {
+
+                LinkedList<TipoDeEntrega> tipoDeEntregascopy = new LinkedList<>(tipoDeEntregas);
+                Collections.sort(tipoDeEntregascopy, new TipoDeEntregaComparator(atriordena,ordena));
+                for (TipoDeEntrega tipodeentrega : tipoDeEntregascopy) {
                     if (tipodeentrega.Tiempo_Estimado <= busca){
                         System.out.println(tipodeentrega.toString());
                     }
@@ -3282,8 +3348,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(tipoDeEntregas, new TipoDeEntregaComparator(atriordena,ordena));
-                for (TipoDeEntrega tipodeentrega : tipoDeEntregas) {
+
+                LinkedList<TipoDeEntrega> tipoDeEntregascopy = new LinkedList<>(tipoDeEntregas);
+                Collections.sort(tipoDeEntregascopy, new TipoDeEntregaComparator(atriordena,ordena));
+                for (TipoDeEntrega tipodeentrega : tipoDeEntregascopy) {
                     if ((tipodeentrega.Tiempo_Estimado >= busca1) && (tipodeentrega.Tiempo_Estimado <= busca2)) {
                         System.out.println(tipodeentrega.toString());
                     }
@@ -3355,8 +3423,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(clientes, new ClienteComparator(atriordena,ordena));
-                for (Cliente cliente : clientes) {
+
+                LinkedList<Cliente> clientescopy = new LinkedList<>(clientes);
+                Collections.sort(clientescopy, new ClienteComparator(atriordena,ordena));
+                for (Cliente cliente : clientescopy) {
                     if (cliente.Documento >= busca){
                         System.out.println(cliente.toString());
                     }
@@ -3376,8 +3446,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(clientes, new ClienteComparator(atriordena,ordena));
-                for (Cliente cliente : clientes) {
+
+                LinkedList<Cliente> clientescopy = new LinkedList<>(clientes);
+                Collections.sort(clientescopy, new ClienteComparator(atriordena,ordena));
+                for (Cliente cliente : clientescopy) {
                     if (cliente.Documento <= busca){
                         System.out.println(cliente.toString());
                     }
@@ -3397,8 +3469,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(clientes, new ClienteComparator(atriordena,ordena));
-                for (Cliente cliente : clientes) {
+
+                LinkedList<Cliente> clientescopy = new LinkedList<>(clientes);
+                Collections.sort(clientescopy, new ClienteComparator(atriordena,ordena));
+                for (Cliente cliente : clientescopy) {
                     if ((cliente.Documento >= busca1) && (cliente.Documento <= busca2)){
                         System.out.println(cliente.toString());
                     }
@@ -3499,8 +3573,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(clientes, new ClienteComparator(atriordena,ordena));
-                for (Cliente cliente : clientes) {
+
+                LinkedList<Cliente> clientescopy = new LinkedList<>(clientes);
+                Collections.sort(clientescopy, new ClienteComparator(atriordena,ordena));
+                for (Cliente cliente : clientescopy) {
                     if (cliente.Telefono >= busca){
                         System.out.println(cliente.toString());
                     }
@@ -3520,8 +3596,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(clientes, new ClienteComparator(atriordena,ordena));
-                for (Cliente cliente : clientes) {
+
+                LinkedList<Cliente> clientescopy = new LinkedList<>(clientes);
+                Collections.sort(clientescopy, new ClienteComparator(atriordena,ordena));
+                for (Cliente cliente : clientescopy) {
                     if (cliente.Telefono <= busca){
                         System.out.println(cliente.toString());
                     }
@@ -3541,8 +3619,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(clientes, new ClienteComparator(atriordena,ordena));
-                for (Cliente cliente : clientes) {
+
+                LinkedList<Cliente> clientescopy = new LinkedList<>(clientes);
+                Collections.sort(clientescopy, new ClienteComparator(atriordena,ordena));
+                for (Cliente cliente : clientescopy) {
                     if ((cliente.Telefono >= busca1) && (cliente.Telefono <= busca2)) {
                         System.out.println(cliente.toString());
                     }
@@ -3581,8 +3661,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(clientes, new ClienteComparator(atriordena,ordena));
-                for (Cliente cliente : clientes) {
+
+                LinkedList<Cliente> clientescopy = new LinkedList<>(clientes);
+                Collections.sort(clientescopy, new ClienteComparator(atriordena,ordena));
+                for (Cliente cliente : clientescopy) {
                     if (cliente.CodigoPostal >= busca){
                         System.out.println(cliente.toString());
                     }
@@ -3602,8 +3684,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(clientes, new ClienteComparator(atriordena,ordena));
-                for (Cliente cliente : clientes) {
+
+                LinkedList<Cliente> clientescopy = new LinkedList<>(clientes);
+                Collections.sort(clientescopy, new ClienteComparator(atriordena,ordena));
+                for (Cliente cliente : clientescopy) {
                     if (cliente.CodigoPostal <= busca){
                         System.out.println(cliente.toString());
                     }
@@ -3623,8 +3707,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(clientes, new ClienteComparator(atriordena,ordena));
-                for (Cliente cliente : clientes) {
+
+                LinkedList<Cliente> clientescopy = new LinkedList<>(clientes);
+                Collections.sort(clientescopy, new ClienteComparator(atriordena,ordena));
+                for (Cliente cliente : clientescopy) {
                     if ((cliente.CodigoPostal >= busca1) && (cliente.CodigoPostal <= busca2)) {
                         System.out.println(cliente.toString());
                     }
@@ -3677,8 +3763,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(contratorepartidores, new ContratoRepartidorComparator(atriordena,ordena));
-                for (ContratoRepartidor contratorepartidor : contratorepartidores) {
+
+                LinkedList<ContratoRepartidor> contratoRepartidorescopy = new LinkedList<>(contratorepartidores);
+                Collections.sort(contratoRepartidorescopy, new ContratoRepartidorComparator(atriordena,ordena));
+                for (ContratoRepartidor contratorepartidor : contratoRepartidorescopy) {
                     if (contratorepartidor.numerocontrato >= busca){
                         System.out.println(contratorepartidor.toString());
                     }
@@ -3697,8 +3785,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(contratorepartidores, new ContratoRepartidorComparator(atriordena,ordena));
-                for (ContratoRepartidor contratorepartidor : contratorepartidores) {
+
+                LinkedList<ContratoRepartidor> contratoRepartidorescopy = new LinkedList<>(contratorepartidores);
+                Collections.sort(contratoRepartidorescopy, new ContratoRepartidorComparator(atriordena,ordena));
+                for (ContratoRepartidor contratorepartidor : contratoRepartidorescopy) {
                     if (contratorepartidor.numerocontrato <= busca){
                         System.out.println(contratorepartidor.toString());
                     }
@@ -3717,8 +3807,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(contratorepartidores, new ContratoRepartidorComparator(atriordena,ordena));
-                for (ContratoRepartidor contratorepartidor : contratorepartidores) {
+
+                LinkedList<ContratoRepartidor> contratoRepartidorescopy = new LinkedList<>(contratorepartidores);
+                Collections.sort(contratoRepartidorescopy, new ContratoRepartidorComparator(atriordena,ordena));
+                for (ContratoRepartidor contratorepartidor : contratoRepartidorescopy) {
                     if ((contratorepartidor.numerocontrato >= busca1) && (contratorepartidor.numerocontrato <= busca2)){
                         System.out.println(contratorepartidor.toString());
                     }
@@ -3756,8 +3848,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(contratorepartidores, new ContratoRepartidorComparator(atriordena,ordena));
-                for (ContratoRepartidor contratorepartidor : contratorepartidores) {
+
+                LinkedList<ContratoRepartidor> contratoRepartidorescopy = new LinkedList<>(contratorepartidores);
+                Collections.sort(contratoRepartidorescopy, new ContratoRepartidorComparator(atriordena,ordena));
+                for (ContratoRepartidor contratorepartidor : contratoRepartidorescopy) {
                     if (contratorepartidor.salario >= busca){
                         System.out.println(contratorepartidor.toString());
                     }
@@ -3776,8 +3870,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(contratorepartidores, new ContratoRepartidorComparator(atriordena,ordena));
-                for (ContratoRepartidor contratorepartidor : contratorepartidores) {
+
+                LinkedList<ContratoRepartidor> contratoRepartidorescopy = new LinkedList<>(contratorepartidores);
+                Collections.sort(contratoRepartidorescopy, new ContratoRepartidorComparator(atriordena,ordena));
+                for (ContratoRepartidor contratorepartidor : contratoRepartidorescopy) {
                     if (contratorepartidor.salario <= busca){
                         System.out.println(contratorepartidor.toString());
                     }
@@ -3796,8 +3892,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(contratorepartidores, new ContratoRepartidorComparator(atriordena,ordena));
-                for (ContratoRepartidor contratorepartidor : contratorepartidores) {
+
+                LinkedList<ContratoRepartidor> contratoRepartidorescopy = new LinkedList<>(contratorepartidores);
+                Collections.sort(contratoRepartidorescopy, new ContratoRepartidorComparator(atriordena,ordena));
+                for (ContratoRepartidor contratorepartidor : contratoRepartidorescopy) {
                     if ((contratorepartidor.salario >= busca1) && (contratorepartidor.salario <= busca2)){
                         System.out.println(contratorepartidor.toString());
                     }
@@ -3902,8 +4000,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
-                for (Entrega entrega : entregas) {
+
+                LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
+                Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregascopy) {
                     if (entrega.codEntrega >= busca){
                         System.out.println(entrega.toString());
                     }
@@ -3922,8 +4022,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
-                for (Entrega entrega : entregas) {
+
+                LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
+                Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregascopy) {
                     if (entrega.codEntrega <= busca){
                         System.out.println(entrega.toString());
                     }
@@ -3942,8 +4044,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
-                for (Entrega entrega : entregas) {
+
+                LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
+                Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregascopy) {
                     if ((entrega.codEntrega >= busca1) && (entrega.codEntrega <= busca2)){
                         System.out.println(entrega.toString());
                     }
@@ -3981,8 +4085,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
-                for (Entrega entrega : entregas) {
+
+                LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
+                Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregascopy) {
                     if (entrega.peso >= busca){
                         System.out.println(entrega.toString());
                     }
@@ -4001,8 +4107,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
-                for (Entrega entrega : entregas) {
+
+                LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
+                Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregascopy) {
                     if (entrega.peso <= busca){
                         System.out.println(entrega.toString());
                     }
@@ -4021,8 +4129,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
-                for (Entrega entrega : entregas) {
+
+                LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
+                Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregascopy) {
                     if ((entrega.peso >= busca1) && (entrega.peso <= busca2)){
                         System.out.println(entrega.toString());
                     }
@@ -4059,8 +4169,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
-                for (Entrega entrega : entregas) {
+
+                LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
+                Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregascopy) {
                     if (entrega.dimenciones >= busca){
                         System.out.println(entrega.toString());
                     }
@@ -4079,8 +4191,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
-                for (Entrega entrega : entregas) {
+
+                LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
+                Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregascopy) {
                     if (entrega.dimenciones <= busca){
                         System.out.println(entrega.toString());
                     }
@@ -4099,8 +4213,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
-                for (Entrega entrega : entregas) {
+
+                LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
+                Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregascopy) {
                     if ((entrega.dimenciones >= busca1) && (entrega.dimenciones <= busca2)){
                         System.out.println(entrega.toString());
                     }
@@ -4138,8 +4254,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
-                for (Entrega entrega : entregas) {
+
+                LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
+                Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregascopy) {
                     if (entrega.costo >= busca){
                         System.out.println(entrega.toString());
                     }
@@ -4158,8 +4276,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
-                for (Entrega entrega : entregas) {
+
+                LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
+                Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregascopy) {
                     if (entrega.costo <= busca){
                         System.out.println(entrega.toString());
                     }
@@ -4178,8 +4298,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
-                for (Entrega entrega : entregas) {
+
+                LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
+                Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregascopy) {
                     if ((entrega.costo >= busca1) && (entrega.costo <= busca2)) {
                         System.out.println(entrega.toString());
                     }
