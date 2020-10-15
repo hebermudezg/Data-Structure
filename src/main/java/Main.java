@@ -1741,9 +1741,7 @@ public class Main {
             System.out.println("3. Dimenciones");
             System.out.println("4. Costo");
             System.out.println("5. Estado de entrega");
-            System.out.println("6" +
-                    "" +
-                    ". Mostrar todas las entregas");
+            System.out.println("6 Mostrar todas las entregas");
             System.out.println("0. Cancelar");
             String option1;
             option1 = input.next();
@@ -1756,6 +1754,8 @@ public class Main {
             } else if (option1.equals("4")) {
                 BusquedaEntrega(option1);
             } else if (option1.equals("5")) {
+                BusquedaEntrega(option1);
+            } else if (option1.equals("6")) {
                 BusquedaEntrega(option1);
             } else {
                 return;
@@ -1796,6 +1796,7 @@ public class Main {
             System.out.println("2. salario ");
             System.out.println("3. fecha de inicio");
             System.out.println("4. fecha de fin");
+            System.out.println("5. mostrar todo");
             System.out.println("0. Cancelar");
             String option1;
             option1 = input.next();
@@ -1928,6 +1929,8 @@ public class Main {
 
 
     // BUSQUEDAS ****************************************************************************
+
+    // Busqueda Sucursales
     public static void BusquedaEmpresa(String option1){
         // NIt
         if (option1.equals("1")){
@@ -2038,7 +2041,10 @@ public class Main {
             if (sucursales.size() == 0){
                 System.out.println("No hay empresas registradas en el momento");
             }else{
-                System.out.println(sucursales.toString());
+                for (int i = 0; i < empresas.size(); i++) {
+                    System.out.println("Elemento: " + (i+1));
+                    System.out.println(empresas.get(i).toString());
+                }
             }
         }
 
@@ -2198,7 +2204,7 @@ public class Main {
             }
 
            // Cantidad de Empleados
-        } else if (option1.equals("3")) {
+        } else if (option1.equals("4")) {
             System.out.println("Escoja una opcion:");
             System.out.println("1. Valor exacto");
             System.out.println("2. Valor mínimo");
@@ -2206,10 +2212,19 @@ public class Main {
             System.out.println("4. Rango");
             String option2 = input.next();
             if (option2.equals("1")) {
-                System.out.println("Ingrese el valor exacto"); // valor exacto
+                System.out.println("Ingrese el valor exacto"); // valor exacto (tambien se debe poder ordenar)
                 input.nextLine();
                 int busca = input.nextInt();
-                for (Sucursal sucursal : sucursales) {
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de sucursal");
+                //System.out.println("2. Cantidad de empleados");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                LinkedList<Sucursal> sucursalescopy = new LinkedList<>(sucursales);
+                for (Sucursal sucursal : sucursalescopy) {
                     if (sucursal.cantEmpleados == busca){
                         //imprimir empresa
                         System.out.println(sucursal.toString());
@@ -2283,6 +2298,15 @@ public class Main {
             }
 
 
+        } else if (option1.equals("5")){
+            if(sucursales.size()==0){
+                System.out.println("No hay registros");
+            }else{
+                for (int i = 0; i < sucursales.size(); i++) {
+                    System.out.println("Elemento: " + (i +1));
+                    System.out.println(sucursales.get(i).toString());
+                }
+            }
         }
 
     }
@@ -2450,8 +2474,7 @@ public class Main {
                 input.nextLine();
                 int busca = input.nextInt();
                 for (Especialidad especialidad : especialidades) {
-                    if (especialidad.codigoEspecialidad == busca){
-                        //imprimir empresa
+                    if (especialidad.lineaAtencion == busca){
                         System.out.println(especialidad.toString());
                     }
                 }
@@ -2523,10 +2546,13 @@ public class Main {
             }
 
         } else if (option1.equals("5")) { //mostrar todo
-            if (sucursales.size() == 0){
+            if (especialidades.size() == 0){
                 System.out.println("No hay elementos en la lista");
             }else{
-                System.out.println(sucursales.toString());
+                for (int i = 0; i < especialidades.size(); i++) {
+                    System.out.println("Elemento: " + (i+1));
+                    System.out.println(especialidades.get(i).toString());
+                }
             }
         } else {
             return;
@@ -2536,7 +2562,6 @@ public class Main {
 
     // Busqueda Contrato arriendo
     public static void BusquedaContratoArriendo(String option1){
-        // codigo
         if (option1.equals("1")){
             System.out.println("Escoja una opcion:");
             System.out.println("1. Valor exacto");
@@ -2560,21 +2585,24 @@ public class Main {
                 input.nextLine();
                 int busca = input.nextInt();
                 System.out.println("Por cual atributo desea ordenar");
-                System.out.println("1. Código");
+                System.out.println("1. Número de contrato");
                 System.out.println("2. Canon");
                 String atriordena = input.next();
                 System.out.println("De que manera desea ordenar");
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-
                 LinkedList<ContratoArriendo> contratoArriendoscopy = new LinkedList<>(contratoArriendos);
                 Collections.sort(contratoArriendoscopy, new ContratoDeArriendoComparator(atriordena,ordena));
+                int i = 0;
                 for (ContratoArriendo contratoarriendo : contratoArriendoscopy) {
                     if (contratoarriendo.numContrato >= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(contratoarriendo.toString());
+                        i++;
                     }
                 }
+
 
 
             } else if (option2.equals("3")){  // valor maximo
@@ -2582,7 +2610,7 @@ public class Main {
                 input.nextLine();
                 int busca = input.nextInt();
                 System.out.println("Por cual atributo desea ordenar");
-                System.out.println("1. Código");
+                System.out.println("1. Número de contrato");
                 System.out.println("2. Canon");
                 String atriordena = input.next();
                 System.out.println("De que manera desea ordenar");
@@ -2604,7 +2632,7 @@ public class Main {
                 int busca1 = input.nextInt();
                 int busca2 = input.nextInt();
                 System.out.println("Por cual atributo desea ordenar");
-                System.out.println("1. Código");
+                System.out.println("1. Número de contrato");
                 System.out.println("2. Canon");
                 String atriordena = input.next();
                 System.out.println("De que manera desea ordenar");
@@ -2653,7 +2681,7 @@ public class Main {
             }
 
             // fecha fin
-        } else if (option1.equals("3")){ //enfoque
+        } else if (option1.equals("3")){
             System.out.println("Escoja una opcion:");
             System.out.println("1. Valor exacto");
             System.out.println("2. Valor sin considerar mayúsculas");
@@ -2695,9 +2723,18 @@ public class Main {
                 System.out.println("Ingrese el valor exacto"); // valor exacto
                 input.nextLine();
                 int busca = input.nextInt();
-                for (ContratoArriendo contratoarriendo : contratoArriendos) {
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Número de contrato");
+                System.out.println("2. Canon");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                LinkedList<ContratoArriendo> contratoArriendoscopy = new LinkedList<>(contratoArriendos);
+                Collections.sort(contratoArriendoscopy, new ContratoDeArriendoComparator(atriordena,ordena));
+                for (ContratoArriendo contratoarriendo : contratoArriendoscopy) {
                     if (contratoarriendo.canon == busca){
-                        //imprimir empresa
                         System.out.println(contratoarriendo.toString());
                     }
                 }
@@ -2707,7 +2744,7 @@ public class Main {
                 input.nextLine();
                 int busca = input.nextInt();
                 System.out.println("Por cual atributo desea ordenar");
-                System.out.println("1. Código");
+                System.out.println("1. Número de contrato");
                 System.out.println("2. Canon");
                 String atriordena = input.next();
                 System.out.println("De que manera desea ordenar");
@@ -2729,7 +2766,7 @@ public class Main {
                 input.nextLine();
                 int busca = input.nextInt();
                 System.out.println("Por cual atributo desea ordenar");
-                System.out.println("1. Código");
+                System.out.println("1. Número de contrato");
                 System.out.println("2. Canon");
                 String atriordena = input.next();
                 System.out.println("De que manera desea ordenar");
@@ -2751,7 +2788,7 @@ public class Main {
                 int busca1 = input.nextInt();
                 int busca2 = input.nextInt();
                 System.out.println("Por cual atributo desea ordenar");
-                System.out.println("1. Código");
+                System.out.println("1. Número de contrato");
                 System.out.println("2. Canon");
                 String atriordena = input.next();
                 System.out.println("De que manera desea ordenar");
@@ -2772,7 +2809,10 @@ public class Main {
             if (contratoArriendos.size()==0){
                 System.out.println("La lista está vacía");
             }else {
-                System.out.println(contratoArriendos.toString());
+                for (int i = 0; i < contratoArriendos.size(); i++) {
+                    System.out.println("Elemento: " + (i+1));
+                    System.out.println(contratoArriendos.get(i).toString());
+                }
             }
         }
 
@@ -2843,7 +2883,7 @@ public class Main {
                     }
                 }
 
-            } else if (option2.equals("4")){ // rango
+            } else if (option2.equals("4")){
                 System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
                 input.nextLine();
                 int busca1 = input.nextInt();
@@ -2893,7 +2933,7 @@ public class Main {
                 }
             }
 
-
+        // celular
         } else if (option1.equals("4")) {
             System.out.println("Escoja una opcion:");
             System.out.println("1. Valor exacto");
@@ -2978,7 +3018,7 @@ public class Main {
                 }
             }
 
-            // Edadd
+            // Edad
         } else if (option1.equals("3")) {
             System.out.println("Escoja una opcion:");
             System.out.println("1. Valor exacto");
@@ -2990,7 +3030,17 @@ public class Main {
                 System.out.println("Ingrese el valor exacto"); // valor exacto
                 input.nextLine();
                 int busca = input.nextInt();
-                for (Repartidor repartidor : repartidores) {
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Cedula");
+                //System.out.println("2. Edad");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
+                Collections.sort(repartidorescopy, new RepartidorComparator(atriordena,ordena));
+                for (Repartidor repartidor : repartidorescopy) {
                     if (repartidor.Edad == busca){
                         //imprimir empresa
                         System.out.println(repartidor.toString());
@@ -3063,91 +3113,7 @@ public class Main {
                 }
             }
 
-        // numero de celular
-
-        } else if (option1.equals("4")) {
-            System.out.println("Escoja una opcion:");
-            System.out.println("1. Valor exacto");
-            System.out.println("2. Valor mínimo");
-            System.out.println("3. Valor máximo");
-            System.out.println("4. Rango");
-            String option2 = input.next();
-            if (option2.equals("1")) {
-                System.out.println("Ingrese el valor exacto"); // valor exacto
-                input.nextLine();
-                int busca = input.nextInt();
-                for (Repartidor repartidor : repartidores) {
-                    if (repartidor.Num_Celular == busca) {
-                        //imprimir empresa
-                        System.out.println(repartidor.toString());
-                    }
-                }
-
-            } else if (option2.equals("2")) { // valor minimo
-                System.out.println("Ingrese el valor mínimo");
-                input.nextLine();
-                int busca = input.nextInt();
-                System.out.println("Por cual atributo desea ordenar");
-                System.out.println("1. Cedula");
-                System.out.println("2. Edad");
-                String atriordena = input.next();
-                System.out.println("De que manera desea ordenar");
-                System.out.println("1. ascendente");
-                System.out.println("2. descendente");
-                String ordena = input.next();
-
-                LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
-                Collections.sort(repartidorescopy, new RepartidorComparator(atriordena, ordena));
-                for (Repartidor repartidor : repartidorescopy) {
-                    if (repartidor.Num_Celular >= busca) {
-                        System.out.println(repartidor.toString());
-                    }
-                }
-
-
-            } else if (option2.equals("3")) {  // valor maximo
-                System.out.println("Ingrese el valor máximo");
-                input.nextLine();
-                int busca = input.nextInt();
-                System.out.println("Por cual atributo desea ordenar");
-                System.out.println("1. Cedula");
-                System.out.println("2. Edad");
-                String atriordena = input.next();
-                System.out.println("De que manera desea ordenar");
-                System.out.println("1. ascendente");
-                System.out.println("2. descendente");
-                String ordena = input.next();
-
-                LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
-                Collections.sort(repartidorescopy, new RepartidorComparator(atriordena, ordena));
-                for (Repartidor repartidor : repartidorescopy) {
-                    if (repartidor.Num_Celular <= busca) {
-                        System.out.println(repartidor.toString());
-                    }
-                }
-
-            } else if (option2.equals("4")) { // rango
-                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
-                input.nextLine();
-                int busca1 = input.nextInt();
-                int busca2 = input.nextInt();
-                System.out.println("Por cual atributo desea ordenar");
-                System.out.println("1. Cedula");
-                System.out.println("2. Edad");
-                String atriordena = input.next();
-                System.out.println("De que manera desea ordenar");
-                System.out.println("1. ascendente");
-                System.out.println("2. descendente");
-                String ordena = input.next();
-
-                LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
-                Collections.sort(repartidorescopy, new RepartidorComparator(atriordena, ordena));
-                for (Repartidor repartidor : repartidorescopy) {
-                    if ((repartidor.Num_Celular >= busca1) && (repartidor.Num_Celular <= busca2)) {
-                        System.out.println(repartidor.toString());
-                    }
-                }
-            }
+        // licencia
 
         } else if (option1.equals("5")) { // tipo de licencia
             System.out.println("Escoja una opcion:");
@@ -3177,11 +3143,15 @@ public class Main {
 
             }
 
-        } else if (option1.equals("5")) {
+        } else if (option1.equals("6")) {
             if (repartidores.size() == 0){
                 System.out.println("No hay registros");
             }else{
-                System.out.println(repartidores.toString());
+                for (int i = 0; i < repartidores.size(); i++) {
+                    System.out.println("Elemento: " + (i+1));
+                    System.out.println(repartidores.get(i).toString());
+                }
+
             }
         }
 
@@ -3286,7 +3256,16 @@ public class Main {
                 System.out.println("Ingrese el valor exacto"); // valor exacto
                 input.nextLine();
                 int busca = input.nextInt();
-                for (TipoDeEntrega tipodeentrega : tipoDeEntregas) {
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo "); //solo podre ordennar poe l codigo no por el mismo tiempo de entrega
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                LinkedList<TipoDeEntrega> tipoDeEntregascopy = new LinkedList<>(tipoDeEntregas);
+                Collections.sort(tipoDeEntregascopy, new TipoDeEntregaComparator(atriordena,ordena));
+                for (TipoDeEntrega tipodeentrega : tipoDeEntregascopy) {
                     if (tipodeentrega.Tiempo_Estimado == busca){
                         System.out.println(tipodeentrega.toString());
                     }
@@ -3384,6 +3363,15 @@ public class Main {
                     }
                 }
 
+            }
+        } else if (option1.equals("4")) {
+            if (tipoDeEntregas.size()==0){
+                System.out.println("No hay elementos");
+            }else {
+                for (int i = 0; i < tipoDeEntregas.size(); i++) {
+                    System.out.println("Elemento: "+ (i+1));
+                    System.out.println(tipoDeEntregas.get(i).toString());
+                }
             }
         }
     }
@@ -3641,9 +3629,21 @@ public class Main {
                 System.out.println("Ingrese el valor exacto"); // valor exacto
                 input.nextLine();
                 int busca = input.nextInt();
-                for (Cliente cliente : clientes) {
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Documento");
+                System.out.println("2. Telefono");
+               //System.out.println("3. Codigo postal");
+
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+
+                LinkedList<Cliente> clientescopy = new LinkedList<>(clientes);
+                Collections.sort(clientescopy, new ClienteComparator(atriordena,ordena));
+                for (Cliente cliente : clientescopy) {
                     if (cliente.CodigoPostal == busca){
-                        //imprimir empresa
                         System.out.println(cliente.toString());
                     }
                 }
@@ -3829,7 +3829,18 @@ public class Main {
                 System.out.println("Ingrese el valor exacto"); // valor exacto
                 input.nextLine();
                 int busca = input.nextInt();
-                for (ContratoRepartidor contratorepartidor : contratorepartidores) {
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Numero");
+                //System.out.println("2. Salario");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+
+                LinkedList<ContratoRepartidor> contratoRepartidorescopy = new LinkedList<>(contratorepartidores);
+                Collections.sort(contratoRepartidorescopy, new ContratoRepartidorComparator(atriordena,ordena));
+                for (ContratoRepartidor contratorepartidor : contratoRepartidorescopy) {
                     if (contratorepartidor.salario == busca){
                         //imprimir empresa
                         System.out.println(contratorepartidor.toString());
@@ -3934,7 +3945,7 @@ public class Main {
             }
 
             // fecha fin
-        } else if (option1.equals("3")) {
+        } else if (option1.equals("4")) {
             System.out.println("Escoja una opcion:");
             System.out.println("1. Valor exacto");
             System.out.println("2. Valor sin considerar mayúsculas");
@@ -3964,6 +3975,15 @@ public class Main {
                 return;
             }
 
+        } else if (option1.equals("5")) {
+            if (contratorepartidores.size()==0){
+                System.out.println("No hay elementos registrados");
+            }else{
+                for (int i = 0; i < contratorepartidores.size(); i++) {
+                    System.out.println("Elemento: " + (i+1));
+                    System.out.println(contratorepartidores.get(i).toString());
+                }
+            }
         }
 
     }
@@ -3993,8 +4013,10 @@ public class Main {
                 input.nextLine();
                 int busca = input.nextInt();
                 System.out.println("Por cual atributo desea ordenar");
-                System.out.println("1. Codigo de especialidad");
-                System.out.println("2. Linea de atencion");
+                System.out.println("1. Codigo de entrega");
+                System.out.println("2. Peso");
+                System.out.println("3. Dimensiones");
+                System.out.println("4. Costo");
                 String atriordena = input.next();
                 System.out.println("De que manera desea ordenar");
                 System.out.println("1. ascendente");
@@ -4015,8 +4037,10 @@ public class Main {
                 input.nextLine();
                 int busca = input.nextInt();
                 System.out.println("Por cual atributo desea ordenar");
-                System.out.println("1. Codigo de especialidad");
-                System.out.println("2. Linea de atencion");
+                System.out.println("1. Codigo de entrega");
+                System.out.println("2. Peso");
+                System.out.println("3. Dimensiones");
+                System.out.println("4. Costo");
                 String atriordena = input.next();
                 System.out.println("De que manera desea ordenar");
                 System.out.println("1. ascendente");
@@ -4037,8 +4061,10 @@ public class Main {
                 int busca1 = input.nextInt();
                 int busca2 = input.nextInt();
                 System.out.println("Por cual atributo desea ordenar");
-                System.out.println("1. Codigo de especialidad");
-                System.out.println("2. Linea de atencion");
+                System.out.println("1. Codigo de entrega");
+                System.out.println("2. Peso");
+                System.out.println("3. Dimensiones");
+                System.out.println("4. Costo");
                 String atriordena = input.next();
                 System.out.println("De que manera desea ordenar");
                 System.out.println("1. ascendente");
@@ -4067,7 +4093,20 @@ public class Main {
                 System.out.println("Ingrese el valor exacto"); // valor exacto
                 input.nextLine();
                 int busca = input.nextInt();
-                for (Entrega entrega : entregas) {
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de entrega");
+                //System.out.println("2. Peso");
+                System.out.println("3. Dimensiones");
+                System.out.println("4. Costo");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+
+                LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
+                Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregascopy) {
                     if (entrega.peso == busca){
                         System.out.println(entrega.toString());
                     }
@@ -4078,8 +4117,10 @@ public class Main {
                 input.nextLine();
                 int busca = input.nextInt();
                 System.out.println("Por cual atributo desea ordenar");
-                System.out.println("1. Codigo de especialidad");
-                System.out.println("2. Linea de atencion");
+                System.out.println("1. Codigo de entrega");
+                System.out.println("2. Peso");
+                System.out.println("3. Dimensiones");
+                System.out.println("4. Costo");
                 String atriordena = input.next();
                 System.out.println("De que manera desea ordenar");
                 System.out.println("1. ascendente");
@@ -4100,8 +4141,10 @@ public class Main {
                 input.nextLine();
                 int busca = input.nextInt();
                 System.out.println("Por cual atributo desea ordenar");
-                System.out.println("1. Codigo de especialidad");
-                System.out.println("2. Linea de atencion");
+                System.out.println("1. Codigo de entrega");
+                System.out.println("2. Peso");
+                System.out.println("3. Dimensiones");
+                System.out.println("4. Costo");
                 String atriordena = input.next();
                 System.out.println("De que manera desea ordenar");
                 System.out.println("1. ascendente");
@@ -4122,8 +4165,10 @@ public class Main {
                 int busca1 = input.nextInt();
                 int busca2 = input.nextInt();
                 System.out.println("Por cual atributo desea ordenar");
-                System.out.println("1. Codigo de especialidad");
-                System.out.println("2. Linea de atencion");
+                System.out.println("1. Codigo de entrega");
+                System.out.println("2. Peso");
+                System.out.println("3. Dimensiones");
+                System.out.println("4. Costo");
                 String atriordena = input.next();
                 System.out.println("De que manera desea ordenar");
                 System.out.println("1. ascendente");
@@ -4151,7 +4196,20 @@ public class Main {
                 System.out.println("Ingrese el valor exacto"); // valor exacto
                 input.nextLine();
                 int busca = input.nextInt();
-                for (Entrega entrega : entregas) {
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de entrega");
+                System.out.println("2. Peso");
+                //System.out.println("3. Dimensiones");
+                System.out.println("4. Costo");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+
+                LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
+                Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregascopy) {
                     if (entrega.dimenciones == busca){
                         System.out.println(entrega.toString());
                     }
@@ -4162,8 +4220,10 @@ public class Main {
                 input.nextLine();
                 int busca = input.nextInt();
                 System.out.println("Por cual atributo desea ordenar");
-                System.out.println("1. Codigo de especialidad");
-                System.out.println("2. Linea de atencion");
+                System.out.println("1. Codigo de entrega");
+                System.out.println("2. Peso");
+                System.out.println("3. Dimensiones");
+                System.out.println("4. Costo");
                 String atriordena = input.next();
                 System.out.println("De que manera desea ordenar");
                 System.out.println("1. ascendente");
@@ -4184,8 +4244,10 @@ public class Main {
                 input.nextLine();
                 int busca = input.nextInt();
                 System.out.println("Por cual atributo desea ordenar");
-                System.out.println("1. Codigo de especialidad");
-                System.out.println("2. Linea de atencion");
+                System.out.println("1. Codigo de entrega");
+                System.out.println("2. Peso");
+                System.out.println("3. Dimensiones");
+                System.out.println("4. Costo");
                 String atriordena = input.next();
                 System.out.println("De que manera desea ordenar");
                 System.out.println("1. ascendente");
@@ -4206,8 +4268,10 @@ public class Main {
                 int busca1 = input.nextInt();
                 int busca2 = input.nextInt();
                 System.out.println("Por cual atributo desea ordenar");
-                System.out.println("1. Codigo de especialidad");
-                System.out.println("2. Linea de atencion");
+                System.out.println("1. Codigo de entrega");
+                System.out.println("2. Peso");
+                System.out.println("3. Dimensiones");
+                System.out.println("4. Costo");
                 String atriordena = input.next();
                 System.out.println("De que manera desea ordenar");
                 System.out.println("1. ascendente");
@@ -4235,7 +4299,20 @@ public class Main {
                 System.out.println("Ingrese el valor exacto"); // valor exacto
                 input.nextLine();
                 int busca = input.nextInt();
-                for (Entrega entrega : entregas) {
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de entrega");
+                System.out.println("2. Peso");
+                System.out.println("3. Dimensiones");
+               //System.out.println("4. Costo");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+
+                LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
+                Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregascopy) {
                     if (entrega.costo == busca){
                         //imprimir empresa
                         System.out.println(entrega.toString());
@@ -4247,8 +4324,10 @@ public class Main {
                 input.nextLine();
                 int busca = input.nextInt();
                 System.out.println("Por cual atributo desea ordenar");
-                System.out.println("1. Codigo de especialidad");
-                System.out.println("2. Linea de atencion");
+                System.out.println("1. Codigo de entrega");
+                System.out.println("2. Peso");
+                System.out.println("3. Dimensiones");
+                System.out.println("4. Costo");
                 String atriordena = input.next();
                 System.out.println("De que manera desea ordenar");
                 System.out.println("1. ascendente");
@@ -4269,8 +4348,10 @@ public class Main {
                 input.nextLine();
                 int busca = input.nextInt();
                 System.out.println("Por cual atributo desea ordenar");
-                System.out.println("1. Codigo de especialidad");
-                System.out.println("2. Linea de atencion");
+                System.out.println("1. Codigo de entrega");
+                System.out.println("2. Peso");
+                System.out.println("3. Dimensiones");
+                System.out.println("4. Costo");
                 String atriordena = input.next();
                 System.out.println("De que manera desea ordenar");
                 System.out.println("1. ascendente");
@@ -4291,8 +4372,10 @@ public class Main {
                 int busca1 = input.nextInt();
                 int busca2 = input.nextInt();
                 System.out.println("Por cual atributo desea ordenar");
-                System.out.println("1. Codigo de especialidad");
-                System.out.println("2. Linea de atencion");
+                System.out.println("1. Codigo de entrega");
+                System.out.println("2. Peso");
+                System.out.println("3. Dimensiones");
+                System.out.println("4. Costo");
                 String atriordena = input.next();
                 System.out.println("De que manera desea ordenar");
                 System.out.println("1. ascendente");
@@ -4342,7 +4425,10 @@ public class Main {
             if (entregas.size()==0){
                 System.out.println("No hay registros");
             }else{
-                System.out.println(entregas.toString());
+                for (int i = 0; i < entregas.size(); i++) {
+                    System.out.println("Elemento: "+(i+1));
+                    System.out.println(entregas.get(i).toString());
+                }
             }
         } else{
             return;

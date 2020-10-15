@@ -18,13 +18,18 @@ public class EntregaComparator implements Comparator<Entrega> {
             resul = o2.codEntrega - o1.codEntrega;     // descendente
 
         } else if (criterio.equals("2") && ordendir.equals("1")){// cant empleados
-            resul = o1.dimenciones - o2.dimenciones;     // acendente
+            resul = (int) (o1.peso - o2.peso);     // acendente
         } else if (criterio.equals("2") && ordendir.equals("2")) { //cant empleados
-            resul = o2.dimenciones - o1.dimenciones;     // descendente
+            resul = (int) (o2.peso - o1.peso);     // descendente
 
         } else if (criterio.equals("3") && ordendir.equals("1")){// cant empleados
-            resul = (int) (o1.costo - o2.costo);     // acendente
+            resul = o1.dimenciones - o2.dimenciones;     // acendente
         } else if (criterio.equals("3") && ordendir.equals("2")) { //cant empleados
+            resul = o2.dimenciones - o1.dimenciones;     // descendente
+
+        } else if (criterio.equals("4") && ordendir.equals("1")){// cant empleados
+            resul = (int) (o1.costo - o2.costo);     // acendente
+        } else if (criterio.equals("4") && ordendir.equals("2")) { //cant empleados
             resul = (int) (o2.costo - o1.costo);     // descendente
         }
 
