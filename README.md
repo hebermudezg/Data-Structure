@@ -1,11 +1,20 @@
 # Data-Structure
 
+**Para ingresar**
+*correo:admin@
+
+*documento:1
+
+*contraseña:123
+
+*nombre:admin
+
 In this repository, a java application is created to put into practice the knowledge acquired in the data structure courses at the National University of Colombia-Medellín.
 
 ## Integrantes
 * Heber Esteban Bermudez Gonzalez  hebermudezg@unal.edu.co
 * David Duque Calle daduqueca@unal.edu.co
-* intgrante
+* Juan David Guzman  judguzmanmo@unal.edu.co
 
 
 ## Problema
