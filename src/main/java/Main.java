@@ -2046,6 +2046,18 @@ public class Main {
                     System.out.println(empresas.get(i).toString());
                 }
             }
+            System.out.println("Que desea hacer ? ");
+            System.out.println("1. Editar ");
+            System.out.println("2. Eliminar ");
+            System.out.println("0. Cancelar ");
+            String n1 = input.next();
+            if (n1.equals("1")){
+                EEmpresa();
+            }else if  (n1.equals("2")){
+                ELEmpresa();
+            }else{
+                return;
+            }
         }
 
     }
@@ -2325,6 +2337,20 @@ public class Main {
                     System.out.println(sucursales.get(i).toString());
                 }
             }
+            System.out.println("Que desea hacer ? ");
+            System.out.println("1. Editar ");
+            System.out.println("2. Eliminar ");
+            System.out.println("0. Cancelar ");
+            String n1 = input.next();
+            if (n1.equals("1")){
+                ESucursal();
+            }else if  (n1.equals("2")){
+                ELSucursal();
+            }else{
+                return;
+            }
+
+
         }
 
     }
@@ -2590,6 +2616,20 @@ public class Main {
                     System.out.println(especialidades.get(i).toString());
                 }
             }
+            System.out.println("Que desea hacer ? ");
+            System.out.println("1. Editar ");
+            System.out.println("2. Eliminar ");
+            System.out.println("0. Cancelar ");
+            String n1 = input.next();
+            if (n1.equals("1")){
+                EEspecialidad();
+            }else if  (n1.equals("2")){
+                ELEspecialidad();
+            }else{
+                return;
+            }
+
+
         } else {
             return;
         }
@@ -2868,6 +2908,20 @@ public class Main {
                     System.out.println(contratoArriendos.get(i).toString());
                 }
             }
+
+            System.out.println("Que desea hacer ? ");
+            System.out.println("1. Editar ");
+            System.out.println("2. Eliminar ");
+            System.out.println("0. Cancelar ");
+            String n1 = input.next();
+            if (n1.equals("1")){
+                EContratoArriendo();
+            }else if  (n1.equals("2")){
+                ELContratoArriendo();
+            }else{
+                return;
+            }
+
         }
 
     }
@@ -3236,6 +3290,18 @@ public class Main {
                 }
 
             }
+            System.out.println("Que desea hacer ? ");
+            System.out.println("1. Editar ");
+            System.out.println("2. Eliminar ");
+            System.out.println("0. Cancelar ");
+            String n1 = input.next();
+            if (n1.equals("1")){
+                ERepartidor();
+            }else if  (n1.equals("2")){
+                ELRepartidor();
+            }else{
+                return;
+            }
         }
 
     }
@@ -3476,6 +3542,18 @@ public class Main {
                     System.out.println("Elemento: "+ (i+1));
                     System.out.println(tipoDeEntregas.get(i).toString());
                 }
+            }
+            System.out.println("Que desea hacer ? ");
+            System.out.println("1. Editar ");
+            System.out.println("2. Eliminar ");
+            System.out.println("0. Cancelar ");
+            String n1 = input.next();
+            if (n1.equals("1")){
+                ETipoEntrega();
+            }else if  (n1.equals("2")){
+                ELTipoEntrega();
+            }else{
+                return;
             }
         }
     }
@@ -3860,6 +3938,18 @@ public class Main {
                     System.out.println(clientes.get(i).toString());
                 }
             }
+            System.out.println("Que desea hacer ? ");
+            System.out.println("1. Editar ");
+            System.out.println("2. Eliminar ");
+            System.out.println("0. Cancelar ");
+            String n1 = input.next();
+            if (n1.equals("1")){
+                ECliente();
+            }else if  (n1.equals("2")){
+                ELCliente();
+            }else{
+                return;
+            }
 
         }else{
             return;
@@ -4140,6 +4230,19 @@ public class Main {
                     System.out.println(contratorepartidores.get(i).toString());
                 }
             }
+            System.out.println("Que desea hacer ? ");
+            System.out.println("1. Editar ");
+            System.out.println("2. Eliminar ");
+            System.out.println("0. Cancelar ");
+            String n1 = input.next();
+            if (n1.equals("1")){
+                EContratoRepartidores();
+            }else if  (n1.equals("2")){
+                ELContratoRepartidores();
+            }else{
+                return;
+            }
+
         }
 
     }
@@ -4629,6 +4732,19 @@ public class Main {
                     System.out.println(entregas.get(i).toString());
                 }
             }
+            System.out.println("Que desea hacer ? ");
+            System.out.println("1. Editar ");
+            System.out.println("2. Eliminar ");
+            System.out.println("0. Cancelar ");
+            String n1 = input.next();
+            if (n1.equals("1")){
+                EEntrega();
+            }else if  (n1.equals("2")){
+                ELEntrega();
+            }else{
+                return;
+            }
+
         } else{
             return;
         }
