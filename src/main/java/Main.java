@@ -2086,9 +2086,12 @@ public class Main {
 
                 LinkedList<Sucursal> sucursalescopy = new LinkedList<>(sucursales);
                 Collections.sort(sucursalescopy, new SucursalComparator(atriordena,ordena));
+                int i =0;
                 for (Sucursal sucursale : sucursalescopy) {
                     if (sucursale.codigoScursal >= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(sucursale.toString());
+                        i++;
                     }
                 }
 
@@ -2107,9 +2110,12 @@ public class Main {
                 String ordena = input.next();
                 LinkedList<Sucursal> sucursalescopy = new LinkedList<>(sucursales);
                 Collections.sort(sucursalescopy, new SucursalComparator(atriordena,ordena));
+                int i = 0;
                 for (Sucursal sucursale : sucursalescopy) {
                     if (sucursale.codigoScursal <= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(sucursale.toString());
+                        i++;
                     }
                 }
 
@@ -2129,9 +2135,12 @@ public class Main {
 
                 LinkedList<Sucursal> sucursalescopy = new LinkedList<>(sucursales);
                 Collections.sort(sucursalescopy, new SucursalComparator(atriordena,ordena));
+                int i =0;
                 for (Sucursal sucursale : sucursalescopy) {
                     if ((sucursale.codigoScursal >= busca1) && (sucursale.codigoScursal <= busca2)){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(sucursale.toString());
+                        i++;
                     }
                 }
             }
@@ -2246,9 +2255,12 @@ public class Main {
 
                 LinkedList<Sucursal> sucursalescopy = new LinkedList<>(sucursales);
                 Collections.sort(sucursalescopy, new SucursalComparator(atriordena,ordena));
+                int i =0;
                 for (Sucursal sucursale : sucursalescopy) {
                     if (sucursale.cantEmpleados >= busca){
+                        System.out.println("Elemento" + (i+1));
                         System.out.println(sucursale.toString());
+                        i++;
                     }
                 }
 
@@ -2268,9 +2280,12 @@ public class Main {
 
                 LinkedList<Sucursal> sucursalescopy = new LinkedList<>(sucursales);
                 Collections.sort(sucursalescopy, new SucursalComparator(atriordena,ordena));
+                int i = 0;
                 for (Sucursal sucursale : sucursalescopy) {
                     if (sucursale.cantEmpleados <= busca){
+                        System.out.println("Elemento" + (i+1));
                         System.out.println(sucursale.toString());
+                        i++;
                     }
                 }
 
@@ -2290,9 +2305,12 @@ public class Main {
 
                 LinkedList<Sucursal> sucursalescopy = new LinkedList<>(sucursales);
                 Collections.sort(sucursalescopy, new SucursalComparator(atriordena,ordena));
+                int i = 0;
                 for (Sucursal sucursale : sucursalescopy) {
                     if ((sucursale.cantEmpleados >= busca1) && (sucursale.cantEmpleados <= busca2)){
+                        System.out.println("Elemento" + (i+1));
                         System.out.println(sucursale.toString());
+                        i ++;
                     }
                 }
             }
@@ -2347,9 +2365,12 @@ public class Main {
 
                 LinkedList<Especialidad> especialidadescopy = new LinkedList<>(especialidades);
                 Collections.sort(especialidadescopy, new EspecialidadComparator(atriordena,ordena));
+                int i =0;
                 for (Especialidad especialidad : especialidadescopy) {
                     if (especialidad.codigoEspecialidad >= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(especialidad.toString());
+                        i++;
                     }
                 }
 
@@ -2369,9 +2390,12 @@ public class Main {
 
                 LinkedList<Especialidad> especialidadescopy = new LinkedList<>(especialidades);
                 Collections.sort(especialidadescopy, new EspecialidadComparator(atriordena,ordena));
+                int i = 0;
                 for (Especialidad especialidad : especialidadescopy) {
                     if (especialidad.codigoEspecialidad <= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(especialidad.toString());
+                        i++;
                     }
                 }
 
@@ -2391,9 +2415,12 @@ public class Main {
 
                 LinkedList<Especialidad> especialidadescopy = new LinkedList<>(especialidades);
                 Collections.sort(especialidadescopy, new EspecialidadComparator(atriordena,ordena));
+                int i =0;
                 for (Especialidad especialidad : especialidades) {
                     if ((especialidad.codigoEspecialidad >= busca1) && (especialidad.codigoEspecialidad <= busca2)){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(especialidad.toString());
+                        i++;
                     }
                 }
             }
@@ -2494,9 +2521,12 @@ public class Main {
 
                 LinkedList<Especialidad> especialidadescopy = new LinkedList<>(especialidades);
                 Collections.sort(especialidadescopy, new EspecialidadComparator(atriordena,ordena));
+                int i = 0;
                 for (Especialidad especialidad : especialidadescopy) {
                     if (especialidad.lineaAtencion >= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(especialidad.toString());
+                        i++;
                     }
                 }
 
@@ -2516,9 +2546,12 @@ public class Main {
 
                 LinkedList<Especialidad> especialidadescopy = new LinkedList<>(especialidades);
                 Collections.sort(especialidadescopy, new EspecialidadComparator(atriordena,ordena));
+                int i = 0;
                 for (Especialidad especialidad : especialidadescopy) {
                     if (especialidad.lineaAtencion <= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(especialidad.toString());
+                        i++;
                     }
                 }
 
@@ -2538,9 +2571,12 @@ public class Main {
 
                 LinkedList<Especialidad> especialidadescopy = new LinkedList<>(especialidades);
                 Collections.sort(especialidadescopy, new EspecialidadComparator(atriordena, ordena));
+                int i = 0;
                 for (Especialidad especialidad : especialidadescopy) {
                     if ((especialidad.lineaAtencion >= busca1) && (especialidad.lineaAtencion <= busca2)) {
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(especialidad.toString());
+                        i++;
                     }
                 }
             }
@@ -2620,9 +2656,12 @@ public class Main {
 
                 LinkedList<ContratoArriendo> contratoArriendoscopy = new LinkedList<>(contratoArriendos);
                 Collections.sort(contratoArriendoscopy, new ContratoDeArriendoComparator(atriordena,ordena));
+                int i = 0;
                 for (ContratoArriendo contratoarriendo : contratoArriendoscopy) {
                     if (contratoarriendo.numContrato <= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(contratoarriendo.toString());
+                        i++;
                     }
                 }
 
@@ -2642,9 +2681,12 @@ public class Main {
 
                 LinkedList<ContratoArriendo> contratoArriendoscopy = new LinkedList<>(contratoArriendos);
                 Collections.sort(contratoArriendoscopy, new ContratoDeArriendoComparator(atriordena,ordena));
+                int i = 0;
                 for (ContratoArriendo contratoarriendo : contratoArriendoscopy) {
                     if ((contratoarriendo.numContrato >= busca1) && (contratoarriendo.numContrato <= busca2)){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(contratoarriendo.toString());
+                        i++;
                     }
                 }
             }
@@ -2725,7 +2767,7 @@ public class Main {
                 int busca = input.nextInt();
                 System.out.println("Por cual atributo desea ordenar");
                 System.out.println("1. Número de contrato");
-                System.out.println("2. Canon");
+                //System.out.println("2. Canon");
                 String atriordena = input.next();
                 System.out.println("De que manera desea ordenar");
                 System.out.println("1. ascendente");
@@ -2733,9 +2775,12 @@ public class Main {
                 String ordena = input.next();
                 LinkedList<ContratoArriendo> contratoArriendoscopy = new LinkedList<>(contratoArriendos);
                 Collections.sort(contratoArriendoscopy, new ContratoDeArriendoComparator(atriordena,ordena));
+                int i = 0;
                 for (ContratoArriendo contratoarriendo : contratoArriendoscopy) {
                     if (contratoarriendo.canon == busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(contratoarriendo.toString());
+                        i++;
                     }
                 }
 
@@ -2754,9 +2799,12 @@ public class Main {
 
                 LinkedList<ContratoArriendo> contratoArriendoscopy = new LinkedList<>(contratoArriendos);
                 Collections.sort(contratoArriendoscopy, new ContratoDeArriendoComparator(atriordena,ordena));
+                int i = 0;
                 for (ContratoArriendo contratoarriendo : contratoArriendoscopy) {
                     if (contratoarriendo.canon >= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(contratoarriendo.toString());
+                        i++;
                     }
                 }
 
@@ -2776,9 +2824,12 @@ public class Main {
 
                 LinkedList<ContratoArriendo> contratoArriendoscopy = new LinkedList<>(contratoArriendos);
                 Collections.sort(contratoArriendoscopy, new ContratoDeArriendoComparator(atriordena,ordena));
+                int i =0;
                 for (ContratoArriendo contratoarriendo : contratoArriendoscopy) {
                     if (contratoarriendo.canon <= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(contratoarriendo.toString());
+                        i++;
                     }
                 }
 
@@ -2798,9 +2849,12 @@ public class Main {
 
                 LinkedList<ContratoArriendo> contratoArriendoscopy = new LinkedList<>(contratoArriendos);
                 Collections.sort(contratoArriendoscopy, new ContratoDeArriendoComparator(atriordena,ordena));
+                int i = 0;
                 for (ContratoArriendo contratoarriendo : contratoArriendoscopy) {
                     if ((contratoarriendo.canon >= busca1) && (contratoarriendo.canon <= busca2)) {
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(contratoarriendo.toString());
+                        i++;
                     }
                 }
             }
@@ -2855,9 +2909,12 @@ public class Main {
 
                 LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
                 Collections.sort(repartidorescopy, new RepartidorComparator(atriordena,ordena));
+                int i =0;
                 for (Repartidor repartidor : repartidorescopy) {
                     if (repartidor.Cedula >= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(repartidor.toString());
+                        i++;
                     }
                 }
 
@@ -2877,9 +2934,12 @@ public class Main {
 
                 LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
                 Collections.sort(repartidorescopy, new RepartidorComparator(atriordena,ordena));
+                int i = 0;
                 for (Repartidor repartidor : repartidorescopy) {
                     if (repartidor.Cedula <= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(repartidor.toString());
+                        i++;
                     }
                 }
 
@@ -2899,9 +2959,12 @@ public class Main {
 
                 LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
                 Collections.sort(repartidorescopy, new RepartidorComparator(atriordena,ordena));
+                int i = 0;
                 for (Repartidor repartidor : repartidorescopy) {
                     if ((repartidor.Cedula >= busca1) && (repartidor.Cedula <= busca2)){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(repartidor.toString());
+                        i++;
                     }
                 }
             }
@@ -2967,9 +3030,12 @@ public class Main {
 
                 LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
                 Collections.sort(repartidorescopy, new RepartidorComparator(atriordena,ordena));
+                int i = 0;
                 for (Repartidor repartidor : repartidorescopy) {
                     if (repartidor.Num_Celular >= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(repartidor.toString());
+                        i++;
                     }
                 }
 
@@ -2989,9 +3055,12 @@ public class Main {
 
                 LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
                 Collections.sort(repartidorescopy, new RepartidorComparator(atriordena,ordena));
+                int i =0;
                 for (Repartidor repartidor : repartidorescopy) {
                     if (repartidor.Num_Celular <= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(repartidor.toString());
+                        i++;
                     }
                 }
 
@@ -3011,9 +3080,12 @@ public class Main {
 
                 LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
                 Collections.sort(repartidorescopy, new RepartidorComparator(atriordena,ordena));
+                int i =0;
                 for (Repartidor repartidor : repartidorescopy) {
                     if ((repartidor.Num_Celular >= busca1) && (repartidor.Num_Celular <= busca2)) {
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(repartidor.toString());
+                        i++;
                     }
                 }
             }
@@ -3040,10 +3112,12 @@ public class Main {
                 String ordena = input.next();
                 LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
                 Collections.sort(repartidorescopy, new RepartidorComparator(atriordena,ordena));
+                int i =0;
                 for (Repartidor repartidor : repartidorescopy) {
                     if (repartidor.Edad == busca){
-                        //imprimir empresa
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(repartidor.toString());
+                        i++;
                     }
                 }
 
@@ -3062,9 +3136,12 @@ public class Main {
 
                 LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
                 Collections.sort(repartidorescopy, new RepartidorComparator(atriordena,ordena));
+                int i =0;
                 for (Repartidor repartidor : repartidorescopy) {
                     if (repartidor.Edad >= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(repartidor.toString());
+                        i++;
                     }
                 }
 
@@ -3084,9 +3161,12 @@ public class Main {
 
                 LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
                 Collections.sort(repartidorescopy, new RepartidorComparator(atriordena,ordena));
+                int i = 0;
                 for (Repartidor repartidor : repartidorescopy) {
                     if (repartidor.Edad <= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(repartidor.toString());
+                        i++;
                     }
                 }
 
@@ -3106,9 +3186,12 @@ public class Main {
 
                 LinkedList<Repartidor> repartidorescopy = new LinkedList<>(repartidores);
                 Collections.sort(repartidorescopy, new RepartidorComparator(atriordena,ordena));
+                int i = 0;
                 for (Repartidor repartidor : repartidorescopy) {
                     if ((repartidor.Edad >= busca1) && (repartidor.Edad <= busca2)) {
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(repartidor.toString());
+                        i++;
                     }
                 }
             }
@@ -3193,9 +3276,12 @@ public class Main {
 
                 LinkedList<TipoDeEntrega> tipoDeEntregascopy = new LinkedList<>(tipoDeEntregas);
                 Collections.sort(tipoDeEntregascopy, new TipoDeEntregaComparator(atriordena,ordena));
+                int i = 0;
                 for (TipoDeEntrega tipodeentrega : tipoDeEntregascopy) {
                     if (tipodeentrega.Codigo >= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(tipodeentrega.toString());
+                        i++;
                     }
                 }
 
@@ -3215,9 +3301,12 @@ public class Main {
 
                 LinkedList<TipoDeEntrega> tipoDeEntregascopy = new LinkedList<>(tipoDeEntregas);
                 Collections.sort(tipoDeEntregascopy, new TipoDeEntregaComparator(atriordena,ordena));
+                int i=0;
                 for (TipoDeEntrega tipodeentrega : tipoDeEntregascopy) {
                     if (tipodeentrega.Codigo <= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(tipodeentrega.toString());
+                        i++;
                     }
                 }
 
@@ -3237,9 +3326,12 @@ public class Main {
 
                 LinkedList<TipoDeEntrega> tipoDeEntregascopy = new LinkedList<>(tipoDeEntregas);
                 Collections.sort(tipoDeEntregascopy, new TipoDeEntregaComparator(atriordena,ordena));
+                int i =0;
                 for (TipoDeEntrega tipodeentrega : tipoDeEntregascopy) {
                     if ((tipodeentrega.Codigo >= busca1) && (tipodeentrega.Codigo <= busca2)){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(tipodeentrega.toString());
+                        i++;
                     }
                 }
             }
@@ -3265,9 +3357,12 @@ public class Main {
                 String ordena = input.next();
                 LinkedList<TipoDeEntrega> tipoDeEntregascopy = new LinkedList<>(tipoDeEntregas);
                 Collections.sort(tipoDeEntregascopy, new TipoDeEntregaComparator(atriordena,ordena));
+                int i =0;
                 for (TipoDeEntrega tipodeentrega : tipoDeEntregascopy) {
                     if (tipodeentrega.Tiempo_Estimado == busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(tipodeentrega.toString());
+                        i++;
                     }
                 }
 
@@ -3286,9 +3381,12 @@ public class Main {
 
                 LinkedList<TipoDeEntrega> tipoDeEntregascopy = new LinkedList<>(tipoDeEntregas);
                 Collections.sort(tipoDeEntregascopy, new TipoDeEntregaComparator(atriordena,ordena));
+                int i = 0;
                 for (TipoDeEntrega tipodeentrega : tipoDeEntregascopy) {
                     if (tipodeentrega.Tiempo_Estimado >= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(tipodeentrega.toString());
+                        i++;
                     }
                 }
 
@@ -3308,9 +3406,12 @@ public class Main {
 
                 LinkedList<TipoDeEntrega> tipoDeEntregascopy = new LinkedList<>(tipoDeEntregas);
                 Collections.sort(tipoDeEntregascopy, new TipoDeEntregaComparator(atriordena,ordena));
+                int i =0;
                 for (TipoDeEntrega tipodeentrega : tipoDeEntregascopy) {
                     if (tipodeentrega.Tiempo_Estimado <= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(tipodeentrega.toString());
+                        i++;
                     }
                 }
 
@@ -3330,9 +3431,12 @@ public class Main {
 
                 LinkedList<TipoDeEntrega> tipoDeEntregascopy = new LinkedList<>(tipoDeEntregas);
                 Collections.sort(tipoDeEntregascopy, new TipoDeEntregaComparator(atriordena,ordena));
+                int i =0;
                 for (TipoDeEntrega tipodeentrega : tipoDeEntregascopy) {
                     if ((tipodeentrega.Tiempo_Estimado >= busca1) && (tipodeentrega.Tiempo_Estimado <= busca2)) {
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(tipodeentrega.toString());
+                        i++;
                     }
                 }
             }
@@ -3414,9 +3518,12 @@ public class Main {
 
                 LinkedList<Cliente> clientescopy = new LinkedList<>(clientes);
                 Collections.sort(clientescopy, new ClienteComparator(atriordena,ordena));
+                int i =0;
                 for (Cliente cliente : clientescopy) {
                     if (cliente.Documento >= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(cliente.toString());
+                        i++;
                     }
                 }
 
@@ -3437,9 +3544,12 @@ public class Main {
 
                 LinkedList<Cliente> clientescopy = new LinkedList<>(clientes);
                 Collections.sort(clientescopy, new ClienteComparator(atriordena,ordena));
+                int i = 0;
                 for (Cliente cliente : clientescopy) {
                     if (cliente.Documento <= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(cliente.toString());
+                        i++;
                     }
                 }
 
@@ -3460,9 +3570,12 @@ public class Main {
 
                 LinkedList<Cliente> clientescopy = new LinkedList<>(clientes);
                 Collections.sort(clientescopy, new ClienteComparator(atriordena,ordena));
+                int i =0;
                 for (Cliente cliente : clientescopy) {
                     if ((cliente.Documento >= busca1) && (cliente.Documento <= busca2)){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(cliente.toString());
+                        i++;
                     }
                 }
             }
@@ -3564,9 +3677,12 @@ public class Main {
 
                 LinkedList<Cliente> clientescopy = new LinkedList<>(clientes);
                 Collections.sort(clientescopy, new ClienteComparator(atriordena,ordena));
+                int i =0;
                 for (Cliente cliente : clientescopy) {
                     if (cliente.Telefono >= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(cliente.toString());
+                        i++;
                     }
                 }
 
@@ -3587,9 +3703,12 @@ public class Main {
 
                 LinkedList<Cliente> clientescopy = new LinkedList<>(clientes);
                 Collections.sort(clientescopy, new ClienteComparator(atriordena,ordena));
+                int i =0;
                 for (Cliente cliente : clientescopy) {
                     if (cliente.Telefono <= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(cliente.toString());
+                        i++;
                     }
                 }
 
@@ -3610,9 +3729,12 @@ public class Main {
 
                 LinkedList<Cliente> clientescopy = new LinkedList<>(clientes);
                 Collections.sort(clientescopy, new ClienteComparator(atriordena,ordena));
+                int i =0;
                 for (Cliente cliente : clientescopy) {
                     if ((cliente.Telefono >= busca1) && (cliente.Telefono <= busca2)) {
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(cliente.toString());
+                        i++;
                     }
                 }
             }
@@ -3642,9 +3764,12 @@ public class Main {
 
                 LinkedList<Cliente> clientescopy = new LinkedList<>(clientes);
                 Collections.sort(clientescopy, new ClienteComparator(atriordena,ordena));
+                int i =0;
                 for (Cliente cliente : clientescopy) {
                     if (cliente.CodigoPostal == busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(cliente.toString());
+                        i++;
                     }
                 }
 
@@ -3664,9 +3789,12 @@ public class Main {
 
                 LinkedList<Cliente> clientescopy = new LinkedList<>(clientes);
                 Collections.sort(clientescopy, new ClienteComparator(atriordena,ordena));
+                int i =0;
                 for (Cliente cliente : clientescopy) {
                     if (cliente.CodigoPostal >= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(cliente.toString());
+                        i++;
                     }
                 }
 
@@ -3687,9 +3815,12 @@ public class Main {
 
                 LinkedList<Cliente> clientescopy = new LinkedList<>(clientes);
                 Collections.sort(clientescopy, new ClienteComparator(atriordena,ordena));
+                int i =0;
                 for (Cliente cliente : clientescopy) {
                     if (cliente.CodigoPostal <= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(cliente.toString());
+                        i++;
                     }
                 }
 
@@ -3710,9 +3841,12 @@ public class Main {
 
                 LinkedList<Cliente> clientescopy = new LinkedList<>(clientes);
                 Collections.sort(clientescopy, new ClienteComparator(atriordena,ordena));
+                int i =0;
                 for (Cliente cliente : clientescopy) {
                     if ((cliente.CodigoPostal >= busca1) && (cliente.CodigoPostal <= busca2)) {
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(cliente.toString());
+                        i++;
                     }
                 }
             }
@@ -3721,13 +3855,15 @@ public class Main {
             if (clientes.size()==0){
                 System.out.println("No hay registros");
             }else{
-                System.out.println(clientes.toString());
+                for (int i = 0; i < clientes.size(); i++) {
+                    System.out.println("Elemento: "+(i+1));
+                    System.out.println(clientes.get(i).toString());
+                }
             }
 
         }else{
             return;
         }
-
     }
 
     // Busqueda Contrato de repartidor
@@ -3766,9 +3902,12 @@ public class Main {
 
                 LinkedList<ContratoRepartidor> contratoRepartidorescopy = new LinkedList<>(contratorepartidores);
                 Collections.sort(contratoRepartidorescopy, new ContratoRepartidorComparator(atriordena,ordena));
+                int i =0;
                 for (ContratoRepartidor contratorepartidor : contratoRepartidorescopy) {
                     if (contratorepartidor.numerocontrato >= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(contratorepartidor.toString());
+                        i++;
                     }
                 }
 
@@ -3788,9 +3927,12 @@ public class Main {
 
                 LinkedList<ContratoRepartidor> contratoRepartidorescopy = new LinkedList<>(contratorepartidores);
                 Collections.sort(contratoRepartidorescopy, new ContratoRepartidorComparator(atriordena,ordena));
+                int i =0;
                 for (ContratoRepartidor contratorepartidor : contratoRepartidorescopy) {
                     if (contratorepartidor.numerocontrato <= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(contratorepartidor.toString());
+                        i++;
                     }
                 }
 
@@ -3810,9 +3952,12 @@ public class Main {
 
                 LinkedList<ContratoRepartidor> contratoRepartidorescopy = new LinkedList<>(contratorepartidores);
                 Collections.sort(contratoRepartidorescopy, new ContratoRepartidorComparator(atriordena,ordena));
+                int i =0;
                 for (ContratoRepartidor contratorepartidor : contratoRepartidorescopy) {
                     if ((contratorepartidor.numerocontrato >= busca1) && (contratorepartidor.numerocontrato <= busca2)){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(contratorepartidor.toString());
+                        i++;
                     }
                 }
             }
@@ -3840,10 +3985,12 @@ public class Main {
 
                 LinkedList<ContratoRepartidor> contratoRepartidorescopy = new LinkedList<>(contratorepartidores);
                 Collections.sort(contratoRepartidorescopy, new ContratoRepartidorComparator(atriordena,ordena));
+                int i =0;
                 for (ContratoRepartidor contratorepartidor : contratoRepartidorescopy) {
                     if (contratorepartidor.salario == busca){
-                        //imprimir empresa
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(contratorepartidor.toString());
+                        i++;
                     }
                 }
 
@@ -3862,9 +4009,12 @@ public class Main {
 
                 LinkedList<ContratoRepartidor> contratoRepartidorescopy = new LinkedList<>(contratorepartidores);
                 Collections.sort(contratoRepartidorescopy, new ContratoRepartidorComparator(atriordena,ordena));
+                int i =0;
                 for (ContratoRepartidor contratorepartidor : contratoRepartidorescopy) {
                     if (contratorepartidor.salario >= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(contratorepartidor.toString());
+                        i++;
                     }
                 }
 
@@ -3884,9 +4034,12 @@ public class Main {
 
                 LinkedList<ContratoRepartidor> contratoRepartidorescopy = new LinkedList<>(contratorepartidores);
                 Collections.sort(contratoRepartidorescopy, new ContratoRepartidorComparator(atriordena,ordena));
+                int i =0;
                 for (ContratoRepartidor contratorepartidor : contratoRepartidorescopy) {
                     if (contratorepartidor.salario <= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(contratorepartidor.toString());
+                        i++;
                     }
                 }
 
@@ -3906,9 +4059,12 @@ public class Main {
 
                 LinkedList<ContratoRepartidor> contratoRepartidorescopy = new LinkedList<>(contratorepartidores);
                 Collections.sort(contratoRepartidorescopy, new ContratoRepartidorComparator(atriordena,ordena));
+                int i =0;
                 for (ContratoRepartidor contratorepartidor : contratoRepartidorescopy) {
                     if ((contratorepartidor.salario >= busca1) && (contratorepartidor.salario <= busca2)){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(contratorepartidor.toString());
+                        i++;
                     }
                 }
             }
@@ -4025,9 +4181,12 @@ public class Main {
 
                 LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
                 Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                int i =0;
                 for (Entrega entrega : entregascopy) {
                     if (entrega.codEntrega >= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(entrega.toString());
+                        i++;
                     }
                 }
 
@@ -4049,9 +4208,12 @@ public class Main {
 
                 LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
                 Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                int i =0;
                 for (Entrega entrega : entregascopy) {
                     if (entrega.codEntrega <= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(entrega.toString());
+                        i++;
                     }
                 }
 
@@ -4073,9 +4235,12 @@ public class Main {
 
                 LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
                 Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                int i =0;
                 for (Entrega entrega : entregascopy) {
                     if ((entrega.codEntrega >= busca1) && (entrega.codEntrega <= busca2)){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(entrega.toString());
+                        i++;
                     }
                 }
             }
@@ -4106,9 +4271,12 @@ public class Main {
 
                 LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
                 Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                int i = 0;
                 for (Entrega entrega : entregascopy) {
                     if (entrega.peso == busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(entrega.toString());
+                        i++;
                     }
                 }
 
@@ -4129,9 +4297,12 @@ public class Main {
 
                 LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
                 Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                int i =0;
                 for (Entrega entrega : entregascopy) {
                     if (entrega.peso >= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(entrega.toString());
+                        i++;
                     }
                 }
 
@@ -4153,9 +4324,12 @@ public class Main {
 
                 LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
                 Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                int i =0;
                 for (Entrega entrega : entregascopy) {
                     if (entrega.peso <= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(entrega.toString());
+                        i++;
                     }
                 }
 
@@ -4177,9 +4351,12 @@ public class Main {
 
                 LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
                 Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                int i =0;
                 for (Entrega entrega : entregascopy) {
                     if ((entrega.peso >= busca1) && (entrega.peso <= busca2)){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(entrega.toString());
+                        i++;
                     }
                 }
             }
@@ -4209,9 +4386,12 @@ public class Main {
 
                 LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
                 Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                int i =0;
                 for (Entrega entrega : entregascopy) {
                     if (entrega.dimenciones == busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(entrega.toString());
+                        i++;
                     }
                 }
 
@@ -4232,9 +4412,12 @@ public class Main {
 
                 LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
                 Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                int i =0;
                 for (Entrega entrega : entregascopy) {
                     if (entrega.dimenciones >= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(entrega.toString());
+                        i++;
                     }
                 }
 
@@ -4256,9 +4439,12 @@ public class Main {
 
                 LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
                 Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                int i =0;
                 for (Entrega entrega : entregascopy) {
                     if (entrega.dimenciones <= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(entrega.toString());
+                        i++;
                     }
                 }
 
@@ -4280,9 +4466,12 @@ public class Main {
 
                 LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
                 Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                int i =0;
                 for (Entrega entrega : entregascopy) {
                     if ((entrega.dimenciones >= busca1) && (entrega.dimenciones <= busca2)){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(entrega.toString());
+                        i++;
                     }
                 }
             }
@@ -4312,10 +4501,12 @@ public class Main {
 
                 LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
                 Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                int i =0;
                 for (Entrega entrega : entregascopy) {
                     if (entrega.costo == busca){
-                        //imprimir empresa
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(entrega.toString());
+                        i++;
                     }
                 }
 
@@ -4336,9 +4527,12 @@ public class Main {
 
                 LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
                 Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                int i =0;
                 for (Entrega entrega : entregascopy) {
                     if (entrega.costo >= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(entrega.toString());
+                        i++;
                     }
                 }
 
@@ -4360,9 +4554,12 @@ public class Main {
 
                 LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
                 Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                int i =0;
                 for (Entrega entrega : entregascopy) {
                     if (entrega.costo <= busca){
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(entrega.toString());
+                        i++;
                     }
                 }
 
@@ -4383,10 +4580,12 @@ public class Main {
                 String ordena = input.next();
 
                 LinkedList<Entrega> entregascopy = new LinkedList<>(entregas);
-                Collections.sort(entregascopy, new EntregaComparator(atriordena,ordena));
+                int i =0;
                 for (Entrega entrega : entregascopy) {
                     if ((entrega.costo >= busca1) && (entrega.costo <= busca2)) {
+                        System.out.println("Elemento: " + (i+1));
                         System.out.println(entrega.toString());
+                        i++;
                     }
                 }
             }
