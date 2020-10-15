@@ -1555,9 +1555,9 @@ public class Main {
         }
         System.out.println("No fue encontrado");
     }
-// aqui empieza el menu de busqueda
+// aqui empieza el menu de BUSCAR ------------------------------------------------------------------
     public static void Busqueda() {
-        System.out.println("Estos son los elementos posibles");
+        System.out.println("Estos son los elementos posibles a Buscar");
         System.out.println("Escoja una opcion:");
         System.out.println("1. Empresas");
         System.out.println("2. Sucursales");
@@ -1572,6 +1572,8 @@ public class Main {
         System.out.println();
         String option;
         option = input.next();
+
+        // Busqueda Empresa .------------------------------------------------------------------
         if (option.equals("1")) {
             System.out.println("Los atributos que tiene la clase seleccionada");
             System.out.println("Escoja una opcion:");
@@ -1582,25 +1584,21 @@ public class Main {
             System.out.println("0. Cancelar");
             String option1;
             option1 = input.next();
-            if (option1.equals("1")) {
-                TexBusqueda();
-            } else if (option1.equals("2")) {
-                TexBusqueda();
-            } else if (option1.equals("3")) {
-                TexBusqueda();
+
+            if (option1.equals("1")) { //Nit
+                BusquedaEmpresa(option1);
+            } else if (option1.equals("2")) { // Razon social
+                BusquedaEmpresa(option1);
+            } else if (option1.equals("3")) { // presidente
+                BusquedaEmpresa(option1);
             } else if (option1.equals("4")) { // Mostrar todas las empresas***
-                if (empresas.size() == 0){
-                    System.out.println("No hay empresas registradas en el momento");
-                }else{
-                    System.out.println(empresas.toString());
-                }
-
-
+                BusquedaEmpresa(option1);
             } else {
                 return;
             }
 
 
+        // Busqueda Sucursales  .------------------------------------------------------------------
         } else if (option.equals("2")) {
             System.out.println("Los atributos que tiene la clase seleccionada");
             System.out.println("Escoja una opcion:");
@@ -1613,45 +1611,20 @@ public class Main {
             String option1;
             option1 = input.next();
             if (option1.equals("1")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
-                }
+                BusquedaSucursal(option1);
             } else if (option1.equals("2")) {
-                TexBusqueda();
-                if(Texbus == 0){
-
-                }else if (Texbus == 1){
-
-                }
+                BusquedaSucursal(option1);
             } else if (option1.equals("3")) {
-                TexBusqueda();
-                if(Texbus == 0){
-
-                }else if (Texbus == 1){
-
-                }
+                BusquedaSucursal(option1);
             } else if (option1.equals("4")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
-                }
+                BusquedaSucursal(option1);
             } else if (option1.equals("5")) {
+                BusquedaSucursal(option1);
             } else {
                 return;
             }
+
+        // Busqueda Especialidades  ------------------------------------------------------------------
         } else if (option.equals("3")) {
             System.out.println("Los atributos que tiene la clase seleccionada");
             System.out.println("Escoja una opcion:");
@@ -1664,45 +1637,20 @@ public class Main {
             String option1;
             option1 = input.next();
             if (option1.equals("1")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
-                }
+                BusquedaEspecialidad(option1);
             } else if (option1.equals("2")) {
-                TexBusqueda();
-                if(Texbus == 0){
-
-                }else if (Texbus == 1){
-
-                }
+                BusquedaEspecialidad(option1);
             } else if (option1.equals("3")) {
-                TexBusqueda();
-                if(Texbus == 0){
-
-                }else if (Texbus == 1){
-
-                }
+                BusquedaEspecialidad(option1);
             } else if (option1.equals("4")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
-                }
+                BusquedaEspecialidad(option1);
             } else if (option1.equals("5")) {
+                BusquedaEspecialidad(option1);
             } else {
                 return;
             }
+
+        // Busqueda Contrato de arriendos  ------------------------------------------------------------------
         } else if (option.equals("4")) {
             System.out.println("Los atributos que tiene la clase seleccionada");
             System.out.println("Escoja una opcion:");
@@ -1715,53 +1663,20 @@ public class Main {
             String option1;
             option1 = input.next();
             if (option1.equals("1")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
-                }
+                BusquedaContratoArriendo(option1);
             } else if (option1.equals("2")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
-                }
+                BusquedaContratoArriendo(option1);
             } else if (option1.equals("3")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
-                }
+                BusquedaContratoArriendo(option1);
             } else if (option1.equals("4")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
-                }
+                BusquedaContratoArriendo(option1);
             } else if (option1.equals("5")) {
+                BusquedaContratoArriendo(option1);
             } else {
                 return;
             }
+
+        // Busqueda Repartidores --------------------------------------------------------------
         } else if (option.equals("5")) {
             System.out.println("Los atributos que tiene la clase seleccionada");
             System.out.println("Escoja una opcion:");
@@ -1770,73 +1685,30 @@ public class Main {
             System.out.println("3. Edad");
             System.out.println("4. Numero de celular");
             System.out.println("5. Tipo de licencia");
-            System.out.println("6. Sueldo");
-            System.out.println("7. Mostrar todos los Repartidores");
+            System.out.println("6. Mostrar todos los Repartidores");
             System.out.println("0. Cancelar");
             String option1;
             option1 = input.next();
             if (option1.equals("1")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
-                }
+                BusquedaRepartidor(option1);
             } else if (option1.equals("2")) {
-                TexBusqueda();
-                if(Texbus == 0){
-
-                }else if (Texbus == 1){
-
-                }
+                BusquedaRepartidor(option1);
             } else if (option1.equals("3")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
-                }
+                BusquedaRepartidor(option1);
             } else if (option1.equals("4")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
-                }
+                BusquedaRepartidor(option1);
             } else if (option1.equals("5")) {
-                TexBusqueda();
-                if(Texbus == 0){
-
-                }else if (Texbus == 1){
-
-                }
+                BusquedaRepartidor(option1);
             } else if (option1.equals("6")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
-                }
-            } else if (option1.equals("7")) {
-            } else {
+                BusquedaRepartidor(option1);
+            } else if (option1.equals("0")) {
+                return;
+            } else{
                 return;
             }
+
+
+         // Busqueda Tipo de entregas --------------------------------------------------------------
         } else if (option.equals("6")) {
             System.out.println("Los atributos que tiene la clase seleccionada");
             System.out.println("Escoja una opcion:");
@@ -1848,109 +1720,48 @@ public class Main {
             String option1;
             option1 = input.next();
             if (option1.equals("1")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
-                }
+                BusquedaTipoDeEntrega(option1);
             } else if (option1.equals("2")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
-                }
+                BusquedaTipoDeEntrega(option1);
             } else if (option1.equals("3")) {
-                TexBusqueda();
-                if(Texbus == 0){
-
-                }else if (Texbus == 1){
-
-                }
+                BusquedaTipoDeEntrega(option1);
             } else if (option1.equals("4")) {
-
+                BusquedaTipoDeEntrega(option1);
             } else {
                 return;
             }
+
+
+            // Busqueda entregas --------------------------------------------------------------
         } else if (option.equals("7")) {
             System.out.println("Los atributos que tiene la clase seleccionada");
             System.out.println("Escoja una opcion:");
             System.out.println("1. Codigo de entrega");
             System.out.println("2. Peso");
             System.out.println("3. Dimenciones");
-            System.out.println("4. Fragil");
-            System.out.println("5. Costo");
-            System.out.println("6. Estado de entrega");
-            System.out.println("7. Mostrar todas las entregas");
+            System.out.println("4. Costo");
+            System.out.println("5. Estado de entrega");
+            System.out.println("6" +
+                    "" +
+                    ". Mostrar todas las entregas");
             System.out.println("0. Cancelar");
             String option1;
             option1 = input.next();
             if (option1.equals("1")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
-                }
+                BusquedaEntrega(option1);
             } else if (option1.equals("2")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
-                }
+                BusquedaEntrega(option1);
             } else if (option1.equals("3")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
-                }
+                BusquedaEntrega(option1);
             } else if (option1.equals("4")) {
-
+                BusquedaEntrega(option1);
             } else if (option1.equals("5")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
-                }
-            } else if (option1.equals("6")) {
-                TexBusqueda();
-                if(Texbus == 0){
-
-                }else if (Texbus == 1){
-
-                }
-            } else if (option1.equals("7")) {
+                BusquedaEntrega(option1);
             } else {
                 return;
             }
+
+            // Busqueda Clientes --------------------------------------------------------------
         } else if (option.equals("8")) {
             System.out.println("Los atributos que tiene la clase seleccionada");
             System.out.println("Escoja una opcion:");
@@ -1964,60 +1775,51 @@ public class Main {
             String option1;
             option1 = input.next();
             if (option1.equals("1")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
-                }
+                BusquedaCliente(option1);
             } else if (option1.equals("2")) {
-                TexBusqueda();
-                if(Texbus == 0){
-
-                }else if (Texbus == 1){
-
-                }
+                BusquedaCliente(option1);
             } else if (option1.equals("3")) {
-                TexBusqueda();
-                if(Texbus == 0){
-
-                }else if (Texbus == 1){
-
-                }
+                BusquedaCliente(option1);
             } else if (option1.equals("4")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
-                }
+                BusquedaCliente(option1);
             } else if (option1.equals("5")) {
-                NumBusqueda();
-                if(Numbus == 0){
-
-                }else if (Numbus == 1){
-
-                }else if (Numbus == 2){
-
-                }else if (Numbus == 3){
-
-                }
-            } else if (option1.equals("6")) {
+                BusquedaCliente(option1);
             } else {
                 return;
             }
-        } else {
+
+        // Busqueda Contrato de Repartidor --------------------------------------------------------------
+        } else if (option.equals("9")){
+            System.out.println("Los atributos que tiene la clase seleccionada");
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. numero de contrato");
+            System.out.println("2. salario ");
+            System.out.println("3. fecha de inicio");
+            System.out.println("4. fecha de fin");
+            System.out.println("0. Cancelar");
+            String option1;
+            option1 = input.next();
+            if (option1.equals("1")) {
+                BusquedaContratoRepartidor(option1);
+            } else if (option1.equals("2")) {
+                BusquedaContratoRepartidor(option1);
+            } else if (option1.equals("3")) {
+                BusquedaContratoRepartidor(option1);
+            } else if (option1.equals("4")) {
+                BusquedaContratoRepartidor(option1);
+            } else if (option1.equals("5")) {
+                BusquedaContratoRepartidor(option1);
+            } else {
+                return;
+            }
+
+        }else{
             return;
         }
     }
+
+
+    // Diagnostico de incosistencias -------------------------------------------------------------------
     public static void DiagnosticoInconsistencias() {
         LinkedList<Empresa> empre = new LinkedList<>();
         for (int i = 0; i < empresas.size(); i++) {
@@ -2106,6 +1908,8 @@ public class Main {
         EscribirJSON.guardarEntrega(entregas);
         System.out.println("Se han guardado satisfactoriamente todos los datos de esta sesión");
     }
+
+
     public static void SalirCancelar() {
         while (true) {
             System.out.println("Si sale se perderán los cambios sin guardar:");
@@ -2120,45 +1924,2313 @@ public class Main {
             }
         }
     }
-    public static void NumBusqueda() {
-        System.out.println("Escoja una opcion:");
-        System.out.println("1. Valor exacto");
-        System.out.println("2. Valor mínimo");
-        System.out.println("3. Valor máximo");
-        System.out.println("4. Rango");
-        System.out.println("0. Cancelar");
-        String option1;
-        option1 = input.next();
-        if (option1.equals("1")) {
-            Numbus =0;
-        } else if (option1.equals("2")) {
-            Numbus =1;
+
+
+
+
+
+
+    // Busqueda Empresa
+    public static void BusquedaEmpresa(String option1){
+        // NIt
+        if (option1.equals("1")){
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor sin considerar caracteres especiales para el Nit");
+            System.out.println("0. Cancelar");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto del Nit");
+                input.nextLine();
+                String buscanit = input.nextLine();
+                for (Empresa empresa : empresas) {
+                    if (empresa.Nit.equals(buscanit)){
+                        //imprimir empresa
+                        System.out.println(empresa.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) {
+                System.out.println("Ingrese el valor sin caracteres especiales para el Nit");
+                input.nextLine();
+                String buscanit2 = input.nextLine();
+                for (Empresa empresa : empresas) {
+                    if (limpiarcadena(empresa.Nit).equals(limpiarcadena(buscanit2))){
+                        //imprimir empresa
+                        System.out.println(empresa.toString());
+                    }
+                }
+
+            } else {
+                return;
+            }
+
+            // Razon social
+        }else if(option1.equals("2")){
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor sin considerar mayúsculas ");
+            System.out.println("0. Cancelar");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto del la razon social");
+                input.nextLine();
+                String razonsocial = input.nextLine();
+                for (Empresa empresa : empresas) {
+                    if (empresa.RazonSocial.equals(razonsocial)){
+                        System.out.println(empresa.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) {
+                System.out.println("Ingrese la razon social sin considerar mayúsculas");
+                input.nextLine();
+                String razonsocial2 = input.nextLine();
+                for (Empresa empresa : empresas) {
+                    if (limpiarcadena(empresa.RazonSocial).equals(limpiarcadena(razonsocial2))){
+                        //imprimir empresa
+                        System.out.println(empresa.toString());
+                    }
+                }
+
+            } else{
+                return;
+            }
+
+        // Presidente
+        }else if(option1.equals("3")){
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor sin considerar mayúsculas ");
+            System.out.println("0. Cancelar");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor del presidente");
+                input.nextLine();
+                String presidente = input.nextLine();
+                for (Empresa empresa : empresas) {
+                    if (empresa.Presidente.equals(presidente)){
+                        System.out.println(empresa.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) {
+                System.out.println("Ingrese el presidente sin considerar mayúsculas");
+                input.nextLine();
+                String Presidente = input.nextLine();
+                for (Empresa empresa : empresas) {
+                    if (limpiarcadena(empresa.Presidente).equals(limpiarcadena(Presidente))){
+                        //imprimir empresa
+                        System.out.println(empresa.toString());
+                    }
+                }
+
+            } else if(option1.equals("4")){ // mostrar empresa
+                if(empresas.size() == 0){
+                    System.out.println("No hay empresas registradas");
+                }else{
+                    System.out.println(empresas.toString());
+                }
+
+            } else {
+                return;
+            }
+
+        // Mostar las emresas
+        } else if (option1.equals("4")){
+            if (sucursales.size() == 0){
+                System.out.println("No hay empresas registradas en el momento");
+            }else{
+                System.out.println(sucursales.toString());
+            }
+        }
+
+    }
+
+    // Busqueda Sucursales
+    public static void BusquedaSucursal(String option1){
+        // Codigo**************
+        if (option1.equals("1")){
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor mínimo");
+            System.out.println("3. Valor máximo");
+            System.out.println("4. Rango");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto"); // valor exacto
+                input.nextLine();
+                int busca = input.nextInt();
+                for (Sucursal sucursal : sucursales) {
+                    if (sucursal.codigoScursal == busca){
+                        //imprimir empresa
+                        System.out.println(sucursal.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) { // valor minimo
+                System.out.println("Ingrese el valor mínimo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de sucursal");
+                System.out.println("2. Cantidad de empleados");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(sucursales, new SucursalComparator(atriordena,ordena));
+                for (Sucursal sucursale : sucursales) {
+                    if (sucursale.codigoScursal >= busca){
+                        System.out.println(sucursale.toString());
+                    }
+                }
+
+
+            } else if (option2.equals("3")){  // valor maximo
+                System.out.println("Ingrese el valor máximo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de sucursal");
+                System.out.println("2. Cantidad de empleados");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(sucursales, new SucursalComparator(atriordena,ordena));
+                for (Sucursal sucursale : sucursales) {
+                    if (sucursale.codigoScursal <= busca){
+                        System.out.println(sucursale.toString());
+                    }
+                }
+
+            } else if (option2.equals("4")){ // rango
+                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
+                input.nextLine();
+                int busca1 = input.nextInt();
+                int busca2 = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de sucursal");
+                System.out.println("2. Cantidad de empleados");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(sucursales, new SucursalComparator(atriordena,ordena));
+                for (Sucursal sucursale : sucursales) {
+                    if ((sucursale.codigoScursal >= busca1) && (sucursale.codigoScursal <= busca2)){
+                        System.out.println(sucursale.toString());
+                    }
+                }
+            }
+
+
+        // Ciudad
+        } else if (option1.equals("2")){
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor sin considerar mayúsculas");
+            System.out.println("0. Cancelar");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (Sucursal sucursal : sucursales) {
+                    if (sucursal.ciudad.equals(busca)){
+                        //imprimir empresa
+                        System.out.println(sucursal.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) {//**************************************
+                System.out.println("Ingrese Valor sin considerar mayúsculas");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (Sucursal sucursal : sucursales) {
+                    if (limpiarcadena(sucursal.ciudad).equals(limpiarcadena(busca))){
+                        //imprimir empresa
+                        System.out.println(sucursal.toString());
+                    }
+                }
+
+            } else {
+                return;
+            }
+
+            // Direccion
+        } else if (option1.equals("3")){
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor sin considerar mayúsculas");
+            System.out.println("0. Cancelar");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (Sucursal sucursal : sucursales) {
+                    if (sucursal.direccion.equals(busca)){
+                        //imprimir empresa
+                        System.out.println(sucursal.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) {//**************************************
+                System.out.println("Ingrese Valor sin considerar mayúsculas");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (Sucursal sucursal : sucursales) {
+                    if (limpiarcadena(sucursal.direccion).equals(limpiarcadena(busca))){
+                        //imprimir empresa
+                        System.out.println(sucursal.toString());
+                    }
+                }
+
+            } else {
+                return;
+            }
+
+           // Cantidad de Empleados
         } else if (option1.equals("3")) {
-            Numbus =2;
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor mínimo");
+            System.out.println("3. Valor máximo");
+            System.out.println("4. Rango");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto"); // valor exacto
+                input.nextLine();
+                int busca = input.nextInt();
+                for (Sucursal sucursal : sucursales) {
+                    if (sucursal.cantEmpleados == busca){
+                        //imprimir empresa
+                        System.out.println(sucursal.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) { // valor minimo
+                System.out.println("Ingrese el valor mínimo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de sucursal");
+                System.out.println("2. Cantidad de empleados");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(sucursales, new SucursalComparator(atriordena,ordena));
+                for (Sucursal sucursale : sucursales) {
+                    if (sucursale.cantEmpleados >= busca){
+                        System.out.println(sucursale.toString());
+                    }
+                }
+
+
+            } else if (option2.equals("3")){  // valor maximo
+                System.out.println("Ingrese el valor máximo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de sucursal");
+                System.out.println("2. Cantidad de empleados");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(sucursales, new SucursalComparator(atriordena,ordena));
+                for (Sucursal sucursale : sucursales) {
+                    if (sucursale.cantEmpleados <= busca){
+                        System.out.println(sucursale.toString());
+                    }
+                }
+
+            } else if (option2.equals("4")){ // rango
+                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
+                input.nextLine();
+                int busca1 = input.nextInt();
+                int busca2 = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de sucursal");
+                System.out.println("2. Cantidad de empleados");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(sucursales, new SucursalComparator(atriordena,ordena));
+                for (Sucursal sucursale : sucursales) {
+                    if ((sucursale.cantEmpleados >= busca1) && (sucursale.cantEmpleados <= busca2)){
+                        System.out.println(sucursale.toString());
+                    }
+                }
+            }
+
+
+        }
+
+    }
+
+    // Busqueda Especialidad
+    public static void BusquedaEspecialidad(String option1){
+        // Codigo**************
+        if (option1.equals("1")){
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor mínimo");
+            System.out.println("3. Valor máximo");
+            System.out.println("4. Rango");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto"); // valor exacto
+                input.nextLine();
+                int busca = input.nextInt();
+                for (Especialidad especialidad : especialidades) {
+                    if (especialidad.codigoEspecialidad == busca){
+                        //imprimir empresa
+                        System.out.println(especialidad.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) { // valor minimo
+                System.out.println("Ingrese el valor mínimo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de especialidad");
+                System.out.println("2. Linea de atención");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(especialidades, new EspecialidadComparator(atriordena,ordena));
+                for (Especialidad especialidad : especialidades) {
+                    if (especialidad.codigoEspecialidad >= busca){
+                        System.out.println(especialidad.toString());
+                    }
+                }
+
+
+            } else if (option2.equals("3")){  // valor maximo
+                System.out.println("Ingrese el valor máximo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de especialidad");
+                System.out.println("2. Linea de atención");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(especialidades, new EspecialidadComparator(atriordena,ordena));
+                for (Especialidad especialidad : especialidades) {
+                    if (especialidad.codigoEspecialidad <= busca){
+                        System.out.println(especialidad.toString());
+                    }
+                }
+
+            } else if (option2.equals("4")){ // rango
+                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
+                input.nextLine();
+                int busca1 = input.nextInt();
+                int busca2 = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de especialidad");
+                System.out.println("2. Linea de atención");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(sucursales, new SucursalComparator(atriordena,ordena));
+                for (Especialidad especialidad : especialidades) {
+                    if ((especialidad.codigoEspecialidad >= busca1) && (especialidad.codigoEspecialidad <= busca2)){
+                        System.out.println(especialidad.toString());
+                    }
+                }
+            }
+
+
+            // Encargado
+        } else if (option1.equals("2")){
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor sin considerar mayúsculas");
+            System.out.println("0. Cancelar");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (Especialidad especialidad : especialidades) {
+                    if (especialidad.encargado.equals(busca)){
+                        System.out.println(especialidad.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) {//**************************************
+                System.out.println("Ingrese Valor sin considerar mayúsculas");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (Especialidad especialidad : especialidades) {
+                    if (limpiarcadena(especialidad.encargado).equals(limpiarcadena(busca))){
+                        System.out.println(especialidad.toString());
+                    }
+                }
+
+            } else {
+                return;
+            }
+
+            // enfoque
+        } else if (option1.equals("3")){ //enfoque
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor sin considerar mayúsculas");
+            System.out.println("0. Cancelar");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (Especialidad especialidad : especialidades) {
+                    if (especialidad.enfoque.equals(busca)){
+                        System.out.println(especialidad.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) {//**************************************
+                System.out.println("Ingrese Valor sin considerar mayúsculas");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (Especialidad especialidad : especialidades) {
+                    if (limpiarcadena(especialidad.enfoque).equals(limpiarcadena(busca))){
+                        System.out.println(especialidad.toString());
+                    }
+                }
+
+            } else {
+                return;
+            }
+
+            // linea de atencion
         } else if (option1.equals("4")) {
-            Numbus =3;
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor mínimo");
+            System.out.println("3. Valor máximo");
+            System.out.println("4. Rango");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto"); // valor exacto
+                input.nextLine();
+                int busca = input.nextInt();
+                for (Especialidad especialidad : especialidades) {
+                    if (especialidad.codigoEspecialidad == busca){
+                        //imprimir empresa
+                        System.out.println(especialidad.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) { // valor minimo
+                System.out.println("Ingrese el valor mínimo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de especialidad");
+                System.out.println("2. Linea de atención");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(especialidades, new EspecialidadComparator(atriordena,ordena));
+                for (Especialidad especialidad : especialidades) {
+                    if (especialidad.lineaAtencion >= busca){
+                        System.out.println(especialidad.toString());
+                    }
+                }
+
+
+            } else if (option2.equals("3")){  // valor maximo
+                System.out.println("Ingrese el valor máximo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de especialidad");
+                System.out.println("2. Linea de atención");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(especialidades, new EspecialidadComparator(atriordena,ordena));
+                for (Especialidad especialidad : especialidades) {
+                    if (especialidad.lineaAtencion <= busca){
+                        System.out.println(especialidad.toString());
+                    }
+                }
+
+            } else if (option2.equals("4")) { // rango
+                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
+                input.nextLine();
+                int busca1 = input.nextInt();
+                int busca2 = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de especialidad");
+                System.out.println("2. Linea de atención");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(sucursales, new SucursalComparator(atriordena, ordena));
+                for (Especialidad especialidad : especialidades) {
+                    if ((especialidad.lineaAtencion >= busca1) && (especialidad.lineaAtencion <= busca2)) {
+                        System.out.println(especialidad.toString());
+                    }
+                }
+            }
+
+        } else if (option1.equals("5")) { //mostrar todo
+            if (sucursales.size() == 0){
+                System.out.println("No hay elementos en la lista");
+            }else{
+                System.out.println(sucursales.toString());
+            }
         } else {
             return;
         }
-    }
-    public static void TexBusqueda() {
-        System.out.println("Escoja una opcion:");
-        System.out.println("1. Valor exacto");
-        System.out.println("2. Valor sin considerar mayúsculas");
 
-        System.out.println("0. Cancelar");
-        String option1;
-        option1 = input.next();
-        if (option1.equals("1")) {
-            Texbus =0;
-        } else if (option1.equals("2")) {
-            Texbus =1;
-        } else {
+    }
+
+    // Busqueda Contrato arriendo
+    public static void BusquedaContratoArriendo(String option1){
+        // codigo
+        if (option1.equals("1")){
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor mínimo");
+            System.out.println("3. Valor máximo");
+            System.out.println("4. Rango");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto"); // valor exacto
+                input.nextLine();
+                int busca = input.nextInt();
+                for (ContratoArriendo contratoarriendo : contratoArriendos) {
+                    if (contratoarriendo.numContrato == busca){
+                        //imprimir empresa
+                        System.out.println(contratoarriendo.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) { // valor minimo
+                System.out.println("Ingrese el valor mínimo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Código");
+                System.out.println("2. Canon");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(contratoArriendos, new ContratoDeArriendoComparator(atriordena,ordena));
+                for (ContratoArriendo contratoarriendo : contratoArriendos) {
+                    if (contratoarriendo.numContrato >= busca){
+                        System.out.println(contratoarriendo.toString());
+                    }
+                }
+
+
+            } else if (option2.equals("3")){  // valor maximo
+                System.out.println("Ingrese el valor máximo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Código");
+                System.out.println("2. Canon");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(contratoArriendos, new ContratoDeArriendoComparator(atriordena,ordena));
+                for (ContratoArriendo contratoarriendo : contratoArriendos) {
+                    if (contratoarriendo.numContrato <= busca){
+                        System.out.println(contratoarriendo.toString());
+                    }
+                }
+
+            } else if (option2.equals("4")){ // rango
+                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
+                input.nextLine();
+                int busca1 = input.nextInt();
+                int busca2 = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Código");
+                System.out.println("2. Canon");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(contratoArriendos, new ContratoDeArriendoComparator(atriordena,ordena));
+                for (ContratoArriendo contratoarriendo : contratoArriendos) {
+                    if ((contratoarriendo.numContrato >= busca1) && (contratoarriendo.numContrato <= busca2)){
+                        System.out.println(contratoarriendo.toString());
+                    }
+                }
+            }
+
+            //fecha inicio
+        } else if (option1.equals("2")){
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor sin considerar mayúsculas");
+            System.out.println("0. Cancelar");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (ContratoArriendo contratoarriendo : contratoArriendos) {
+                    if (contratoarriendo.fechadeInicio.equals(busca)){
+                        System.out.println(contratoarriendo.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) {//**************************************
+                System.out.println("Ingrese Valor sin considerar mayúsculas");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (ContratoArriendo contratoarriendo : contratoArriendos) {
+                    if (limpiarcadena(contratoarriendo.fechadeInicio).equals(limpiarcadena(busca))){
+                        System.out.println(contratoarriendo.toString());
+                    }
+                }
+
+            } else {
+                return;
+            }
+
+            // fecha fin
+        } else if (option1.equals("3")){ //enfoque
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor sin considerar mayúsculas");
+            System.out.println("0. Cancelar");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (ContratoArriendo contratoarriendo : contratoArriendos) {
+                    if (contratoarriendo.FechadeFin.equals(busca)){
+                        System.out.println(contratoarriendo.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) {//**************************************
+                System.out.println("Ingrese Valor sin considerar mayúsculas");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (ContratoArriendo contratoarriendo : contratoArriendos) {
+                    if (limpiarcadena(contratoarriendo.FechadeFin).equals(limpiarcadena(busca))){
+                        System.out.println(contratoarriendo.toString());
+                    }
+                }
+
+            } else {
+                return;
+            }
+
+            // canon
+        } else if (option1.equals("4")) {
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor mínimo");
+            System.out.println("3. Valor máximo");
+            System.out.println("4. Rango");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto"); // valor exacto
+                input.nextLine();
+                int busca = input.nextInt();
+                for (ContratoArriendo contratoarriendo : contratoArriendos) {
+                    if (contratoarriendo.canon == busca){
+                        //imprimir empresa
+                        System.out.println(contratoarriendo.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) { // valor minimo
+                System.out.println("Ingrese el valor mínimo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Código");
+                System.out.println("2. Canon");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(contratoArriendos, new ContratoDeArriendoComparator(atriordena,ordena));
+                for (ContratoArriendo contratoarriendo : contratoArriendos) {
+                    if (contratoarriendo.canon >= busca){
+                        System.out.println(contratoarriendo.toString());
+                    }
+                }
+
+
+            } else if (option2.equals("3")){  // valor maximo
+                System.out.println("Ingrese el valor máximo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Código");
+                System.out.println("2. Canon");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(contratoArriendos, new ContratoDeArriendoComparator(atriordena,ordena));
+                for (ContratoArriendo contratoarriendo : contratoArriendos) {
+                    if (contratoarriendo.canon <= busca){
+                        System.out.println(contratoarriendo.toString());
+                    }
+                }
+
+            } else if (option2.equals("4")) { // rango canon
+                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
+                input.nextLine();
+                int busca1 = input.nextInt();
+                int busca2 = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Código");
+                System.out.println("2. Canon");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(contratoArriendos, new ContratoDeArriendoComparator(atriordena,ordena));
+                for (ContratoArriendo contratoarriendo : contratoArriendos) {
+                    if ((contratoarriendo.canon >= busca1) && (contratoarriendo.canon <= busca2)) {
+                        System.out.println(contratoarriendo.toString());
+                    }
+                }
+            }
+
+        } else if (option1.equals("5")) {
+            if (contratoArriendos.size()==0){
+                System.out.println("La lista está vacía");
+            }else {
+                System.out.println(contratoArriendos.toString());
+            }
+        }
+
+    }
+
+    // Busqueda Contrato repartidor
+    public static void BusquedaRepartidor(String option1){
+        // cedula
+        if (option1.equals("1")){
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor mínimo");
+            System.out.println("3. Valor máximo");
+            System.out.println("4. Rango");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto"); // valor exacto
+                input.nextLine();
+                int busca = input.nextInt();
+                for (Repartidor repartidor : repartidores) {
+                    if (repartidor.Cedula == busca){
+                        //imprimir empresa
+                        System.out.println(repartidor.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) { // valor minimo
+                System.out.println("Ingrese el valor mínimo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Cedula");
+                System.out.println("2. Edad");
+
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(repartidores, new RepartidorComparator(atriordena,ordena));
+                for (Repartidor repartidor : repartidores) {
+                    if (repartidor.Cedula >= busca){
+                        System.out.println(repartidor.toString());
+                    }
+                }
+
+
+            } else if (option2.equals("3")){  // valor maximo
+                System.out.println("Ingrese el valor máximo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Cedula");
+                System.out.println("2. Edad");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(repartidores, new RepartidorComparator(atriordena,ordena));
+                for (Repartidor repartidor : repartidores) {
+                    if (repartidor.Cedula <= busca){
+                        System.out.println(repartidor.toString());
+                    }
+                }
+
+            } else if (option2.equals("4")){ // rango
+                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
+                input.nextLine();
+                int busca1 = input.nextInt();
+                int busca2 = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Cedula");
+                System.out.println("2. Edad");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(repartidores, new RepartidorComparator(atriordena,ordena));
+                for (Repartidor repartidor : repartidores) {
+                    if ((repartidor.Cedula >= busca1) && (repartidor.Cedula <= busca2)){
+                        System.out.println(repartidor.toString());
+                    }
+                }
+            }
+
+        } else if (option1.equals("2")){ //nombre
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor sin considerar mayúsculas");
+            System.out.println("0. Cancelar");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (Repartidor repartidor : repartidores) {
+                    if (repartidor.Nombre.equals(busca)){
+                        System.out.println(repartidor.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) {//**************************************
+                System.out.println("Ingrese Valor sin considerar mayúsculas");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (Repartidor repartidor : repartidores) {
+                    if (limpiarcadena(repartidor.Nombre).equals(limpiarcadena(busca))){
+                        System.out.println(repartidor.toString());
+                    }
+                }
+            }
+
+
+        } else if (option1.equals("4")) {
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor mínimo");
+            System.out.println("3. Valor máximo");
+            System.out.println("4. Rango");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto"); // valor exacto
+                input.nextLine();
+                int busca = input.nextInt();
+                for (Repartidor repartidor : repartidores) {
+                    if (repartidor.Num_Celular == busca){
+                        //imprimir empresa
+                        System.out.println(repartidor.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) { // valor minimo
+                System.out.println("Ingrese el valor mínimo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Cedula");
+                System.out.println("2. Edad");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(repartidores, new RepartidorComparator(atriordena,ordena));
+                for (Repartidor repartidor : repartidores) {
+                    if (repartidor.Num_Celular >= busca){
+                        System.out.println(repartidor.toString());
+                    }
+                }
+
+
+            } else if (option2.equals("3")){  // valor maximo
+                System.out.println("Ingrese el valor máximo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Cedula");
+                System.out.println("2. Edad");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(repartidores, new RepartidorComparator(atriordena,ordena));
+                for (Repartidor repartidor : repartidores) {
+                    if (repartidor.Num_Celular <= busca){
+                        System.out.println(repartidor.toString());
+                    }
+                }
+
+            } else if (option2.equals("4")) { // rango
+                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
+                input.nextLine();
+                int busca1 = input.nextInt();
+                int busca2 = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Cedula");
+                System.out.println("2. Edad");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(repartidores, new RepartidorComparator(atriordena,ordena));
+                for (Repartidor repartidor : repartidores) {
+                    if ((repartidor.Num_Celular >= busca1) && (repartidor.Num_Celular <= busca2)) {
+                        System.out.println(repartidor.toString());
+                    }
+                }
+            }
+
+            // Edadd
+        } else if (option1.equals("3")) {
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor mínimo");
+            System.out.println("3. Valor máximo");
+            System.out.println("4. Rango");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto"); // valor exacto
+                input.nextLine();
+                int busca = input.nextInt();
+                for (Repartidor repartidor : repartidores) {
+                    if (repartidor.Edad == busca){
+                        //imprimir empresa
+                        System.out.println(repartidor.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) { // valor minimo
+                System.out.println("Ingrese el valor mínimo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Cedula");
+                System.out.println("2. Edad");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(repartidores, new RepartidorComparator(atriordena,ordena));
+                for (Repartidor repartidor : repartidores) {
+                    if (repartidor.Edad >= busca){
+                        System.out.println(repartidor.toString());
+                    }
+                }
+
+
+            } else if (option2.equals("3")){  // valor maximo
+                System.out.println("Ingrese el valor máximo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Cedula");
+                System.out.println("2. Edad");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(repartidores, new RepartidorComparator(atriordena,ordena));
+                for (Repartidor repartidor : repartidores) {
+                    if (repartidor.Edad <= busca){
+                        System.out.println(repartidor.toString());
+                    }
+                }
+
+            } else if (option2.equals("4")) { // rango
+                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
+                input.nextLine();
+                int busca1 = input.nextInt();
+                int busca2 = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Cedula");
+                System.out.println("2. Edad");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(repartidores, new RepartidorComparator(atriordena,ordena));
+                for (Repartidor repartidor : repartidores) {
+                    if ((repartidor.Edad >= busca1) && (repartidor.Edad <= busca2)) {
+                        System.out.println(repartidor.toString());
+                    }
+                }
+            }
+
+        // numero de celular
+
+        } else if (option1.equals("4")) {
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor mínimo");
+            System.out.println("3. Valor máximo");
+            System.out.println("4. Rango");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto"); // valor exacto
+                input.nextLine();
+                int busca = input.nextInt();
+                for (Repartidor repartidor : repartidores) {
+                    if (repartidor.Num_Celular == busca) {
+                        //imprimir empresa
+                        System.out.println(repartidor.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) { // valor minimo
+                System.out.println("Ingrese el valor mínimo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Cedula");
+                System.out.println("2. Edad");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(repartidores, new RepartidorComparator(atriordena, ordena));
+                for (Repartidor repartidor : repartidores) {
+                    if (repartidor.Num_Celular >= busca) {
+                        System.out.println(repartidor.toString());
+                    }
+                }
+
+
+            } else if (option2.equals("3")) {  // valor maximo
+                System.out.println("Ingrese el valor máximo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Cedula");
+                System.out.println("2. Edad");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(repartidores, new RepartidorComparator(atriordena, ordena));
+                for (Repartidor repartidor : repartidores) {
+                    if (repartidor.Num_Celular <= busca) {
+                        System.out.println(repartidor.toString());
+                    }
+                }
+
+            } else if (option2.equals("4")) { // rango
+                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
+                input.nextLine();
+                int busca1 = input.nextInt();
+                int busca2 = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Cedula");
+                System.out.println("2. Edad");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(repartidores, new RepartidorComparator(atriordena, ordena));
+                for (Repartidor repartidor : repartidores) {
+                    if ((repartidor.Num_Celular >= busca1) && (repartidor.Num_Celular <= busca2)) {
+                        System.out.println(repartidor.toString());
+                    }
+                }
+            }
+
+        } else if (option1.equals("5")) { // tipo de licencia
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor sin considerar mayúsculas");
+            System.out.println("0. Cancelar");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (Repartidor repartidor : repartidores) {
+                    if (repartidor.Tipo_Licencia.equals(busca)) {
+                        System.out.println(repartidor.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) {//**************************************
+                System.out.println("Ingrese Valor sin considerar mayúsculas");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (Repartidor repartidor : repartidores) {
+                    if (limpiarcadena(repartidor.Tipo_Licencia).equals(limpiarcadena(busca))) {
+                        System.out.println(repartidor.toString());
+                    }
+                }
+
+            }
+
+        } else if (option1.equals("5")) {
+            if (repartidores.size() == 0){
+                System.out.println("No hay registros");
+            }else{
+                System.out.println(repartidores.toString());
+            }
+        }
+
+    }
+
+    // Busqueda Tipo de entrega
+    public static void BusquedaTipoDeEntrega(String option1){
+        // Codigo**************
+        if (option1.equals("1")){
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor mínimo");
+            System.out.println("3. Valor máximo");
+            System.out.println("4. Rango");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto"); // valor exacto
+                input.nextLine();
+                int busca = input.nextInt();
+                for (TipoDeEntrega tipodeentrega : tipoDeEntregas) {
+                    if (tipodeentrega.Codigo == busca){
+                        //imprimir empresa
+                        System.out.println(tipodeentrega.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) { // valor minimo
+                System.out.println("Ingrese el valor mínimo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo ");
+                System.out.println("2. Tiempo estimado");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(tipoDeEntregas, new TipoDeEntregaComparator(atriordena,ordena));
+                for (TipoDeEntrega tipodeentrega : tipoDeEntregas) {
+                    if (tipodeentrega.Codigo >= busca){
+                        System.out.println(tipodeentrega.toString());
+                    }
+                }
+
+
+            } else if (option2.equals("3")){  // valor maximo
+                System.out.println("Ingrese el valor máximo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo ");
+                System.out.println("2. Tiempo estimado");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(tipoDeEntregas, new TipoDeEntregaComparator(atriordena,ordena));
+                for (TipoDeEntrega tipodeentrega : tipoDeEntregas) {
+                    if (tipodeentrega.Codigo <= busca){
+                        System.out.println(tipodeentrega.toString());
+                    }
+                }
+
+            } else if (option2.equals("4")){ // rango
+                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
+                input.nextLine();
+                int busca1 = input.nextInt();
+                int busca2 = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo ");
+                System.out.println("2. Tiempo estimado");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(tipoDeEntregas, new TipoDeEntregaComparator(atriordena,ordena));
+                for (TipoDeEntrega tipodeentrega : tipoDeEntregas) {
+                    if ((tipodeentrega.Codigo >= busca1) && (tipodeentrega.Codigo <= busca2)){
+                        System.out.println(tipodeentrega.toString());
+                    }
+                }
+            }
+
+
+        } else if (option1.equals("2")) { // tiempo estimado
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor mínimo");
+            System.out.println("3. Valor máximo");
+            System.out.println("4. Rango");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto"); // valor exacto
+                input.nextLine();
+                int busca = input.nextInt();
+                for (TipoDeEntrega tipodeentrega : tipoDeEntregas) {
+                    if (tipodeentrega.Tiempo_Estimado == busca){
+                        System.out.println(tipodeentrega.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) { // valor minimo
+                System.out.println("Ingrese el valor mínimo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo ");
+                System.out.println("2. Tiempo estimado");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(tipoDeEntregas, new TipoDeEntregaComparator(atriordena,ordena));
+                for (TipoDeEntrega tipodeentrega : tipoDeEntregas) {
+                    if (tipodeentrega.Tiempo_Estimado >= busca){
+                        System.out.println(tipodeentrega.toString());
+                    }
+                }
+
+
+            } else if (option2.equals("3")){  // valor maximo
+                System.out.println("Ingrese el valor máximo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo ");
+                System.out.println("2. Tiempo estimado");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(tipoDeEntregas, new TipoDeEntregaComparator(atriordena,ordena));
+                for (TipoDeEntrega tipodeentrega : tipoDeEntregas) {
+                    if (tipodeentrega.Tiempo_Estimado <= busca){
+                        System.out.println(tipodeentrega.toString());
+                    }
+                }
+
+            } else if (option2.equals("4")) { // rango
+                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
+                input.nextLine();
+                int busca1 = input.nextInt();
+                int busca2 = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo ");
+                System.out.println("2. Tiempo estimado");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(tipoDeEntregas, new TipoDeEntregaComparator(atriordena,ordena));
+                for (TipoDeEntrega tipodeentrega : tipoDeEntregas) {
+                    if ((tipodeentrega.Tiempo_Estimado >= busca1) && (tipodeentrega.Tiempo_Estimado <= busca2)) {
+                        System.out.println(tipodeentrega.toString());
+                    }
+                }
+            }
+
+        } else if (option1.equals("3")) {
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor sin considerar mayúsculas");
+            System.out.println("0. Cancelar");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (TipoDeEntrega tipodeentrega : tipoDeEntregas) {
+                    if (tipodeentrega.MedioDeTransporte.equals(busca)) {
+                        System.out.println(tipodeentrega.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) {//**************************************
+                System.out.println("Ingrese Valor sin considerar mayúsculas");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (TipoDeEntrega tipodeentrega : tipoDeEntregas) {
+                    if (limpiarcadena(tipodeentrega.MedioDeTransporte).equals(limpiarcadena(busca))) {
+                        System.out.println(tipodeentrega.toString());
+                    }
+                }
+
+            }
+        }
+    }
+
+    // Busqueda clientes
+    public static void BusquedaCliente(String option1){
+        // Codigo**************
+        if (option1.equals("1")){
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor mínimo");
+            System.out.println("3. Valor máximo");
+            System.out.println("4. Rango");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto"); // valor exacto
+                input.nextLine();
+                int busca = input.nextInt();
+                for (Cliente cliente : clientes) {
+                    if (cliente.Documento == busca){
+                        //imprimir empresa
+                        System.out.println(cliente.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) { // valor minimo
+                System.out.println("Ingrese el valor mínimo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Documento");
+                System.out.println("2. Telefono");
+                System.out.println("3. Codigo postal");
+
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(clientes, new ClienteComparator(atriordena,ordena));
+                for (Cliente cliente : clientes) {
+                    if (cliente.Documento >= busca){
+                        System.out.println(cliente.toString());
+                    }
+                }
+
+
+            } else if (option2.equals("3")){  // valor maximo
+                System.out.println("Ingrese el valor máximo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Documento");
+                System.out.println("2. Telefono");
+                System.out.println("3. Codigo postal");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(clientes, new ClienteComparator(atriordena,ordena));
+                for (Cliente cliente : clientes) {
+                    if (cliente.Documento <= busca){
+                        System.out.println(cliente.toString());
+                    }
+                }
+
+            } else if (option2.equals("4")){ // rango
+                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
+                input.nextLine();
+                int busca1 = input.nextInt();
+                int busca2 = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Documento");
+                System.out.println("2. Telefono");
+                System.out.println("3. Codigo postal");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(clientes, new ClienteComparator(atriordena,ordena));
+                for (Cliente cliente : clientes) {
+                    if ((cliente.Documento >= busca1) && (cliente.Documento <= busca2)){
+                        System.out.println(cliente.toString());
+                    }
+                }
+            }
+
+
+            // Nombre
+        } else if (option1.equals("2")){
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor sin considerar mayúsculas");
+            System.out.println("0. Cancelar");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (Cliente cliente : clientes) {
+                    if (cliente.Nombre.equals(busca)){
+                        System.out.println(cliente.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) {//**************************************
+                System.out.println("Ingrese Valor sin considerar mayúsculas");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (Cliente cliente : clientes) {
+                    if (limpiarcadena(cliente.Nombre).equals(limpiarcadena(busca))){
+                        System.out.println(cliente.toString());
+                    }
+                }
+
+            } else {
+                return;
+            }
+
+            // Direccionn
+        } else if (option1.equals("3")){ //enfoque
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor sin considerar mayúsculas");
+            System.out.println("0. Cancelar");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (Cliente cliente : clientes) {
+                    if (cliente.Nombre.equals(busca)){
+                        System.out.println(cliente.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) {//**************************************
+                System.out.println("Ingrese Valor sin considerar mayúsculas");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (Cliente cliente : clientes) {
+                    if (limpiarcadena(cliente.Nombre).equals(limpiarcadena(busca))){
+                        System.out.println(cliente.toString());
+                    }
+                }
+            } else {
+                return;
+            }
+
+            // teefono
+        } else if (option1.equals("4")) {
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor mínimo");
+            System.out.println("3. Valor máximo");
+            System.out.println("4. Rango");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto"); // valor exacto
+                input.nextLine();
+                int busca = input.nextInt();
+                for (Cliente cliente : clientes) {
+                    if (cliente.Telefono == busca){
+                        //imprimir empresa
+                        System.out.println(cliente.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) { // valor minimo
+                System.out.println("Ingrese el valor mínimo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Documento");
+                System.out.println("2. Telefono");
+                System.out.println("3. Codigo postal");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(clientes, new ClienteComparator(atriordena,ordena));
+                for (Cliente cliente : clientes) {
+                    if (cliente.Telefono >= busca){
+                        System.out.println(cliente.toString());
+                    }
+                }
+
+
+            } else if (option2.equals("3")){  // valor maximo
+                System.out.println("Ingrese el valor máximo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Documento");
+                System.out.println("2. Telefono");
+                System.out.println("3. Codigo postal");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(clientes, new ClienteComparator(atriordena,ordena));
+                for (Cliente cliente : clientes) {
+                    if (cliente.Telefono <= busca){
+                        System.out.println(cliente.toString());
+                    }
+                }
+
+            } else if (option2.equals("4")) { // rango
+                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
+                input.nextLine();
+                int busca1 = input.nextInt();
+                int busca2 = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Documento");
+                System.out.println("2. Telefono");
+                System.out.println("3. Codigo postal");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(clientes, new ClienteComparator(atriordena,ordena));
+                for (Cliente cliente : clientes) {
+                    if ((cliente.Telefono >= busca1) && (cliente.Telefono <= busca2)) {
+                        System.out.println(cliente.toString());
+                    }
+                }
+            }
+
+            // codigo postal
+        } else if (option1.equals("5")) {
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor mínimo");
+            System.out.println("3. Valor máximo");
+            System.out.println("4. Rango");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto"); // valor exacto
+                input.nextLine();
+                int busca = input.nextInt();
+                for (Cliente cliente : clientes) {
+                    if (cliente.CodigoPostal == busca){
+                        //imprimir empresa
+                        System.out.println(cliente.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) { // valor minimo
+                System.out.println("Ingrese el valor mínimo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Documento");
+                System.out.println("2. Telefono");
+                System.out.println("3. Codigo postal");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(clientes, new ClienteComparator(atriordena,ordena));
+                for (Cliente cliente : clientes) {
+                    if (cliente.CodigoPostal >= busca){
+                        System.out.println(cliente.toString());
+                    }
+                }
+
+
+            } else if (option2.equals("3")){  // valor maximo
+                System.out.println("Ingrese el valor máximo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Documento");
+                System.out.println("2. Telefono");
+                System.out.println("3. Codigo postal");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(clientes, new ClienteComparator(atriordena,ordena));
+                for (Cliente cliente : clientes) {
+                    if (cliente.CodigoPostal <= busca){
+                        System.out.println(cliente.toString());
+                    }
+                }
+
+            } else if (option2.equals("4")) { // rango
+                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
+                input.nextLine();
+                int busca1 = input.nextInt();
+                int busca2 = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Documento");
+                System.out.println("2. Telefono");
+                System.out.println("3. Codigo postal");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(clientes, new ClienteComparator(atriordena,ordena));
+                for (Cliente cliente : clientes) {
+                    if ((cliente.CodigoPostal >= busca1) && (cliente.CodigoPostal <= busca2)) {
+                        System.out.println(cliente.toString());
+                    }
+                }
+            }
+
+        }else if(option1.equals("6")){
+            if (clientes.size()==0){
+                System.out.println("No hay registros");
+            }else{
+                System.out.println(clientes.toString());
+            }
+
+        }else{
+            return;
+        }
+
+    }
+
+    // Busqueda Contrato de repartidor
+    public static void BusquedaContratoRepartidor(String option1){
+        // Codigo**************
+        if (option1.equals("1")){
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor mínimo");
+            System.out.println("3. Valor máximo");
+            System.out.println("4. Rango");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto"); // valor exacto
+                input.nextLine();
+                int busca = input.nextInt();
+                for (ContratoRepartidor contratorepartidor : contratorepartidores) {
+                    if (contratorepartidor.numerocontrato == busca){
+                        //imprimir empresa
+                        System.out.println(contratorepartidor.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) { // valor minimo
+                System.out.println("Ingrese el valor mínimo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Numero");
+                System.out.println("2. Salario");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(contratorepartidores, new ContratoRepartidorComparator(atriordena,ordena));
+                for (ContratoRepartidor contratorepartidor : contratorepartidores) {
+                    if (contratorepartidor.numerocontrato >= busca){
+                        System.out.println(contratorepartidor.toString());
+                    }
+                }
+
+
+            } else if (option2.equals("3")){  // valor maximo
+                System.out.println("Ingrese el valor máximo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Numero");
+                System.out.println("2. Salario");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(contratorepartidores, new ContratoRepartidorComparator(atriordena,ordena));
+                for (ContratoRepartidor contratorepartidor : contratorepartidores) {
+                    if (contratorepartidor.numerocontrato <= busca){
+                        System.out.println(contratorepartidor.toString());
+                    }
+                }
+
+            } else if (option2.equals("4")){ // rango
+                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
+                input.nextLine();
+                int busca1 = input.nextInt();
+                int busca2 = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Numero");
+                System.out.println("2. Salario");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(contratorepartidores, new ContratoRepartidorComparator(atriordena,ordena));
+                for (ContratoRepartidor contratorepartidor : contratorepartidores) {
+                    if ((contratorepartidor.numerocontrato >= busca1) && (contratorepartidor.numerocontrato <= busca2)){
+                        System.out.println(contratorepartidor.toString());
+                    }
+                }
+            }
+
+            // salario
+        } else if (option1.equals("2")){
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor mínimo");
+            System.out.println("3. Valor máximo");
+            System.out.println("4. Rango");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto"); // valor exacto
+                input.nextLine();
+                int busca = input.nextInt();
+                for (ContratoRepartidor contratorepartidor : contratorepartidores) {
+                    if (contratorepartidor.salario == busca){
+                        //imprimir empresa
+                        System.out.println(contratorepartidor.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) { // valor minimo
+                System.out.println("Ingrese el valor mínimo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Numero");
+                System.out.println("2. Salario");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(contratorepartidores, new ContratoRepartidorComparator(atriordena,ordena));
+                for (ContratoRepartidor contratorepartidor : contratorepartidores) {
+                    if (contratorepartidor.salario >= busca){
+                        System.out.println(contratorepartidor.toString());
+                    }
+                }
+
+
+            } else if (option2.equals("3")){  // valor maximo
+                System.out.println("Ingrese el valor máximo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Numero");
+                System.out.println("2. Salario");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(contratorepartidores, new ContratoRepartidorComparator(atriordena,ordena));
+                for (ContratoRepartidor contratorepartidor : contratorepartidores) {
+                    if (contratorepartidor.salario <= busca){
+                        System.out.println(contratorepartidor.toString());
+                    }
+                }
+
+            } else if (option2.equals("4")){ // rango
+                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
+                input.nextLine();
+                int busca1 = input.nextInt();
+                int busca2 = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Numero");
+                System.out.println("2. Salario");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(contratorepartidores, new ContratoRepartidorComparator(atriordena,ordena));
+                for (ContratoRepartidor contratorepartidor : contratorepartidores) {
+                    if ((contratorepartidor.salario >= busca1) && (contratorepartidor.salario <= busca2)){
+                        System.out.println(contratorepartidor.toString());
+                    }
+                }
+            }
+
+            // fecha inicio
+        } else if (option1.equals("3")){ //enfoque
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor sin considerar mayúsculas");
+            System.out.println("0. Cancelar");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (ContratoRepartidor contratorepartidor : contratorepartidores) {
+                    if (contratorepartidor.fechainicio.equals(busca)){
+                        System.out.println(contratorepartidor.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) {//**************************************
+                System.out.println("Ingrese Valor sin considerar mayúsculas");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (ContratoRepartidor contratorepartidor : contratorepartidores) {
+                    if (limpiarcadena(contratorepartidor.fechainicio).equals(limpiarcadena(busca))){
+                        System.out.println(contratorepartidor.toString());
+                    }
+                }
+
+            } else {
+                return;
+            }
+
+            // fecha fin
+        } else if (option1.equals("3")) {
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor sin considerar mayúsculas");
+            System.out.println("0. Cancelar");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (ContratoRepartidor contratorepartidor : contratorepartidores) {
+                    if (contratorepartidor.fechafin.equals(busca)){
+                        System.out.println(contratorepartidor.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) {//**************************************
+                System.out.println("Ingrese Valor sin considerar mayúsculas");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (ContratoRepartidor contratorepartidor : contratorepartidores) {
+                    if (limpiarcadena(contratorepartidor.fechafin).equals(limpiarcadena(busca))){
+                        System.out.println(contratorepartidor.toString());
+                    }
+                }
+
+            } else {
+                return;
+            }
+
+        }
+
+    }
+
+    // Busqueda Contrato entrega
+    public static void BusquedaEntrega(String option1){
+        // Codigo**************
+        if (option1.equals("1")){
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor mínimo");
+            System.out.println("3. Valor máximo");
+            System.out.println("4. Rango");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto"); // valor exacto
+                input.nextLine();
+                int busca = input.nextInt();
+                for (Entrega entrega : entregas) {
+                    if (entrega.codEntrega == busca){
+                        System.out.println(entrega.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) { // valor minimo
+                System.out.println("Ingrese el valor mínimo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de especialidad");
+                System.out.println("2. Linea de atencion");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregas) {
+                    if (entrega.codEntrega >= busca){
+                        System.out.println(entrega.toString());
+                    }
+                }
+
+
+            } else if (option2.equals("3")){  // valor maximo
+                System.out.println("Ingrese el valor máximo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de especialidad");
+                System.out.println("2. Linea de atencion");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregas) {
+                    if (entrega.codEntrega <= busca){
+                        System.out.println(entrega.toString());
+                    }
+                }
+
+            } else if (option2.equals("4")){ // rango
+                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
+                input.nextLine();
+                int busca1 = input.nextInt();
+                int busca2 = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de especialidad");
+                System.out.println("2. Linea de atencion");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregas) {
+                    if ((entrega.codEntrega >= busca1) && (entrega.codEntrega <= busca2)){
+                        System.out.println(entrega.toString());
+                    }
+                }
+            }
+
+
+            // Peso
+        } else if (option1.equals("2")){
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor mínimo");
+            System.out.println("3. Valor máximo");
+            System.out.println("4. Rango");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto"); // valor exacto
+                input.nextLine();
+                int busca = input.nextInt();
+                for (Entrega entrega : entregas) {
+                    if (entrega.peso == busca){
+                        System.out.println(entrega.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) { // valor minimo
+                System.out.println("Ingrese el valor mínimo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de especialidad");
+                System.out.println("2. Linea de atencion");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregas) {
+                    if (entrega.peso >= busca){
+                        System.out.println(entrega.toString());
+                    }
+                }
+
+
+            } else if (option2.equals("3")){  // valor maximo
+                System.out.println("Ingrese el valor máximo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de especialidad");
+                System.out.println("2. Linea de atencion");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregas) {
+                    if (entrega.peso <= busca){
+                        System.out.println(entrega.toString());
+                    }
+                }
+
+            } else if (option2.equals("4")){ // rango
+                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
+                input.nextLine();
+                int busca1 = input.nextInt();
+                int busca2 = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de especialidad");
+                System.out.println("2. Linea de atencion");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregas) {
+                    if ((entrega.peso >= busca1) && (entrega.peso <= busca2)){
+                        System.out.println(entrega.toString());
+                    }
+                }
+            }
+
+            // dimensiones
+        } else if (option1.equals("3")){
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor mínimo");
+            System.out.println("3. Valor máximo");
+            System.out.println("4. Rango");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto"); // valor exacto
+                input.nextLine();
+                int busca = input.nextInt();
+                for (Entrega entrega : entregas) {
+                    if (entrega.dimenciones == busca){
+                        System.out.println(entrega.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) { // valor minimo
+                System.out.println("Ingrese el valor mínimo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de especialidad");
+                System.out.println("2. Linea de atencion");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregas) {
+                    if (entrega.dimenciones >= busca){
+                        System.out.println(entrega.toString());
+                    }
+                }
+
+
+            } else if (option2.equals("3")){  // valor maximo
+                System.out.println("Ingrese el valor máximo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de especialidad");
+                System.out.println("2. Linea de atencion");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregas) {
+                    if (entrega.dimenciones <= busca){
+                        System.out.println(entrega.toString());
+                    }
+                }
+
+            } else if (option2.equals("4")){ // rango
+                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
+                input.nextLine();
+                int busca1 = input.nextInt();
+                int busca2 = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de especialidad");
+                System.out.println("2. Linea de atencion");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregas) {
+                    if ((entrega.dimenciones >= busca1) && (entrega.dimenciones <= busca2)){
+                        System.out.println(entrega.toString());
+                    }
+                }
+            }
+
+            // costo
+        } else if (option1.equals("4")) {
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor mínimo");
+            System.out.println("3. Valor máximo");
+            System.out.println("4. Rango");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto"); // valor exacto
+                input.nextLine();
+                int busca = input.nextInt();
+                for (Entrega entrega : entregas) {
+                    if (entrega.costo == busca){
+                        //imprimir empresa
+                        System.out.println(entrega.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) { // valor minimo
+                System.out.println("Ingrese el valor mínimo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de especialidad");
+                System.out.println("2. Linea de atencion");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregas) {
+                    if (entrega.costo >= busca){
+                        System.out.println(entrega.toString());
+                    }
+                }
+
+
+            } else if (option2.equals("3")){  // valor maximo
+                System.out.println("Ingrese el valor máximo");
+                input.nextLine();
+                int busca = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de especialidad");
+                System.out.println("2. Linea de atencion");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregas) {
+                    if (entrega.costo <= busca){
+                        System.out.println(entrega.toString());
+                    }
+                }
+
+            } else if (option2.equals("4")) { // rango
+                System.out.println("Ingrese valor minimo y el maximo del rango separado por espacio");
+                input.nextLine();
+                int busca1 = input.nextInt();
+                int busca2 = input.nextInt();
+                System.out.println("Por cual atributo desea ordenar");
+                System.out.println("1. Codigo de especialidad");
+                System.out.println("2. Linea de atencion");
+                String atriordena = input.next();
+                System.out.println("De que manera desea ordenar");
+                System.out.println("1. ascendente");
+                System.out.println("2. descendente");
+                String ordena = input.next();
+                Collections.sort(entregas, new EntregaComparator(atriordena,ordena));
+                for (Entrega entrega : entregas) {
+                    if ((entrega.costo >= busca1) && (entrega.costo <= busca2)) {
+                        System.out.println(entrega.toString());
+                    }
+                }
+            }
+
+            // Estado de entrega
+        } else if (option1.equals("5")) {
+            System.out.println("Escoja una opcion:");
+            System.out.println("1. Valor exacto");
+            System.out.println("2. Valor sin considerar mayúsculas");
+            System.out.println("0. Cancelar");
+            String option2 = input.next();
+            if (option2.equals("1")) {
+                System.out.println("Ingrese el valor exacto");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (Entrega entrega : entregas) {
+                    if (entrega.estadoEntrega.equals(busca)) {
+                        System.out.println(entrega.toString());
+                    }
+                }
+
+            } else if (option2.equals("2")) {//**************************************
+                System.out.println("Ingrese Valor sin considerar mayúsculas");
+                input.nextLine();
+                String busca = input.nextLine();
+                for (Entrega entrega : entregas) {
+                    if (limpiarcadena(entrega.estadoEntrega).equals(limpiarcadena(busca))) {
+                        System.out.println(entrega.toString());
+                    }
+                }
+
+            } else {
+                return;
+            }
+        } else if (option1.equals("6")) {
+            if (entregas.size()==0){
+                System.out.println("No hay registros");
+            }else{
+                System.out.println(entregas.toString());
+            }
+        } else{
             return;
         }
     }
-    public static void MostrarClase(int option){
 
+
+    // Limpoar cadena ------------------------------------------------------------------------------
+    public static String limpiarcadena(String cadena){
+        return cadena.replaceAll("\\p{P}", "").toLowerCase();
     }
 
 }
