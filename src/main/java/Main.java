@@ -1927,10 +1927,7 @@ public class Main {
 
 
 
-
-
-
-    // Busqueda Empresa
+    // BUSQUEDAS ****************************************************************************
     public static void BusquedaEmpresa(String option1){
         // NIt
         if (option1.equals("1")){
@@ -2080,8 +2077,10 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(sucursales, new SucursalComparator(atriordena,ordena));
-                for (Sucursal sucursale : sucursales) {
+
+                LinkedList<Sucursal> sucursalescopy = new LinkedList<>(sucursales);
+                Collections.sort(sucursalescopy, new SucursalComparator(atriordena,ordena));
+                for (Sucursal sucursale : sucursalescopy) {
                     if (sucursale.codigoScursal >= busca){
                         System.out.println(sucursale.toString());
                     }
@@ -2100,8 +2099,9 @@ public class Main {
                 System.out.println("1. ascendente");
                 System.out.println("2. descendente");
                 String ordena = input.next();
-                Collections.sort(sucursales, new SucursalComparator(atriordena,ordena));
-                for (Sucursal sucursale : sucursales) {
+                LinkedList<Sucursal> sucursalescopy = new LinkedList<>(sucursales);
+                Collections.sort(sucursalescopy, new SucursalComparator(atriordena,ordena));
+                for (Sucursal sucursale : sucursalescopy) {
                     if (sucursale.codigoScursal <= busca){
                         System.out.println(sucursale.toString());
                     }
