@@ -25,7 +25,7 @@ In this repository, a java application is created to put into practice the knowl
 
 ## Trabajo 2 UML 2
 
-<img src="./Otros_Recursos/UML.png" width="800" title="hover text">
+<img src="./Otros_Recursos/UML2.png" width="800" title="hover text">
 
 
 
