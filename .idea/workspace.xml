@@ -23,13 +23,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81015d18-c706-4666-8fc5-e6faff066c61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/Empresa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/Especialidad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/Sucursal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/menu_principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/menu_principal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/menu_principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/menu_principal.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
