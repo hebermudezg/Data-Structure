@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controladores.IngresarAutorController">
+   <children>
+      <Label alignment="CENTER" layoutX="102.0" layoutY="35.0" prefHeight="46.0" prefWidth="358.0" text="Ingrese un nuevo Autor" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="32.0">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="96.0" layoutY="102.0" prefHeight="25.0" prefWidth="96.0" text="Cedula:" AnchorPane.leftAnchor="64.0" />
+      <TextField fx:id="textCedula" layoutX="174.0" layoutY="102.0" />
+      <Label layoutX="64.0" layoutY="144.0" prefHeight="25.0" prefWidth="96.0" text="Nombre:" />
+      <TextField fx:id="textNombre" layoutX="174.0" layoutY="144.0" />
+      <Label layoutX="64.0" layoutY="187.0" prefHeight="25.0" prefWidth="96.0" text="Edad:" />
+      <TextField fx:id="textEdad" layoutX="174.0" layoutY="187.0" />
+      <Button layoutX="425.0" layoutY="348.0" mnemonicParsing="false" onAction="#enviar" prefHeight="36.0" prefWidth="71.0" text="Enviar" AnchorPane.bottomAnchor="16.0" />
+      <Button layoutX="472.0" layoutY="326.0" mnemonicParsing="false" onAction="#volver" prefHeight="36.0" prefWidth="71.0" text="Volver" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="16.0" />
+      <Label fx:id="warningMessageCedula" layoutX="351.0" layoutY="97.0" prefHeight="36.0" prefWidth="209.0" textFill="RED" wrapText="true" />
+      <Label fx:id="warningMessageNombre" layoutX="352.0" layoutY="139.0" prefHeight="36.0" prefWidth="210.0" textFill="RED" />
+      <Label fx:id="warningMessageEdad" layoutX="351.0" layoutY="182.0" prefHeight="36.0" prefWidth="210.0" textFill="RED" />
+      <Label fx:id="warningMessageGeneral" alignment="CENTER" layoutX="53.0" layoutY="253.0" prefHeight="46.0" prefWidth="494.0" textFill="RED" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controladores.MenuPrincipalController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="108.0" layoutY="45.0" prefHeight="36.0" prefWidth="537.0" text="Bienvenido al sistema de Libros UN" textAlignment="JUSTIFY" AnchorPane.leftAnchor="32.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="45.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="51.0" layoutY="81.0" prefHeight="26.0" prefWidth="170.0" text="Seleccione una opcion:" AnchorPane.leftAnchor="32.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button alignment="TOP_LEFT" layoutX="128.0" layoutY="139.0" mnemonicParsing="false" onAction="#routeIngresarAutor" prefHeight="16.0" prefWidth="262.0" text="Ingresar autor" AnchorPane.leftAnchor="128.0" />
+      <Button alignment="TOP_LEFT" layoutX="128.0" layoutY="181.0" mnemonicParsing="false" onAction="#routeVerAutores" prefHeight="16.0" prefWidth="262.0" text="Ver autores ingresados" AnchorPane.leftAnchor="128.0" />
+      <Button alignment="TOP_LEFT" layoutX="128.0" layoutY="246.0" mnemonicParsing="false" onAction="#routeIngresarLibro" prefHeight="16.0" prefWidth="262.0" text="Ingresar libro" AnchorPane.leftAnchor="128.0" />
+      <Button alignment="TOP_LEFT" layoutX="128.0" layoutY="280.0" mnemonicParsing="false" onAction="#routeConsultarLibro" prefHeight="26.0" prefWidth="262.0" text="Consultar libro" AnchorPane.leftAnchor="128.0" />
+      <Button alignment="TOP_LEFT" layoutX="128.0" layoutY="314.0" mnemonicParsing="false" onAction="#routeVerLibros" prefHeight="16.0" prefWidth="262.0" text="Ver libros" AnchorPane.leftAnchor="128.0" />
+      <Label layoutX="77.0" layoutY="117.0" prefHeight="22.0" prefWidth="59.0" text="Autores" AnchorPane.leftAnchor="64.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="223.0" prefHeight="22.0" prefWidth="59.0" text="Libros" AnchorPane.leftAnchor="64.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="closeButton" alignment="CENTER" cancelButton="true" layoutX="443.0" layoutY="361.0" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="26.0" prefWidth="122.0" text="Salir" AnchorPane.bottomAnchor="16.0" AnchorPane.rightAnchor="16.0" />
+   </children>
+</AnchorPane>
