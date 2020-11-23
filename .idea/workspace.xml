@@ -23,75 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81015d18-c706-4666-8fc5-e6faff066c61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/Autor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/Libro.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/ConsultarLibroController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/IngresarAutorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/IngresarLibroController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/MenuPrincipalController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/VerAutoresController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/VerLibrosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Data-Structure.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_10_2020_12_22_p__m__[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_10_2020_12_22_p__m___Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_10_2020_2_49_p__m__[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_10_2020_2_49_p__m___Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Otros_Recursos/Estrucutra de datos UML Trabajo 1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Otros_Recursos/UML.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cliente.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ContratoArriendo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ContratoRepartidor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Empresa.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entrega.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EscribirJSON.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Especialidad.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Funciones.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LeerJSON.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Repartidor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sucursal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TipoDeEntrega.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Usuario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database/ClienteJSON.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database/ContratoRepartidorJSON.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database/EmpresasJSON.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database/EntregaJSON.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database/RepartidorJSON.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database/TipoDeEntregaJSON.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database/UsuariosJSON.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database/contratoArriendosJSON.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database/especialidadesJSON.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database/sucursalesJSON.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Cliente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ContratoArriendo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ContratoRepartidor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Empresa.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entrega.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EscribirJSON.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Especialidad.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/LeerJSON.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Repartidor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Sucursal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TipoDeEntrega.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Usuario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/database/ClienteJSON.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/database/ContratoRepartidorJSON.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/database/EmpresasJSON.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/database/EntregaJSON.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/database/RepartidorJSON.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/database/TipoDeEntregaJSON.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/database/UsuariosJSON.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/database/contratoArriendosJSON.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/database/especialidadesJSON.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/database/sucursalesJSON.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/menu_principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/menu_principal.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
