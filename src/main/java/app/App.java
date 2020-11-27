@@ -28,13 +28,16 @@ public class App extends Application {
     public static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
-
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
 
     public static void main(String[] args) {
+        // Quemando usuario y contraseña en el codigo
+        
+
+
         codigosSedes.put("Bogotá","23");
         codigosSedes.put("Medellín","19");
         codigosSedes.put("Manizales","17");
