@@ -1,13 +1,14 @@
 package app.controladores;
-
-import java.io.IOException;
-import app.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import java.io.IOException;
+import static app.App.selecionAccion;
+
 
 public class MenuPrincipalController {
+    @FXML
     public Button closeButton;
     @FXML
     private void closeButtonAction(){
@@ -15,29 +16,15 @@ public class MenuPrincipalController {
         stage.close();
     }
 
-
     @FXML
-    private void routeIngresarAutor(ActionEvent event) throws IOException {
-        App.setRoot("ingresar_autor");
+    public void routeAministra(ActionEvent event) throws IOException {
+        selecionAccion=0;
+        app.App.setRoot("SelecionarEntidad");
     }
 
-
-    @FXML
-    private void routeVerAutores(ActionEvent event) throws IOException {
-        App.setRoot("ver_autores");
+    public void routeBusqueda(ActionEvent event) throws IOException {
+        selecionAccion=1;
+        app.App.setRoot("SelecionarEntidad");
     }
-    @FXML
-    private void routeIngresarLibro(ActionEvent event) throws IOException {
-        App.setRoot("ingresar_libro");
-    }
-    @FXML
-    private void routeConsultarLibro(ActionEvent event) throws IOException {
-        App.setRoot("consultar_libro");
-    }
-    @FXML
-    private void routeVerLibros(ActionEvent event) throws IOException {
-        App.setRoot("ver_libros");
-    }
-
 
 }

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="402.0" prefWidth="572.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controladores.InicioSesionController">
+   <children>
+      <Label alignment="TOP_LEFT" layoutX="72.0" layoutY="14.0" prefHeight="54.0" prefWidth="459.0" text="EMPRESAS DE ENTREGAS" textFill="#ff7400f5" textOverrun="LEADING_ELLIPSIS" AnchorPane.leftAnchor="72.0" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font name="ISOCPEUR" size="40.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="45.0" layoutY="72.0" text="Iniciar sesion" textFill="#ff7400f5" textOverrun="LEADING_ELLIPSIS" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="72.0">
+         <font>
+            <Font name="ISOCPEUR" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="61.0" layoutY="116.0" prefHeight="26.0" prefWidth="521.0" text="Por favor ingrese su documento o correo" textFill="#ff7400f5" textOverrun="LEADING_ELLIPSIS" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="115.0">
+         <font>
+            <Font name="ISOCPEUR" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textDoCorreo" layoutX="212.0" layoutY="162.0" prefHeight="25.0" prefWidth="190.0" AnchorPane.leftAnchor="212.0" AnchorPane.rightAnchor="198.0" AnchorPane.topAnchor="162.0" />
+      <Label alignment="CENTER" layoutX="40.0" layoutY="200.0" prefHeight="26.0" prefWidth="521.0" text="Por favor ingrese su contraseña" textFill="#ff7400f5" textOverrun="LEADING_ELLIPSIS" AnchorPane.topAnchor="200.0">
+         <font>
+            <Font name="ISOCPEUR" size="24.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="textCotraseña" layoutX="206.0" layoutY="249.0" prefHeight="25.0" prefWidth="190.0" AnchorPane.topAnchor="245.0" />
+      <Button fx:id="Buttonsalir" layoutX="418.0" layoutY="351.0" mnemonicParsing="false" onAction="#ButtonsalirAction" prefHeight="26.0" prefWidth="88.0" text="Salir" textFill="#0033ff" AnchorPane.bottomAnchor="20.0">
+         <font>
+            <Font name="ISOCPEUR" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="256.0" layoutY="286.0" mnemonicParsing="false" onAction="#Enviar" prefHeight="26.0" prefWidth="88.0" text="Enviar" textFill="#0033ff" AnchorPane.bottomAnchor="85.0">
+         <font>
+            <Font name="ISOCPEUR" size="15.0" />
+         </font>
+      </Button>
+      <Label fx:id="warningMessageGeneral" alignment="CENTER" layoutX="42.0" layoutY="320.0" prefHeight="0.0" prefWidth="521.0" textFill="#ff0000f5" textOverrun="LEADING_ELLIPSIS">
+         <font>
+            <Font name="ISOCPEUR" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

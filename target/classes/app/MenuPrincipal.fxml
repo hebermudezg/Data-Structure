@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controladores.MenuPrincipalController">
+   <children>
+      <Label alignment="TOP_LEFT" layoutX="73.0" layoutY="37.0" text="EMPRESAS DE ENTREGAS" textFill="#ff7400f5" textOverrun="LEADING_ELLIPSIS" AnchorPane.leftAnchor="73.0" AnchorPane.topAnchor="37.0">
+         <font>
+            <Font name="ISOCPEUR" size="40.0" />
+         </font>
+      </Label>
+      <Button fx:id="closeButton" layoutX="222.0" layoutY="306.0" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="42.0" prefWidth="158.0" text="Salir" textFill="#0033ff" AnchorPane.topAnchor="295.0">
+         <font>
+            <Font name="ISOCPEUR" size="15.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="40.0" layoutY="98.0" text="Menu principal" textFill="#ff7400f5" textOverrun="LEADING_ELLIPSIS" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="95.0">
+         <font>
+            <Font name="ISOCPEUR" size="36.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="215.0" layoutY="136.0" text="escoja una opcion:" textFill="#ff7400f5" textOverrun="LEADING_ELLIPSIS">
+         <font>
+            <Font name="ISOCPEUR" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="221.0" layoutY="185.0" mnemonicParsing="false" onAction="#routeAministra" prefHeight="42.0" prefWidth="158.0" text="Administración" textFill="#0033ff" AnchorPane.topAnchor="185.0">
+         <font>
+            <Font name="ISOCPEUR" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="221.0" layoutY="248.0" mnemonicParsing="false" onAction="#routeBusqueda" prefHeight="42.0" prefWidth="158.0" text="Búsqueda" textFill="#0033ff" AnchorPane.topAnchor="240.0">
+         <font>
+            <Font name="ISOCPEUR" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

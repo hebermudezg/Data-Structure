@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controladores.ELEmpresa">
+    <children>
+      <TextField fx:id="textNitElimi" layoutX="132.0" layoutY="151.0" prefHeight="26.0" prefWidth="337.0" />
+      <Label alignment="TOP_LEFT" layoutX="60.0" layoutY="62.0" text="ELIMINAR EMPRESAS" textFill="#ff7400f5" textOverrun="LEADING_ELLIPSIS" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="40.0">
+         <font>
+            <Font name="ISOCPEUR" size="40.0" />
+         </font>
+      </Label>
+      <Label fx:id="warningMessageResult" layoutX="132.0" layoutY="188.0" prefHeight="144.0" prefWidth="337.0" />
+      <Label alignment="CENTER" layoutX="132.0" layoutY="109.0" prefHeight="27.0" prefWidth="337.0" text="Ingrese el nit de la empresa a eliminar:" textFill="#000000f5" textOverrun="LEADING_ELLIPSIS" AnchorPane.leftAnchor="132.0" AnchorPane.rightAnchor="131.0">
+         <font>
+            <Font name="ISOCPEUR" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="192.0" layoutY="352.0" mnemonicParsing="false" onAction="#volver" prefHeight="26.0" prefWidth="88.0" text="Volver" textFill="#0033ff">
+         <font>
+            <Font name="ISOCPEUR" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="294.0" layoutY="352.0" mnemonicParsing="false" onAction="#Eliminar" prefHeight="26.0" prefWidth="88.0" text="Eliminar" textFill="#0033ff">
+         <font>
+            <Font name="ISOCPEUR" size="15.0" />
+         </font>
+      </Button>
+    </children>
+</AnchorPane>

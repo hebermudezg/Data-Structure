@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controladores.MenuAdministracion">
+   <children>
+      <Label fx:id="textTitulo" alignment="TOP_LEFT" layoutX="28.0" layoutY="27.0" textFill="#ff7400f5" textOverrun="LEADING_ELLIPSIS" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="40.0">
+         <font>
+            <Font name="ISOCPEUR" size="40.0" />
+         </font>
+      </Label>
+      <Button layoutX="342.0" layoutY="194.0" mnemonicParsing="false" onAction="#routeCrear" prefHeight="42.0" prefWidth="158.0" text="Crear" textFill="#0033ff" AnchorPane.rightAnchor="100.0">
+         <font>
+            <Font name="ISOCPEUR" size="15.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="35.0" layoutY="99.0" text="Cual de las acciones quiere realizar" textFill="#ff7400f5" textOverrun="LEADING_ELLIPSIS" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+         <font>
+            <Font name="ISOCPEUR" size="32.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="220.0" layoutY="137.0" text="escoja una opcion:" textFill="#ff7400f5" textOverrun="LEADING_ELLIPSIS" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+         <font>
+            <Font name="ISOCPEUR" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="100.0" layoutY="194.0" mnemonicParsing="false" onAction="#routeVer" prefHeight="42.0" prefWidth="158.0" text="Ver" textFill="#0033ff" AnchorPane.leftAnchor="100.0">
+         <font>
+            <Font name="ISOCPEUR" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="100.0" layoutY="260.0" mnemonicParsing="false" onAction="#routeEditar" prefHeight="42.0" prefWidth="158.0" text="Editar" textFill="#0033ff" AnchorPane.leftAnchor="100.0">
+         <font>
+            <Font name="ISOCPEUR" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="252.0" layoutY="319.0" mnemonicParsing="false" onAction="#volver" prefHeight="42.0" prefWidth="96.0" text="Cancelar" textFill="#0033ff" AnchorPane.bottomAnchor="39.0" AnchorPane.rightAnchor="252.0">
+         <font>
+            <Font name="ISOCPEUR" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="342.0" layoutY="260.0" mnemonicParsing="false" onAction="#routeEliminar" prefHeight="42.0" prefWidth="158.0" text="Eliminar" textFill="#0033ff" AnchorPane.rightAnchor="100.0">
+         <font>
+            <Font name="ISOCPEUR" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controladores.CEmpresa">
+   <children>
+      <Label alignment="TOP_LEFT" layoutX="50.0" layoutY="52.0" text="EMPRESAS DE EMTREGAS" textFill="#ff7400f5" textOverrun="LEADING_ELLIPSIS" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="40.0">
+         <font>
+            <Font name="ISOCPEUR" size="40.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="28.0" layoutY="82.0" text="Crear una nuevo Empresa" textFill="#ff7400f5" textOverrun="LEADING_ELLIPSIS" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="90.0">
+         <font>
+            <Font name="ISOCPEUR" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="39.0" layoutY="166.0" text="Ingrese razon social" textFill="#000000f5" textOverrun="LEADING_ELLIPSIS" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="170.0">
+         <font>
+            <Font name="ISOCPEUR" size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="33.0" layoutY="190.0" text="Valor en bolsa" textFill="#000000f5" textOverrun="LEADING_ELLIPSIS" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="190.0">
+         <font>
+            <Font name="ISOCPEUR" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textValor_en_bolsa" layoutX="205.0" layoutY="178.0" prefHeight="25.0" prefWidth="190.0" AnchorPane.leftAnchor="205.0" />
+      <Label alignment="CENTER" layoutX="33.0" layoutY="125.0" text="Ingrese el nit" textFill="#000000f5" textOverrun="LEADING_ELLIPSIS" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="125.0">
+         <font>
+            <Font name="ISOCPEUR" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textNit" layoutX="205.0" layoutY="133.0" prefHeight="25.0" prefWidth="190.0" AnchorPane.leftAnchor="205.0" />
+      <Label alignment="CENTER" layoutX="33.0" layoutY="210.0" text="Ingrese el presidente" textFill="#000000f5" textOverrun="LEADING_ELLIPSIS" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="215.0">
+         <font>
+            <Font name="ISOCPEUR" size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="33.0" layoutY="232.0" text="de la nueva empresa:" textFill="#000000f5" textOverrun="LEADING_ELLIPSIS" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="235.0">
+         <font>
+            <Font name="ISOCPEUR" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textRazonSocial" layoutX="205.0" layoutY="223.0" prefHeight="25.0" prefWidth="190.0" AnchorPane.leftAnchor="205.0" />
+      <Label alignment="CENTER" layoutX="36.0" layoutY="148.0" text="de la nueva empresa:" textFill="#000000f5" textOverrun="LEADING_ELLIPSIS" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="145.0">
+         <font>
+            <Font name="ISOCPEUR" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="205.0" layoutY="349.0" mnemonicParsing="false" onAction="#volver" prefHeight="26.0" prefWidth="88.0" text="Volver" textFill="#0033ff" AnchorPane.bottomAnchor="25.0">
+         <font>
+            <Font name="ISOCPEUR" size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="307.0" layoutY="349.0" mnemonicParsing="false" onAction="#Enviar" prefHeight="26.0" prefWidth="88.0" text="Enviar" textFill="#0033ff" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="307.0" AnchorPane.rightAnchor="205.0" AnchorPane.topAnchor="349.0">
+         <font>
+            <Font name="ISOCPEUR" size="15.0" />
+         </font>
+      </Button>
+      <Label fx:id="warningMessageNit" alignment="CENTER" layoutX="405.0" layoutY="135.0" prefHeight="20.0" prefWidth="177.0" textFill="#ff0000f5" textOverrun="LEADING_ELLIPSIS">
+         <font>
+            <Font name="ISOCPEUR" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="warningMessageRazon" alignment="CENTER" layoutX="405.0" layoutY="180.0" prefHeight="20.0" prefWidth="177.0" textFill="#ff0000f5" textOverrun="LEADING_ELLIPSIS">
+         <font>
+            <Font name="ISOCPEUR" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="warningMessagePresidente" alignment="CENTER" layoutX="405.0" layoutY="226.0" prefHeight="20.0" prefWidth="177.0" textFill="#ff0000f5" textOverrun="LEADING_ELLIPSIS">
+         <font>
+            <Font name="ISOCPEUR" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
