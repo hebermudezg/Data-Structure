@@ -1,5 +1,7 @@
 # Data-Structure
 
+##  NOTA: El trabajo 2 con interfaz frafica esta en la rama  llamada Trabajo2
+
 **Para ingresar**
 
 * correo:admin@
@@ -17,17 +19,15 @@ In this repository, a java application is created to put into practice the knowl
 * David Duque Calle daduqueca@unal.edu.co
 * Juan David Guzman  judguzmanmo@unal.edu.co
 
-## Trabajo 2 UML 2
-
-<img src="./Otros_Recursos/UML2.png" width="800" title="hover text">
-
 
 ## Problema
 
 <img src="./Otros_Recursos/UML.png" width="800" title="hover text">
 
 
+## Trabajo 2 UML 2
 
+<img src="./Trabajo 2 ER.jpg" width="800" title="hover text">
 
 
 
