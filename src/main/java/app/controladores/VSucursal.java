@@ -1,10 +1,12 @@
 package app.controladores;
 
 import app.App;
+import app.Empresa;
 import app.Sucursal;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 
 import java.io.IOException;
@@ -16,26 +18,31 @@ public class VSucursal implements Initializable {
     @FXML
     public ListView listView;
 
+    @FXML
+    public Label warningMessageGeneral;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-    }
-
-    public void Enviar(ActionEvent event) throws IOException {
-        listView.getItems().clear(); // limpiando
-        Set<Object> sucursalesmostrar = App.graph.vertexSet();
-        for(Object obj : sucursalesmostrar){
-            if(obj instanceof Sucursal){
-                listView.getItems().add((Sucursal) obj);
+        if (Empresa.empresas.isEmpty()){
+            warningMessageGeneral.setText("No hay sucursales regisradas");
+        }else{
+            listView.getItems().clear(); // limpiando el list
+            Set<Object> sucursalesmostrar = App.graph.vertexSet();
+            for(Object obj : sucursalesmostrar){
+                if(obj instanceof Sucursal){
+                    listView.getItems().add((Sucursal) obj);
+                }
             }
+
         }
 
     }
+
 
     @FXML
     public void volver(ActionEvent event) throws IOException {
         App.setRoot("MenuPrincipal");
     }
-
 
 }

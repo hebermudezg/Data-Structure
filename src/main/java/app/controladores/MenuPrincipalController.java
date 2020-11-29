@@ -24,7 +24,7 @@ public class MenuPrincipalController {
 
     public void routeBusqueda(ActionEvent event) throws IOException {
         selecionAccion=1;
-        app.App.setRoot("SelecionarEntidad");
+        app.App.setRoot("MenuBusqueda");
     }
 
 }

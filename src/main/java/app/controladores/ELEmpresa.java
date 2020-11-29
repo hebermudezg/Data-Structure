@@ -18,9 +18,8 @@ public class ELEmpresa {
 
     public void Eliminar(ActionEvent event) throws IOException {
         String Nit = textNitElimi.getText().trim();
-        // buscando la empresa
         Empresa empresaeditar = Empresa.empresas.get(Nit);
-        empresaeditar.eliminarempresa(Nit);
+        empresaeditar.eliminarempresa();
 
     }
 
@@ -34,12 +33,12 @@ public class ELEmpresa {
     private void clean(){
         textUNSBN.setText("");
         cleanWarnings();
-    }
+    }*/
 
     @FXML
     private void cleanWarnings(){
         warningMessageResult.setText("");
 
-    }*/
+    }
 
 }

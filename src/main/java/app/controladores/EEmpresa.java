@@ -32,13 +32,6 @@ public class EEmpresa implements Initializable {
 
 
     public void Enviar(ActionEvent event) throws IOException {
-        //cleanWarnings();
-        //String Nit = "";
-
-        /*if(textNit.getText().trim().equals("")||textModificado.getText().trim().equals("")){
-            warningMessageGenral.setText("¡ No pueden estar vacios !");
-            return;
-        }*/
 
         // Informacion editar*****
         String Nit = textNit.getText();
@@ -50,7 +43,12 @@ public class EEmpresa implements Initializable {
 
 
         if (value.equals("Nit")){
-            empresaeditar.editarNit(Modified);
+            boolean exito = empresaeditar.editarNit(Modified);
+            if (exito){
+                System.out.println("Se modifico");
+            }else{
+                System.out.println("No Se modifico");
+            }
         }else if (value.equals("Valor en bolsa")){
             empresaeditar.editarvalorenbolsa(Integer.parseInt(Modified));
         }else if (value.equals("Razon social")){

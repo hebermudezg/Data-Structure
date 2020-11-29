@@ -24,9 +24,11 @@
          </font>
       </Button>
 
-      <Button layoutX="100.0" layoutY="244.0" mnemonicParsing="false" onAction="#Enviar" prefHeight="42.0" prefWidth="96.0" text="Enviar" textFill="#0033ff" AnchorPane.bottomAnchor="330.0" AnchorPane.rightAnchor="100.0">
-
-      </Button>
+      <Label fx:id="warningMessageGeneral" alignment="CENTER" layoutX="44.0" layoutY="314.0" prefHeight="0.0" prefWidth="521.0" textFill="#ff0000f5" textOverrun="LEADING_ELLIPSIS">
+         <font>
+            <Font name="ISOCPEUR" size="18.0" />
+         </font>
+      </Label>
 
 
    </children>

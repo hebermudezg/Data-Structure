@@ -51,7 +51,7 @@ public class Sucursal {
         if (obj == this) { // apuntan al mismo?
             return true;
         }
-        if (!(obj instanceof Empresa)) {
+        if (!(obj instanceof Sucursal)) {
             return false; // es intancia de empresa?
         }
         Sucursal sucursal = (Sucursal) obj;

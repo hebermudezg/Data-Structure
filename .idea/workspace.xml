@@ -23,76 +23,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81015d18-c706-4666-8fc5-e6faff066c61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_jgrapht_jgrapht_core_1_5_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/CEmpresa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/CEspecialidad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/CSucursal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/EEmpresa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/EEspecialidad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/ELEmpresa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/ELEspecialidad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/ELSucursal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/ESucursal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/InicioSesionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/MenuAdministracion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/MenuBusqueda.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/SelecionarEntidad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/VEmpresa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/VEspecialidad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/controladores/VSucursal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/CEmpresa.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/CEspecialidad.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/CSucursal.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/EEmpresa.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/EEspecialidad.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/ELEmpresa.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/ELEspecialidad.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/ELSucursal.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/ESucursal.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/InicioSesion.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/MenuAdministracion.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/MenuBusqueda.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/MenuPrincipal.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/SelecionarEntidad.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/VEmpresa.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/VEspecialidad.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/app/VSucursal.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Empresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Empresa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Especialidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Especialidad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Sucursal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Sucursal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controladores/ConsultarLibroController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controladores/IngresarAutorController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controladores/IngresarLibroController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controladores/CEmpresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controladores/CEmpresa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controladores/CEspecialidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controladores/CEspecialidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controladores/CSucursal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controladores/CSucursal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controladores/EEmpresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controladores/EEmpresa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controladores/ELEmpresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controladores/ELEmpresa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controladores/MenuBusqueda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controladores/MenuBusqueda.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/controladores/MenuPrincipalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controladores/MenuPrincipalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controladores/VerAutoresController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controladores/VerLibrosController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/consultar_libro.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/ingresar_autor.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/ingresar_libro.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/menu_principal.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/ver_autores.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/app/ver_libros.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Ejemplostica.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/Empresa.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Empresa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/Especialidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Especialidad.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/Sucursal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Sucursal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/consultar_libro.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controladores/ConsultarLibroController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controladores/IngresarAutorController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controladores/IngresarLibroController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controladores/MenuPrincipalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/controladores/MenuPrincipalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controladores/VerAutoresController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/controladores/VerLibrosController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ingresar_autor.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ingresar_libro.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/menu_principal.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ver_autores.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/ver_libros.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controladores/VEmpresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controladores/VEmpresa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controladores/VEspecialidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controladores/VEspecialidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/controladores/VSucursal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controladores/VSucursal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/CEmpresa.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/CEmpresa.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/CEspecialidad.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/CEspecialidad.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/CSucursal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/CSucursal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/MenuBusqueda.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/MenuBusqueda.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/VEmpresa.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/VEmpresa.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/VEspecialidad.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/VEspecialidad.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/app/VSucursal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/app/VSucursal.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +83,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Trabajo1EstructurasActual" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -221,46 +172,50 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="419" y="154" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1606141879752" />
+    <state x="387" y="121" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog" timestamp="1606662848918">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="387" y="121" key="#com.intellij.refactoring.encapsulateFields.EncalpsulateFieldsDialog/0.0.1366.728@0.0.1366.728" timestamp="1606662848918" />
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606621895931">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1606621895931" />
-    <state x="462" y="119" key="FileChooserDialogImpl" timestamp="1606482960957">
+    <state x="462" y="119" key="FileChooserDialogImpl" timestamp="1606656576203">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="462" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606482960957" />
-    <state width="1323" height="128" key="GridCell.Tab.0.bottom" timestamp="1606627773574">
+    <state x="462" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606656576203" />
+    <state width="1323" height="55" key="GridCell.Tab.0.bottom" timestamp="1606683257318">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="128" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606627773574" />
-    <state width="1323" height="128" key="GridCell.Tab.0.center" timestamp="1606627773574">
+    <state width="1323" height="55" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606683257318" />
+    <state width="1323" height="55" key="GridCell.Tab.0.center" timestamp="1606683257317">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="128" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606627773574" />
-    <state width="1323" height="128" key="GridCell.Tab.0.left" timestamp="1606627773573">
+    <state width="1323" height="55" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606683257317" />
+    <state width="1323" height="55" key="GridCell.Tab.0.left" timestamp="1606683257317">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="128" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606627773573" />
-    <state width="1323" height="128" key="GridCell.Tab.0.right" timestamp="1606627773574">
+    <state width="1323" height="55" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606683257317" />
+    <state width="1323" height="55" key="GridCell.Tab.0.right" timestamp="1606683257318">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="128" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606627773574" />
-    <state width="1323" height="128" key="GridCell.Tab.1.bottom" timestamp="1606627773575">
+    <state width="1323" height="55" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606683257318" />
+    <state width="1323" height="128" key="GridCell.Tab.1.bottom" timestamp="1606628551156">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="128" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606627773575" />
-    <state width="1323" height="128" key="GridCell.Tab.1.center" timestamp="1606627773575">
+    <state width="1323" height="128" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606628551156" />
+    <state width="1323" height="128" key="GridCell.Tab.1.center" timestamp="1606628551155">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="128" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1606627773575" />
-    <state width="1323" height="128" key="GridCell.Tab.1.left" timestamp="1606627773574">
+    <state width="1323" height="128" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1606628551155" />
+    <state width="1323" height="128" key="GridCell.Tab.1.left" timestamp="1606628551154">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="128" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1606627773574" />
-    <state width="1323" height="128" key="GridCell.Tab.1.right" timestamp="1606627773575">
+    <state width="1323" height="128" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1606628551154" />
+    <state width="1323" height="128" key="GridCell.Tab.1.right" timestamp="1606628551155">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="128" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1606627773575" />
+    <state width="1323" height="128" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1606628551155" />
     <state x="213" y="19" key="Maven.ArtifactSearchDialog" timestamp="1606571382323">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -281,14 +236,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="65" y="25" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1606419149265" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1606627633598">
+    <state x="339" y="162" key="run.anything.popup" timestamp="1606676818101">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1606627633598" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1606608831032">
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1606676818101" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1606669311724">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606608831032" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606669311724" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.TreeMap;
 
 public class Empresa {
-    public static String Nit;
+    public String Nit;
     public int valor_en_bolsa;
     public String RazonSocial;
 
@@ -60,7 +60,7 @@ public class Empresa {
 
     // Metodo editar valor en la bolsa ******
     public boolean editarvalorenbolsa(Integer nuevovalorenbolsa){
-        valores_en_bolsa_busqueda.get(this.valor_en_bolsa).remove(this); // romover actual
+        valores_en_bolsa_busqueda.get(this.valor_en_bolsa).remove(this); // romover este elemto de la lista
 
         if(valores_en_bolsa_busqueda.containsKey(nuevovalorenbolsa)){
             valores_en_bolsa_busqueda.get(nuevovalorenbolsa).add(this);
@@ -69,12 +69,24 @@ public class Empresa {
             listanueva.add(this);
             valores_en_bolsa_busqueda.put(nuevovalorenbolsa, listanueva);
         }
+        this.valor_en_bolsa = nuevovalorenbolsa;
         return true;
+
     }
 
-    /*public void eliminarempresa(String niteliminar){
-        empresas.get(niteliminar);
-    }*/
+    public void eliminarempresa(){
+        // eliminar del tablhas
+        empresas.remove(this);
+
+        // eliminar de los arboles
+        valores_en_bolsa_busqueda.get(this.valor_en_bolsa).remove(this); // lista --> removelista --> objeto
+        RazonSocial_busqueda.get(this.RazonSocial).remove(this);
+
+        // grafo
+        App.graph.removeVertex(this);
+
+
+    }
 
 
     /*public boolean editarrazonsocial(String nitnew){
@@ -105,9 +117,9 @@ public class Empresa {
     @Override
     public String toString() {
         return "Empresa" + "\n"+
-                "\t Nit:" + Nit + "\n" +
-                "\t Valor en la bolsa:" + valor_en_bolsa +"\n" +
-                "\t Razon social:" + RazonSocial +"\n" +
+                "\t Nit: " + this.Nit + "\n" +
+                "\t Valor en la bolsa: " + this.valor_en_bolsa +"\n" +
+                "\t Razon social: " + this.RazonSocial +"\n" +
                 "\t ";
     }
 

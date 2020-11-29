@@ -5,6 +5,7 @@ import app.Especialidad;
 import app.Sucursal;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -28,38 +29,45 @@ public class CEspecialidad{
     public Label warningMessageEncargado;
     @FXML
     public Label warningMessageEnfoque;
+
     @FXML
     public Label warningMessageCodigoSu;
 
+    @FXML
+    public Label warningMessageGeneral;
+
 
     public void Enviar(ActionEvent event) throws IOException {
-        Integer codigoEspecialidad = Integer.parseInt(textcodigoEspecialidad.getText());
-        String encargado = textencargado.getText(); // validar
-        Integer numero_entregas = Integer.parseInt(textnumero_entregas.getText());
-        Integer codigoScursal = Integer.parseInt(textcodigoScursal.getText());
-        //creando la especialidad
-        new Especialidad(codigoEspecialidad,encargado,numero_entregas, Sucursal.sucursales.get(codigoScursal));
+        if (textcodigoEspecialidad.getText().trim().equals("") || textencargado.getText().trim().equals("") || textnumero_entregas.getText().trim().equals("") || textcodigoScursal.getText().trim().equals("")) {
+            warningMessageGeneral.setText("¡Los campos no pueden estar vacios !");
+        }
+        else if (Especialidad.especialidades.containsKey(Integer.parseInt(textcodigoEspecialidad.getText()))) {
+            warningMessageGeneral.setText("Código de especialidad ya está en uso");
+        }
+        else if (!Sucursal.sucursales.containsKey(Integer.parseInt(textcodigoScursal.getText()))) {
+            warningMessageGeneral.setText("Ingrese un Sucursal que esté registrada");
+            System.out.println("ingrese sucursal registrada");
+        }
+        else {
+            Integer codigoEspecialidad = Integer.parseInt(textcodigoEspecialidad.getText());
+            String encargado = textencargado.getText(); // validar
+            Integer numero_entregas = Integer.parseInt(textnumero_entregas.getText());
+            Integer codigoScursal = Integer.parseInt(textcodigoScursal.getText());
+            //creando la especialidad
+            new Especialidad(codigoEspecialidad, encargado, numero_entregas, Sucursal.sucursales.get(codigoScursal));
+            System.out.println("Se creo correctamente");
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Mensaje");
+            alert.setContentText("Especialidad creada correctamente" );
+            alert.showAndWait();
+
+            App.setRoot("MenuPrincipal");
+        }
     }
 
 
-    /*@FXML
-    private void clean(){
-        textCodigE.setText("");
-        textEncargado.setText("");
-        textEnfoque.setText("");
-        textLAtencion.setText("");
-        textCodigoSu.setText("");
-        cleanWarnings();
-    }
 
-    @FXML
-    private void cleanWarnings(){
-        warningMessageCodigE.setText("");
-        warningMessageEncargado.setText("");
-        warningMessageEnfoque.setText("");
-        warningMessageLAtencion.setText("");
-        warningMessageCodigoSu.setText("");
-    } */
     @FXML
     public void volver(ActionEvent event) throws IOException {
         App.setRoot("MenuPrincipal");

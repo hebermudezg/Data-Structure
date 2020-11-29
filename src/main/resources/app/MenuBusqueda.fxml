@@ -7,17 +7,18 @@
 <AnchorPane prefHeight="480.0" prefWidth="546.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controladores.MenuBusqueda">
    <children>
       <Label layoutX="107.0" layoutY="90.0" text="Seleccione entidad" />
-      <ChoiceBox layoutX="225.0" layoutY="86.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="ChoiceEntidad" layoutX="225.0" layoutY="86.0" prefWidth="150.0" />
       <Label layoutX="56.0" layoutY="143.0" text="Seleccione Atributo a buscar" />
-      <ChoiceBox layoutX="225.0" layoutY="139.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="ChoiceAtrubuto" layoutX="225.0" layoutY="139.0" prefWidth="150.0" />
       <Label layoutX="132.0" layoutY="199.0" prefHeight="17.0" prefWidth="72.0" text="Ingrese Valor" />
-      <TextField layoutX="226.0" layoutY="195.0" />
-      <Button layoutX="421.0" layoutY="192.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="66.0" text="Buscar" />
+      <TextField fx:id="valor" layoutX="226.0" layoutY="195.0" />
+      <Button layoutX="421.0" layoutY="192.0" mnemonicParsing="false" onAction="#Buscar" prefHeight="31.0" prefWidth="66.0" text="Buscar" />
       <ScrollPane layoutX="115.0" layoutY="250.0" prefHeight="171.0" prefWidth="331.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
                <children>
                   <ListView layoutX="7.0" prefHeight="163.0" prefWidth="322.0" />
+                  <ListView fx:id="listview" layoutX="-12.0" layoutY="-24.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="374.0" AnchorPane.leftAnchor="-12.0" AnchorPane.rightAnchor="332.0" AnchorPane.topAnchor="-24.0" />
                </children></AnchorPane>
         </content>
       </ScrollPane>
@@ -26,5 +27,6 @@
             <Font size="37.0" />
          </font>
       </Label>
+      <Button layoutX="461.0" layoutY="421.0" mnemonicParsing="false" text="Volver" />
    </children>
 </AnchorPane>
