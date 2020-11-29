@@ -1,6 +1,6 @@
 # Data-Structure
 
-### El trabajo 2 con interfaz frafica esta en la rama Trabajo2
+##  NOTA: El trabajo 2 con interfaz frafica esta en la rama  llamada Trabajo2
 
 **Para ingresar**
 
