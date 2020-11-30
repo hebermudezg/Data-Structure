@@ -74,6 +74,7 @@ public class InicioSesionController {
             alert.showAndWait();
             clean();
 
+
             app.App.setRoot("MenuPrincipal");
         }
 
@@ -112,8 +113,5 @@ public class InicioSesionController {
             return false;
         }
     }
-
-
-
 
 }

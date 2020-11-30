@@ -6,7 +6,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controladores.ELEspecialidad">
     <children>
-      <TextField fx:id="textUNSBN" layoutX="118.0" layoutY="132.0" prefHeight="26.0" prefWidth="337.0" />
+      <TextField fx:id="textElimiEspeci" layoutX="118.0" layoutY="132.0" prefHeight="26.0" prefWidth="337.0" />
       <Label alignment="TOP_LEFT" layoutX="60.0" layoutY="62.0" text="ELIMINAR ESPECIALIDAD" textFill="#ff7400f5" textOverrun="LEADING_ELLIPSIS" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="40.0">
          <font>
             <Font name="ISOCPEUR" size="40.0" />

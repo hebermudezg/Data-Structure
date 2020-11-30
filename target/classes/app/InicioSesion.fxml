@@ -33,7 +33,7 @@
             <Font name="ISOCPEUR" size="15.0" />
          </font>
       </Button>
-      <Button layoutX="256.0" layoutY="286.0" mnemonicParsing="false" onAction="#Enviar" prefHeight="26.0" prefWidth="88.0" text="Enviar" textFill="#0033ff" AnchorPane.bottomAnchor="85.0">
+      <Button layoutX="242.0" layoutY="289.0" mnemonicParsing="false" onAction="#Enviar" prefHeight="26.0" prefWidth="88.0" text="Enviar" textFill="#0033ff" AnchorPane.bottomAnchor="82.0">
          <font>
             <Font name="ISOCPEUR" size="15.0" />
          </font>

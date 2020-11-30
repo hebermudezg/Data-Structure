@@ -1,9 +1,11 @@
 package app.controladores;
 
 import app.App;
+import app.Especialidad;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -25,35 +27,72 @@ public class EEspecialidad implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         chiOpcion.getItems().removeAll(chiOpcion.getItems());
-        chiOpcion.getItems().addAll("Codigo", "Encargado", "Enfoque", "Linea de atencion");
+        chiOpcion.getItems().addAll("Codigo especialidad", "Encargado", "Numero entregas realizadad");
     }
     //organisar dependiendo lo que se necesite
     public void Enviar(ActionEvent event) throws IOException {
-        cleanWarnings();
-        String nit = "";
-        if(textCodigoE.getText().trim().equals("")||textModificado.getText().trim().equals("")){
-            warningMessageGenral.setText("¡ No pueden estar vacios !");
-            return;
-        }
-        nit = textCodigoE.getText().trim();
-        /////////////IMPORTANTE PARA SABER EL VALOR DEL CHOICEBOX //////////
-
+        // Informacion editar*****
+        String Nit = textCodigoE.getText();
+        // buscando la empresa
+        Especialidad especialidadeditar = Especialidad.especialidades.get(Integer.parseInt(Nit));
         String value = (String) chiOpcion.getValue();
+        String Modified = textModificado.getText();
 
 
-        /*codigo de busqueda para eliminar
-        for (int i = 0; i < empresas.size(); i++) {
-            if (empresas.get(i).Nit.equals(nit)) {
-                empresas.remove(i);
-                System.out.println("¡ Se realizo la operacion correctamente !");
-                return;
+        if (value.equals("Codigo especialidad")){
+            boolean exito = especialidadeditar.editarcodigoespcialidad(Integer.parseInt(Modified));
+            if (exito){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Mensaje");
+                alert.setContentText("se modifico correctamente" );
+                alert.showAndWait();
+                App.setRoot("MenuPrincipal");
+            }else{
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Mensaje");
+                alert.setContentText("No se modifico correctamente" );
+                alert.showAndWait();
+                App.setRoot("MenuPrincipal");
+            }
+
+        }else if (value.equals("Encargado")){
+            boolean exito = especialidadeditar.editarencargado(Modified);
+            if (exito){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Mensaje");
+                alert.setContentText("se modifico correctamente" );
+                alert.showAndWait();
+                App.setRoot("MenuPrincipal");
+            }else{
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Mensaje");
+                alert.setContentText("No se modifico correctamente" );
+                alert.showAndWait();
+                App.setRoot("MenuPrincipal");
+            }
+
+        }else if (value.equals("Numero entregas realizadad")){
+            boolean exito = especialidadeditar.editarnumeroentregas(Integer.parseInt(Modified));
+            if (exito){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Mensaje");
+                alert.setContentText("se modifico correctamente" );
+                alert.showAndWait();
+                App.setRoot("MenuPrincipal");
+            }else{
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Mensaje");
+                alert.setContentText("No se modifico correctamente" );
+                alert.showAndWait();
+                App.setRoot("MenuPrincipal");
             }
         }
-        alfinal poner que la operacion salio bien
-         */
 
-        clean();
     }
+
+
+
+
     @FXML
     private void clean(){
         textCodigoE.setText("");

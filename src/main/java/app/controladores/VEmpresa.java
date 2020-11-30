@@ -24,7 +24,6 @@ public class VEmpresa implements Initializable {
     // Mostrar empresas al iniciar***
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         if (Empresa.empresas.isEmpty()){
             warningMessageGeneral.setText("No hay empresas registradas");
         }else{

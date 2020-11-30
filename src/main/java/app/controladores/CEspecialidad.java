@@ -44,13 +44,13 @@ public class CEspecialidad{
         else if (Especialidad.especialidades.containsKey(Integer.parseInt(textcodigoEspecialidad.getText()))) {
             warningMessageGeneral.setText("Código de especialidad ya está en uso");
         }
-        else if (!Sucursal.sucursales.containsKey(Integer.parseInt(textcodigoScursal.getText()))) {
+        /*else if (!Sucursal.sucursales.containsKey(Integer.parseInt(textcodigoScursal.getText()))) {
             warningMessageGeneral.setText("Ingrese un Sucursal que esté registrada");
             System.out.println("ingrese sucursal registrada");
-        }
+        }*/
         else {
             Integer codigoEspecialidad = Integer.parseInt(textcodigoEspecialidad.getText());
-            String encargado = textencargado.getText(); // validar
+            String encargado = textencargado.getText().toLowerCase(); // validar
             Integer numero_entregas = Integer.parseInt(textnumero_entregas.getText());
             Integer codigoScursal = Integer.parseInt(textcodigoScursal.getText());
             //creando la especialidad

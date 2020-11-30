@@ -1,5 +1,8 @@
 package app.controladores;
+import app.App;
 import app.Empresa;
+import app.Especialidad;
+import app.Sucursal;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -75,24 +78,45 @@ public class MenuBusqueda implements Initializable {
 
         }else if("Sucursal".equals((String) ChoiceEntidad.getValue())){
             if ("Código de sucursal".equals((String) ChoiceAtrubuto.getValue())) {
+                listview.getItems().add(Sucursal.sucursales.get(Integer.parseInt(valor.getText())));
+
 
             } else if ("Ciudad".equals((String) ChoiceAtrubuto.getValue())) {
+                LinkedList<Sucursal> sucursalesamostrar = Sucursal.ciudad_busqueda.get(valor.getText());
+                for (Sucursal sucursal : sucursalesamostrar) {
+                    listview.getItems().add(sucursal);
+                }
 
             } else if ("Cantidad de empleados".equals((String) ChoiceAtrubuto.getValue())){
-
+                LinkedList<Sucursal> sucursalesamostrar = Sucursal.cantEmpleados_busqueda.get(Integer.parseInt(valor.getText()));
+                for (Sucursal sucursal : sucursalesamostrar) {
+                    listview.getItems().add(sucursal);
+                }
             }
-
 
         }else if("Especialidad".equals((String) ChoiceEntidad.getValue())){
             if ("Código de Especialidad".equals((String) ChoiceAtrubuto.getValue())) {
+                listview.getItems().add(Especialidad.especialidades.get(Integer.parseInt(valor.getText())));
 
             } else if ("Encargado".equals((String) ChoiceAtrubuto.getValue())) {
+                LinkedList<Especialidad> sucursalesamostrar = Especialidad.encargados_buscar.get(valor.getText());
+                for (Especialidad especialidad : sucursalesamostrar) {
+                    listview.getItems().add(especialidad);
+                }
 
             } else if ("Número de entregas".equals((String) ChoiceAtrubuto.getValue())){
-
+                LinkedList<Especialidad> sucursalesamostrar = Especialidad.numero_entregas_buscar.get(Integer.parseInt(valor.getText()));
+                for (Especialidad especialidad : sucursalesamostrar) {
+                    listview.getItems().add(especialidad);
+                }
             }
 
         }
+    }
+
+    @FXML
+    public void volver(ActionEvent event) throws IOException {
+        App.setRoot("MenuPrincipal");
     }
 }
 

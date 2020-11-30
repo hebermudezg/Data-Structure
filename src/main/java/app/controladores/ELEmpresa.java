@@ -4,6 +4,7 @@ import app.App;
 import app.Empresa;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -13,14 +14,20 @@ public class ELEmpresa {
     @FXML
     public TextField textNitElimi;
     @FXML
-    public Label warningMessageResult;
+    public Label warningMessageGeneral;
+
 
 
     public void Eliminar(ActionEvent event) throws IOException {
         String Nit = textNitElimi.getText().trim();
         Empresa empresaeditar = Empresa.empresas.get(Nit);
         empresaeditar.eliminarempresa();
-
+        if ( empresaeditar.eliminarempresa()){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Se eliminó correctamente");
+            alert.showAndWait();
+            app.App.setRoot("MenuPrincipal");
+        }
     }
 
     @FXML
@@ -29,16 +36,6 @@ public class ELEmpresa {
     }
 
 
-    /*@FXML
-    private void clean(){
-        textUNSBN.setText("");
-        cleanWarnings();
-    }*/
 
-    @FXML
-    private void cleanWarnings(){
-        warningMessageResult.setText("");
-
-    }
 
 }

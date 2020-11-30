@@ -47,6 +47,61 @@ public class Especialidad {
 
     }
 
+
+
+    public boolean editarcodigoespcialidad(Integer codigoespecialiadanuevo){
+        if (especialidades.containsKey(codigoespecialiadanuevo)){
+            return false;
+        }else{
+            especialidades.remove(this.codigoEspecialidad);
+            especialidades.put(codigoespecialiadanuevo, this);
+            this.codigoEspecialidad = codigoespecialiadanuevo; // actualizar
+            return true;
+        }
+    }
+
+
+    public boolean editarencargado(String nuevoencargado){
+        encargados_buscar.get(this.encargado).remove(this);
+        if(encargados_buscar.containsKey(nuevoencargado)){
+            encargados_buscar.get(nuevoencargado).add(this);
+        }else{
+            LinkedList<Especialidad> listanueva = new LinkedList<>();
+            listanueva.add(this);
+            encargados_buscar.put(nuevoencargado, listanueva);
+        }
+        this.encargado = nuevoencargado;
+        return true;
+    }
+
+    public boolean editarnumeroentregas(Integer nuevovanumempleados){
+        numero_entregas_buscar.get(this.numero_entregas).remove(this); // romover este elemto de la lista
+
+        if(numero_entregas_buscar.containsKey(nuevovanumempleados)){
+            numero_entregas_buscar.get(nuevovanumempleados).add(this);
+        }else{
+            LinkedList<Especialidad> listanueva = new LinkedList<>();
+            listanueva.add(this);
+            numero_entregas_buscar.put(nuevovanumempleados, listanueva);
+        }
+        this.numero_entregas = nuevovanumempleados;
+        return true;
+    }
+
+
+    
+    public boolean eliminarespecialidad(){
+        // eliminar del tablhas
+        especialidades.remove(this);
+        // eliminar de los arboles
+        encargados_buscar.get(this.encargado).remove(this); // lista --> removelista --> objeto
+        numero_entregas_buscar.get(this.numero_entregas).remove(this);
+        // grafo
+        App.graph.removeVertex(this);
+        return true;
+    }
+
+
     @Override
     public boolean equals(Object obj) {
         if (obj == this) { // apuntan al mismo?
@@ -58,8 +113,6 @@ public class Especialidad {
         Especialidad especialidad = (Especialidad) obj;
         return especialidad.codigoEspecialidad == this.codigoEspecialidad;
     }
-
-
 
 
     @Override

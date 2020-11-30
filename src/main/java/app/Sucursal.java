@@ -5,15 +5,16 @@ import java.util.LinkedList;
 import java.util.TreeMap;
 
 public class Sucursal {
-    public int codigoScursal;
+    public Integer codigoScursal;
     public String ciudad;
     public int cantEmpleados;
+
 
     public static Hashtable<Integer, Sucursal> sucursales = new Hashtable<>();
     public static TreeMap<String, LinkedList<Sucursal>> ciudad_busqueda = new TreeMap<>();
     public static TreeMap<Integer, LinkedList<Sucursal>> cantEmpleados_busqueda = new TreeMap<>();
 
-
+    // Constructr
     public Sucursal(int codigoScursal, String ciudad, int cantEmpleados, Empresa empresa) {
         this.codigoScursal = codigoScursal;
         this.ciudad = ciudad;
@@ -45,6 +46,60 @@ public class Sucursal {
         }
 
     }
+
+    public boolean editarcodigosucursal(Integer codigosucurslanuevo){
+        if (sucursales.containsKey(codigosucurslanuevo)){
+            return false;
+        }else{
+            sucursales.remove(this.codigoScursal);
+            sucursales.put(codigosucurslanuevo, this);
+            this.codigoScursal = codigosucurslanuevo; // actualizar
+            return true;
+        }
+
+    }
+
+    public boolean editarciudad(String nuevaciudad){
+        ciudad_busqueda.get(this.ciudad).remove(this);
+
+        if(ciudad_busqueda.containsKey(nuevaciudad)){
+            ciudad_busqueda.get(nuevaciudad).add(this);
+        }else{
+            LinkedList<Sucursal> listanueva = new LinkedList<>();
+            listanueva.add(this);
+            ciudad_busqueda.put(nuevaciudad, listanueva);
+        }
+        this.ciudad = nuevaciudad;
+        return true;
+    }
+
+
+    public boolean editarcantempleados(Integer nuevovacantempleados){
+        cantEmpleados_busqueda.get(this.cantEmpleados).remove(this); // romover este elemto de la lista
+
+        if(cantEmpleados_busqueda.containsKey(nuevovacantempleados)){
+            cantEmpleados_busqueda.get(nuevovacantempleados).add(this);
+        }else{
+            LinkedList<Sucursal> listanueva = new LinkedList<>();
+            listanueva.add(this);
+            cantEmpleados_busqueda.put(nuevovacantempleados, listanueva);
+        }
+        this.cantEmpleados = nuevovacantempleados;
+        return true;
+    }
+
+
+    public boolean eliminarsucursal(){
+        // eliminar del tablhas
+        sucursales.remove(this);
+        // eliminar de los arboles
+        ciudad_busqueda.get(this.ciudad).remove(this); // lista --> removelista --> objeto
+        cantEmpleados_busqueda.get(this.cantEmpleados).remove(this);
+        // grafo
+        App.graph.removeVertex(this);
+        return true;
+    }
+
 
     @Override
     public boolean equals(Object obj) {

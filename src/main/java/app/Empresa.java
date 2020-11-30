@@ -18,7 +18,7 @@ public class Empresa {
     public Empresa(String Nit, int valor_en_bolsa, String RazonSocial) {
         this.Nit = Nit;
         this.valor_en_bolsa = valor_en_bolsa;
-        this.RazonSocial = RazonSocial.toLowerCase(); // convertir a minusculas
+        this.RazonSocial = RazonSocial; // convertir a minusculas
         // crenado vertice
         App.graph.addVertex(this);
 
@@ -42,7 +42,6 @@ public class Empresa {
             listanueva.add(this);
             RazonSocial_busqueda.put(RazonSocial, listanueva);
         }
-
 
     }
 
@@ -74,31 +73,37 @@ public class Empresa {
 
     }
 
-    public void eliminarempresa(){
-        // eliminar del tablhas
-        empresas.remove(this);
-
-        // eliminar de los arboles
-        valores_en_bolsa_busqueda.get(this.valor_en_bolsa).remove(this); // lista --> removelista --> objeto
+    public boolean editarrazonsocial(String nuevarazonsocial){
         RazonSocial_busqueda.get(this.RazonSocial).remove(this);
 
-        // grafo
-        App.graph.removeVertex(this);
-
+        if(RazonSocial_busqueda.containsKey(nuevarazonsocial)){
+            RazonSocial_busqueda.get(nuevarazonsocial).add(this);
+        }else{
+            LinkedList<Empresa> listanueva = new LinkedList<>();
+            listanueva.add(this);
+            RazonSocial_busqueda.put(nuevarazonsocial, listanueva);
+        }
+        this.RazonSocial = nuevarazonsocial;
+        return true;
 
     }
 
 
-    /*public boolean editarrazonsocial(String nitnew){
-        if (empresas.containsKey(nitnew)){
-            return false;
-        }else{
-            empresas.remove(this.Nit);
-            empresas.put(nitnew, this);
-            this.Nit = nitnew; // actualizar
-            return true;
-        }
-    }*/
+
+
+
+    public boolean eliminarempresa(){
+        // eliminar del tablhas
+        empresas.remove(this);
+        // eliminar de los arboles
+        valores_en_bolsa_busqueda.get(this.valor_en_bolsa).remove(this); // lista --> removelista --> objeto
+        RazonSocial_busqueda.get(this.RazonSocial).remove(this);
+        // grafo
+        App.graph.removeVertex(this);
+        return true;
+    }
+
+
 
 
     @Override

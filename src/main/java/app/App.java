@@ -57,37 +57,28 @@ public class App extends Application {
         RegistrosUsuarios.add(nuevousuario);
 
         // Empresas
-        Empresa empresa1 = new Empresa("123456-123", 200000, "Envios Joselito");
-        Empresa empresa2 = new Empresa("911456-123", 500000, "Logistica TripleAAA");
-        Empresa empresa3 = new Empresa("912456-432", 200000, "Envios Integrados SAS");
+        Empresa empresa0 = new Empresa("123", 200000, "Envios Rapifacil");
+        Empresa empresa1 = new Empresa("123456", 200000, "Envios Joselito");
+        Empresa empresa2 = new Empresa("911456", 500000, "Logistica Triple A");
+        Empresa empresa3 = new Empresa("912456", 200000, "Envios Integrados SAS");
 
         // Sucursales
         Sucursal sucursal1 = new Sucursal(123, "Ibagué", 200,empresa1);
         Sucursal sucursal2 = new Sucursal(124, "Bogotá", 200,empresa1);
         Sucursal sucursal3 = new Sucursal(125, "Cartgena", 200,empresa1);
-        Sucursal sucursal4 = new Sucursal(126, "Barranquilla", 200,empresa1);
-        Sucursal sucursal5 = new Sucursal(127, "Medellín", 200,empresa1);
+        Sucursal sucursal4 = new Sucursal(126, "Barranquilla", 800,empresa1);
+        Sucursal sucursal5 = new Sucursal(127, "Medellín", 100,empresa1);
 
         // Especialidades
         Especialidad especialidad1 = new Especialidad(982, "Esteban Bermudez",
                 2000, sucursal1);
-
         Especialidad especialidad2 = new Especialidad(983, "Juan Maldonado",
                 2000, sucursal1);
-
         Especialidad especialidad3 = new Especialidad(984, "Esteban Bermudez",
                 2000, sucursal2);
-
         Especialidad especialidad4 = new Especialidad(985, "Juanes Aristizabal",
                 3000, sucursal3);
-
-
         launch();
     }
-
-
-
-
-
 
 }

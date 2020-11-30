@@ -5,6 +5,7 @@ import app.Empresa;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -45,14 +46,50 @@ public class EEmpresa implements Initializable {
         if (value.equals("Nit")){
             boolean exito = empresaeditar.editarNit(Modified);
             if (exito){
-                System.out.println("Se modifico");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Mensaje");
+                alert.setContentText("se modifico correctamente" );
+                alert.showAndWait();
+                App.setRoot("MenuPrincipal");
             }else{
-                System.out.println("No Se modifico");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Mensaje");
+                alert.setContentText("No se modifico correctamente" );
+                alert.showAndWait();
+                App.setRoot("MenuPrincipal");
             }
+
         }else if (value.equals("Valor en bolsa")){
-            empresaeditar.editarvalorenbolsa(Integer.parseInt(Modified));
+            boolean exito =empresaeditar.editarvalorenbolsa(Integer.parseInt(Modified));
+            if (exito){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Mensaje");
+                alert.setContentText("se modifico correctamente" );
+                alert.showAndWait();
+                App.setRoot("MenuPrincipal");
+            }else{
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Mensaje");
+                alert.setContentText("No se modifico correctamente" );
+                alert.showAndWait();
+                App.setRoot("MenuPrincipal");
+            }
+
         }else if (value.equals("Razon social")){
-            //empresaeditar.editarrazonsocial();
+            boolean exito = empresaeditar.editarrazonsocial(Modified);
+            if (exito){
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Mensaje");
+                alert.setContentText("se modifico correctamente" );
+                alert.showAndWait();
+                App.setRoot("MenuPrincipal");
+            }else{
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Mensaje");
+                alert.setContentText("No se modifico correctamente" );
+                alert.showAndWait();
+                App.setRoot("MenuPrincipal");
+            }
         }
 
     }

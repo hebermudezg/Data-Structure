@@ -12,7 +12,7 @@
             <Font name="ISOCPEUR" size="40.0" />
          </font>
       </Label>
-      <Label fx:id="warningMessageResult" layoutX="132.0" layoutY="188.0" prefHeight="144.0" prefWidth="337.0" />
+      <Label fx:id="warningMessageGeneral" layoutX="132.0" layoutY="188.0" prefHeight="144.0" prefWidth="337.0" />
       <Label alignment="CENTER" layoutX="132.0" layoutY="109.0" prefHeight="27.0" prefWidth="337.0" text="Ingrese el nit de la empresa a eliminar:" textFill="#000000f5" textOverrun="LEADING_ELLIPSIS" AnchorPane.leftAnchor="132.0" AnchorPane.rightAnchor="131.0">
          <font>
             <Font name="ISOCPEUR" size="18.0" />
