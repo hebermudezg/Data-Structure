@@ -35,12 +35,12 @@ public class Empresa {
             valores_en_bolsa_busqueda.put(valor_en_bolsa, listanueva);
         }
 
-        if(RazonSocial_busqueda.containsKey(RazonSocial)){
-            RazonSocial_busqueda.get(valor_en_bolsa).add(this);
+        if(RazonSocial_busqueda.containsKey(RazonSocial.toLowerCase())){
+            RazonSocial_busqueda.get(RazonSocial).add(this);
         }else{
             LinkedList<Empresa> listanueva = new LinkedList<>();
             listanueva.add(this);
-            RazonSocial_busqueda.put(RazonSocial, listanueva);
+            RazonSocial_busqueda.put(RazonSocial.toLowerCase(), listanueva);
         }
 
     }
@@ -73,8 +73,9 @@ public class Empresa {
 
     }
 
-    public boolean editarrazonsocial(String nuevarazonsocial){
-        RazonSocial_busqueda.get(this.RazonSocial).remove(this);
+    public boolean editarrazonsocial(String razonsocialrecibida){
+        String nuevarazonsocial = razonsocialrecibida.toLowerCase();
+        RazonSocial_busqueda.get(this.RazonSocial.toLowerCase()).remove(this);
 
         if(RazonSocial_busqueda.containsKey(nuevarazonsocial)){
             RazonSocial_busqueda.get(nuevarazonsocial).add(this);
@@ -97,7 +98,7 @@ public class Empresa {
         empresas.remove(this);
         // eliminar de los arboles
         valores_en_bolsa_busqueda.get(this.valor_en_bolsa).remove(this); // lista --> removelista --> objeto
-        RazonSocial_busqueda.get(this.RazonSocial).remove(this);
+        RazonSocial_busqueda.get(this.RazonSocial.toLowerCase()).remove(this);
         // grafo
         App.graph.removeVertex(this);
         return true;

@@ -41,22 +41,21 @@ public class CEspecialidad{
         if (textcodigoEspecialidad.getText().trim().equals("") || textencargado.getText().trim().equals("") || textnumero_entregas.getText().trim().equals("") || textcodigoScursal.getText().trim().equals("")) {
             warningMessageGeneral.setText("¡Los campos no pueden estar vacios !");
         }
-        else if (Especialidad.especialidades.containsKey(Integer.parseInt(textcodigoEspecialidad.getText()))) {
+        else if (Especialidad.especialidades.containsKey(textcodigoEspecialidad.getText())) {
             warningMessageGeneral.setText("Código de especialidad ya está en uso");
         }
-        /*else if (!Sucursal.sucursales.containsKey(Integer.parseInt(textcodigoScursal.getText()))) {
+        else if (!Sucursal.sucursales.containsKey(textcodigoScursal.getText())) {
             warningMessageGeneral.setText("Ingrese un Sucursal que esté registrada");
-            System.out.println("ingrese sucursal registrada");
-        }*/
+
+        }
         else {
-            Integer codigoEspecialidad = Integer.parseInt(textcodigoEspecialidad.getText());
+            String codigoEspecialidad = textcodigoEspecialidad.getText();
             String encargado = textencargado.getText().toLowerCase(); // validar
             Integer numero_entregas = Integer.parseInt(textnumero_entregas.getText());
-            Integer codigoScursal = Integer.parseInt(textcodigoScursal.getText());
+            String codigoScursal = textcodigoScursal.getText();
             //creando la especialidad
             new Especialidad(codigoEspecialidad, encargado, numero_entregas, Sucursal.sucursales.get(codigoScursal));
-            System.out.println("Se creo correctamente");
-
+            App.setRoot("MenuPrincipal");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Mensaje");
             alert.setContentText("Especialidad creada correctamente" );

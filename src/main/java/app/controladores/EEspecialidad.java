@@ -34,13 +34,13 @@ public class EEspecialidad implements Initializable {
         // Informacion editar*****
         String Nit = textCodigoE.getText();
         // buscando la empresa
-        Especialidad especialidadeditar = Especialidad.especialidades.get(Integer.parseInt(Nit));
+        Especialidad especialidadeditar = Especialidad.especialidades.get(Nit);
         String value = (String) chiOpcion.getValue();
         String Modified = textModificado.getText();
 
 
         if (value.equals("Codigo especialidad")){
-            boolean exito = especialidadeditar.editarcodigoespcialidad(Integer.parseInt(Modified));
+            boolean exito = especialidadeditar.editarcodigoespcialidad(Modified);
             if (exito){
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Mensaje");

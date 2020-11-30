@@ -4,6 +4,7 @@ import app.App;
 import app.Especialidad;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -19,8 +20,17 @@ public class ELEspecialidad {
     //organisar dependiendo lo que se necesite
     public void Eliminar(ActionEvent event) throws IOException {
         String Nit = textElimiEspeci.getText();
-        Especialidad expressed = Especialidad.especialidades.get(Integer.parseInt(Nit));
+        Especialidad expressed = Especialidad.especialidades.get(Nit);
         expressed.eliminarespecialidad();
+
+        if (expressed.eliminarespecialidad()){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Se eliminó correctamente");
+            alert.showAndWait();
+            app.App.setRoot("MenuPrincipal");
+        }
+
+
     }
 
     @FXML

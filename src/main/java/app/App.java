@@ -57,26 +57,26 @@ public class App extends Application {
         RegistrosUsuarios.add(nuevousuario);
 
         // Empresas
-        Empresa empresa0 = new Empresa("123", 200000, "Envios Rapifacil");
-        Empresa empresa1 = new Empresa("123456", 200000, "Envios Joselito");
-        Empresa empresa2 = new Empresa("911456", 500000, "Logistica Triple A");
-        Empresa empresa3 = new Empresa("912456", 200000, "Envios Integrados SAS");
+        Empresa empresa0 = new Empresa("123", 200000, "envios rapifacil");
+        Empresa empresa1 = new Empresa("123456", 200000, "envios joselito");
+        Empresa empresa2 = new Empresa("911456", 500000, "logistica triple a");
+        Empresa empresa3 = new Empresa("912456", 200000, "envios integrados sas");
 
         // Sucursales
-        Sucursal sucursal1 = new Sucursal(123, "Ibagué", 200,empresa1);
-        Sucursal sucursal2 = new Sucursal(124, "Bogotá", 200,empresa1);
-        Sucursal sucursal3 = new Sucursal(125, "Cartgena", 200,empresa1);
-        Sucursal sucursal4 = new Sucursal(126, "Barranquilla", 800,empresa1);
-        Sucursal sucursal5 = new Sucursal(127, "Medellín", 100,empresa1);
+        Sucursal sucursal1 = new Sucursal("123", "ibagué", 200,empresa1);
+        Sucursal sucursal2 = new Sucursal("124", "bogotá", 200,empresa1);
+        Sucursal sucursal3 = new Sucursal("125", "cartgena", 200,empresa1);
+        Sucursal sucursal4 = new Sucursal("126", "barranquilla", 800,empresa1);
+        Sucursal sucursal5 = new Sucursal("127", "medellín", 100,empresa1);
 
         // Especialidades
-        Especialidad especialidad1 = new Especialidad(982, "Esteban Bermudez",
+        Especialidad especialidad1 = new Especialidad("982", "esteban bermudez",
                 2000, sucursal1);
-        Especialidad especialidad2 = new Especialidad(983, "Juan Maldonado",
+        Especialidad especialidad2 = new Especialidad("983", "juan maldonado",
                 2000, sucursal1);
-        Especialidad especialidad3 = new Especialidad(984, "Esteban Bermudez",
+        Especialidad especialidad3 = new Especialidad("984", "esteban bermudez",
                 2000, sucursal2);
-        Especialidad especialidad4 = new Especialidad(985, "Juanes Aristizabal",
+        Especialidad especialidad4 = new Especialidad("985", "juanes aristizabal",
                 3000, sucursal3);
         launch();
     }

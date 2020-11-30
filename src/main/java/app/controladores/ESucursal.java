@@ -36,13 +36,13 @@ public class ESucursal implements Initializable {
         // Informacion editar*****
         String Nit = textCodigoS.getText();
         // buscando la empresa
-        Sucursal sucursaleditar = Sucursal.sucursales.get(Integer.parseInt(Nit));
+        Sucursal sucursaleditar = Sucursal.sucursales.get(Nit);
         String value = (String) chiOpcion.getValue();
         String Modified = textModificado.getText();
 
 
         if (value.equals("Codigo sucursal")){
-            boolean exito = sucursaleditar.editarcodigosucursal(Integer.parseInt(Modified));
+            boolean exito = sucursaleditar.editarcodigosucursal(Modified);
             if (exito){
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Mensaje");

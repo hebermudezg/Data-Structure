@@ -5,20 +5,22 @@ import java.util.LinkedList;
 import java.util.TreeMap;
 
 public class Sucursal {
-    public Integer codigoScursal;
+    public String codigoScursal;
     public String ciudad;
     public int cantEmpleados;
 
 
-    public static Hashtable<Integer, Sucursal> sucursales = new Hashtable<>();
+    public static Hashtable<String, Sucursal> sucursales = new Hashtable<>();
     public static TreeMap<String, LinkedList<Sucursal>> ciudad_busqueda = new TreeMap<>();
     public static TreeMap<Integer, LinkedList<Sucursal>> cantEmpleados_busqueda = new TreeMap<>();
 
     // Constructr
-    public Sucursal(int codigoScursal, String ciudad, int cantEmpleados, Empresa empresa) {
+    public Sucursal(String codigoScursal, String ciudad, int cantEmpleados, Empresa empresa) {
         this.codigoScursal = codigoScursal;
         this.ciudad = ciudad;
         this.cantEmpleados = cantEmpleados;
+
+        sucursales.put(codigoScursal, this);
 
         // vertice (creando el nodo)
         App.graph.addVertex(this);
@@ -27,13 +29,13 @@ public class Sucursal {
         App.graph.addEdge(this, empresa);
 
         // Agregando ciudad *********************
-        if(ciudad_busqueda.containsKey(ciudad)){  // si esta en el treemap simplemete lo traigo y agrego
-            ciudad_busqueda.get(ciudad).add(this); // retorno lista y agrego objeto
+        if(ciudad_busqueda.containsKey(ciudad.toLowerCase())){  // si esta en el treemap simplemete lo traigo y agrego
+            ciudad_busqueda.get(ciudad.toLowerCase()).add(this); // retorno lista y agrego objeto
         }else{ // si no esta creo la lista, lo agrego
             LinkedList<Sucursal> listanueva = new LinkedList<>();
             listanueva.add(this);
             // añadiendo el nuevo valor en la bolsa con la respectiva lista al tree map
-            ciudad_busqueda.put(ciudad, listanueva);
+            ciudad_busqueda.put(ciudad.toLowerCase(), listanueva);
         }
 
         // Agregando Cantidad de empleados **************
@@ -47,7 +49,7 @@ public class Sucursal {
 
     }
 
-    public boolean editarcodigosucursal(Integer codigosucurslanuevo){
+    public boolean editarcodigosucursal(String codigosucurslanuevo){
         if (sucursales.containsKey(codigosucurslanuevo)){
             return false;
         }else{
@@ -59,7 +61,9 @@ public class Sucursal {
 
     }
 
-    public boolean editarciudad(String nuevaciudad){
+    public boolean editarciudad(String nuevaciudadd){
+
+        String nuevaciudad = nuevaciudadd.toLowerCase();
         ciudad_busqueda.get(this.ciudad).remove(this);
 
         if(ciudad_busqueda.containsKey(nuevaciudad)){
@@ -93,7 +97,7 @@ public class Sucursal {
         // eliminar del tablhas
         sucursales.remove(this);
         // eliminar de los arboles
-        ciudad_busqueda.get(this.ciudad).remove(this); // lista --> removelista --> objeto
+        ciudad_busqueda.get(this.ciudad.toLowerCase()).remove(this); // lista --> removelista --> objeto
         cantEmpleados_busqueda.get(this.cantEmpleados).remove(this);
         // grafo
         App.graph.removeVertex(this);

@@ -22,6 +22,7 @@ public class ELEmpresa {
         String Nit = textNitElimi.getText().trim();
         Empresa empresaeditar = Empresa.empresas.get(Nit);
         empresaeditar.eliminarempresa();
+
         if ( empresaeditar.eliminarempresa()){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Se eliminó correctamente");

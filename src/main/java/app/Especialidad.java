@@ -5,21 +5,24 @@ import java.util.LinkedList;
 import java.util.TreeMap;
 
 public class Especialidad {
-    public int codigoEspecialidad;
+    public String codigoEspecialidad;
     public String encargado;
     public int numero_entregas;
 
     // para la clave principal HasTable
-    public static Hashtable<Integer, Especialidad> especialidades = new Hashtable<>();
+    public static Hashtable<String, Especialidad> especialidades = new Hashtable<>();
     // para los otros atributos TreeMap
     public static TreeMap<String, LinkedList<Especialidad>> encargados_buscar = new TreeMap<>();
     public static TreeMap<Integer, LinkedList<Especialidad>> numero_entregas_buscar = new TreeMap<>();
 
 
-    public Especialidad(int codigo, String encargado, int numero_entregas, Sucursal sucursal) {
-        this.codigoEspecialidad = codigo;
+    public Especialidad(String codigoEspecialidad, String encargado, int numero_entregas, Sucursal sucursal) {
+        this.codigoEspecialidad = codigoEspecialidad;
         this.encargado = encargado;
         this.numero_entregas = numero_entregas;
+
+        // Agragandi al hash
+        especialidades.put(codigoEspecialidad, this);
 
         // vertice (creando el nodo)
         App.graph.addVertex(this);
@@ -28,12 +31,12 @@ public class Especialidad {
         App.graph.addEdge(this, sucursal);
 
         // Agregando encargado el tree*************
-        if (encargados_buscar.containsKey(encargado)){
-            encargados_buscar.get(encargado).add(this); // agregar esta
+        if (encargados_buscar.containsKey(encargado.toLowerCase())){
+            encargados_buscar.get(encargado.toLowerCase()).add(this); // agregar esta
         }else {
             LinkedList<Especialidad> listanueva = new LinkedList<>();
             listanueva.add(this);
-            encargados_buscar.put(encargado, listanueva);
+            encargados_buscar.put(encargado.toLowerCase(), listanueva);
         }
 
         // Agregando numero de entregas ************
@@ -49,7 +52,7 @@ public class Especialidad {
 
 
 
-    public boolean editarcodigoespcialidad(Integer codigoespecialiadanuevo){
+    public boolean editarcodigoespcialidad(String codigoespecialiadanuevo){
         if (especialidades.containsKey(codigoespecialiadanuevo)){
             return false;
         }else{
@@ -61,7 +64,8 @@ public class Especialidad {
     }
 
 
-    public boolean editarencargado(String nuevoencargado){
+    public boolean editarencargado(String nuevoencargado2){
+        String nuevoencargado = nuevoencargado2.toLowerCase();
         encargados_buscar.get(this.encargado).remove(this);
         if(encargados_buscar.containsKey(nuevoencargado)){
             encargados_buscar.get(nuevoencargado).add(this);
@@ -94,7 +98,7 @@ public class Especialidad {
         // eliminar del tablhas
         especialidades.remove(this);
         // eliminar de los arboles
-        encargados_buscar.get(this.encargado).remove(this); // lista --> removelista --> objeto
+        encargados_buscar.get(this.encargado.toLowerCase()).remove(this); // lista --> removelista --> objeto
         numero_entregas_buscar.get(this.numero_entregas).remove(this);
         // grafo
         App.graph.removeVertex(this);

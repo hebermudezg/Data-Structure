@@ -47,9 +47,9 @@ public class MenuBusqueda implements Initializable {
                 if (newValue.intValue() == 0) {
                     ChoiceAtrubuto.setItems(FXCollections.observableArrayList("Nit", "Valor en la bolsa", "Razón social"));
                 } else if (newValue.intValue() == 1) {
-                    ChoiceAtrubuto.setItems(FXCollections.observableArrayList("Código de sucursal", "Ciudad", "Cantidad de empleados"));
+                    ChoiceAtrubuto.setItems(FXCollections.observableArrayList("Codigo", "Ciudad", "Cantidad de empleados"));
                 } else if (newValue.intValue() == 2) {
-                    ChoiceAtrubuto.setItems(FXCollections.observableArrayList("Código de Especialidad", "Encargado", "Número de entregas"));
+                    ChoiceAtrubuto.setItems(FXCollections.observableArrayList("Codigo", "Encargado", "Número de entregas"));
                 }
 
             }
@@ -59,9 +59,8 @@ public class MenuBusqueda implements Initializable {
     public void Buscar(ActionEvent event) throws IOException {
         listview.getItems().clear(); // limpiando
         if ("Empresa".equals((String) ChoiceEntidad.getValue())) {
-
             if ("Nit".equals((String) ChoiceAtrubuto.getValue())) {
-               listview.getItems().add( Empresa.empresas.get(valor.getText()));
+               listview.getItems().add(Empresa.empresas.get(valor.getText()));
             } else if ("Valor en la bolsa".equals((String) ChoiceAtrubuto.getValue())) {
                 LinkedList<Empresa> empresasamostrar = Empresa.valores_en_bolsa_busqueda.get(Integer.parseInt(valor.getText()));
                 for (Empresa empresa : empresasamostrar) {
@@ -69,20 +68,21 @@ public class MenuBusqueda implements Initializable {
                 }
 
             } else if ("Razón social".equals((String) ChoiceAtrubuto.getValue())){
-                LinkedList<Empresa> empresasamostrar = Empresa.RazonSocial_busqueda.get(valor.getText());
+                LinkedList<Empresa> empresasamostrar = Empresa.RazonSocial_busqueda.get(valor.getText().toLowerCase());
                 for (Empresa empresa : empresasamostrar) {
                     listview.getItems().add(empresa);
                 }
             }
 
 
+
         }else if("Sucursal".equals((String) ChoiceEntidad.getValue())){
-            if ("Código de sucursal".equals((String) ChoiceAtrubuto.getValue())) {
-                listview.getItems().add(Sucursal.sucursales.get(Integer.parseInt(valor.getText())));
+            if ("Codigo".equals((String) ChoiceAtrubuto.getValue())) {
+                listview.getItems().add(Sucursal.sucursales.get(valor.getText()));
 
 
             } else if ("Ciudad".equals((String) ChoiceAtrubuto.getValue())) {
-                LinkedList<Sucursal> sucursalesamostrar = Sucursal.ciudad_busqueda.get(valor.getText());
+                LinkedList<Sucursal> sucursalesamostrar = Sucursal.ciudad_busqueda.get(valor.getText().toLowerCase());
                 for (Sucursal sucursal : sucursalesamostrar) {
                     listview.getItems().add(sucursal);
                 }
@@ -95,11 +95,11 @@ public class MenuBusqueda implements Initializable {
             }
 
         }else if("Especialidad".equals((String) ChoiceEntidad.getValue())){
-            if ("Código de Especialidad".equals((String) ChoiceAtrubuto.getValue())) {
-                listview.getItems().add(Especialidad.especialidades.get(Integer.parseInt(valor.getText())));
+            if ("Codigo".equals((String) ChoiceAtrubuto.getValue())) {
+                listview.getItems().add(Especialidad.especialidades.get(valor.getText()));
 
             } else if ("Encargado".equals((String) ChoiceAtrubuto.getValue())) {
-                LinkedList<Especialidad> sucursalesamostrar = Especialidad.encargados_buscar.get(valor.getText());
+                LinkedList<Especialidad> sucursalesamostrar = Especialidad.encargados_buscar.get(valor.getText().toLowerCase());
                 for (Especialidad especialidad : sucursalesamostrar) {
                     listview.getItems().add(especialidad);
                 }

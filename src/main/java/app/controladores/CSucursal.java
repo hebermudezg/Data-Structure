@@ -34,7 +34,7 @@ public class CSucursal {
         else if (!Empresa.empresas.containsKey(textNit.getText().trim())) {
             warningMessageGeneral.setText("Ingrese un NIT de una empresa registrada");
         } else {
-            Integer codigoSucursal = Integer.parseInt(textcodigoScursal.getText());
+            String codigoSucursal = textcodigoScursal.getText();
             String ciudad = textciudad.getText().toLowerCase(); // validar
             Integer cantEmpleados = Integer.parseInt(textcantEmpleados.getText());
             String Nit = textNit.getText();
